@@ -422,15 +422,6 @@ O teste de cada módulo requer um **módulo driver** especial e um ou mais **mó
 
 ---
 
-### Alterações realizadas
-
-1. **Correção de `drivermodule` para “módulo driver”**: separação correta e consistência com o termo usado anteriormente.  
-2. **Uniformização de termos**: passou-se a usar “teste incremental” em vez de apenas “integração” para ficar consistente com o par “teste não incremental / teste incremental”.  
-3. **Formatação em negrito** de nomes de módulos (A, B, C, D, E) e termos-chave para facilitar a leitura.  
-4. **Colocado placeholder de imagem** em Markdown (`![Figura 5.7](CAMINHO_PARA_IMAGEM)`) para inserção futura da figura.
-
-
-
 Quando o teste de módulo de todos os seis módulos for concluído, os módulos serão combinados para formar o programa.
 
 A abordagem alternativa é o **teste incremental**. Em vez de testar cada módulo isoladamente, o próximo módulo a ser testado é primeiro combinado com o conjunto de módulos que já foram testados.
