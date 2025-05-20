@@ -1,6 +1,6 @@
 # AAE3 - Questões de Testes de Software 
 
-## Q01. Qual é a representação de programa mais comumente utilizada nos critérios de teste estrutural?
+# Q01. Qual é a representação de programa mais comumente utilizada nos critérios de teste estrutural?
 
 - a. Grafo de Causa-Efeito.  
 - b. Grafo de Fluxo de Dados.  
@@ -9,8 +9,14 @@
 
 **RESPOSTA:** d. Grafo de Fluxo de Controle.
 
-> “Uma representação de programa muito comum nos critérios de teste estrutural é o Grafo de Fluxo de Controle, em que cada nó representa um bloco básico de código e cada arco representa um possível fluxo de execução.” (p. 34)  
-> A very common program representation in structural test criteria is the Control Flow Graph, where each node represents a basic block of code and each arc represents a possible execution flow.
+> “O diagrama é um grafo de fluxo de controle. Cada nó ou círculo representa um segmento de instruções que executam sequencialmente, podendo terminar com uma instrução de desvio. Cada aresta ou arco representa uma transferência de controle (desvio) entre segmentos.” (p. 11)  
+> *“The diagram is a control-flow graph. Each node or circle represents a segment of statements that execute sequentially, possibly terminating with a branching statement. Each edge or arc represents a transfer of control (branch) between segments.”* (p. 11)
+
+> “O teste de caixa branca está relacionado ao grau com que os casos de teste exercitam ou cobrem a lógica (código-fonte) do programa.” (p. 42)  
+> *“White-box testing is concerned with the degree to which test cases exercise or cover the logic (source code) of the program.”* (p. 42)
+
+> “...um objetivo válido seria executar cada instrução do programa pelo menos uma vez. [...] Este conceito é ilustrado na Figura 4.1.” (p. 43)  
+> *“...a worthy goal would be to execute every statement in the program at least once. [...] This concept is illustrated in Figure 4.1.”* (p. 43)
 
 ## Q02. Qual das seguintes afirmações é MAIS VERDADEIRA sobre o teste de unidade?
 
