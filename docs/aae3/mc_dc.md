@@ -40,16 +40,7 @@ D ≡ A && B && C
 
 Para atingir 100 % de MC/DC, além de cobrir as condições e decisões, precisamos demonstrar a **independência** de cada condição.
 
-### 2.1. Independência de **B**
-
-Mantém **A = True** e **C = True**, varia apenas **B**:
-
-| Caso | A    | B         | C    | D = A∧B∧C |
-| ---- | ---- | --------- | ---- | --------- |
-| 1    | True | **True**  | True | **True**  |
-| 3    | True | **False** | True | **False** |
-
-### 2.2. Independência de **A**
+### 2.1. Independência de **A**
 
 Mantém **B = True** e **C = True**, varia apenas **A**:
 
@@ -57,6 +48,15 @@ Mantém **B = True** e **C = True**, varia apenas **A**:
 | ---- | --------- | ---- | ---- | --------- |
 | 1    | **True**  | True | True | **True**  |
 | 5    | **False** | True | True | **False** |
+
+### 2.2. Independência de **B**
+
+Mantém **A = True** e **C = True**, varia apenas **B**:
+
+| Caso | A    | B         | C    | D = A∧B∧C |
+| ---- | ---- | --------- | ---- | --------- |
+| 1    | True | **True**  | True | **True**  |
+| 3    | True | **False** | True | **False** |
 
 ### 2.3. Independência de **C**
 
