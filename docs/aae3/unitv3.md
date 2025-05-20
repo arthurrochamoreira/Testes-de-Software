@@ -149,7 +149,8 @@ pytest --maxfail=1 --disable-warnings -q
 coverage run -m pytest && coverage report -m
 ```
 
-*Referências*  
+## 12. Referências Bibliográficas
+
 - Myers, G. J., Sandler, C., & Badgett, T. (2012). _The Art of Software Testing_. John Wiley & Sons.  
 - pytest Development Team. (2024). _pytest documentation_. Retrieved from https://docs.pytest.org/  
 - Ned Batchelder. (2024). _coverage.py documentation_. Retrieved from https://coverage.readthedocs.io/  
