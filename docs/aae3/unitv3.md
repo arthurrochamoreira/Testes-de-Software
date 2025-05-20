@@ -1,3 +1,95 @@
+## 3. Pirâmide de Testes
+
+A **Pirâmide de Testes** ilustra como equilibrar velocidade, custo e cobertura ao estruturar sua suíte de testes (Meszaros, 2007):
+
+![Pirâmide de Testes](/aae3/assets/piramide_de_testes.jpg)
+
+| Nível       | Quantidade de Testes | Custo por Teste | Velocidade de Execução | Exemplos de Ferramentas          |
+|-------------|----------------------|-----------------|------------------------|----------------------------------|
+| **Aceitação**   | Baixa                | Alto            | Muito Lenta            | Cucumber, Robot Framework        |
+| **Sistema**     | Média                | Médio           | Lenta                  | Selenium, TestComplete           |
+| **Integração**  | Média–Alta           | Baixo–Médio     | Moderada               | Pytest + Docker Compose, Postman |
+| **Unidade**     | Alta                 | Baixo           | Muito Rápida           | pytest, unittest, Jest           |
+
+- **Unidade (base)**  
+  -  **O que:** Testes de função/método isolado.  
+  -  **Por que:** Rápidos e baratos; detectam defeitos de lógica interna antes de integrar dependências.  
+- **Integração (camada intermediária)**  
+  -  **O que:** Testes de múltiplos módulos funcionando juntos (por exemplo, serviço + banco de dados).  
+  -  **Por que:** Verifica contratos/interfaces, detecta erros de comunicação e configuração.  
+- **Sistema (última camada antes da aceitação)**  
+  -  **O que:** Testes fim-a-fim que exercitam todo o sistema em ambiente real ou simulado.  
+  -  **Por que:** Confirma fluxo completo (UI → backend → DB), mas custa mais manter.  
+- **Aceitação (topo)**  
+  -  **O que:** Validação contra requisitos de negócio por meio de cenários escritos em linguagem natural.  
+  -  **Por que:** Garante que o software atenda às expectativas do usuário, mas demora para rodar.
+
+> **Eixos**  
+> - **Velocidade**: decresce de unidades → aceitação.  
+> - **Custo**: cresce de unidades → aceitação.  
+> - **Quantidade**: cresce de aceitação → unidades.
+
+---
+
+## 4. Outros Formatos de Estratégia
+
+### A. The Testing Trophy  
+Desenvolvida por Kent C. Dodds para aplicações web modernas:
+
+![The Testing Trophy ](/aae3/assets/the_testing_trophy.jpg)
+
+
+- **Static**: detecção de erros sem execução (ESLint, mypy).  
+- **Unit**: lógica interna (Jest, pytest).  
+- **Integration**: contratos entre módulos (Testing Library, pytest-docker).  
+- **End to End**: simulação completa de usuário (Cypress, Playwright).  
+> *Meta:* Keep static and unit tests em larga quantidade, reduzindo gradualmente até E2E (Dodds, 2020).
+
+### B. Microservices Test Strategy  
+Abordagem do Spotify Labs para arquiteturas de microsserviços:
+
+1. **Implementation Detail**: validar lógica isolada de cada serviço (testes de unidade profundas).  
+2. **Integration**: testar comunicação entre pares de serviços (contratos de API).  
+3. **Integrated**: executar conjunto completo de microsserviços simulando produção (fluxos end-to-end).  
+> *Recomendação:* minimizar testes de detalhe interno, focar em Integration e Integrated (Spotify Labs, 2019).
+
+---
+
+## 5. Níveis de Teste – Benefícios
+
+1. **Evita redundância**  
+   - Cada nível foca em diferentes categorias de defeitos (Myers et al., 2012).  
+2. **Custo x Risco**  
+   - Detectar cedo (unidade) corrige barato; detectar tarde (aceitação) corrige caro.  
+3. **Escalabilidade**  
+   - Pequenos projetos podem parar em integração; projetos críticos devem chegar à aceitação.  
+
+---
+
+## 6. Níveis de Teste – Considerações
+
+- **Não são sequenciais:** escolha níveis conforme **risco**, **orçamento** e **complexidade** do projeto.  
+- **Fatores a influenciar a estratégia:**  
+  - Grau de acoplamento e coesão do sistema.  
+  - Frequência de mudanças nos componentes.  
+  - Recursos de infraestrutura (tempo de build, ambientes de teste).  
+
+---
+
+## 7. Diagrama de Correspondência de Níveis
+
+![Diagrama de Correspondência de Níveis](/aae3/assets/diagrama_de_correspondência_de_níveis.jpg)
+
+## 8. Lista de Níveis de Teste
+
+1. **Unidade** – testar o menor bloco de código isoladamente.  
+2. **Integração** – validar a interação entre módulos.  
+3. **Função** – foco em funcionalidades discretas, similar a testes de sistema menores.  
+4. **Sistema** – testes de ponta a ponta num ambiente completo.  
+5. **Aceitação** – validação contra critérios de aceite do cliente.
+
+---
+
 ## 9. Testes de Unidade
 
 **Definição (Myers, 2012):**  
@@ -154,3 +246,6 @@ coverage run -m pytest && coverage report -m
 - Myers, G. J., Sandler, C., & Badgett, T. (2012). _The Art of Software Testing_. John Wiley & Sons.  
 - pytest Development Team. (2024). _pytest documentation_. Retrieved from https://docs.pytest.org/  
 - Ned Batchelder. (2024). _coverage.py documentation_. Retrieved from https://coverage.readthedocs.io/  
+- Meszaros, G. (2007). _xUnit Test Patterns: Refactoring Test Code_. Addison-Wesley.  
+- Dodds, K. C. (2020). *The Testing Trophy*.  
+- Spotify Labs. (2019). *Microservices Test Strategy*
