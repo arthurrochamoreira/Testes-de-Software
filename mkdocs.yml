@@ -34,7 +34,9 @@ theme:
 
 nav:
   - Home: index.md
-  - Module (White-Box) Testing:
+  - White-Box Testing:
       - Teste Caixa Branca: aae3/white_box_test.md
-  - Module (Unit) Testing:
+  - Unit Testing:
       - Teste de Unidade: aae3/unit_test.md
+  - MC/DC:
+      - Modified Condition/Decision Coverage (MC/DC): aae3/mc_dc.md
