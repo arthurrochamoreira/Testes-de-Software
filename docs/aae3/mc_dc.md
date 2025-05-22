@@ -84,3 +84,4 @@ Mantém **A = True** e **B = True**, varia apenas **C**:
 3. RTCA/DO-178C. *Software Considerations in Airborne Systems and Equipment Certification*, 2011.
 4. ISO 26262:2011. *Road vehicles – Functional safety*, Parte 6.
 5. IEC 61508-3:2010. *Functional safety of electrical/electronic/programmable electronic safety-related systems*, Anexo B.
+6. Myers, G. J., Sandler, C., & Badgett, T. (2011). *The Art of Software Testing* (3rd ed.). Wiley. pp. 46–48.
