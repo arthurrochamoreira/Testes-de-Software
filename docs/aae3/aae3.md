@@ -110,7 +110,7 @@ C1 || C2
 
 ```java
 C3 && (C4 || C5)
-````
+```
 > Se a string tem 1 caractere **E** esse caractere é '+' **OU** '-', retorna false
 
 ---
