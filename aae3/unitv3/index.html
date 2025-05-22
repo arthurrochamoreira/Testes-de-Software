@@ -1,0 +1,1671 @@
+
+<!doctype html>
+<html lang="pt" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../unitv2/">
+      
+      
+        <link rel="next" href="../mc_dc/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>Teste de Unidade v3 - Testes de Software</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto Mono";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#3-piramide-de-testes" class="md-skip">
+          Pular para conteúdo
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
+    <a href="../.." title="Testes de Software" class="md-header__button md-logo" aria-label="Testes de Software" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Testes de Software
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Teste de Unidade v3
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-2.69L23.31 12 20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 2c-1.82 0-3.53.5-5 1.35C8 5.08 10 8.3 10 12s-2 6.92-5 8.65C6.47 21.5 8.18 22 10 22a10 10 0 0 0 10-10A10 10 0 0 0 10 2"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Buscar" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Pesquisar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpar" aria-label="Limpar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando busca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/arthurrochamoreira/Testes-de-Software" title="Ir para repositório" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    testes-de-software
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Abas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../tpi_tpe/tpi3_tpe3/" class="md-tabs__link">
+          
+  
+  
+  TPI/TPE
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../white_box_test/" class="md-tabs__link">
+          
+  
+  
+  White-Box Testing
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../unit_test/" class="md-tabs__link">
+          
+  
+  
+  Unit Testing
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../mc_dc/" class="md-tabs__link">
+          
+  
+  
+  MC/DC
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegação" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Testes de Software" class="md-nav__button md-logo" aria-label="Testes de Software" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Testes de Software
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/arthurrochamoreira/Testes-de-Software" title="Ir para repositório" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    testes-de-software
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    TPI/TPE
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            TPI/TPE
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tpi_tpe/tpi3_tpe3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    TPI/TPE(3)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tpi_tpe/tpi4_tpe4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    TPI/TPE(4)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    White-Box Testing
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            White-Box Testing
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../white_box_test/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Teste Caixa Branca
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Unit Testing
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Unit Testing
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unit_test/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Teste de Unidade
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unitv2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Teste de Unidade v2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Teste de Unidade v3
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Teste de Unidade v3
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#3-piramide-de-testes" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Pirâmide de Testes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-outros-formatos-de-estrategia" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Outros Formatos de Estratégia
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Outros Formatos de Estratégia">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-the-testing-trophy" class="md-nav__link">
+    <span class="md-ellipsis">
+      A. The Testing Trophy
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-microservices-test-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      B. Microservices Test Strategy
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-niveis-de-teste-beneficios" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Níveis de Teste – Benefícios
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-niveis-de-teste-consideracoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Níveis de Teste – Considerações
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-diagrama-de-correspondencia-de-niveis" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Diagrama de Correspondência de Níveis
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-lista-de-niveis-de-teste" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Lista de Níveis de Teste
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-testes-de-unidade" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Testes de Unidade
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Testes de Unidade">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#91-ferramentas-em-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.1. Ferramentas em Python
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#92-exemplo-simples-funcao-is_even" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.2. Exemplo Simples: Função is_even
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9.2. Exemplo Simples: Função is_even">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#921-testes-com-pytest" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.2.1. Testes com pytest
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#922-teste-caixa-branca-cobertura-de-decisao" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.2.2. Teste Caixa-Branca (Cobertura de Decisão)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#93-criterios-de-cobertura" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.3. Critérios de Cobertura
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-testes-de-unidade-consideracoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. Testes de Unidade – Considerações
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-elaboracao-dos-casos-de-teste" class="md-nav__link">
+    <span class="md-ellipsis">
+      11. Elaboração dos Casos de Teste
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11. Elaboração dos Casos de Teste">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#procedimento" class="md-nav__link">
+    <span class="md-ellipsis">
+      Procedimento
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-referencias-bibliograficas" class="md-nav__link">
+    <span class="md-ellipsis">
+      12. Referências Bibliográficas
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    MC/DC
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            MC/DC
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mc_dc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Modified Condition/Decision Coverage (MC/DC)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#3-piramide-de-testes" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Pirâmide de Testes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-outros-formatos-de-estrategia" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Outros Formatos de Estratégia
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Outros Formatos de Estratégia">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-the-testing-trophy" class="md-nav__link">
+    <span class="md-ellipsis">
+      A. The Testing Trophy
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-microservices-test-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      B. Microservices Test Strategy
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-niveis-de-teste-beneficios" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Níveis de Teste – Benefícios
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-niveis-de-teste-consideracoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Níveis de Teste – Considerações
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-diagrama-de-correspondencia-de-niveis" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Diagrama de Correspondência de Níveis
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-lista-de-niveis-de-teste" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Lista de Níveis de Teste
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-testes-de-unidade" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Testes de Unidade
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Testes de Unidade">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#91-ferramentas-em-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.1. Ferramentas em Python
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#92-exemplo-simples-funcao-is_even" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.2. Exemplo Simples: Função is_even
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9.2. Exemplo Simples: Função is_even">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#921-testes-com-pytest" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.2.1. Testes com pytest
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#922-teste-caixa-branca-cobertura-de-decisao" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.2.2. Teste Caixa-Branca (Cobertura de Decisão)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#93-criterios-de-cobertura" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.3. Critérios de Cobertura
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-testes-de-unidade-consideracoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. Testes de Unidade – Considerações
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-elaboracao-dos-casos-de-teste" class="md-nav__link">
+    <span class="md-ellipsis">
+      11. Elaboração dos Casos de Teste
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11. Elaboração dos Casos de Teste">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#procedimento" class="md-nav__link">
+    <span class="md-ellipsis">
+      Procedimento
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-referencias-bibliograficas" class="md-nav__link">
+    <span class="md-ellipsis">
+      12. Referências Bibliográficas
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+  <h1>Teste de Unidade v3</h1>
+
+<h2 id="3-piramide-de-testes">3. Pirâmide de Testes</h2>
+<p>A <strong>Pirâmide de Testes</strong> ilustra como equilibrar velocidade, custo e cobertura ao estruturar sua suíte de testes (Meszaros, 2007):</p>
+<p><img alt="Pirâmide de Testes" src="/aae3/assets/piramide_de_testes.jpg" /></p>
+<table>
+<thead>
+<tr>
+<th>Nível</th>
+<th>Quantidade de Testes</th>
+<th>Custo por Teste</th>
+<th>Velocidade de Execução</th>
+<th>Exemplos de Ferramentas</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Aceitação</strong></td>
+<td>Baixa</td>
+<td>Alto</td>
+<td>Muito Lenta</td>
+<td>Cucumber, Robot Framework</td>
+</tr>
+<tr>
+<td><strong>Sistema</strong></td>
+<td>Média</td>
+<td>Médio</td>
+<td>Lenta</td>
+<td>Selenium, TestComplete</td>
+</tr>
+<tr>
+<td><strong>Integração</strong></td>
+<td>Média–Alta</td>
+<td>Baixo–Médio</td>
+<td>Moderada</td>
+<td>Pytest + Docker Compose, Postman</td>
+</tr>
+<tr>
+<td><strong>Unidade</strong></td>
+<td>Alta</td>
+<td>Baixo</td>
+<td>Muito Rápida</td>
+<td>pytest, unittest, Jest</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>Unidade (base)</strong>  </li>
+<li><strong>O que:</strong> Testes de função/método isolado.  </li>
+<li><strong>Por que:</strong> Rápidos e baratos; detectam defeitos de lógica interna antes de integrar dependências.  </li>
+<li><strong>Integração (camada intermediária)</strong>  </li>
+<li><strong>O que:</strong> Testes de múltiplos módulos funcionando juntos (por exemplo, serviço + banco de dados).  </li>
+<li><strong>Por que:</strong> Verifica contratos/interfaces, detecta erros de comunicação e configuração.  </li>
+<li><strong>Sistema (última camada antes da aceitação)</strong>  </li>
+<li><strong>O que:</strong> Testes fim-a-fim que exercitam todo o sistema em ambiente real ou simulado.  </li>
+<li><strong>Por que:</strong> Confirma fluxo completo (UI → backend → DB), mas custa mais manter.  </li>
+<li><strong>Aceitação (topo)</strong>  </li>
+<li><strong>O que:</strong> Validação contra requisitos de negócio por meio de cenários escritos em linguagem natural.  </li>
+<li><strong>Por que:</strong> Garante que o software atenda às expectativas do usuário, mas demora para rodar.</li>
+</ul>
+<blockquote>
+<p><strong>Eixos</strong><br />
+- <strong>Velocidade</strong>: decresce de unidades → aceitação.<br />
+- <strong>Custo</strong>: cresce de unidades → aceitação.<br />
+- <strong>Quantidade</strong>: cresce de aceitação → unidades.</p>
+</blockquote>
+<hr />
+<h2 id="4-outros-formatos-de-estrategia">4. Outros Formatos de Estratégia</h2>
+<h3 id="a-the-testing-trophy">A. The Testing Trophy</h3>
+<p>Desenvolvida por Kent C. Dodds para aplicações web modernas:</p>
+<p><img alt="The Testing Trophy " src="/aae3/assets/the_testing_trophy.jpg" /></p>
+<ul>
+<li><strong>Static</strong>: detecção de erros sem execução (ESLint, mypy).  </li>
+<li><strong>Unit</strong>: lógica interna (Jest, pytest).  </li>
+<li><strong>Integration</strong>: contratos entre módulos (Testing Library, pytest-docker).  </li>
+<li><strong>End to End</strong>: simulação completa de usuário (Cypress, Playwright).  <blockquote>
+<p><em>Meta:</em> Keep static and unit tests em larga quantidade, reduzindo gradualmente até E2E (Dodds, 2020).</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="b-microservices-test-strategy">B. Microservices Test Strategy</h3>
+<p>Abordagem do Spotify Labs para arquiteturas de microsserviços:</p>
+<ol>
+<li><strong>Implementation Detail</strong>: validar lógica isolada de cada serviço (testes de unidade profundas).  </li>
+<li><strong>Integration</strong>: testar comunicação entre pares de serviços (contratos de API).  </li>
+<li><strong>Integrated</strong>: executar conjunto completo de microsserviços simulando produção (fluxos end-to-end).  <blockquote>
+<p><em>Recomendação:</em> minimizar testes de detalhe interno, focar em Integration e Integrated (Spotify Labs, 2019).</p>
+</blockquote>
+</li>
+</ol>
+<hr />
+<h2 id="5-niveis-de-teste-beneficios">5. Níveis de Teste – Benefícios</h2>
+<ol>
+<li><strong>Evita redundância</strong>  </li>
+<li>Cada nível foca em diferentes categorias de defeitos (Myers et al., 2012).  </li>
+<li><strong>Custo x Risco</strong>  </li>
+<li>Detectar cedo (unidade) corrige barato; detectar tarde (aceitação) corrige caro.  </li>
+<li><strong>Escalabilidade</strong>  </li>
+<li>Pequenos projetos podem parar em integração; projetos críticos devem chegar à aceitação.  </li>
+</ol>
+<hr />
+<h2 id="6-niveis-de-teste-consideracoes">6. Níveis de Teste – Considerações</h2>
+<ul>
+<li><strong>Não são sequenciais:</strong> escolha níveis conforme <strong>risco</strong>, <strong>orçamento</strong> e <strong>complexidade</strong> do projeto.  </li>
+<li><strong>Fatores a influenciar a estratégia:</strong>  </li>
+<li>Grau de acoplamento e coesão do sistema.  </li>
+<li>Frequência de mudanças nos componentes.  </li>
+<li>Recursos de infraestrutura (tempo de build, ambientes de teste).  </li>
+</ul>
+<hr />
+<h2 id="7-diagrama-de-correspondencia-de-niveis">7. Diagrama de Correspondência de Níveis</h2>
+<p><img alt="Diagrama de Correspondência de Níveis" src="/aae3/assets/diagrama_de_correspondência_de_níveis.jpg" /></p>
+<h2 id="8-lista-de-niveis-de-teste">8. Lista de Níveis de Teste</h2>
+<ol>
+<li><strong>Unidade</strong> – testar o menor bloco de código isoladamente.  </li>
+<li><strong>Integração</strong> – validar a interação entre módulos.  </li>
+<li><strong>Função</strong> – foco em funcionalidades discretas, similar a testes de sistema menores.  </li>
+<li><strong>Sistema</strong> – testes de ponta a ponta num ambiente completo.  </li>
+<li><strong>Aceitação</strong> – validação contra critérios de aceite do cliente.</li>
+</ol>
+<hr />
+<h2 id="9-testes-de-unidade">9. Testes de Unidade</h2>
+<p><strong>Definição (Myers, 2012):</strong><br />
+Processo de testar funções, métodos, procedimentos, sub-rotinas ou subprogramas <strong>individualmente</strong>, garantindo que cada unidade isolada se comporte conforme a especificação.</p>
+<ul>
+<li><strong>Objetivo:</strong> verificar o <strong>menor elemento testável</strong> de um software.  </li>
+<li>Procedural: função ou procedimento.  </li>
+<li>Orientado a objeto: método de classe.  </li>
+<li><strong>Responsável:</strong> geralmente o <strong>desenvolvedor</strong>.  </li>
+<li><strong>Enfoque:</strong> algoritmos e lógica de programação.  </li>
+<li><strong>Técnicas:</strong> tipicamente <strong>caixa-branca</strong>, complementada por <strong>caixa-preta</strong>.</li>
+</ul>
+<p><strong>Motivações:</strong><br />
+- Gerenciar incrementalmente os elementos do teste.<br />
+- Facilitar a <strong>depuração</strong> (localização de defeitos).<br />
+- Permitir <strong>paralelismo</strong> na execução dos testes.</p>
+<h3 id="91-ferramentas-em-python">9.1. Ferramentas em Python</h3>
+<table>
+<thead>
+<tr>
+<th>Ferramenta</th>
+<th>Características</th>
+<th>Referência</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>unittest</code></td>
+<td>Framework padrão, estilo xUnit.</td>
+<td>Python Software Foundation (2024).</td>
+</tr>
+<tr>
+<td><code>pytest</code></td>
+<td>Sintaxe concisa, fixtures, parametrização e plugins.</td>
+<td>pytest Documentation (2024).</td>
+</tr>
+<tr>
+<td><code>coverage.py</code></td>
+<td>Medição de cobertura de código.</td>
+<td>Ned Batchelder (2024).</td>
+</tr>
+</tbody>
+</table>
+<h3 id="92-exemplo-simples-funcao-is_even">9.2. Exemplo Simples: Função <code>is_even</code></h3>
+<pre><code class="language-python"># utils.py
+def is_even(n: int) -&gt; bool:
+    &quot;&quot;&quot;
+    Retorna True se n for par, False caso contrário.
+    &quot;&quot;&quot;
+    return n % 2 == 0
+</code></pre>
+<h4 id="921-testes-com-pytest">9.2.1. Testes com <code>pytest</code></h4>
+<pre><code class="language-python"># tests/test_utils.py
+import pytest
+from utils import is_even
+
+@pytest.mark.parametrize(&quot;input,expected&quot;, [
+    (0, True),
+    (1, False),
+    (2, True),
+    (99, False),
+])
+def test_is_even(input, expected):
+    assert is_even(input) == expected
+</code></pre>
+<ul>
+<li><strong>Casos de teste</strong>:</li>
+<li><code>0</code> → <code>True</code></li>
+<li><code>1</code> → <code>False</code></li>
+<li><code>2</code> → <code>True</code></li>
+<li><code>99</code> → <code>False</code></li>
+</ul>
+<h4 id="922-teste-caixa-branca-cobertura-de-decisao">9.2.2. Teste Caixa-Branca (Cobertura de Decisão)</h4>
+<pre><code class="language-python">def test_is_even_branches():
+    # testa tanto o ramo True quanto o ramo False
+    assert is_even(4) is True
+    assert is_even(5) is False
+</code></pre>
+<ul>
+<li>Com isso garantimos que ambas as saídas (<code>True</code> e <code>False</code>) ocorram ao menos uma vez.</li>
+</ul>
+<hr />
+<h3 id="93-criterios-de-cobertura">9.3. Critérios de Cobertura</h3>
+<table>
+<thead>
+<tr>
+<th>Critério</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cobertura de decisões</td>
+<td>Garante que <code>n % 2 == 0</code> avalie <code>True</code> e <code>False</code></td>
+</tr>
+<tr>
+<td>Cobertura de instruções</td>
+<td>Garante execução da única linha da função</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-bash"># Gerando relatório de cobertura
+coverage run -m pytest &amp;&amp; coverage report -m
+</code></pre>
+<pre><code class="language-text">Name           Stmts   Miss  Cover
+----------------------------------
+utils.py           3      0   100%
+</code></pre>
+<hr />
+<h2 id="10-testes-de-unidade-consideracoes">10. Testes de Unidade – Considerações</h2>
+<ul>
+<li><strong>Objetivo:</strong> comparar a função <code>is_even</code> com sua especificação, demonstrando que ela retorna <code>True</code> somente para números pares e <code>False</code> para ímpares.  </li>
+<li><strong>Escopo dos testes:</strong>  </li>
+<li>Entradas válidas (números inteiros ≥ 0 e &lt; 1000, por exemplo).  </li>
+<li>Entradas negativas ou tipos incorretos (ex.: strings) para validar robustez.  </li>
+<li><strong>Questões fundamentais:</strong>  </li>
+<li>Como representar valores-limite? (0, 1, maior inteiro par dentro do intervalo)  </li>
+<li>Como testaremos comportamentos inesperados? (valores negativos, tipos errados)  </li>
+<li>Como automatizar e integrar ao CI?</li>
+</ul>
+<hr />
+<h2 id="11-elaboracao-dos-casos-de-teste">11. Elaboração dos Casos de Teste</h2>
+<p><strong>Especificação da função <code>is_even(n: int) -&gt; bool</code>:</strong><br />
+- Retorna <code>True</code> se <code>n % 2 == 0</code>.<br />
+- Retorna <code>False</code> caso contrário.  </p>
+<h3 id="procedimento">Procedimento</h3>
+<ol>
+<li><strong>Análise caixa-preta:</strong>  </li>
+<li>Identificar classes de equivalência:  <ul>
+<li><strong>Pares:</strong> {..., 0, 2, 4, ...}  </li>
+<li><strong>Ímpares:</strong> {..., 1, 3, 5, ...}  </li>
+</ul>
+</li>
+<li>
+<p>Valores-limite:  </p>
+<ul>
+<li>0 (menor par não-negativo)  </li>
+<li>1 (menor ímpar)  </li>
+<li>999 (maior ímpar dentro do intervalo)  </li>
+<li>1000 (maior par dentro do intervalo)  </li>
+</ul>
+</li>
+<li>
+<p><strong>Análise caixa-branca:</strong>  </p>
+</li>
+<li>Verificar a operação <code>% 2</code>: deve executar divisão e resto.  </li>
+<li>
+<p>Cobertura de decisões: ambos os caminhos (<code>== 0</code> True/False).</p>
+</li>
+<li>
+<p><strong>Documentação em tabela de decisão:</strong></p>
+</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Caso</th>
+<th>Entrada</th>
+<th>Saída Esperada</th>
+<th>Tipo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>C1</td>
+<td>n = 0</td>
+<td>True</td>
+<td>Caixa-preta</td>
+</tr>
+<tr>
+<td>C2</td>
+<td>n = 1</td>
+<td>False</td>
+<td>Caixa-preta</td>
+</tr>
+<tr>
+<td>C3</td>
+<td>n = 2</td>
+<td>True</td>
+<td>Caixa-preta</td>
+</tr>
+<tr>
+<td>C4</td>
+<td>n = 999</td>
+<td>False</td>
+<td>Caixa-preta</td>
+</tr>
+<tr>
+<td>C5</td>
+<td>n = 1000</td>
+<td>True</td>
+<td>Caixa-preta</td>
+</tr>
+<tr>
+<td>C6</td>
+<td>n = -1</td>
+<td>Error/TypeError</td>
+<td>Caixa-preta</td>
+</tr>
+<tr>
+<td>C7</td>
+<td>n = 'a'</td>
+<td>TypeError</td>
+<td>Caixa-preta</td>
+</tr>
+<tr>
+<td>C8</td>
+<td>n = 4</td>
+<td>True</td>
+<td>Caixa-branca</td>
+</tr>
+<tr>
+<td>C9</td>
+<td>n = 5</td>
+<td>False</td>
+<td>Caixa-branca</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li><strong>Implementação dos testes:</strong>  </li>
+<li>Usar <code>pytest</code> para casos de equivalência e limites.  </li>
+<li>
+<p>Usar <code>pytest.raises</code> para tipos incorretos.  </p>
+</li>
+<li>
+<p><strong>Execução e relatório de cobertura:</strong>  </p>
+</li>
+</ol>
+<pre><code class="language-bash">pytest --maxfail=1 --disable-warnings -q
+coverage run -m pytest &amp;&amp; coverage report -m
+</code></pre>
+<h2 id="12-referencias-bibliograficas">12. Referências Bibliográficas</h2>
+<ul>
+<li>Myers, G. J., Sandler, C., &amp; Badgett, T. (2012). <em>The Art of Software Testing</em>. John Wiley &amp; Sons.  </li>
+<li>pytest Development Team. (2024). <em>pytest documentation</em>. Retrieved from https://docs.pytest.org/  </li>
+<li>Ned Batchelder. (2024). <em>coverage.py documentation</em>. Retrieved from https://coverage.readthedocs.io/  </li>
+<li>Meszaros, G. (2007). <em>xUnit Test Patterns: Refactoring Test Code</em>. Addison-Wesley.  </li>
+<li>Dodds, K. C. (2020). <em>The Testing Trophy</em>.  </li>
+<li>Spotify Labs. (2019). <em>Microservices Test Strategy</em></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Voltar para o topo
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Rodapé" >
+        
+          
+          <a href="../unitv2/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Teste de Unidade v2">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Anterior
+              </span>
+              <div class="md-ellipsis">
+                Teste de Unidade v2
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../mc_dc/" class="md-footer__link md-footer__link--next" aria-label="Próximo: Modified Condition/Decision Coverage (MC/DC)">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Próximo
+              </span>
+              <div class="md-ellipsis">
+                Modified Condition/Decision Coverage (MC/DC)
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.footer", "navigation.sections", "navigation.expand"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+    
+  </body>
+</html>

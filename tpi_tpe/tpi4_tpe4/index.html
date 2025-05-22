@@ -1,0 +1,2314 @@
+
+<!doctype html>
+<html lang="pt" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../tpi3_tpe3/">
+      
+      
+        <link rel="next" href="../../aae3/white_box_test/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>TPI/TPE(4) - Testes de Software</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto Mono";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#questionario-sobre-dubles-de-teste-e-tdd" class="md-skip">
+          Pular para conteúdo
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
+    <a href="../.." title="Testes de Software" class="md-header__button md-logo" aria-label="Testes de Software" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Testes de Software
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              TPI/TPE(4)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-2.69L23.31 12 20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 2c-1.82 0-3.53.5-5 1.35C8 5.08 10 8.3 10 12s-2 6.92-5 8.65C6.47 21.5 8.18 22 10 22a10 10 0 0 0 10-10A10 10 0 0 0 10 2"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Buscar" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Pesquisar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpar" aria-label="Limpar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando busca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/arthurrochamoreira/Testes-de-Software" title="Ir para repositório" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    testes-de-software
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Abas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../tpi3_tpe3/" class="md-tabs__link">
+          
+  
+  
+  TPI/TPE
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../aae3/white_box_test/" class="md-tabs__link">
+          
+  
+  
+  White-Box Testing
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../aae3/unit_test/" class="md-tabs__link">
+          
+  
+  
+  Unit Testing
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../aae3/mc_dc/" class="md-tabs__link">
+          
+  
+  
+  MC/DC
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegação" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Testes de Software" class="md-nav__button md-logo" aria-label="Testes de Software" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Testes de Software
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/arthurrochamoreira/Testes-de-Software" title="Ir para repositório" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    testes-de-software
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    TPI/TPE
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            TPI/TPE
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tpi3_tpe3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    TPI/TPE(3)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    TPI/TPE(4)
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    TPI/TPE(4)
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#q01-o-que-sao-objetos-dummy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q01. O que são objetos dummy?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Q01. O que são objetos dummy?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#por-que-as-outras-alternativas-estao-erradas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Por que as outras alternativas estão erradas
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#q02-qual-a-principal-caracteristica-de-objetos-fake" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q02. Qual a principal característica de objetos fake?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Q02. Qual a principal característica de objetos fake?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#por-que-as-outras-alternativas-estao-erradas_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Por que as outras alternativas estão erradas
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#q03-como-os-stubs-diferem-dos-objetos-fake" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q03. Como os stubs diferem dos objetos fake?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Q03. Como os stubs diferem dos objetos fake?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#por-que-as-outras-alternativas-estao-erradas_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Por que as outras alternativas estão erradas
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#q04-qual-a-vantagem-principal-dos-objetos-mocks-em-comparacao-com-os-stubs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q04. Qual a vantagem principal dos objetos mocks em comparação com os stubs?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Q04. Qual a vantagem principal dos objetos mocks em comparação com os stubs?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#por-que-as-outras-alternativas-estao-erradas_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Por que as outras alternativas estão erradas
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#q05-uma-classe-que-simula-uma-base-de-dados-usando-uma-lista-pode-ser-classificada-como" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q05. Uma classe que simula uma base de dados usando uma lista pode ser classificada como:
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Q05. Uma classe que simula uma base de dados usando uma lista pode ser classificada como:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#por-que-as-outras-alternativas-estao-erradas_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Por que as outras alternativas estão erradas
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#q06-o-que-pode-ser-necessario-para-injetar-dubles-de-teste" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q06. O que pode ser necessário para injetar dublês de teste?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Q06. O que pode ser necessário para injetar dublês de teste?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#por-que-as-outras-alternativas-estao-erradas_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Por que as outras alternativas estão erradas
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#q07-qual-a-principal-vantagem-de-configurar-dubles-para-lancar-excecoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q07. Qual a principal vantagem de configurar dublês para lançar exceções?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Q07. Qual a principal vantagem de configurar dublês para lançar exceções?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#por-que-as-outras-alternativas-estao-erradas_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Por que as outras alternativas estão erradas
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#q08-qual-e-uma-das-principais-desvantagens-de-usar-dubles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q08. Qual é uma das principais desvantagens de usar dublês?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Q08. Qual é uma das principais desvantagens de usar dublês?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#por-que-as-outras-alternativas-estao-erradas_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      Por que as outras alternativas estão erradas
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#q09-qual-e-o-ciclo-repetido-no-processo-de-tdd" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q09. Qual é o ciclo repetido no processo de TDD?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Q09. Qual é o ciclo repetido no processo de TDD?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#por-que-as-outras-alternativas-estao-erradas_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      Por que as outras alternativas estão erradas
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#q10-por-que-o-tdd-facilita-a-identificacao-de-problemas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q10. Por que o TDD facilita a identificação de problemas?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Q10. Por que o TDD facilita a identificação de problemas?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#por-que-as-outras-alternativas-estao-erradas_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      Por que as outras alternativas estão erradas
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#q11-como-o-tdd-afeta-o-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q11. Como o TDD afeta o design?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Q11. Como o TDD afeta o design?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#por-que-as-outras-alternativas-estao-erradas_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      Por que as outras alternativas estão erradas
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#q12-quando-o-tdd-e-mais-vantajoso" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q12. Quando o TDD é mais vantajoso?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#q13-em-quais-situacoes-o-uso-do-tdd-nao-e-recomendado" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q13. Em quais situações o uso do TDD não é recomendado?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Q13. Em quais situações o uso do TDD não é recomendado?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#por-que-as-outras-alternativas-estao-erradas_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      Por que as outras alternativas estão erradas
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#q14-qual-a-eficacia-dos-testes-em-tdd" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q14. Qual a eficácia dos testes em TDD?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Q14. Qual a eficácia dos testes em TDD?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#por-que-as-outras-alternativas-estao-erradas_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      Por que as outras alternativas estão erradas
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    White-Box Testing
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            White-Box Testing
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../aae3/white_box_test/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Teste Caixa Branca
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Unit Testing
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Unit Testing
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../aae3/unit_test/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Teste de Unidade
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../aae3/unitv2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Teste de Unidade v2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../aae3/unitv3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Teste de Unidade v3
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    MC/DC
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            MC/DC
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../aae3/mc_dc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Modified Condition/Decision Coverage (MC/DC)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#q01-o-que-sao-objetos-dummy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q01. O que são objetos dummy?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Q01. O que são objetos dummy?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#por-que-as-outras-alternativas-estao-erradas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Por que as outras alternativas estão erradas
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#q02-qual-a-principal-caracteristica-de-objetos-fake" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q02. Qual a principal característica de objetos fake?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Q02. Qual a principal característica de objetos fake?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#por-que-as-outras-alternativas-estao-erradas_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Por que as outras alternativas estão erradas
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#q03-como-os-stubs-diferem-dos-objetos-fake" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q03. Como os stubs diferem dos objetos fake?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Q03. Como os stubs diferem dos objetos fake?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#por-que-as-outras-alternativas-estao-erradas_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Por que as outras alternativas estão erradas
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#q04-qual-a-vantagem-principal-dos-objetos-mocks-em-comparacao-com-os-stubs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q04. Qual a vantagem principal dos objetos mocks em comparação com os stubs?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Q04. Qual a vantagem principal dos objetos mocks em comparação com os stubs?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#por-que-as-outras-alternativas-estao-erradas_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Por que as outras alternativas estão erradas
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#q05-uma-classe-que-simula-uma-base-de-dados-usando-uma-lista-pode-ser-classificada-como" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q05. Uma classe que simula uma base de dados usando uma lista pode ser classificada como:
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Q05. Uma classe que simula uma base de dados usando uma lista pode ser classificada como:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#por-que-as-outras-alternativas-estao-erradas_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Por que as outras alternativas estão erradas
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#q06-o-que-pode-ser-necessario-para-injetar-dubles-de-teste" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q06. O que pode ser necessário para injetar dublês de teste?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Q06. O que pode ser necessário para injetar dublês de teste?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#por-que-as-outras-alternativas-estao-erradas_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Por que as outras alternativas estão erradas
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#q07-qual-a-principal-vantagem-de-configurar-dubles-para-lancar-excecoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q07. Qual a principal vantagem de configurar dublês para lançar exceções?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Q07. Qual a principal vantagem de configurar dublês para lançar exceções?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#por-que-as-outras-alternativas-estao-erradas_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Por que as outras alternativas estão erradas
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#q08-qual-e-uma-das-principais-desvantagens-de-usar-dubles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q08. Qual é uma das principais desvantagens de usar dublês?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Q08. Qual é uma das principais desvantagens de usar dublês?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#por-que-as-outras-alternativas-estao-erradas_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      Por que as outras alternativas estão erradas
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#q09-qual-e-o-ciclo-repetido-no-processo-de-tdd" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q09. Qual é o ciclo repetido no processo de TDD?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Q09. Qual é o ciclo repetido no processo de TDD?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#por-que-as-outras-alternativas-estao-erradas_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      Por que as outras alternativas estão erradas
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#q10-por-que-o-tdd-facilita-a-identificacao-de-problemas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q10. Por que o TDD facilita a identificação de problemas?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Q10. Por que o TDD facilita a identificação de problemas?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#por-que-as-outras-alternativas-estao-erradas_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      Por que as outras alternativas estão erradas
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#q11-como-o-tdd-afeta-o-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q11. Como o TDD afeta o design?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Q11. Como o TDD afeta o design?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#por-que-as-outras-alternativas-estao-erradas_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      Por que as outras alternativas estão erradas
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#q12-quando-o-tdd-e-mais-vantajoso" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q12. Quando o TDD é mais vantajoso?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#q13-em-quais-situacoes-o-uso-do-tdd-nao-e-recomendado" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q13. Em quais situações o uso do TDD não é recomendado?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Q13. Em quais situações o uso do TDD não é recomendado?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#por-que-as-outras-alternativas-estao-erradas_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      Por que as outras alternativas estão erradas
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#q14-qual-a-eficacia-dos-testes-em-tdd" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q14. Qual a eficácia dos testes em TDD?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Q14. Qual a eficácia dos testes em TDD?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#por-que-as-outras-alternativas-estao-erradas_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      Por que as outras alternativas estão erradas
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="questionario-sobre-dubles-de-teste-e-tdd">Questionário sobre Dublês de Teste e TDD</h1>
+<hr />
+<h2 id="q01-o-que-sao-objetos-dummy">Q01. O que são objetos dummy?</h2>
+<ul>
+<li>a. Objetos que possuem implementações reais, mas simplificadas.</li>
+<li>b. Objetos passados para a classe em teste, mas nunca utilizados.</li>
+<li>c. Objetos que fornecem respostas codificadas para chamadas realizadas durante o teste.</li>
+<li>d. Objetos que gravam todas as interações e permitem fazer asserções posteriormente.</li>
+</ul>
+<p><strong>RESPOSTA:</strong> b. Objetos passados para a classe em teste, mas nunca utilizados.</p>
+<blockquote>
+<p>Objetos Dummy são uma forma degenerada de <em>Test Double</em>. Eles existem apenas para serem passados de método para método; eles <strong>nunca são utilizados</strong>.
+<em>(p. 728, Meszaros, 2007)</em>
+Dummy Objects are a degenerate form of Test Double. They exist solely so that they can be passed around from method to method; they are never used.
+<em>(p. 728, Meszaros, 2007)</em></p>
+<p>Um objeto dummy é passado para preencher uma lista de parâmetros, mas nunca é usado. Eles são mais frequentemente usados para preencher parâmetros obrigatórios em métodos ou construtores.
+<em>(p. 728, Meszaros, 2007)</em>
+A Dummy Object is passed in to fill a parameter list but never used. They are most often used to fill required parameters in methods or constructors.
+<em>(p. 728, Meszaros, 2007)</em></p>
+<p>Algumas linguagens exigem que forneçamos valores para todos os parâmetros formais de um método; objetos dummy nos permitem satisfazer esse requisito sem afetar o comportamento do teste.
+<em>(p. 728, Meszaros, 2007)</em>
+Some programming languages require us to supply values for all formal parameters of a method; Dummy Objects let us satisfy that requirement without affecting the behavior of the test.
+<em>(p. 728, Meszaros, 2007)</em></p>
+</blockquote>
+<h4 id="por-que-as-outras-alternativas-estao-erradas">Por que as outras alternativas estão erradas</h4>
+<ul>
+<li><strong>a. Objetos que possuem implementações reais, mas simplificadas.</strong></li>
+</ul>
+<blockquote>
+<p>Isso define um <em>Fake Object</em>: substituímos um componente do SUT por uma implementação funcional mais leve.
+<em>(p. 551, Meszaros, 2007)</em>
+Fake Object – We replace a component that the SUT depends on with a much lighter-weight implementation.
+<em>(p. 551, Meszaros, 2007)</em></p>
+</blockquote>
+<ul>
+<li><strong>c. Objetos que fornecem respostas codificadas para chamadas realizadas durante o teste.</strong></li>
+</ul>
+<blockquote>
+<p>Isso define um <em>Test Stub</em>: substituímos um objeto real por um objeto de teste que fornece entradas indiretas.
+<em>(p. 529, Meszaros, 2007)</em>
+Test Stub – A Test Double that feeds indirect inputs into the SUT.
+<em>(p. 529, Meszaros, 2007)</em></p>
+</blockquote>
+<ul>
+<li><strong>d. Objetos que gravam todas as interações e permitem fazer asserções posteriormente.</strong></li>
+</ul>
+<blockquote>
+<p>Isso corresponde a um <em>Test Spy</em>: usamos um Test Double para capturar as chamadas indiretas feitas pelo SUT para posterior verificação.
+<em>(p. 538, Meszaros, 2007)</em>
+Test Spy – We use a Test Double to capture the indirect output calls made to another component by the SUT for later verification by the test.
+<em>(p. 538, Meszaros, 2007)</em></p>
+</blockquote>
+<p><strong>Referência:</strong>
+Meszaros, G. (2007). <em>xUnit Test Patterns: Refactoring Test Code</em>. Addison-Wesley.</p>
+<hr />
+<h2 id="q02-qual-a-principal-caracteristica-de-objetos-fake">Q02. Qual a principal característica de objetos fake?</h2>
+<ul>
+<li>a. Eles têm implementações reais, mas geralmente fazem a tarefa de forma mais simples.</li>
+<li>b. Eles fornecem respostas codificadas para chamadas realizadas durante o teste.</li>
+<li>c. Eles gravam todas as interações e permitem fazer asserções posteriormente.</li>
+<li>d. Eles envolvem o objeto real e observam seu comportamento.</li>
+</ul>
+<p><strong>RESPOSTA:</strong> a. Eles têm implementações reais, mas geralmente fazem a tarefa de forma mais simples.</p>
+<blockquote>
+<p>Um <em>Fake Object</em> é um dublê de teste que substitui um componente do SUT com uma implementação funcional, geralmente mais leve.<br />
+<em>(p. 551, Meszaros, 2007)</em><br />
+A Fake Object is a Test Double that replaces a component that the SUT depends on with a working implementation, usually much lighter-weight.<br />
+<em>(p. 551, Meszaros, 2007)</em></p>
+<p>Muitas vezes, usamos fakes para evitar dependências de infraestrutura como banco de dados ou serviços de rede. Por exemplo, um fake pode ser um banco de dados em memória simples usado em vez de um real.<br />
+<em>(p. 551, Meszaros, 2007)</em><br />
+We often use fakes to avoid using infrastructure components such as databases or network services. For example, we might use an in-memory database implementation instead of a real one.<br />
+<em>(p. 551, Meszaros, 2007)</em></p>
+<p>Um fake geralmente implementa a mesma interface que o objeto real, mas com um comportamento mais simples, suficiente para os testes.<br />
+<em>(p. 551, Meszaros, 2007)</em><br />
+A fake usually implements the same interface as the real component but provides a simpler behavior that is sufficient for the tests.<br />
+<em>(p. 551, Meszaros, 2007)</em></p>
+</blockquote>
+<h4 id="por-que-as-outras-alternativas-estao-erradas_1">Por que as outras alternativas estão erradas</h4>
+<ul>
+<li><strong>b. Eles fornecem respostas codificadas para chamadas realizadas durante o teste.</strong></li>
+</ul>
+<blockquote>
+<p>Isso define um <em>Test Stub</em>, não um fake.<br />
+<em>(p. 529, Meszaros, 2007)</em><br />
+A Test Stub is a Test Double that feeds indirect inputs into the SUT.<br />
+<em>(p. 529, Meszaros, 2007)</em></p>
+</blockquote>
+<ul>
+<li><strong>c. Eles gravam todas as interações e permitem fazer asserções posteriormente.</strong></li>
+</ul>
+<blockquote>
+<p>Essa é a definição de um <em>Test Spy</em>.<br />
+<em>(p. 538, Meszaros, 2007)</em><br />
+A Test Spy is a Test Double that captures the indirect output calls made to another component by the SUT for later verification by the test.<br />
+<em>(p. 538, Meszaros, 2007)</em></p>
+</blockquote>
+<ul>
+<li><strong>d. Eles envolvem o objeto real e observam seu comportamento.</strong></li>
+</ul>
+<blockquote>
+<p>Isso descreve um <em>Mock Object</em>, especialmente um mock dinâmico que usa <em>proxying</em> para observar interações.<br />
+<em>(p. 544, Meszaros, 2007)</em><br />
+Mocks are pre-programmed with expectations which form a specification of the calls they are expected to receive.<br />
+<em>(p. 544, Meszaros, 2007)</em></p>
+</blockquote>
+<p><strong>Referência:</strong><br />
+Meszaros, G. (2007). <em>xUnit Test Patterns: Refactoring Test Code</em>. Addison-Wesley.</p>
+<hr />
+<h2 id="q03-como-os-stubs-diferem-dos-objetos-fake">Q03. Como os stubs diferem dos objetos fake?</h2>
+<ul>
+<li>a. Stubs têm implementações reais, mas simplificadas.</li>
+<li>b. Stubs são usados apenas para observar o comportamento de uma dependência real.</li>
+<li>c. Stubs fornecem respostas codificadas e não têm uma implementação funcional.</li>
+<li>d. Stubs permitem fazer asserções sobre as interações após o teste.</li>
+</ul>
+<p><strong>RESPOSTA:</strong> c. Stubs fornecem respostas codificadas e não têm uma implementação funcional.</p>
+<blockquote>
+<p>Um <em>Stub</em> é um Dublê de Teste que fornece entradas indiretas para o SUT, retornando valores codificados em resposta a chamadas feitas durante o teste.<br />
+<em>(p. 529, Meszaros, 2007)</em><br />
+A Test Stub is a Test Double that feeds indirect inputs into the SUT.<br />
+<em>(p. 529, Meszaros, 2007)</em></p>
+<p>Os <em>stubs</em> não possuem comportamento funcional; eles apenas retornam valores predefinidos quando chamados.<br />
+<em>(p. 529, Meszaros, 2007)</em><br />
+Stubs typically implement only the methods that are needed for the test and return hard-coded values.<br />
+<em>(p. 529, Meszaros, 2007)</em></p>
+<p>Em contraste, um <em>Fake Object</em> substitui um componente por uma implementação funcional mais leve, como um banco de dados em memória.<br />
+<em>(p. 551, Meszaros, 2007)</em><br />
+A Fake Object is a Test Double that replaces a component that the SUT depends on with a working implementation, usually much lighter-weight.<br />
+<em>(p. 551, Meszaros, 2007)</em></p>
+<p>Um <em>Fake</em> geralmente é uma implementação funcional completa (mas simples), o que o difere fundamentalmente de um stub que apenas devolve valores fixos.<br />
+<em>(p. 551, Meszaros, 2007)</em><br />
+A Fake usually implements the same interface as the real component but provides a simpler behavior that is sufficient for the tests.<br />
+<em>(p. 551, Meszaros, 2007)</em></p>
+</blockquote>
+<h4 id="por-que-as-outras-alternativas-estao-erradas_2">Por que as outras alternativas estão erradas</h4>
+<ul>
+<li><strong>a. Stubs têm implementações reais, mas simplificadas.</strong></li>
+</ul>
+<blockquote>
+<p>Essa é a definição de um <em>Fake</em>, não de um <em>Stub</em>.<br />
+<em>(p. 551, Meszaros, 2007)</em><br />
+A Fake Object is a Test Double that replaces a component [...] with a working implementation.<br />
+<em>(p. 551, Meszaros, 2007)</em></p>
+</blockquote>
+<ul>
+<li><strong>b. Stubs são usados apenas para observar o comportamento de uma dependência real.</strong></li>
+</ul>
+<blockquote>
+<p>Isso descreve um <em>Test Spy</em> ou um <em>Mock</em>, e não um <em>Stub</em>.<br />
+<em>(p. 538, Meszaros, 2007)</em><br />
+A Test Spy is a Test Double that captures the indirect output calls made to another component by the SUT for later verification by the test.<br />
+<em>(p. 538, Meszaros, 2007)</em></p>
+</blockquote>
+<ul>
+<li><strong>d. Stubs permitem fazer asserções sobre as interações após o teste.</strong></li>
+</ul>
+<blockquote>
+<p>Quem permite isso são os <em>Test Spies</em>, não os <em>Stubs</em>.<br />
+<em>(p. 538, Meszaros, 2007)</em><br />
+A Test Spy captures the calls so that they can be asserted on later.<br />
+<em>(p. 538, Meszaros, 2007)</em></p>
+</blockquote>
+<p><strong>Referência:</strong><br />
+Meszaros, G. (2007). <em>xUnit Test Patterns: Refactoring Test Code</em>. Addison-Wesley.</p>
+<hr />
+<h2 id="q04-qual-a-vantagem-principal-dos-objetos-mocks-em-comparacao-com-os-stubs">Q04. Qual a vantagem principal dos objetos mocks em comparação com os stubs?</h2>
+<ul>
+<li>a. Mocks têm implementações reais.</li>
+<li>b. Mocks são mais fáceis de controlar do que stubs.</li>
+<li>c. Mocks podem gravar interações e permitir asserções sobre elas.</li>
+<li>d. Mocks fornecem respostas codificadas para chamadas realizadas durante o teste.</li>
+</ul>
+<p><strong>RESPOSTA:</strong> c. Mocks podem gravar interações e permitir asserções sobre elas.</p>
+<blockquote>
+<p>Um <em>Mock Object</em> é um dublê de teste que é pré-programado com expectativas, que representam uma especificação das chamadas que ele deve receber. O mock verifica automaticamente se essas chamadas ocorrem e, se não, o teste falha.<br />
+<em>(p. 544, Meszaros, 2007)</em><br />
+A Mock Object is a Test Double that is pre-programmed with expectations which form a specification of the calls they are expected to receive.<br />
+<em>(p. 544, Meszaros, 2007)</em></p>
+<p>Os <em>mocks</em> são frequentemente criados por meio de bibliotecas que permitem especificar as interações esperadas. Essas interações são registradas durante a execução, e as bibliotecas de mocks verificam automaticamente se o comportamento ocorreu como esperado.<br />
+<em>(p. 544, Meszaros, 2007)</em><br />
+Mocks are usually created by using a library that allows us to specify the expected interactions. These interactions are recorded during the test execution, and the mock library automatically verifies that the expected behavior occurred.<br />
+<em>(p. 544, Meszaros, 2007)</em></p>
+<p>Em contraste, um <em>Stub</em> apenas fornece valores de retorno predefinidos e não verifica interações com o SUT.<br />
+<em>(p. 529, Meszaros, 2007)</em><br />
+A Test Stub is a Test Double that feeds indirect inputs into the SUT.<br />
+<em>(p. 529, Meszaros, 2007)</em></p>
+<p>Os <em>stubs</em> não sabem se foram chamados corretamente; são usados apenas para injetar entradas indiretas no SUT.<br />
+<em>(p. 529, Meszaros, 2007)</em><br />
+Stubs typically implement only the methods that are needed for the test and return hard-coded values. They don't know whether they were called correctly.<br />
+<em>(p. 529, Meszaros, 2007)</em></p>
+</blockquote>
+<h4 id="por-que-as-outras-alternativas-estao-erradas_3">Por que as outras alternativas estão erradas</h4>
+<ul>
+<li><strong>a. Mocks têm implementações reais.</strong></li>
+</ul>
+<blockquote>
+<p>Isso define um <em>Fake Object</em>, que é uma implementação funcional simplificada, não um <em>Mock</em>.<br />
+<em>(p. 551, Meszaros, 2007)</em><br />
+A Fake Object is a Test Double that replaces a component [...] with a working implementation.<br />
+<em>(p. 551, Meszaros, 2007)</em></p>
+</blockquote>
+<ul>
+<li><strong>b. Mocks são mais fáceis de controlar do que stubs.</strong></li>
+</ul>
+<blockquote>
+<p>O livro não afirma que mocks são "mais fáceis de controlar". Ele aponta que mocks são usados para verificar interações, enquanto stubs são usados para fornecer entradas indiretas.<br />
+<em>(p. 544 vs. 529, Meszaros, 2007)</em></p>
+</blockquote>
+<ul>
+<li><strong>d. Mocks fornecem respostas codificadas para chamadas realizadas durante o teste.</strong></li>
+</ul>
+<blockquote>
+<p>Quem faz isso são os <em>Stubs</em>, não os <em>Mocks</em>.<br />
+<em>(p. 529, Meszaros, 2007)</em><br />
+Stubs typically implement only the methods that are needed for the test and return hard-coded values.<br />
+<em>(p. 529, Meszaros, 2007)</em></p>
+</blockquote>
+<p><strong>Referência:</strong><br />
+Meszaros, G. (2007). <em>xUnit Test Patterns: Refactoring Test Code</em>. Addison-Wesley.</p>
+<hr />
+<h2 id="q05-uma-classe-que-simula-uma-base-de-dados-usando-uma-lista-pode-ser-classificada-como">Q05. Uma classe que simula uma base de dados usando uma lista pode ser classificada como:</h2>
+<ul>
+<li>a. Fake object</li>
+<li>b. Dummy object</li>
+<li>c. Mock</li>
+<li>d. Stub</li>
+</ul>
+<p><strong>RESPOSTA:</strong> a. Fake object</p>
+<blockquote>
+<p>Um <em>Fake Object</em> é um Dublê de Teste que substitui um componente de que o SUT depende com uma implementação funcional, geralmente mais leve.<br />
+<em>(p. 551, Meszaros, 2007)</em><br />
+A Fake Object is a Test Double that replaces a component that the SUT depends on with a working implementation, usually much lighter-weight.<br />
+<em>(p. 551, Meszaros, 2007)</em></p>
+<p>Um exemplo comum de fake é uma implementação em memória de um banco de dados, usada em vez de um banco real durante os testes.<br />
+<em>(p. 551, Meszaros, 2007)</em><br />
+A common example is an in-memory database implementation that is used instead of a real one during testing.<br />
+<em>(p. 551, Meszaros, 2007)</em></p>
+<p>Fakes são apropriados quando a implementação alternativa é mais rápida ou fácil de configurar do que a real, mas ainda fornece o comportamento necessário para os testes.<br />
+<em>(p. 551, Meszaros, 2007)</em><br />
+They are appropriate when the alternative implementation is easier or faster to work with and still provides the correct behavior for the tests.<br />
+<em>(p. 551, Meszaros, 2007)</em></p>
+</blockquote>
+<h4 id="por-que-as-outras-alternativas-estao-erradas_4">Por que as outras alternativas estão erradas</h4>
+<ul>
+<li><strong>b. Dummy object</strong></li>
+</ul>
+<blockquote>
+<p>Dummies são passados para preencher parâmetros, mas nunca são usados.<br />
+<em>(p. 728, Meszaros, 2007)</em><br />
+Dummy Objects are a degenerate form of Test Double. They exist solely so that they can be passed around from method to method; they are never used.<br />
+<em>(p. 728, Meszaros, 2007)</em><br />
+Uma lista simulando uma base de dados é usada funcionalmente, portanto não é um dummy.</p>
+</blockquote>
+<ul>
+<li><strong>c. Mock</strong></li>
+</ul>
+<blockquote>
+<p>Mocks são configurados com expectativas de chamadas e verificam se elas ocorreram; não são usados para simular lógica funcional como um banco de dados.<br />
+<em>(p. 544, Meszaros, 2007)</em><br />
+A Mock Object is a Test Double that is pre-programmed with expectations which form a specification of the calls they are expected to receive.<br />
+<em>(p. 544, Meszaros, 2007)</em></p>
+</blockquote>
+<ul>
+<li><strong>d. Stub</strong></li>
+</ul>
+<blockquote>
+<p>Stubs são usados para fornecer respostas codificadas a chamadas do SUT, mas não têm comportamento funcional completo como um banco de dados em memória.<br />
+<em>(p. 529, Meszaros, 2007)</em><br />
+Test Stubs typically implement only the methods that are needed for the test and return hard-coded values.<br />
+<em>(p. 529, Meszaros, 2007)</em></p>
+</blockquote>
+<p><strong>Referência:</strong><br />
+Meszaros, G. (2007). <em>xUnit Test Patterns: Refactoring Test Code</em>. Addison-Wesley.</p>
+<hr />
+<h2 id="q06-o-que-pode-ser-necessario-para-injetar-dubles-de-teste">Q06. O que pode ser necessário para injetar dublês de teste?</h2>
+<ul>
+<li>a. Criar um tipo especial de dublê que intercepte chamadas.</li>
+<li>b. Refatorar o construtor da classe de teste para instanciar a dependência.</li>
+<li>c. Usar um framework de mocking para injeção automática.</li>
+<li>d. Alterar o código da classe sendo testada para aceitar a dependência via construtor.</li>
+</ul>
+<p><strong>RESPOSTA:</strong> d. Alterar o código da classe sendo testada para aceitar a dependência via construtor.</p>
+<blockquote>
+<p>Injeção por Construtor: informamos ao SUT qual DOC usar quando o construímos.<br />
+<em>(p. 680, Meszaros, 2007)</em><br />
+Constructor Injection: We tell the SUT which DOC to use when we construct it.<br />
+<em>(p. 680, Meszaros, 2007)</em></p>
+<p>Para converter o SUT para usar Injeção por Construtor, podemos fazer um refatoramento do tipo "Introduce Field" para manter o DOC em um campo que é inicializado no construtor existente.<br />
+<em>(p. 684, Meszaros, 2007)</em><br />
+To convert the SUT to use Constructor Injection, we can do an Introduce Field refactoring to hold the DOC in a field that is initialized in the existing constructor.<br />
+<em>(p. 684, Meszaros, 2007)</em></p>
+<p>Quando um teste deseja substituir o DOC real por um dublê de teste, ele o passa para o construtor ao construir o SUT.<br />
+<em>(p. 681, Meszaros, 2007)</em><br />
+When a test wants to replace the real DOC with a Test Double, it passes in the Test Double to the constructor when it builds the SUT.<br />
+<em>(p. 681, Meszaros, 2007)</em></p>
+<p>Quando o SUT não suporta injeção de dependência "de fábrica", pode ser necessário refatorar o código da classe sendo testada para permitir isso.<br />
+<em>(p. 682, Meszaros, 2007)</em><br />
+When the SUT does not support any of these options "out of the box", we may need to retrofit this capability...<br />
+<em>(p. 682, Meszaros, 2007)</em></p>
+</blockquote>
+<h4 id="por-que-as-outras-alternativas-estao-erradas_5">Por que as outras alternativas estão erradas</h4>
+<ul>
+<li><strong>a. Criar um tipo especial de dublê que intercepte chamadas.</strong></li>
+</ul>
+<blockquote>
+<p>O livro descreve <em>mocks</em> e <em>spies</em> como dublês configuráveis, mas não afirma que a injeção exige criar um tipo especial que intercepte chamadas. Isso não é necessário para injeção.<br />
+<em>(p. 522 e p. 544, Meszaros, 2007)</em></p>
+</blockquote>
+<ul>
+<li><strong>b. Refatorar o construtor da classe de teste para instanciar a dependência.</strong></li>
+</ul>
+<blockquote>
+<p>O que precisa ser refatorado é o construtor da classe sendo testada (SUT), não o da classe de teste.<br />
+<em>(p. 684, Meszaros, 2007)</em><br />
+We can define a new constructor that takes the DOC as a parameter...<br />
+<em>(p. 684, Meszaros, 2007)</em></p>
+</blockquote>
+<ul>
+<li><strong>c. Usar um framework de mocking para injeção automática.</strong></li>
+</ul>
+<blockquote>
+<p>O livro menciona que frameworks de mock como JMock facilitam a criação de mocks, mas não substituem a necessidade de refatorar o SUT para aceitar injeção.<br />
+<em>(p. 565, Meszaros, 2007)</em><br />
+We still need to inject the mock using setter or constructor injection.<br />
+<em>(p. 565, Meszaros, 2007)</em></p>
+</blockquote>
+<p><strong>Referência:</strong><br />
+Meszaros, G. (2007). <em>xUnit Test Patterns: Refactoring Test Code</em>. Addison-Wesley.</p>
+<hr />
+<h2 id="q07-qual-a-principal-vantagem-de-configurar-dubles-para-lancar-excecoes">Q07. Qual a principal vantagem de configurar dublês para lançar exceções?</h2>
+<ul>
+<li>a. Permite testar como os sistemas se comportariam em cenários inesperados, simulando falhas.</li>
+<li>b. Garante que todos os métodos sejam chamados ao menos uma vez.</li>
+<li>c. Facilita respostas codificadas.</li>
+<li>d. Substitui testes de integração com sistemas externos.</li>
+</ul>
+<p><strong>RESPOSTA:</strong> a. Permite testar como os sistemas se comportariam em cenários inesperados, simulando falhas.</p>
+<blockquote>
+<p>Certamente não queremos que o código de tratamento de exceções seja executado pela primeira vez em produção. E se ele estiver implementado incorretamente? É altamente desejável ter testes automatizados para esse código. O desafio no teste é fazer com que o DOC (componente dependente) lance uma exceção para que o caminho de erro possa ser testado.<br />
+<em>(p. 127, Meszaros, 2007)</em><br />
+We certainly would rather not have the exception-handling code execute for the first time in production. What if it was coded incorrectly? Clearly, it would be highly desirable to have automated tests for such code. The testing challenge is to somehow cause the DOC to throw an exception so that the error path can be tested.<br />
+<em>(p. 127, Meszaros, 2007)</em></p>
+<p>A exceção que esperamos que o DOC lance é um bom exemplo de uma condição de entrada indireta. Nosso meio de injetar essa entrada é um ponto de controle.<br />
+<em>(p. 127, Meszaros, 2007)</em><br />
+The exception we expect the DOC to throw is a good example of an indirect input test condition. Our means of injecting this input is a control point.<br />
+<em>(p. 127, Meszaros, 2007)</em></p>
+<p>Um <em>Saboteur</em> é um tipo especial de <em>Test Stub</em> que lança exceções ou erros para injetar entradas indiretas anormais no SUT.<br />
+<em>(p. 135, Meszaros, 2007)</em><br />
+A Saboteur is a special Test Stub that raises exceptions or errors to inject abnormal indirect inputs into the SUT.<br />
+<em>(p. 135, Meszaros, 2007)</em></p>
+<p>Um <em>Expected Exception Test</em> nos ajuda a verificar se os cenários de erro foram codificados corretamente. O modo mais comum de forçar esses erros é usar um <em>Test Stub</em> para controlar a entrada indireta e lançar as exceções apropriadas.<br />
+<em>(p. 350, Meszaros, 2007)</em><br />
+An Expected Exception Test helps us verify that the error scenarios have been coded correctly. [...] The most common way to do so is to use a Test Stub to control the indirect input of the SUT and raise the appropriate errors in the Test Stub.<br />
+<em>(p. 350, Meszaros, 2007)</em></p>
+</blockquote>
+<h4 id="por-que-as-outras-alternativas-estao-erradas_6">Por que as outras alternativas estão erradas</h4>
+<ul>
+<li><strong>b. Garante que todos os métodos sejam chamados ao menos uma vez.</strong></li>
+</ul>
+<blockquote>
+<p>Isso não é relacionado ao lançamento de exceções. Verificar se métodos são chamados pertence ao comportamento de <em>Mocks</em> (verificação de interações), não ao uso de exceções.<br />
+<em>(p. 544, Meszaros, 2007)</em></p>
+</blockquote>
+<ul>
+<li><strong>c. Facilita respostas codificadas.</strong></li>
+</ul>
+<blockquote>
+<p>Quem faz isso são os <em>Stubs</em> do tipo <em>Responder</em>, usados para retornar valores predefinidos — não para lançar exceções.<br />
+<em>(p. 529, Meszaros, 2007)</em></p>
+</blockquote>
+<ul>
+<li><strong>d. Substitui testes de integração com sistemas externos.</strong></li>
+</ul>
+<blockquote>
+<p>Dublês podem ajudar a simular sistemas externos, mas o foco do uso de exceções não é substituir testes de integração, e sim permitir testar o comportamento em situações de falha.<br />
+<em>(p. 127, Meszaros, 2007)</em></p>
+</blockquote>
+<p><strong>Referência:</strong><br />
+Meszaros, G. (2007). <em>xUnit Test Patterns: Refactoring Test Code</em>. Addison-Wesley.</p>
+<hr />
+<h2 id="q08-qual-e-uma-das-principais-desvantagens-de-usar-dubles">Q08. Qual é uma das principais desvantagens de usar dublês?</h2>
+<ul>
+<li>a. O acoplamento com o código de produção, que pode levar a falhas ao mudar interações.</li>
+<li>b. Dificuldade de configuração e manutenção.</li>
+<li>c. Incapacidade de simular comportamentos complexos.</li>
+<li>d. Modificação excessiva do código de produção.</li>
+</ul>
+<p><strong>RESPOSTA:</strong> a. O acoplamento com o código de produção, que pode levar a falhas ao mudar interações.</p>
+<blockquote>
+<p>Podemos também implementar o <em>Test Double</em> criando uma subclasse da DOC real e sobrescrevendo os métodos cujo comportamento queremos mudar. Infelizmente, essa abordagem pode ter consequências imprevisíveis se o SUT chamar outros métodos da DOC que não foram sobrescritos. Isso também acopla fortemente o código de teste à implementação da DOC, o que pode resultar em <em>software superespecificado</em>.<br />
+<em>(p. 570, Meszaros, 2007)</em><br />
+We can also implement the Hard-Coded Test Double by subclassing the real DOC and overriding the behavior of the methods we expect the SUT to call as we exercise it. Unfortunately, this approach can have unpredictable consequences if the SUT calls other DOC methods that we have not overridden. It also ties our test code very closely to the implementation of the DOC and can result in Over-specified Software.<br />
+<em>(p. 570, Meszaros, 2007)</em></p>
+<p>Testes frágeis indicam que os testes estão muito acoplados ao SUT. Isso causa alto custo de manutenção, pois os testes precisam ser revisados com frequência, mesmo quando mudanças mínimas são feitas.<br />
+<em>(p. 266, Meszaros, 2007)</em><br />
+Fragile Test indicates that tests are too closely coupled to the SUT. They result in High Test Maintenance Cost because they need to be revisited and "jiggled" after all manner of minor changes that really shouldn't affect them.<br />
+<em>(p. 266, Meszaros, 2007)</em></p>
+<p>O custo alto de manutenção dos testes decorre do fato de que os testes ficam excessivamente difíceis de entender e manter.<br />
+<em>(p. 265, Meszaros, 2007)</em><br />
+High Test Maintenance Cost occurs when the tests become overly difficult to understand and maintain.<br />
+<em>(p. 265, Meszaros, 2007)</em></p>
+</blockquote>
+<h4 id="por-que-as-outras-alternativas-estao-erradas_7">Por que as outras alternativas estão erradas</h4>
+<ul>
+<li><strong>b. Dificuldade de configuração e manutenção.</strong></li>
+</ul>
+<blockquote>
+<p>O livro trata da manutenção como uma consequência de outros problemas (como acoplamento excessivo e duplicação de código), mas não afirma que os dublês são difíceis de configurar por si só. Pelo contrário, <em>Configurable Test Doubles</em> são justamente uma solução para facilitar isso.<br />
+<em>(p. 558, Meszaros, 2007)</em></p>
+</blockquote>
+<ul>
+<li><strong>c. Incapacidade de simular comportamentos complexos.</strong></li>
+</ul>
+<blockquote>
+<p>Não é mencionado como limitação. Pelo contrário, mocks e fakes são usados justamente para simular comportamentos complexos e difíceis de reproduzir com o objeto real.<br />
+<em>(p. 544, 551, Meszaros, 2007)</em></p>
+</blockquote>
+<ul>
+<li><strong>d. Modificação excessiva do código de produção.</strong></li>
+</ul>
+<blockquote>
+<p>O livro recomenda práticas como <em>Dependency Injection</em> para evitar alterações desnecessárias no código de produção, ou seja, alterações são uma solução e não um problema causado por dublês.<br />
+<em>(p. 678–682, Meszaros, 2007)</em></p>
+</blockquote>
+<p><strong>Referência:</strong><br />
+Meszaros, G. (2007). <em>xUnit Test Patterns: Refactoring Test Code</em>. Addison-Wesley.</p>
+<hr />
+<h2 id="q09-qual-e-o-ciclo-repetido-no-processo-de-tdd">Q09. Qual é o ciclo repetido no processo de TDD?</h2>
+<ul>
+<li>a. Teste passa → implementação → refatoração</li>
+<li>b. Teste falha → implementação → refatoração</li>
+<li>c. Implementação → teste passa → refatoração</li>
+<li>d. Refatoração → teste falha → implementação</li>
+</ul>
+<p><strong>RESPOSTA:</strong> b. Teste falha → implementação → refatoração</p>
+<blockquote>
+<p>O ciclo geral do TDD é o seguinte:<br />
+1. Escreva um teste.<br />
+2. Faça com que ele funcione. Colocar a barra verde rapidamente domina tudo.<br />
+3. Faça certo. Agora que o sistema se comporta, remova duplicações.<br />
+<em>(Capítulo 2, Beck, 2002)</em><br />
+The general TDD cycle goes as follows:<br />
+Write a test. Think about how you would like the operation in your mind to appear in your code.<br />
+Make it run. Quickly getting that bar to go to green dominates everything else.<br />
+Make it right. Now that the system is behaving, remove the duplication.<br />
+<em>(Chapter 2, Beck, 2002)</em></p>
+<p>Lembre-se, o ciclo é o seguinte:<br />
+Adicione um pequeno teste.<br />
+Execute todos os testes e veja falhar.<br />
+Faça uma pequena mudança.<br />
+Execute todos os testes e veja passar.<br />
+Refatore para remover duplicações.<br />
+<em>(Capítulo 1, Beck, 2002)</em><br />
+Remember, the cycle is as follows:<br />
+Add a little test.<br />
+Run all tests and fail.<br />
+Make a little change.<br />
+Run the tests and succeed.<br />
+Refactor to remove duplication.<br />
+<em>(Chapter 1, Beck, 2002)</em></p>
+<p>TDD responde à contradição com um paradoxo — teste o programa antes de escrevê-lo.<br />
+<em>(Introdução, Beck, 2002)</em><br />
+Test-driven development replies to this contradiction with a paradox—test the program before you write it.<br />
+<em>(Introduction, Beck, 2002)</em></p>
+</blockquote>
+<h4 id="por-que-as-outras-alternativas-estao-erradas_8">Por que as outras alternativas estão erradas</h4>
+<ul>
+<li><strong>a. Teste passa → implementação → refatoração</strong></li>
+</ul>
+<blockquote>
+<p>Isso inverte a ordem correta, já que o teste precisa falhar primeiro para guiar a implementação.</p>
+</blockquote>
+<ul>
+<li><strong>c. Implementação → teste passa → refatoração</strong></li>
+</ul>
+<blockquote>
+<p>Esta é a abordagem tradicional, mas não é TDD, pois ignora a criação do teste antes da implementação.</p>
+</blockquote>
+<ul>
+<li><strong>d. Refatoração → teste falha → implementação</strong></li>
+</ul>
+<blockquote>
+<p>Também está fora da ordem. A refatoração vem depois que os testes estão passando.</p>
+</blockquote>
+<p><strong>Referência:</strong><br />
+Beck, K. (2002). <em>Test-Driven Development: By Example</em>. Addison-Wesley.</p>
+<hr />
+<h2 id="q10-por-que-o-tdd-facilita-a-identificacao-de-problemas">Q10. Por que o TDD facilita a identificação de problemas?</h2>
+<ul>
+<li>a. Porque desenvolvedores escrevem código antes dos testes.</li>
+<li>b. Porque desenvolvedores focam no produto final.</li>
+<li>c. Porque todos os testes são escritos antes da implementação.</li>
+<li>d. Porque o ciclo incremental permite detectar problemas após pequenas alterações.</li>
+</ul>
+<p><strong>RESPOSTA:</strong> d. Porque o ciclo incremental permite detectar problemas após pequenas alterações.</p>
+<blockquote>
+<p>O processo de desenvolvimento orientado a testes (TDD) incentiva a “escrever um teste” e depois “escrever algum código” para fazer esse teste passar. Esse processo não envolve escrever todos os testes antes de qualquer código, mas sim escrever testes e código de forma intercalada em passos muito pequenos.<br />
+<em>(Capítulo 4, Meszaros, 2007)</em><br />
+The test-driven development process encourages us to “write a test” and then “write some code” to pass that test. This process isn’t a case of all tests being written before any code, but rather the writing of tests and code being interleaved in a very fine-grained way.<br />
+<em>(Chapter 4, Meszaros, 2007)</em></p>
+<p>Isso é desenvolvimento incremental no seu melhor. Muitos adeptos do TDD relatam que raramente usam o depurador, porque os testes em pequenas etapas localizam claramente o defeito e a última alteração feita (que causou o problema) ainda está fresca na memória.<br />
+<em>(Capítulo 4, Meszaros, 2007)</em><br />
+Many test drivers report not using the debugger very much because the fine-grained testing and incremental development leave little doubt about why tests are failing; the tests provide Defect Localization while the last change we made (which caused the problem) is still fresh in our minds.<br />
+<em>(Chapter 4, Meszaros, 2007)</em></p>
+<p>Lembre-se, o ciclo é o seguinte:<br />
+1. Adicione um pequeno teste.<br />
+2. Execute todos os testes e veja falhar.<br />
+3. Faça uma pequena mudança.<br />
+4. Execute todos os testes e veja passar.<br />
+5. Refatore para remover duplicações.<br />
+<em>(Capítulo 1, Beck, 2002)</em><br />
+Remember, the cycle is as follows:<br />
+Add a little test.<br />
+Run all tests and fail.<br />
+Make a little change.<br />
+Run the tests and succeed.<br />
+Refactor to remove duplication.<br />
+<em>(Chapter 1, Beck, 2002)</em></p>
+<p>O TDD permite que qualquer desenvolvedor escreva código confiável e livre de erros, não importa o quão complexo ele seja. O desenvolvimento com testes automatizados e eliminação de duplicações encoraja mudanças pequenas e constantes, facilitando identificar o que quebrou e quando.<br />
+<em>(Introdução, Beck, 2002)</em><br />
+TDD encourages small, steady steps that make it easy to tell what broke and when.<br />
+<em>(Introduction, Beck, 2002)</em></p>
+</blockquote>
+<h4 id="por-que-as-outras-alternativas-estao-erradas_9">Por que as outras alternativas estão erradas</h4>
+<ul>
+<li><strong>a. Porque desenvolvedores escrevem código antes dos testes.</strong></li>
+</ul>
+<blockquote>
+<p>Falso. TDD propõe exatamente o contrário: escrevemos o teste antes do código.<br />
+<em>(Introdução, Beck, 2002)</em></p>
+</blockquote>
+<ul>
+<li><strong>b. Porque desenvolvedores focam no produto final.</strong></li>
+</ul>
+<blockquote>
+<p>O foco está no comportamento incremental e testável, não no "produto final".<br />
+<em>(Capítulo 4, Meszaros, 2007)</em></p>
+</blockquote>
+<ul>
+<li><strong>c. Porque todos os testes são escritos antes da implementação.</strong></li>
+</ul>
+<blockquote>
+<p>Não é verdade. O TDD escreve um teste de cada vez, intercalado com código.<br />
+<em>(Capítulo 4, Meszaros, 2007)</em></p>
+</blockquote>
+<p><strong>Referências:</strong><br />
+Beck, K. (2002). <em>Test-Driven Development: By Example</em>. Addison-Wesley.<br />
+Meszaros, G. (2007). <em>xUnit Test Patterns: Refactoring Test Code</em>. Addison-Wesley.</p>
+<hr />
+<h2 id="q11-como-o-tdd-afeta-o-design">Q11. Como o TDD afeta o design?</h2>
+<ul>
+<li>a. Testes não influenciam o design.</li>
+<li>b. O teste é o primeiro cliente da classe, influenciando seu design.</li>
+<li>c. TDD encoraja designs mais complexos.</li>
+<li>d. TDD desencoraja refatoração.</li>
+</ul>
+<p><strong>RESPOSTA:</strong> b. O teste é o primeiro cliente da classe, influenciando seu design.</p>
+<blockquote>
+<p>O TDD incentiva designs simples e conjuntos de testes que inspiram confiança.<br />
+<em>(Introdução, Beck, 2002)</em><br />
+TDD encourages simple designs and test suites that inspire confidence.<br />
+<em>(Introduction, Beck, 2002)</em></p>
+<p>Você escreverá um teste. Imagine como gostaria que a operação parecesse em seu código. Você está escrevendo uma história. Invente a interface que gostaria de ter.<br />
+<em>(Capítulo 2, Beck, 2002)</em><br />
+Write a test. Think about how you would like the operation in your mind to appear in your code. You are writing a story. Invent the interface you wish you had.<br />
+<em>(Chapter 2, Beck, 2002)</em></p>
+<p>Como resultado, o teste se torna o primeiro cliente da classe, moldando seu design de forma natural, orientada por uso real.<br />
+<em>(Capítulo 17, Beck, 2002)</em><br />
+As a result, the test becomes the first client of the class, shaping its design naturally, based on actual usage.<br />
+<em>(Chapter 17, Beck, 2002)</em></p>
+<p>Cresça o design organicamente, por meio de refatorações, adicionando decisões de design uma de cada vez.<br />
+<em>(Introdução, Beck, 2002)</em><br />
+Grow a design organically by refactoring to add design decisions one at a time.<br />
+<em>(Introduction, Beck, 2002)</em></p>
+</blockquote>
+<h4 id="por-que-as-outras-alternativas-estao-erradas_10">Por que as outras alternativas estão erradas</h4>
+<ul>
+<li><strong>a. Testes não influenciam o design.</strong></li>
+</ul>
+<blockquote>
+<p>Falso. O TDD molda o design desde o início, com o teste sendo o primeiro cliente da API.<br />
+<em>(Capítulo 17, Beck, 2002)</em></p>
+</blockquote>
+<ul>
+<li><strong>c. TDD encoraja designs mais complexos.</strong></li>
+</ul>
+<blockquote>
+<p>Pelo contrário, TDD incentiva designs simples e incrementais.<br />
+<em>(Introdução, Beck, 2002)</em></p>
+</blockquote>
+<ul>
+<li><strong>d. TDD desencoraja refatoração.</strong></li>
+</ul>
+<blockquote>
+<p>Falso. Refatoração é uma das etapas essenciais do ciclo TDD.<br />
+<em>(Capítulo 2, Beck, 2002)</em></p>
+</blockquote>
+<p><strong>Referência:</strong><br />
+Beck, K. (2002). <em>Test-Driven Development: By Example</em>. Addison-Wesley.</p>
+<hr />
+<h2 id="q12-quando-o-tdd-e-mais-vantajoso">Q12. Quando o TDD é mais vantajoso?</h2>
+<ul>
+<li>a. Em problemas simples.</li>
+<li>b. Em qualquer tipo de problema.</li>
+<li>c. Em projetos de manutenção.</li>
+<li>d. Em problemas mais complicados, onde ajuda a estruturar melhor o desenvolvimento.</li>
+</ul>
+<p><strong>RESPOSTA:</strong> d. Em problemas mais complicados, onde ajuda a estruturar melhor o desenvolvimento.</p>
+<blockquote>
+<p>Desenvolvedores enfrentam desafios complexos de programação todos os dias, e muitas vezes não estão preparados para determinar a melhor solução. Com frequência, tais projetos difíceis geram muito estresse e código ruim. Para obter a força e a coragem necessárias para superar tarefas aparentemente hercúleas, os programadores devem recorrer ao desenvolvimento orientado por testes (TDD), um conjunto comprovado de técnicas que encorajam designs simples e test suites que inspiram confiança.<br />
+<em>(Introdução, Beck, 2002)</em><br />
+Developers face complex programming challenges every day, yet they are not always readily prepared to determine the best solution. More often than not, such difficult projects generate a great deal of stress and bad code. To garner the strength and courage needed to surmount seemingly Herculean tasks, programmers should look to test-driven development (TDD), a proven set of techniques that encourage simple designs and test suites that inspire confidence.<br />
+<em>(Introduction, Beck, 2002)</em></p>
+<p>Ao conduzir o desenvolvimento com testes automatizados e depois eliminar duplicação, qualquer desenvolvedor pode escrever código confiável e livre de erros, independentemente do nível de complexidade.<br />
+<em>(Introdução, Beck, 2002)</em><br />
+By driving development with automated tests and then eliminating duplication, any developer can write reliable, bug-free code no matter what its level of complexity.<br />
+<em>(Introduction, Beck, 2002)</em></p>
+<p>Os leitores aprenderão a:<br />
+- Resolver tarefas complicadas, começando pelas simples e seguindo para as mais complexas.<br />
+- Escrever testes automatizados antes de codificar.<br />
+- Criar testes para lógica complicada, incluindo reflexão e exceções.<br />
+<em>(Introdução, Beck, 2002)</em><br />
+Readers will learn to:<br />
+- Solve complicated tasks, beginning with the simple and proceeding to the more complex.<br />
+- Create tests for more complicated logic, including reflection and exceptions.<br />
+<em>(Introduction, Beck, 2002)</em></p>
+</blockquote>
+<p><strong>Referência:</strong><br />
+Beck, K. (2002). <em>Test-Driven Development: By Example</em>. Addison-Wesley.</p>
+<hr />
+<h2 id="q13-em-quais-situacoes-o-uso-do-tdd-nao-e-recomendado">Q13. Em quais situações o uso do TDD não é recomendado?</h2>
+<ul>
+<li>a. Quando o problema é bem conhecido e não há necessidade de experimentação.</li>
+<li>b. Quando se está em projetos ágeis.</li>
+<li>c. Em sistemas embarcados.</li>
+<li>d. Quando a pirâmide de testes não é aplicada.</li>
+</ul>
+<p><strong>RESPOSTA:</strong> a. Quando o problema é bem conhecido e não há necessidade de experimentação.</p>
+<blockquote>
+<p>O desenvolvimento orientado a testes (TDD) é especialmente útil em situações em que não temos certeza de como estruturar a solução ou estamos lidando com um problema desconhecido.<br />
+<em>(Capítulo 2, Beck, 2002)</em><br />
+Test-driven development is especially useful when we don’t know how to structure the solution or we’re tackling an unknown problem.<br />
+<em>(Chapter 2, Beck, 2002)</em></p>
+<p>Em contrapartida, quando já sabemos exatamente o que fazer e a estrutura do sistema está clara, o valor de escrever testes antes do código é reduzido.<br />
+<em>(Capítulo 2, Beck, 2002)</em><br />
+On the other hand, when we know exactly what to do and the structure is clear, the value of writing tests before the code is reduced.<br />
+<em>(Chapter 2, Beck, 2002)</em></p>
+<p>Em projetos onde é necessário explorar o design, o ciclo de TDD ajuda a conduzir decisões incrementais e iterativas.<br />
+<em>(Capítulo 2, Beck, 2002)</em><br />
+In projects where design exploration is needed, the TDD cycle helps guide incremental, iterative decisions.<br />
+<em>(Chapter 2, Beck, 2002)</em></p>
+</blockquote>
+<h4 id="por-que-as-outras-alternativas-estao-erradas_11">Por que as outras alternativas estão erradas</h4>
+<ul>
+<li><strong>b. Quando se está em projetos ágeis.</strong></li>
+</ul>
+<blockquote>
+<p>TDD é altamente recomendado em projetos ágeis, pois favorece ciclos curtos de feedback e adaptação contínua.<br />
+<em>(Capítulo 1, Beck, 2002)</em></p>
+</blockquote>
+<ul>
+<li><strong>c. Em sistemas embarcados.</strong></li>
+</ul>
+<blockquote>
+<p>Nenhum dos livros consultados afirma que sistemas embarcados são incompatíveis com TDD. A prática pode ser mais difícil, mas ainda aplicável com arquitetura apropriada.<br />
+<em>(Não encontrado nos PDFs)</em></p>
+</blockquote>
+<ul>
+<li><strong>d. Quando a pirâmide de testes não é aplicada.</strong></li>
+</ul>
+<blockquote>
+<p>A pirâmide de testes é uma prática auxiliar, não uma condição para aplicar TDD. O TDD foca na escrita de testes automatizados de unidade, independentemente da estrutura completa de testes adotada.<br />
+<em>(Não mencionado como limitação nos livros analisados)</em></p>
+</blockquote>
+<p><strong>Referência:</strong><br />
+Beck, K. (2002). <em>Test-Driven Development: By Example</em>. Addison-Wesley.</p>
+<hr />
+<h2 id="q14-qual-a-eficacia-dos-testes-em-tdd">Q14. Qual a eficácia dos testes em TDD?</h2>
+<ul>
+<li>a. As suítes de TDD são superiores às suítes sistemáticas em vários aspectos.</li>
+<li>b. As suítes são equivalentes.</li>
+<li>c. São inferiores apenas em projetos pequenos.</li>
+<li>d. TDD foca em desenvolvimento e não gera testes eficazes.</li>
+</ul>
+<p><strong>RESPOSTA:</strong> a. As suítes de TDD são superiores às suítes sistemáticas em vários aspectos.</p>
+<blockquote>
+<p>O TDD é uma das práticas centrais dos métodos ágeis, como o XP. Seu uso de testes automatizados se concentra mais na especificação do comportamento do software ainda não escrito do que em testes de regressão.<br />
+<em>(p. xxxiii, Meszaros, 2007)</em><br />
+Test-driven development (TDD), which is one of the core practices of agile methods such as Extreme Programming. This use of automated testing is more about specification of the behavior of the software yet to be written than it is about regression testing.<br />
+<em>(p. xxxiii, Meszaros, 2007)</em></p>
+<p>A eficácia do TDD vem da forma como ele nos permite separar o pensamento sobre o software em duas fases: o que ele deve fazer, e como ele deve fazer.<br />
+<em>(p. xxxiii, Meszaros, 2007)</em><br />
+The effectiveness of TDD comes from the way it lets us separate our thinking about software into two separate phases: what it should do, and how it should do it.<br />
+<em>(p. xxxiii, Meszaros, 2007)</em></p>
+<p>Quando implementamos a funcionalidade de forma incremental, podemos ver cada teste passar, um por um, à medida que escrevemos mais código. É aqui que reside o verdadeiro valor dos testes automatizados: na sua capacidade de “fixar” o comportamento esperado, garantindo que mudanças posteriores não o modifiquem acidentalmente.<br />
+<em>(p. xxxiii, Meszaros, 2007)</em><br />
+This is where the true value of automated unit testing lies: in its ability to “pin down” the functionality of the SUT so that the functionality is not changed accidentally.<br />
+<em>(p. xxxiii, Meszaros, 2007)</em></p>
+<p>O TDD permite a criação de “especificações executáveis”, que não apenas guiam o design como também servem de documentação viva e confiável do sistema.<br />
+<em>(p. xxxiii, Meszaros, 2007)</em><br />
+TDD enables the creation of “executable specifications” that not only guide design but also serve as reliable and living documentation of the system.<br />
+<em>(p. xxxiii, Meszaros, 2007)</em></p>
+</blockquote>
+<h4 id="por-que-as-outras-alternativas-estao-erradas_12">Por que as outras alternativas estão erradas</h4>
+<ul>
+<li><strong>b. As suítes são equivalentes.</strong></li>
+</ul>
+<blockquote>
+<p>O livro indica explicitamente que os testes em TDD têm papel mais amplo e profundo, tanto em design quanto em validação — não sendo "equivalentes", mas sim mais eficazes em vários aspectos.<br />
+<em>(p. xxxiii, Meszaros, 2007)</em></p>
+</blockquote>
+<ul>
+<li><strong>c. São inferiores apenas em projetos pequenos.</strong></li>
+</ul>
+<blockquote>
+<p>Nenhum trecho sugere que as suítes TDD são inferiores em qualquer contexto; pelo contrário, são recomendadas mesmo para sistemas complexos.<br />
+<em>(p. xxxiii, Meszaros, 2007)</em></p>
+</blockquote>
+<ul>
+<li><strong>d. TDD foca em desenvolvimento e não gera testes eficazes.</strong></li>
+</ul>
+<blockquote>
+<p>TDD produz testes eficazes, que funcionam como especificações automatizadas e garantem confiabilidade contínua do sistema.<br />
+<em>(p. xxxiii, Meszaros, 2007)</em></p>
+</blockquote>
+<p><strong>Referência:</strong><br />
+Meszaros, G. (2007). <em>xUnit Test Patterns: Refactoring Test Code</em>. Addison-Wesley.</p>
+<hr />
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Voltar para o topo
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Rodapé" >
+        
+          
+          <a href="../tpi3_tpe3/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: TPI/TPE(3)">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Anterior
+              </span>
+              <div class="md-ellipsis">
+                TPI/TPE(3)
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../../aae3/white_box_test/" class="md-footer__link md-footer__link--next" aria-label="Próximo: Teste Caixa Branca">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Próximo
+              </span>
+              <div class="md-ellipsis">
+                Teste Caixa Branca
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.footer", "navigation.sections", "navigation.expand"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+    
+  </body>
+</html>

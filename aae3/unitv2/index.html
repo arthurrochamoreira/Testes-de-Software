@@ -1,0 +1,2367 @@
+
+<!doctype html>
+<html lang="pt" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../unit_test/">
+      
+      
+        <link rel="next" href="../unitv3/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>Teste de Unidade v2 - Testes de Software</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto Mono";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#testes-de-unidade-e-testes-de-integracao" class="md-skip">
+          Pular para conteúdo
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
+    <a href="../.." title="Testes de Software" class="md-header__button md-logo" aria-label="Testes de Software" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Testes de Software
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Teste de Unidade v2
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-2.69L23.31 12 20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 2c-1.82 0-3.53.5-5 1.35C8 5.08 10 8.3 10 12s-2 6.92-5 8.65C6.47 21.5 8.18 22 10 22a10 10 0 0 0 10-10A10 10 0 0 0 10 2"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Buscar" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Pesquisar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpar" aria-label="Limpar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando busca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/arthurrochamoreira/Testes-de-Software" title="Ir para repositório" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    testes-de-software
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Abas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../tpi_tpe/tpi3_tpe3/" class="md-tabs__link">
+          
+  
+  
+  TPI/TPE
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../white_box_test/" class="md-tabs__link">
+          
+  
+  
+  White-Box Testing
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../unit_test/" class="md-tabs__link">
+          
+  
+  
+  Unit Testing
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../mc_dc/" class="md-tabs__link">
+          
+  
+  
+  MC/DC
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegação" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Testes de Software" class="md-nav__button md-logo" aria-label="Testes de Software" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Testes de Software
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/arthurrochamoreira/Testes-de-Software" title="Ir para repositório" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    testes-de-software
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    TPI/TPE
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            TPI/TPE
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tpi_tpe/tpi3_tpe3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    TPI/TPE(3)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tpi_tpe/tpi4_tpe4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    TPI/TPE(4)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    White-Box Testing
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            White-Box Testing
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../white_box_test/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Teste Caixa Branca
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Unit Testing
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Unit Testing
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unit_test/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Teste de Unidade
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Teste de Unidade v2
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Teste de Unidade v2
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#sumario" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sumário
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-apresentacao-da-disciplina" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Apresentação da Disciplina
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-conceitos-chaves" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Conceitos-Chaves
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-piramide-de-testes" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Pirâmide de Testes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-outros-formatos" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Outros Formatos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-niveis-de-teste-beneficios" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Níveis de Teste – Benefícios
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-niveis-de-teste-consideracoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Níveis de Teste – Considerações
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-niveis-de-teste" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Níveis de Teste
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-niveis-de-teste-diagrama" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Níveis de Teste – Diagrama
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-testes-de-unidade" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Testes de Unidade
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-testes-de-unidade-consideracoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. Testes de Unidade – Considerações
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-elaboracao-dos-casos-de-teste" class="md-nav__link">
+    <span class="md-ellipsis">
+      11. Elaboração dos Casos de Teste
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-exemplo-funcao-bonus" class="md-nav__link">
+    <span class="md-ellipsis">
+      12. Exemplo: função BONUS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-exemplo-funcao-bonus-variante" class="md-nav__link">
+    <span class="md-ellipsis">
+      13. Exemplo: função BONUS (variante)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-primeiro-passo-listar-as-decisoes-do-programa" class="md-nav__link">
+    <span class="md-ellipsis">
+      14. Primeiro passo: listar as decisões do programa
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-relembrando-criterios-caixa-branca" class="md-nav__link">
+    <span class="md-ellipsis">
+      15. Relembrando: critérios caixa-branca
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#16-cobertura-de-decisoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      16. Cobertura de decisões
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#17-cobertura-de-decisoes-continuacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      17. Cobertura de decisões (continuação)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#18-cobertura-de-condicoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      18. Cobertura de condições
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#19-cobertura-de-condicoes-continuacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      19. Cobertura de condições (continuação)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#20-cobertura-de-decisoescondicoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      20. Cobertura de decisões/condições
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#21-cobertura-mcdc" class="md-nav__link">
+    <span class="md-ellipsis">
+      21. Cobertura MC/DC
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#22-cobertura-mcdc-continuacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      22. Cobertura MC/DC (continuação)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#23-cobertura-de-multiplas-condicoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      23. Cobertura de múltiplas condições
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#24-cobertura-de-multiplas-condicoes-continuacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      24. Cobertura de múltiplas condições (continuação)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#25-exemplo-funcao-bonus-proximos-passos-caixa-preta" class="md-nav__link">
+    <span class="md-ellipsis">
+      25. Exemplo: função BONUS – Próximos passos (caixa-preta)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#26-refino-dos-casos-de-teste-caixa-preta" class="md-nav__link">
+    <span class="md-ellipsis">
+      26. Refino dos casos de teste caixa-preta
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#27-a-ordem-dos-testes" class="md-nav__link">
+    <span class="md-ellipsis">
+      27. A ordem dos testes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#28-a-ordem-dos-testes-de-unidade-comparacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      28. A ordem dos testes de unidade – Comparação
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#29-a-execucao-dos-testes" class="md-nav__link">
+    <span class="md-ellipsis">
+      29. A execução dos testes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#30-a-execucao-dos-testes-continuacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      30. A execução dos testes (continuação)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#31-testes-de-integracao-definicoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      31. Testes de Integração – Definições
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#32-testes-de-integracao-caracteristicas" class="md-nav__link">
+    <span class="md-ellipsis">
+      32. Testes de Integração – Características
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#33-testes-de-integracao-drivers-e-stubs" class="md-nav__link">
+    <span class="md-ellipsis">
+      33. Testes de Integração – Drivers e Stubs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#34-testes-de-integracao-stub" class="md-nav__link">
+    <span class="md-ellipsis">
+      34. Testes de Integração – Stub
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#35-testes-de-integracao-motivacoes-para-drivers-e-stubs" class="md-nav__link">
+    <span class="md-ellipsis">
+      35. Testes de Integração – Motivações para Drivers e Stubs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#36-testes-de-integracao-estrategia-top-down" class="md-nav__link">
+    <span class="md-ellipsis">
+      36. Testes de Integração – Estratégia Top-Down
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#37-testes-de-integracao-diretrizes-top-down" class="md-nav__link">
+    <span class="md-ellipsis">
+      37. Testes de Integração – Diretrizes Top-Down
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#38-testes-de-integracao-vantagens-top-down" class="md-nav__link">
+    <span class="md-ellipsis">
+      38. Testes de Integração – Vantagens Top-Down
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#39-testes-de-integracao-problemas-top-down" class="md-nav__link">
+    <span class="md-ellipsis">
+      39. Testes de Integração – Problemas Top-Down
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#40-testes-de-integracao-estrategia-bottom-up" class="md-nav__link">
+    <span class="md-ellipsis">
+      40. Testes de Integração – Estratégia Bottom-Up
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#41-testes-de-integracao-drivers" class="md-nav__link">
+    <span class="md-ellipsis">
+      41. Testes de Integração – Drivers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#42-referencias" class="md-nav__link">
+    <span class="md-ellipsis">
+      42. Referências
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unitv3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Teste de Unidade v3
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    MC/DC
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            MC/DC
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mc_dc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Modified Condition/Decision Coverage (MC/DC)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#sumario" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sumário
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-apresentacao-da-disciplina" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Apresentação da Disciplina
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-conceitos-chaves" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Conceitos-Chaves
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-piramide-de-testes" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Pirâmide de Testes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-outros-formatos" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Outros Formatos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-niveis-de-teste-beneficios" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Níveis de Teste – Benefícios
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-niveis-de-teste-consideracoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Níveis de Teste – Considerações
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-niveis-de-teste" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Níveis de Teste
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-niveis-de-teste-diagrama" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Níveis de Teste – Diagrama
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-testes-de-unidade" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Testes de Unidade
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-testes-de-unidade-consideracoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. Testes de Unidade – Considerações
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-elaboracao-dos-casos-de-teste" class="md-nav__link">
+    <span class="md-ellipsis">
+      11. Elaboração dos Casos de Teste
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-exemplo-funcao-bonus" class="md-nav__link">
+    <span class="md-ellipsis">
+      12. Exemplo: função BONUS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-exemplo-funcao-bonus-variante" class="md-nav__link">
+    <span class="md-ellipsis">
+      13. Exemplo: função BONUS (variante)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-primeiro-passo-listar-as-decisoes-do-programa" class="md-nav__link">
+    <span class="md-ellipsis">
+      14. Primeiro passo: listar as decisões do programa
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-relembrando-criterios-caixa-branca" class="md-nav__link">
+    <span class="md-ellipsis">
+      15. Relembrando: critérios caixa-branca
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#16-cobertura-de-decisoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      16. Cobertura de decisões
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#17-cobertura-de-decisoes-continuacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      17. Cobertura de decisões (continuação)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#18-cobertura-de-condicoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      18. Cobertura de condições
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#19-cobertura-de-condicoes-continuacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      19. Cobertura de condições (continuação)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#20-cobertura-de-decisoescondicoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      20. Cobertura de decisões/condições
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#21-cobertura-mcdc" class="md-nav__link">
+    <span class="md-ellipsis">
+      21. Cobertura MC/DC
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#22-cobertura-mcdc-continuacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      22. Cobertura MC/DC (continuação)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#23-cobertura-de-multiplas-condicoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      23. Cobertura de múltiplas condições
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#24-cobertura-de-multiplas-condicoes-continuacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      24. Cobertura de múltiplas condições (continuação)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#25-exemplo-funcao-bonus-proximos-passos-caixa-preta" class="md-nav__link">
+    <span class="md-ellipsis">
+      25. Exemplo: função BONUS – Próximos passos (caixa-preta)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#26-refino-dos-casos-de-teste-caixa-preta" class="md-nav__link">
+    <span class="md-ellipsis">
+      26. Refino dos casos de teste caixa-preta
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#27-a-ordem-dos-testes" class="md-nav__link">
+    <span class="md-ellipsis">
+      27. A ordem dos testes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#28-a-ordem-dos-testes-de-unidade-comparacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      28. A ordem dos testes de unidade – Comparação
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#29-a-execucao-dos-testes" class="md-nav__link">
+    <span class="md-ellipsis">
+      29. A execução dos testes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#30-a-execucao-dos-testes-continuacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      30. A execução dos testes (continuação)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#31-testes-de-integracao-definicoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      31. Testes de Integração – Definições
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#32-testes-de-integracao-caracteristicas" class="md-nav__link">
+    <span class="md-ellipsis">
+      32. Testes de Integração – Características
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#33-testes-de-integracao-drivers-e-stubs" class="md-nav__link">
+    <span class="md-ellipsis">
+      33. Testes de Integração – Drivers e Stubs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#34-testes-de-integracao-stub" class="md-nav__link">
+    <span class="md-ellipsis">
+      34. Testes de Integração – Stub
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#35-testes-de-integracao-motivacoes-para-drivers-e-stubs" class="md-nav__link">
+    <span class="md-ellipsis">
+      35. Testes de Integração – Motivações para Drivers e Stubs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#36-testes-de-integracao-estrategia-top-down" class="md-nav__link">
+    <span class="md-ellipsis">
+      36. Testes de Integração – Estratégia Top-Down
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#37-testes-de-integracao-diretrizes-top-down" class="md-nav__link">
+    <span class="md-ellipsis">
+      37. Testes de Integração – Diretrizes Top-Down
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#38-testes-de-integracao-vantagens-top-down" class="md-nav__link">
+    <span class="md-ellipsis">
+      38. Testes de Integração – Vantagens Top-Down
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#39-testes-de-integracao-problemas-top-down" class="md-nav__link">
+    <span class="md-ellipsis">
+      39. Testes de Integração – Problemas Top-Down
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#40-testes-de-integracao-estrategia-bottom-up" class="md-nav__link">
+    <span class="md-ellipsis">
+      40. Testes de Integração – Estratégia Bottom-Up
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#41-testes-de-integracao-drivers" class="md-nav__link">
+    <span class="md-ellipsis">
+      41. Testes de Integração – Drivers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#42-referencias" class="md-nav__link">
+    <span class="md-ellipsis">
+      42. Referências
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="testes-de-unidade-e-testes-de-integracao">Testes de Unidade e Testes de Integração</h1>
+<h2 id="sumario">Sumário</h2>
+<ol>
+<li>Apresentação da Disciplina  </li>
+<li>Conceitos-Chaves  </li>
+<li>Pirâmide de Testes  </li>
+<li>Outros Formatos de Estratégia de Testes  </li>
+<li>Níveis de Teste – Benefícios  </li>
+<li>Níveis de Teste – Considerações  </li>
+</ol>
+<hr />
+<h2 id="1-apresentacao-da-disciplina">1. Apresentação da Disciplina</h2>
+<p><strong>Universidade de Brasília</strong><br />
+<strong>Faculdade Gama</strong><br />
+<strong>Engenharia de Software</strong></p>
+<p><strong>Disciplina:</strong> <code>206580 – Testes de Software</code><br />
+<strong>Tema:</strong> <em>Testes de Software: Testes de Unidade e Testes de Integração</em></p>
+<p><strong>Docente:</strong><br />
+<strong>Elaine Venson</strong><br />
+<em>elainevenson@unb.br</em></p>
+<hr />
+<h2 id="2-conceitos-chaves">2. Conceitos-Chaves</h2>
+<p><strong>NÍVEL</strong><br />
+- Unitário<br />
+- Integração<br />
+- Sistema<br />
+- Aceitação</p>
+<p><strong>OBJETIVO (tipo de testes)</strong><br />
+- Função<br />
+- Segurança<br />
+- Estresse<br />
+- Usabilidade<br />
+- Avaliação desempenho</p>
+<p><strong>TÉCNICA</strong><br />
+- Caixa-branca<br />
+- Caixa-preta<br />
+- Particionamento de equivalência<br />
+- Análise de valor limite</p>
+<p><strong>AMBIENTE</strong><br />
+- mainframe<br />
+- Cliente-servidor<br />
+- web<br />
+- outros</p>
+<p><strong>Eixos</strong><br />
+- ONDE TESTAR<br />
+- QUANDO TESTAR<br />
+- COMO TESTAR<br />
+- O QUE TESTAR  </p>
+<hr />
+<h2 id="3-piramide-de-testes">3. Pirâmide de Testes</h2>
+<p><strong>Hierarquia de testes com base em velocidade, custo e quantidade:</strong></p>
+<ul>
+<li><strong>Topo (menos quantidade, maior custo, menor velocidade):</strong>  </li>
+<li>
+<p>Aceitação</p>
+</li>
+<li>
+<p><strong>Intermediários:</strong>  </p>
+</li>
+<li>Sistema  </li>
+<li>
+<p>Integração  </p>
+</li>
+<li>
+<p><strong>Base (mais quantidade, menor custo, maior velocidade):</strong>  </p>
+</li>
+<li>Unidade</li>
+</ul>
+<p><strong>Eixos laterais:</strong><br />
+- Esquerda: Velocidade (decrescente de cima para baixo)<br />
+- Direita: Custo (crescente de baixo para cima)<br />
+- Inferior: Quantidade (crescente da direita para a esquerda)</p>
+<hr />
+<h2 id="4-outros-formatos">4. Outros Formatos</h2>
+<p><strong>A. The Testing Trophy</strong><br />
+- Static<br />
+- Unit<br />
+- Integration<br />
+- End to End  </p>
+<p><strong>Por Kent C. Dodds</strong><br />
+- End to end com <a href="https://www.cypress.io">Cypress</a><br />
+- Integration &amp; Unit com <a href="https://jestjs.io">Jest</a><br />
+- Static com <a href="https://flow.org">Flowtype</a> e <a href="https://eslint.org">ESLint</a></p>
+<p><strong>B. Microservices Test Strategy (Spotify Labs)</strong><br />
+- Integrated<br />
+- Integration<br />
+- Implementation Detail</p>
+<p><em>Nota:</em> Priorizar testes de Integração. Menos testes de detalhe de implementação e menos ainda testes integrados (idealmente nenhum).</p>
+<hr />
+<h2 id="5-niveis-de-teste-beneficios">5. Níveis de Teste – Benefícios</h2>
+<ul>
+<li>Evita redundância de testes: cada nível trata uma classe específica de defeitos.</li>
+<li>Aplicação conforme o tamanho do software:</li>
+<li>Software para uso do próprio autor → até nível de integração.</li>
+<li>Softwares comerciais em larga escala → requerem testes em níveis mais elevados.</li>
+</ul>
+<hr />
+<h2 id="6-niveis-de-teste-consideracoes">6. Níveis de Teste – Considerações</h2>
+<ul>
+<li>Os níveis <strong>não são necessariamente sequenciais</strong>.</li>
+<li>As características do sistema a ser testado irão determinar:</li>
+<li>Níveis de teste  </li>
+<li>Tipos de testes  </li>
+<li>Técnicas de derivação de casos de teste</li>
+</ul>
+<hr />
+<h2 id="7-niveis-de-teste">7. Níveis de Teste</h2>
+<ol>
+<li>Testes de unidade  </li>
+<li>Testes de integração  </li>
+<li>Testes de função  </li>
+<li>Testes de sistema  </li>
+<li>Testes de aceitação</li>
+</ol>
+<hr />
+<h2 id="8-niveis-de-teste-diagrama">8. Níveis de Teste – Diagrama</h2>
+<p>Fonte: [Myers]</p>
+<p>[End User]
+↓
+[Requirements] → [Acceptance Test]
+↓
+[Objectives] → [System Test]
+↓
+[External Specification] → [Function Test]
+↓
+[System Design] → [Integration Test]
+↓
+[Program Structure Design]
+↓
+[Module Interface Specifications] → [Module Test]
+↓
+[Code]</p>
+<p>Esse diagrama mostra como os diferentes níveis de teste correspondem a diferentes etapas do desenvolvimento de software, desde o código até a interação com o usuário final.</p>
+<hr />
+<h2 id="9-testes-de-unidade">9. Testes de Unidade</h2>
+<ul>
+<li>Processo de testar funções, métodos, procedimentos, sub-rotinas ou subprogramas <strong>individualmente</strong>.</li>
+<li>Objetivo: verificar o <strong>menor elemento testável</strong> de um software.</li>
+<li>Em linguagens procedurais: pode ser uma função ou procedimento.</li>
+<li>Em linguagens orientadas a objeto: geralmente é um método.</li>
+<li>Geralmente realizado pelo <strong>desenvolvedor</strong>.</li>
+<li>Casos de teste com foco nos <strong>algoritmos</strong> e <strong>lógica de programação</strong>.</li>
+<li>Tipicamente <strong>caixa-branca</strong>, podendo ser complementado com <strong>caixa-preta</strong>.</li>
+</ul>
+<p><strong>Motivações:</strong>
+- Gerenciar os elementos do teste, começando pelo menor nível.
+- Facilitar a <strong>depuração</strong> (identificação do defeito).
+- Permitir <strong>paralelismo</strong> na execução dos testes.</p>
+<hr />
+<h2 id="10-testes-de-unidade-consideracoes">10. Testes de Unidade – Considerações</h2>
+<ul>
+<li><strong>Objetivo:</strong> comparar a unidade com sua especificação funcional ou de interface, demonstrando que ela <strong>não atende</strong> a essa especificação, se for o caso.</li>
+</ul>
+<p><strong>Questões importantes:</strong>
+- Como elaborar os casos de teste?<br />
+- Qual a ordem em que as unidades devem ser testadas e integradas?<br />
+- Como será a execução dos testes?</p>
+<hr />
+<h2 id="11-elaboracao-dos-casos-de-teste">11. Elaboração dos Casos de Teste</h2>
+<p><strong>Informações necessárias:</strong>
+- A <strong>especificação da unidade</strong> (entradas e saídas esperadas).
+- O <strong>código-fonte</strong> da unidade.</p>
+<p><strong>Procedimento:</strong>
+1. Analisar o código utilizando <strong>métodos caixa-branca</strong>.
+2. Complementar com <strong>casos de teste caixa-preta</strong> baseados na especificação da unidade.</p>
+<hr />
+<h2 id="12-exemplo-funcao-bonus">12. Exemplo: função BONUS</h2>
+<p><strong>Especificação:</strong></p>
+<ul>
+<li>A função <code>BONUS</code> adiciona <code>$200</code> ao salário de todos os funcionários do(s) departamento(s) com o maior resultado de vendas.</li>
+<li>Se o salário de um funcionário elegível for <strong>$15.000 ou mais</strong>, ou se o funcionário for um <strong>gerente</strong>, o bônus é <strong>reduzido para $100</strong>.</li>
+<li>Em caso de sucesso, a função <strong>retorna 0</strong>.</li>
+<li>Se <strong>alguma das tabelas estiver vazia</strong>, a função <strong>retorna código de erro 1</strong>.</li>
+<li>Se <strong>nenhum funcionário elegível</strong> for encontrado, <strong>retorna código de erro 2</strong>.</li>
+</ul>
+<hr />
+<h2 id="13-exemplo-funcao-bonus-variante">13. Exemplo: função BONUS (variante)</h2>
+<ul>
+<li>Especificação da função BONUS:</li>
+<li>Adiciona <strong>\$2 000</strong> ao salário de todos os funcionários no departamento ou departamentos com o maior resultado de vendas.</li>
+<li>Se o salário de um funcionário elegível for <strong>\$15 000</strong> ou mais, ou se o funcionário for um <strong>gerente</strong>, o salário é adicionado em apenas <strong>\$1 000</strong>.</li>
+<li>Retorno:</li>
+<li><code>0</code>: sucesso.</li>
+<li><code>1</code>: se ao menos uma das tabelas estiver vazia.</li>
+<li><code>2</code>: se a função não encontrar funcionários em um departamento elegível.</li>
+</ul>
+<hr />
+<h2 id="14-primeiro-passo-listar-as-decisoes-do-programa">14. Primeiro passo: listar as decisões do programa</h2>
+<blockquote>
+<p><em>Obs.:</em> as instruções <code>DO</code> não precisam de atenção especial, pois qualquer caso de teste que execute um <code>DO</code> cobrará ambas as ramificações (entrar e pular o corpo do loop).</p>
+</blockquote>
+<hr />
+<h2 id="15-relembrando-criterios-caixa-branca">15. Relembrando: critérios caixa-branca</h2>
+<ul>
+<li>Cobertura de instruções  </li>
+<li>Cobertura de decisões  </li>
+<li>Cobertura de condições  </li>
+<li>Cobertura de decisões-condições  </li>
+<li>Cobertura de múltiplas condições  </li>
+</ul>
+<hr />
+<h2 id="16-cobertura-de-decisoes">16. Cobertura de decisões</h2>
+<table>
+<thead>
+<tr>
+<th>Decisão</th>
+<th>Situação para True</th>
+<th>Situação para False</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2</td>
+<td><code>ESIZE ≤ 0</code> <strong>ou</strong> <code>DSIZE ≤ 0</code></td>
+<td><code>ESIZE &gt; 0</code> <strong>e</strong> <code>DSIZE &gt; 0</code></td>
+</tr>
+<tr>
+<td>6</td>
+<td>Vai sempre ocorrer pelo menos uma vez (ordenar DEPTTAB para que um dept. menor em vendas venha depois)</td>
+<td></td>
+</tr>
+<tr>
+<td>9</td>
+<td>Vai sempre ocorrer pelo menos uma vez (departamentos com vendas diferentes)</td>
+<td></td>
+</tr>
+<tr>
+<td>13</td>
+<td>Há um empregado em um departamento elegível</td>
+<td>Há um empregado em um departamento <strong>não</strong> elegível</td>
+</tr>
+<tr>
+<td>16</td>
+<td>Um empregado de dept. elegível é gerente <strong>ou</strong> recebe ≥ <code>LSALARY</code></td>
+<td>Um empregado de dept. elegível não é gerente <strong>e</strong> recebe &lt; <code>LSALARY</code></td>
+</tr>
+<tr>
+<td>21</td>
+<td>Um departamento elegível <strong>não</strong> contém empregados</td>
+<td>Um departamento elegível contém ao menos um empregado</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="17-cobertura-de-decisoes-continuacao">17. Cobertura de decisões (continuação)</h2>
+<ul>
+<li>Elaborar casos de teste suficientes para invocar ambos os resultados de cada uma das decisões.  </li>
+<li>Como duas situações (decisões 6 e 9) sempre ocorrem, são <strong>10</strong> situações que precisam ser consideradas.</li>
+</ul>
+<hr />
+<h2 id="18-cobertura-de-condicoes">18. Cobertura de condições</h2>
+<table>
+<thead>
+<tr>
+<th>D</th>
+<th>Condição</th>
+<th>Situação para True</th>
+<th>Situação para False</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2</td>
+<td><code>ESIZE ≤ 0</code></td>
+<td><code>ESIZE ≤ 0</code></td>
+<td><code>ESIZE &gt; 0</code></td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>DSIZE ≤ 0</code></td>
+<td><code>DSIZE ≤ 0</code></td>
+<td><code>DSIZE &gt; 0</code></td>
+</tr>
+<tr>
+<td>6</td>
+<td><code>SALES(I) ≥ MAXSALES</code></td>
+<td>Vai sempre ocorrer pelo menos uma vez (ordenar DEPTTAB…)</td>
+<td></td>
+</tr>
+<tr>
+<td>9</td>
+<td><code>SALES(J) = MAXSALES</code></td>
+<td>Vai sempre ocorrer pelo menos uma vez (departamentos com vendas diferentes)</td>
+<td></td>
+</tr>
+<tr>
+<td>13</td>
+<td><code>EMPTAB.DEPT(K) = DEPTTAB.DEPT(J)</code></td>
+<td>Há um empregado em um departamento elegível</td>
+<td>Há um empregado em um departamento não elegível</td>
+</tr>
+<tr>
+<td>16</td>
+<td><code>SALARY(K) ≥ LSALARY</code></td>
+<td>Empregado de dept. elegível recebe ≥ <code>LSALARY</code></td>
+<td>Empregado de dept. elegível recebe &lt; <code>LSALARY</code></td>
+</tr>
+<tr>
+<td>16</td>
+<td><code>CODE(K) = MGR</code></td>
+<td>Empregado de dept. elegível é gerente</td>
+<td>Empregado de dept. elegível não é gerente</td>
+</tr>
+<tr>
+<td>21</td>
+<td><code>¬FOUND</code></td>
+<td>Um departamento elegível não contém empregados</td>
+<td>Um departamento elegível contém ao menos um empregado</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="19-cobertura-de-condicoes-continuacao">19. Cobertura de condições (continuação)</h2>
+<ul>
+<li>Elaborar casos de teste suficientes para invocar ambos os resultados de cada condição em cada decisão.  </li>
+<li>Apenas decisões 2 e 16 possuem mais de uma condição.  </li>
+<li>Como duas situações vão sempre ocorrer, são <strong>14</strong> situações que precisam ser consideradas.</li>
+</ul>
+<hr />
+<h2 id="20-cobertura-de-decisoescondicoes">20. Cobertura de decisões/condições</h2>
+<ul>
+<li>A cobertura combinada decisões/condições elimina a maioria das fraquezas dos casos de teste baseados apenas em condições.  </li>
+<li>Todos os resultados de todas as condições <strong>E</strong> de todas as decisões seriam considerados.  </li>
+<li><em>Exemplo:</em> Para a decisão 16 gerar ambos resultados, bastaria fazer um funcionário elegível gerente e outro não gerente.  </li>
+<li><strong>Observação:</strong> se o compilador usa <em>short-circuit</em> para <code>OR</code>, a condição <code>CODE(K)=MGR</code> nunca seria avaliada para <code>TRUE</code> se o primeiro termo já for <code>TRUE</code>.</li>
+</ul>
+<hr />
+<h2 id="21-cobertura-mcdc">21. Cobertura MC/DC</h2>
+<ul>
+<li><strong>Objetivo:</strong> cada condição que afeta independentemente o resultado de uma decisão deve assumir todos os valores possíveis pelo menos uma vez.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>D</th>
+<th>Condição</th>
+<th>Situação para True</th>
+<th>Situação para False</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2</td>
+<td><code>ESIZE ≤ 0</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>DSIZE ≤ 0</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>6</td>
+<td><code>SALES(I) ≥ MAXSALES</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>9</td>
+<td><code>SALES(J) = MAXSALES</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>13</td>
+<td><code>EMPTAB.DEPT(K) = DEPTTAB.DEPT(J)</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>16</td>
+<td><code>SALARY(K) ≥ LSALARY</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>16</td>
+<td><code>CODE(K) = MGR</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>21</td>
+<td><code>¬FOUND</code></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="22-cobertura-mcdc-continuacao">22. Cobertura MC/DC (continuação)</h2>
+<ul>
+<li>Decisões 2 e 16 têm duas condições → são necessários <strong>3 casos de teste</strong> cada (nº de condições + 1).  </li>
+<li><strong>Decisão 2:</strong></li>
+<li>(V F) → V  &nbsp; e &nbsp; (F F) → F  </li>
+<li>(F V) → V  &nbsp; e &nbsp; (F F) → F  </li>
+<li><strong>Decisão 16:</strong></li>
+<li>(V F) → V  &nbsp; e &nbsp; (F F) → F  </li>
+<li>(F V) → V  &nbsp; e &nbsp; (F F) → F  </li>
+</ul>
+<hr />
+<h2 id="23-cobertura-de-multiplas-condicoes">23. Cobertura de múltiplas condições</h2>
+<ul>
+<li><strong>Definição:</strong> invocar <strong>todas</strong> as combinações possíveis de condições em cada decisão pelo menos uma vez.  </li>
+<li>Decisões 6, 9, 13 e 21 → 2 combinações cada.  </li>
+<li>Decisões 2 e 16 → 4 combinações cada.  </li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>D</th>
+<th>Condição</th>
+<th>Situação para True</th>
+<th>Situação para False</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2</td>
+<td><code>ESIZE ≤ 0</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>DSIZE ≤ 0</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+</tr>
+<tr>
+<td>16</td>
+<td><code>CODE(K) = MGR</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>21</td>
+<td><code>¬FOUND</code></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="24-cobertura-de-multiplas-condicoes-continuacao">24. Cobertura de múltiplas condições (continuação)</h2>
+<ul>
+<li>Alguns problemas permanecem:</li>
+<li>Retorno = 0 não testado.  </li>
+<li>Defeitos de inicialização de variáveis (ex.: <code>LSALARY = 15000.01</code>) podem passar despercebidos.  </li>
+<li>Comparações (ex.: <code>&gt;</code> vs <code>≥</code>) podem não ser detectadas.  </li>
+<li>Defeitos ao acessar o último registro das tabelas não seriam detectados.  </li>
+<li><strong>Conclusão:</strong> cobertura de múltiplas condições é superior a outros critérios, mas não suficiente isoladamente.</li>
+</ul>
+<hr />
+<h2 id="25-exemplo-funcao-bonus-proximos-passos-caixa-preta">25. Exemplo: função BONUS – Próximos passos (caixa-preta)</h2>
+<p><strong>Valores de entrada (análise de valor limite):</strong>
+1. <code>EMPTAB</code> tem 1 registro.<br />
+2. <code>EMPTAB</code> tem o número máximo de registros.<br />
+3. <code>EMPTAB</code> tem 0 registros.<br />
+4. <code>DEPTTAB</code> tem 1 registro.<br />
+5. <code>DEPTTAB</code> tem o número máximo de registros.<br />
+6. <code>DEPTTAB</code> tem 0 registros.<br />
+7. Departamento elegível com 1 funcionário.<br />
+8. Departamento elegível com número máximo de funcionários.<br />
+9. Departamento elegível sem funcionários.<br />
+10. Todos os departamentos têm o mesmo valor de venda.<br />
+11. Departamento elegível é a primeira entrada em <code>DEPTTAB</code>.<br />
+12. Departamento elegível é a última entrada em <code>DEPTTAB</code>.<br />
+13. Funcionário elegível é a primeira entrada em <code>EMPTAB</code>.<br />
+14. Funcionário elegível é a última entrada em <code>EMPTAB</code>.<br />
+15. Funcionário elegível é gerente.<br />
+16. Funcionário elegível não é gerente.<br />
+17. Funcionário elegível (não gerente) recebe \$ 14 999,99.<br />
+18. Funcionário elegível (não gerente) recebe \$ 15 000.<br />
+19. Funcionário elegível (não gerente) recebe \$ 15 000,01.  </p>
+<p><strong>Limites de saída:</strong>
+20. <code>ERRCODE = 0</code><br />
+21. <code>ERRCODE = 1</code><br />
+22. <code>ERRCODE = 2</code><br />
+23. Salário aumentado = \$ 299 999,99  </p>
+<p><strong>Baseado em Error-Guessing:</strong>
+24. Dois departamentos com vendas máximas, um sem funcionários seguido por outro com funcionários.</p>
+<hr />
+<h2 id="26-refino-dos-casos-de-teste-caixa-preta">26. Refino dos casos de teste caixa-preta</h2>
+<ol>
+<li>Excluir situações impraticáveis (ex.: situações 2, 5, 8).  </li>
+<li>Confrontar situações remanescentes com casos já existentes para identificar valor-limite não cobertos (situações 1, 4, 7, 10, 14, 17, 18, 19, 20, 23, 24).  </li>
+<li>Adicionar novos casos (menor conjunto necessário).  <blockquote>
+<p><em>Obs.:</em> não alterar casos existentes para não comprometer cobertura.</p>
+</blockquote>
+</li>
+</ol>
+<hr />
+<h2 id="27-a-ordem-dos-testes">27. A ordem dos testes</h2>
+<ul>
+<li><strong>Teste Não-Incremental:</strong> cada unidade testada isoladamente.  </li>
+<li><strong>Teste Incremental:</strong> combinar com unidades já testadas:</li>
+<li><strong>Bottom-up</strong>  </li>
+<li><strong>Top-down</strong></li>
+</ul>
+<hr />
+<h2 id="28-a-ordem-dos-testes-de-unidade-comparacao">28. A ordem dos testes de unidade – Comparação</h2>
+<table>
+<thead>
+<tr>
+<th>Critério</th>
+<th>Não-incremental</th>
+<th>Incremental</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Esforço</td>
+<td>Mais (criar drivers &amp; stubs)</td>
+<td>Menos (reusar unidades testadas)</td>
+</tr>
+<tr>
+<td>Tempo de execução</td>
+<td>Menor</td>
+<td>Maior</td>
+</tr>
+<tr>
+<td>Paralelismo</td>
+<td>Maior</td>
+<td>Menor</td>
+</tr>
+<tr>
+<td>Defeitos de integração</td>
+<td>Descobertos tardiamente</td>
+<td>Detectados mais cedo</td>
+</tr>
+<tr>
+<td>Depuração</td>
+<td>Mais difícil</td>
+<td>Mais fácil</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="29-a-execucao-dos-testes">29. A execução dos testes</h2>
+<ul>
+<li>A saída esperada faz parte do caso de teste. Discrepâncias podem apontar:</li>
+<li>Defeito na unidade.  </li>
+<li>Expectativa de saída incorreta.  </li>
+<li>Verificar <strong>efeitos colaterais</strong> inesperados (valores alterados indevidamente).  </li>
+<li>Ferramentas de teste podem automatizar:</li>
+<li>Geração de drivers.  </li>
+<li>Análise de fluxo.  </li>
+</ul>
+<hr />
+<h2 id="30-a-execucao-dos-testes-continuacao">30. A execução dos testes (continuação)</h2>
+<ul>
+<li>Desenvolvedores podem trocar as unidades testadas para facilitar.  </li>
+<li>Evitar casos de teste descartáveis; torná-los <strong>reutilizáveis</strong>.  </li>
+<li>Se muitos defeitos são encontrados em uma unidade, testar <strong>ainda mais</strong>.  </li>
+<li>Lembrar: objetivo não é provar que funciona, mas <strong>demonstrar defeitos</strong>.</li>
+</ul>
+<hr />
+<h2 id="31-testes-de-integracao-definicoes">31. Testes de Integração – Definições</h2>
+<ol>
+<li>Garantir que componentes funcionem corretamente quando combinados.  </li>
+<li>Detectar defeitos nas especificações das <strong>interfaces</strong> dos componentes integrados.</li>
+</ol>
+<hr />
+<h2 id="32-testes-de-integracao-caracteristicas">32. Testes de Integração – Características</h2>
+<ol>
+<li>Normalmente <strong>incremental</strong>.  </li>
+<li>Testa partes do sistema e então as integra até completar o produto.  </li>
+<li>Estratégias: <strong>top-down</strong>, <strong>bottom-up</strong> ou <strong>mista</strong>, baseadas em acoplamento/coesão.</li>
+</ol>
+<hr />
+<h2 id="33-testes-de-integracao-drivers-e-stubs">33. Testes de Integração – Drivers e Stubs</h2>
+<ul>
+<li>Quando nem todos os componentes estão disponíveis:</li>
+<li>Criar <strong>Drivers</strong> e <strong>Stubs</strong> para simular funcionamento e interfaces.</li>
+</ul>
+<hr />
+<h2 id="34-testes-de-integracao-stub">34. Testes de Integração – Stub</h2>
+<ul>
+<li>Stub (esboço de método):  </li>
+<li>Substitui componente não operacional.  </li>
+<li>Não implementa lógica, apenas responde a entradas predefinidas.  </li>
+<li>Relação estímulo/resposta programada.</li>
+</ul>
+<hr />
+<h2 id="35-testes-de-integracao-motivacoes-para-drivers-e-stubs">35. Testes de Integração – Motivações para Drivers e Stubs</h2>
+<ul>
+<li>Componente em desenvolvimento ou não implementado.  </li>
+<li>Componente com muitos defeitos que bloqueiam testes.  </li>
+<li>Componentes que dificultam testes (autenticação, janela de tempo, etc.).  </li>
+<li>Componentes que tornam os testes lentos (ex.: inicialização de BD).  </li>
+<li>Provocar situações excepcionais (erros de rede, falta de espaço em disco).</li>
+</ul>
+<hr />
+<h2 id="36-testes-de-integracao-estrategia-top-down">36. Testes de Integração – Estratégia Top-Down</h2>
+<ul>
+<li>Inicia hierarquia pelos níveis mais altos de controle.  </li>
+<li><strong>Requer stubs</strong> para substituir componentes ainda não integrados.</li>
+</ul>
+<hr />
+<h2 id="37-testes-de-integracao-diretrizes-top-down">37. Testes de Integração – Diretrizes Top-Down</h2>
+<ul>
+<li>Priorizar unidades críticas.  </li>
+<li>Priorizar unidades que implementam E/S de dados (simplificar criação e verificação de casos).</li>
+</ul>
+<hr />
+<h2 id="38-testes-de-integracao-vantagens-top-down">38. Testes de Integração – Vantagens Top-Down</h2>
+<ul>
+<li>Detecta erros de fatores humanos cedo.  </li>
+<li>Permite apresentar versão inicial ao usuário.  </li>
+<li>Confirma solidez da arquitetura.  </li>
+<li>Eleva a moral da equipe.</li>
+</ul>
+<hr />
+<h2 id="39-testes-de-integracao-problemas-top-down">39. Testes de Integração – Problemas Top-Down</h2>
+<ul>
+<li>Dificuldade em representar casos de módulos nos níveis mais baixos.  </li>
+<li>Difícil correlacionar saída com resultados de unidades distantes.  </li>
+<li>Mudanças nos módulos do topo exigem retrabalho.  </li>
+<li>Risco de esquecer testes no topo após criar stubs.</li>
+</ul>
+<hr />
+<h2 id="40-testes-de-integracao-estrategia-bottom-up">40. Testes de Integração – Estratégia Bottom-Up</h2>
+<ul>
+<li>Inicia pelos componentes de níveis mais baixos, subindo na hierarquia.  </li>
+<li><strong>Requer drivers</strong> para substituir componentes ainda não integrados.</li>
+</ul>
+<hr />
+<h2 id="41-testes-de-integracao-drivers">41. Testes de Integração – Drivers</h2>
+<ul>
+<li>Disparam testes, fornecem dados, controlam execução e relatam resultados.  </li>
+<li>Controlam execução de um ou mais testes, passando informações ao componente alvo.  </li>
+<li><strong>Vantagens:</strong>  </li>
+<li>Geralmente mais fáceis de implementar que stubs.  </li>
+<li>Não precisam de múltiplas versões.</li>
+</ul>
+<hr />
+<h2 id="42-referencias">42. Referências</h2>
+<ul>
+<li><strong>Myers, G. J. et al.</strong> <em>The Art of Software Testing</em>. John Wiley &amp; Sons, 2012. (Cap. 5)</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Voltar para o topo
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Rodapé" >
+        
+          
+          <a href="../unit_test/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Teste de Unidade">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Anterior
+              </span>
+              <div class="md-ellipsis">
+                Teste de Unidade
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../unitv3/" class="md-footer__link md-footer__link--next" aria-label="Próximo: Teste de Unidade v3">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Próximo
+              </span>
+              <div class="md-ellipsis">
+                Teste de Unidade v3
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.footer", "navigation.sections", "navigation.expand"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+    
+  </body>
+</html>
