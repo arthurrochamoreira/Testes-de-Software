@@ -37,6 +37,8 @@ nav:
   - TPI/TPE:
     - TPI/TPE(3): tpi_tpe/tpi3_tpe3.md
     - TPI/TPE(4): tpi_tpe/tpi4_tpe4.md
+  - AAE: 
+    - AAE3: aae3/aae3.md
   - White-Box Testing:
       - Teste Caixa Branca: aae3/white_box_test.md
   - Unit Testing:
