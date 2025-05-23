@@ -527,9 +527,6 @@ Beck, K. (2002). *Test-Driven Development: By Example*. Addison-Wesley.
 
 * **c. Em sistemas embarcados.**
 
-  > Nenhum dos livros consultados afirma que sistemas embarcados são incompatíveis com TDD. A prática pode ser mais difícil, mas ainda aplicável com arquitetura apropriada.  
-  > *(Não encontrado nos PDFs)*
-
 * **d. Quando a pirâmide de testes não é aplicada.**
 
   > A pirâmide de testes é uma prática auxiliar, não uma condição para aplicar TDD. O TDD foca na escrita de testes automatizados de unidade, independentemente da estrutura completa de testes adotada.  
@@ -569,9 +566,6 @@ Beck, K. (2002). *Test-Driven Development: By Example*. Addison-Wesley.
   > *(Tradução livre de Meszaros, 2007, p. 33)*
 
 * **c. São inferiores apenas em projetos pequenos.**
-
-  > Nenhum trecho sugere que as suítes TDD são inferiores em qualquer contexto; pelo contrário, são recomendadas mesmo para sistemas complexos.  
-  > *(Tradução livre de Meszaros, 2007, p. 33)*
 
 * **d. TDD foca em desenvolvimento e não gera testes eficazes.**
 
