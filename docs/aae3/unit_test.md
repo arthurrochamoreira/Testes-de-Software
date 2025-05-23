@@ -2,7 +2,7 @@
 
 A **Pirâmide de Testes** ilustra como equilibrar velocidade, custo e cobertura ao estruturar sua suíte de testes (Meszaros, 2007):
 
-![Pirâmide de Testes](/assets/unit_test/piramide_de_testes.jpg)
+![Pirâmide de Testes](../assets/unit_test/piramide_de_testes.jpg)
 
 | Nível       | Quantidade de Testes | Custo por Teste | Velocidade de Execução | Exemplos de Ferramentas          |
 |-------------|----------------------|-----------------|------------------------|----------------------------------|
@@ -36,7 +36,7 @@ A **Pirâmide de Testes** ilustra como equilibrar velocidade, custo e cobertura 
 ### A. The Testing Trophy  
 Desenvolvida por Kent C. Dodds para aplicações web modernas:
 
-![The Testing Trophy ](/aae3/assets/the_testing_trophy.jpg)
+![The Testing Trophy ](../assets/unit_test/the_testing_trophy.jpg)
 
 
 - **Static**: detecção de erros sem execução (ESLint, mypy).  
@@ -78,7 +78,7 @@ Abordagem do Spotify Labs para arquiteturas de microsserviços:
 
 ## 7. Diagrama de Correspondência de Níveis
 
-![Diagrama de Correspondência de Níveis](/aae3/assets/diagrama_de_correspondência_de_níveis.jpg)
+![Diagrama de Correspondência de Níveis](../assets/unit_test/diagrama_de_correspondência_de_níveis.jpg)
 
 ## 8. Lista de Níveis de Teste
 
