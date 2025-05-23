@@ -43,7 +43,5 @@ nav:
       - Teste Caixa Branca: aae3/white_box_test.md
   - Unit Testing:
       - Teste de Unidade: aae3/unit_test.md
-      - Teste de Unidade v2: aae3/unitv2.md
-      - Teste de Unidade v3: aae3/unitv3.md
   - MC/DC:
       - Modified Condition/Decision Coverage (MC/DC): aae3/mc_dc.md
