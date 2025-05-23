@@ -1,17 +1,9 @@
-# Welcome to MkDocs
+# Testes de Software — Documentação Pessoal
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+Bem-vindo à minha documentação pessoal sobre **Testes de Software**, desenvolvida como apoio aos estudos da disciplina cursada na graduação em Engenharia de Software.
 
-## Commands
+Este repositório serve como um **guia prático e teórico**, reunindo conceitos essenciais, estratégias de teste, padrões e boas práticas, com base em materiais clássicos da área como:
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
-
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+- *xUnit Test Patterns* (Meszaros, 2007)
+- *Test-Driven Development: By Example* (Kent Beck, 2002)
+- *The Art of Software Testing* (Glenford J. Myers, 2011)
