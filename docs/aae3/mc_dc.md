@@ -38,7 +38,7 @@ O item 4 é o que diferencia o MC/DC: deve-se provar que apenas invertendo uma c
 Considere a decisão:
 
 ```plaintext
-D ≡ A && B && C
+D = A && B && C
 ```
 
 | Caso | A     | B     | C     | D = A∧B∧C |
