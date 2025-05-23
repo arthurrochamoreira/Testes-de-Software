@@ -530,7 +530,6 @@ Beck, K. (2002). *Test-Driven Development: By Example*. Addison-Wesley.
 * **d. Quando a pirâmide de testes não é aplicada.**
 
   > A pirâmide de testes é uma prática auxiliar, não uma condição para aplicar TDD. O TDD foca na escrita de testes automatizados de unidade, independentemente da estrutura completa de testes adotada.  
-  > *(Não mencionado como limitação nos livros analisados)*
 
 **Referência:**  
 Beck, K. (2002). *Test-Driven Development: By Example*. Addison-Wesley.
