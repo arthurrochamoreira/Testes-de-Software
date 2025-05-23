@@ -23,7 +23,7 @@ Terceiro, um teste de caminho exaustivo pode não revelar erros de confidenciali
 ```java
 if (a - b < c)
     System.out.println("a - b < c");
-
+```
 
 Claro, a declaração contém um erro porque deveria comparar `c` com o valor absoluto de `a - b`. A detecção desse erro, no entanto, depende dos valores usados para `a` e `b`, e não seria necessariamente detectada apenas executando todos os caminhos do programa.
 

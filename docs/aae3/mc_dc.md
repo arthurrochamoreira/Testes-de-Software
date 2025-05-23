@@ -1,10 +1,10 @@
 # Modified Condition/Decision Coverage (MC/DC)
 
-O **Modified Condition/Decision Coverage (MC/DC)** é um dos critérios de cobertura estrutural mais exigentes para software de alta criticidade (aviação, automotivo, ferroviário etc.). O MC/DC está definido no **DO-178B/C** da FAA e é referenciado em normas como **ISO 26262** (Automotivo) e **IEC 61508** (Industrial). Uma apresentação detalhada pode ser encontrada em Hayhurst et al. (2001).
+O *Modified Condition/Decision Coverage* (**MC/DC**) é um dos critérios de cobertura estrutural mais exigentes para software de alta criticidade (por exemplo: aviação, automotivo, ferroviário, etc.). O MC/DC está definido na norma *DO-178B/C* da FAA e é referenciado em normas como *ISO 26262* (automotiva) e *IEC 61508* (industrial). Uma apresentação detalhada pode ser encontrada em Hayhurst et al. (2001).
 
-Uma explicação prática e visual pode ser conferida no vídeo abaixo:
+Veja uma explicação prática e visual no vídeo a seguir:
 
-<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
+<div style="position: relative; padding-bottom: 56.25%; overflow: hidden; max-width: 100%; height: auto;">
   <iframe 
     src="https://www.youtube.com/embed/DivaWCNohdw?si=N3JvUW0Z22TVPfQz" 
     title="YouTube video player"
