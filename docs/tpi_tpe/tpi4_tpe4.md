@@ -552,10 +552,10 @@ Beck, K. (2002). *Test-Driven Development: By Example*. Addison-Wesley.
 > A eficácia do TDD vem da forma como ele nos permite separar o pensamento sobre o software em duas fases: o que ele deve fazer, e como ele deve fazer.  
 > *(Tradução livre de Meszaros, 2007, p. 33)*  
 
-> Quando implementamos a funcionalidade de forma incremental, podemos ver cada teste passar, um por um, à medida que escrevemos mais código. É aqui que reside o verdadeiro valor dos testes automatizados: na sua capacidade de "fixar o comportamento esperado, garantindo que mudanças posteriores não o modifiquem acidentalmente.  
+> Quando implementamos a funcionalidade de forma incremental, podemos ver cada teste passar, um por um, à medida que escrevemos mais código. É aqui que reside o verdadeiro valor dos testes automatizados: na sua capacidade de fixar o comportamento esperado, garantindo que mudanças posteriores não o modifiquem acidentalmente.  
 > *(Tradução livre de Meszaros, 2007, p. 33)*  
 
-> O TDD permite a criação de "especificações executáveis, que não apenas guiam o design como também servem de documentação viva e confiável do sistema.  
+> O TDD permite a criação de especificações executáveis, que não apenas guiam o design como também servem de documentação viva e confiável do sistema.  
 > *(Tradução livre de Meszaros, 2007, p. 33)*  
 
 #### Por que as outras alternativas estão erradas
