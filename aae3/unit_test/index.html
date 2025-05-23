@@ -12,7 +12,7 @@
         <link rel="prev" href="../white_box_test/">
       
       
-        <link rel="next" href="../unitv2/">
+        <link rel="next" href="../mc_dc/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -63,7 +63,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="deep-orange">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#capitulo-5-teste-de-modulo-unidade" class="md-skip">
+        <a href="#3-piramide-de-testes" class="md-skip">
           Pular para conteúdo
         </a>
       
@@ -121,7 +121,7 @@
     
     
     
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="deep-orange"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
     
       <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-2.69L23.31 12 20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20z"/></svg>
@@ -131,7 +131,7 @@
     
     
     
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="deep-orange"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
     
       <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 2c-1.82 0-3.53.5-5 1.35C8 5.08 10 8.3 10 12s-2 6.92-5 8.65C6.47 21.5 8.18 22 10 22a10 10 0 0 0 10-10A10 10 0 0 0 10 2"/></svg>
@@ -145,46 +145,6 @@
       <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
     
-    
-      
-      
-        <label class="md-header__button md-icon" for="__search">
-          
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
-        </label>
-        <div class="md-search" data-md-component="search" role="dialog">
-  <label class="md-search__overlay" for="__search"></label>
-  <div class="md-search__inner" role="search">
-    <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Buscar" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
-      <label class="md-search__icon md-icon" for="__search">
-        
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
-        
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
-      </label>
-      <nav class="md-search__options" aria-label="Pesquisar">
-        
-        <button type="reset" class="md-search__icon md-icon" title="Limpar" aria-label="Limpar" tabindex="-1">
-          
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
-        </button>
-      </nav>
-      
-    </form>
-    <div class="md-search__output">
-      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
-        <div class="md-search-result" data-md-component="search-result">
-          <div class="md-search-result__meta">
-            Inicializando busca
-          </div>
-          <ol class="md-search-result__list" role="presentation"></ol>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-      
     
     
       <div class="md-header__source">
@@ -354,7 +314,9 @@
   
 
 
-<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegação" data-md-level="0">
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navegação" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="../.." title="Testes de Software" class="md-nav__button md-logo" aria-label="Testes de Software" data-md-component="logo">
       
@@ -710,8 +672,6 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-        
-      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
@@ -744,8 +704,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -754,9 +712,186 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#teste-de-modulo-unidade" class="md-nav__link">
+  <a href="#3-piramide-de-testes" class="md-nav__link">
     <span class="md-ellipsis">
-      Teste de Módulo (Unidade)
+      3. Pirâmide de Testes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-outros-formatos-de-estrategia" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Outros Formatos de Estratégia
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Outros Formatos de Estratégia">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-the-testing-trophy" class="md-nav__link">
+    <span class="md-ellipsis">
+      A. The Testing Trophy
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-microservices-test-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      B. Microservices Test Strategy
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-niveis-de-teste-beneficios" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Níveis de Teste – Benefícios
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-niveis-de-teste-consideracoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Níveis de Teste – Considerações
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-diagrama-de-correspondencia-de-niveis" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Diagrama de Correspondência de Níveis
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-lista-de-niveis-de-teste" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Lista de Níveis de Teste
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-testes-de-unidade" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Testes de Unidade
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Testes de Unidade">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#91-ferramentas-em-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.1. Ferramentas em Python
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#92-exemplo-simples-funcao-is_even" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.2. Exemplo Simples: Função is_even
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9.2. Exemplo Simples: Função is_even">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#921-testes-com-pytest" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.2.1. Testes com pytest
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#922-teste-caixa-branca-cobertura-de-decisao" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.2.2. Teste Caixa-Branca (Cobertura de Decisão)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#93-criterios-de-cobertura" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.3. Critérios de Cobertura
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-testes-de-unidade-consideracoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. Testes de Unidade – Considerações
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-elaboracao-dos-casos-de-teste" class="md-nav__link">
+    <span class="md-ellipsis">
+      11. Elaboração dos Casos de Teste
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11. Elaboração dos Casos de Teste">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#procedimento" class="md-nav__link">
+    <span class="md-ellipsis">
+      Procedimento
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-referencias-bibliograficas" class="md-nav__link">
+    <span class="md-ellipsis">
+      12. Referências Bibliográficas
     </span>
   </a>
   
@@ -766,52 +901,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../unitv2/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Teste de Unidade v2
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../unitv3/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Teste de Unidade v3
-    
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -906,41 +995,6 @@
               </div>
             
             
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-
-<nav class="md-nav md-nav--secondary" aria-label="Índice">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Índice
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#teste-de-modulo-unidade" class="md-nav__link">
-    <span class="md-ellipsis">
-      Teste de Módulo (Unidade)
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
           
           
             <div class="md-content" data-md-component="content">
@@ -953,662 +1007,367 @@
   
 
 
-<h1 id="capitulo-5-teste-de-modulo-unidade">Capítulo 5 – Teste de Módulo (Unidade)</h1>
-<!-- Espaço para imagem -->
+  <h1>Teste de Unidade</h1>
 
-<h2 id="teste-de-modulo-unidade">Teste de Módulo (Unidade)</h2>
-<p>Até este ponto, ignoramos amplamente a mecânica dos testes e o tamanho do programa que está sendo testado. No entanto, como grandes programas (digamos, de 500 instruções ou mais de 50 classes) requerem tratamento especial de teste, neste capítulo consideramos um passo inicial na estruturação do teste de um grande programa: teste de módulo. Os capítulos 6 e 7 enumeram as etapas restantes.</p>
-<p>Teste de módulo (ou teste de unidade) é um processo de testar os subprogramas, sub-rotinas, classes ou procedimentos individuais em um programa. Mais especificamente, em vez de testar inicialmente o programa como um todo, o teste é primeiro focado nos blocos de construção menores do programa. As motivações para fazer isso são três:</p>
-<ol>
-<li>Gerenciar os elementos combinados de teste, focando inicialmente em unidades menores do programa.  </li>
-<li>Facilitar a depuração (o processo de identificar e corrigir um erro descoberto), pois, quando um erro é encontrado, sabe-se que ele existe em um módulo específico.  </li>
-<li>Introduzir paralelismo no processo de teste do programa, apresentando-nos a oportunidade de testar vários módulos simultaneamente.  </li>
-</ol>
-<p>O objetivo do teste de módulo é comparar a função de um módulo com alguma especificação funcional ou de interface que define o módulo. Para enfatizar novamente o objetivo de todos os processos de teste, o objetivo aqui não é mostrar que o módulo atende à sua especificação, mas <strong>sim</strong> que o módulo contradiz a especificação. <!-- Alteração: inserido "sim" para ênfase --></p>
-<p>Neste capítulo, abordamos o teste de módulos de três pontos de vista:</p>
-<ol>
-<li>A maneira como os casos de teste são projetados.  </li>
-<li>A ordem em que os módulos devem ser testados e integrados.  </li>
-<li>Conselhos sobre a realização dos testes.  </li>
-</ol>
-<h1 id="design-de-caso-de-teste">Design de Caso de Teste</h1>
-<p>Você precisa de dois tipos de informações ao projetar casos de teste para um módulo de teste: uma especificação para o módulo e o código-fonte do módulo. A especificação normalmente define os parâmetros de entrada e saída do módulo e sua função.</p>
-<p>O teste de módulo é amplamente orientado para a <strong>caixa branca</strong>. Um dos motivos é que, à medida que você testa entidades maiores, como programas inteiros (o que será o caso dos processos de teste subsequentes), o teste de caixa branca se torna menos viável. Uma segunda razão é que os processos de teste subsequentes são orientados para encontrar diferentes tipos de erros (por exemplo, erros não necessariamente associados à lógica do programa, como o programa não atender aos requisitos de seus usuários).</p>
-<p>Portanto, o procedimento de design de caso de teste para um teste de módulo é o seguinte:</p>
-<ol>
-<li>Analise a lógica do módulo usando um ou mais dos métodos de caixa branca.  </li>
-<li>Em seguida, complemente esses casos de teste aplicando métodos de caixa preta à especificação do módulo.</li>
-</ol>
-<p>Os métodos de design de caso de teste que usaremos foram definidos no Capítulo 4. Vamos ilustrar seu uso em um teste de módulo aqui por meio de um exemplo.</p>
-<p>Suponha que desejamos testar um módulo chamado <strong>BONUS</strong>, cuja função é:</p>
+<h2 id="3-piramide-de-testes">3. Pirâmide de Testes</h2>
+<p>A <strong>Pirâmide de Testes</strong> ilustra como equilibrar velocidade, custo e cobertura ao estruturar sua suíte de testes (Meszaros, 2007):</p>
+<p><img alt="Pirâmide de Testes" src="/aae3/assets/piramide_de_testes.jpg" /></p>
+<table>
+<thead>
+<tr>
+<th>Nível</th>
+<th>Quantidade de Testes</th>
+<th>Custo por Teste</th>
+<th>Velocidade de Execução</th>
+<th>Exemplos de Ferramentas</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Aceitação</strong></td>
+<td>Baixa</td>
+<td>Alto</td>
+<td>Muito Lenta</td>
+<td>Cucumber, Robot Framework</td>
+</tr>
+<tr>
+<td><strong>Sistema</strong></td>
+<td>Média</td>
+<td>Médio</td>
+<td>Lenta</td>
+<td>Selenium, TestComplete</td>
+</tr>
+<tr>
+<td><strong>Integração</strong></td>
+<td>Média–Alta</td>
+<td>Baixo–Médio</td>
+<td>Moderada</td>
+<td>Pytest + Docker Compose, Postman</td>
+</tr>
+<tr>
+<td><strong>Unidade</strong></td>
+<td>Alta</td>
+<td>Baixo</td>
+<td>Muito Rápida</td>
+<td>pytest, unittest, Jest</td>
+</tr>
+</tbody>
+</table>
 <ul>
-<li>Adicionar R\$ 2.000 ao salário de todos os funcionários do departamento (ou departamentos) com a maior receita de vendas.  </li>
-<li>No entanto, se o salário atual de um funcionário elegível for de R\$ 150.000 ou mais, ou se o funcionário for um gerente, o salário deve ser aumentado em apenas R\$ 1.000.</li>
+<li><strong>Unidade (base)</strong>  </li>
+<li><strong>O que:</strong> Testes de função/método isolado.  </li>
+<li><strong>Por que:</strong> Rápidos e baratos; detectam defeitos de lógica interna antes de integrar dependências.  </li>
+<li><strong>Integração (camada intermediária)</strong>  </li>
+<li><strong>O que:</strong> Testes de múltiplos módulos funcionando juntos (por exemplo, serviço + banco de dados).  </li>
+<li><strong>Por que:</strong> Verifica contratos/interfaces, detecta erros de comunicação e configuração.  </li>
+<li><strong>Sistema (última camada antes da aceitação)</strong>  </li>
+<li><strong>O que:</strong> Testes fim-a-fim que exercitam todo o sistema em ambiente real ou simulado.  </li>
+<li><strong>Por que:</strong> Confirma fluxo completo (UI → backend → DB), mas custa mais manter.  </li>
+<li><strong>Aceitação (topo)</strong>  </li>
+<li><strong>O que:</strong> Validação contra requisitos de negócio por meio de cenários escritos em linguagem natural.  </li>
+<li><strong>Por que:</strong> Garante que o software atenda às expectativas do usuário, mas demora para rodar.</li>
 </ul>
-<p>As entradas para o módulo são mostradas nas tabelas da Figura 5.1.  </p>
-<!-- Espaço para Figura 5.1 -->
-
-<p>Se o módulo executar sua função corretamente, ele retornará um código de erro <strong>0</strong>. Se a tabela de funcionários ou de departamentos não contiver entradas, retornará um código de erro <strong>1</strong>. Se não encontrar funcionários em um departamento qualificado, retornará um código de erro <strong>2</strong>.</p>
-<p>O código-fonte do módulo é mostrado na Figura 5.2. Os parâmetros de entrada <strong>ESIZE</strong> e <strong>DSIZE</strong> contêm o número de entradas nas tabelas de empregados e de departamentos. Observe que, embora o módulo seja escrito em PL/1, a discussão a seguir é amplamente independente da linguagem; as técnicas são aplicáveis a programas codificados em outras linguagens. Além disso, como a lógica em PL/1 no módulo é bastante simples, praticamente qualquer leitor, mesmo aqueles que não estão familiarizados com PL/1, deverá ser capaz de entendê-la.  </p>
-<!-- Espaço para Figura 5.2 -->
-
-<h2 id="employee-table">Employee table</h2>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Job code</th>
-<th>Dept.</th>
-<th>Salary</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<p><em>(Preencha até tantas linhas quanto necessário.)</em></p>
-<h2 id="department-table">Department table</h2>
-<table>
-<thead>
-<tr>
-<th>Dept.</th>
-<th>Sales</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<p><em>(Preencha até tantas linhas quanto necessário.)</em></p>
-<h2 id="barra-lateral-51-plano-de-fundo-pl1">Barra Lateral 5.1: Plano de fundo PL/1</h2>
-<pre><code class="language-plaintext">BONUS : PROCEDURE(EMPTAB,DEPTTAB,ESIZE,DSIZE,ERRCODE);
-DECLARE 1 EMPTAB (*),
-    2 NAME CHAR(6),
-    2 CODE CHAR(1),
-    2 DEPT CHAR(3),
-    2 SALARY FIXED DECIMAL(7,2);
-DECLARE 1 DEPTTAB (*),
-    2 DEPT CHAR(3),
-    2 SALES FIXED DECIMAL(8,2);
-DECLARE (ESIZE,DSIZE) FIXED BINARY;
-DECLARE ERRCODE FIXED DECIMAL(1);
-DECLARE MAXSALES FIXED DECIMAL(8,2) INIT(0); /*MAX. SALES IN DEPTTAB*/
-DECLARE (I,J,K) FIXED BINARY;           /*COUNTERS*/
-DECLARE FOUND BIT(1);                   /*TRUE IF ELIGIBLE DEPT. HAS EMPLOYEES*/
-DECLARE SINC FIXED DECIMAL(7,2) INIT(200.00); /*STANDARD INCREMENT*/
-DECLARE LINC FIXED DECIMAL(7,2) INIT(100.00); /*LOWER INCREMENT*/
-DECLARE LSALARY FIXED DECIMAL(7,2) INIT(15000.00); /*SALARY BOUNDARY*/
-DECLARE MGR CHAR(1) INIT('M');
-</code></pre>
-<h2 id="figure-52-module-bonus">FIGURE 5.2 Module BONUS.</h2>
-<pre><code class="language-plaintext">1  ERRCODE=0;
-2  IF(ESIZE&lt;=0)|(DSIZE&lt;=0)
-3  THEN ERRCODE=1; /*EMPTAB OR DEPTTAB ARE EMPTY*/
-4  ELSE DO;
-5    DO I = 1 TO DSIZE; /*FIND MAXSALES AND MAXDEPTS*/
-6      IF(SALES(I)&gt;=MAXSALES) THEN MAXSALES=SALES(I);
-7    END;
-8    DO J = 1 TO DSIZE;
-9      IF(SALES(J)=MAXSALES) /*ELIGIBLE DEPARTMENT*/
-10     THEN DO;
-11       FOUND='0'B;
-12       DO K = 1 TO ESIZE;
-13         IF(EMPTAB.DEPT(K)=DEPTTAB.DEPT(J))
-14         THEN DO;
-15           FOUND='1'B;
-16           IF(SALARY(K)&gt;=LSALARY)|CODE(K)=MGR)
-17           THEN SALARY(K)=SALARY(K)+LINC;
-18           ELSE SALARY(K)=SALARY(K)+SINC;
-19         END;
-20       END;
-21       IF(-FOUND) THEN ERRCODE=2;
-22     END;
-23   END;
-24 END;
-25 END;
-</code></pre>
-<p>Barra Lateral 5.1: Contexto do PL/1</p>
-<p>Os leitores novos no desenvolvimento de software podem não estar familiarizados com o <strong>PL/1</strong> e pensar que é uma linguagem “morta”. É verdade que provavelmente há muito pouco desenvolvimento novo usando PL/1, mas a manutenção dos sistemas existentes continua, e as construções PL/1 ainda são uma boa maneira de aprender sobre procedimentos de programação.</p>
-<p><strong>PL/1</strong>, que significa <em>Programming Language One</em>, foi desenvolvido na década de 1960 pela IBM para fornecer um ambiente de desenvolvimento semelhante ao inglês para suas máquinas de classe mainframe, começando com o IBM System/360. Nessa época da história da computação, muitos programadores estavam migrando para linguagens especializadas, como COBOL (projetada para aplicativos de negócios) e Fortran (projetado para aplicativos científicos). (Veja a Barra Lateral 3.1 no Capítulo 3 para mais sobre essas linguagens.)</p>
-<p>Um dos principais objetivos dos projetistas do PL/1 era criar uma linguagem de desenvolvimento que pudesse competir com sucesso tanto com COBOL quanto com Fortran, ao mesmo tempo em que fornecia uma sintaxe mais natural e fácil de aprender. Nem todos os objetivos iniciais do PL/1 foram plenamente alcançados, mas o PL/1 foi refinado e atualizado ao longo dos anos e ainda está em uso em alguns ambientes hoje.</p>
-<p>Em meados da década de 1990, o PL/1 foi estendido para outras plataformas de computador, incluindo OS/2, Linux, UNIX e Windows. Esse novo suporte trouxe extensões de linguagem para fornecer mais flexibilidade e funcionalidade.</p>
-<p>Independentemente de qual técnica de cobertura lógica você use, o primeiro passo é listar as decisões condicionais no programa. Neste módulo, as decisões são todas as instruções <code>IF</code> e <code>DO</code>. Observamos que cada <code>DO</code> é uma iteração simples cujo limite é igual ou maior que o valor inicial (ou seja, o corpo do loop sempre será executado ao menos uma vez) e só pode sair por meio da própria instrução <code>DO</code>. Portanto, não é necessária atenção especial às instruções <code>DO</code>: qualquer caso de teste que invoque um <code>DO</code> já exercitará sua ramificação de entrada e saída.</p>
-<p>As declarações <code>IF</code> a serem analisadas são (números à esquerda indicam a ordem no código):</p>
-<pre><code class="language-plaintext">2   IF (ESIZE &lt; 1/4 * 0)  OR  (DSIZE &lt; 1/4 * 0)
-6   IF (SALES(I) &gt; 1/4 * MAXSALES)
-9   IF (SALES(J) &gt; 1/4 * MAXSALES)
-13  IF (EMPTAB.DEPT(K) &gt; DEPTTAB.DEPT(J))
-16  IF (SALARY(K) &gt; LSALARY)  OR  (CODE(K) = MGR)
-21  IF (¬FOUND) THEN ERRCODE = 1/4 290
-</code></pre>
-<!-- Espaço para Tabela 5.1: Situações correspondentes aos resultados da decisão -->
-
-<table>
-<thead>
-<tr>
-<th>Decisão</th>
-<th>Resultado verdadeiro</th>
-<th>Resultado falso</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>2</td>
-<td>ESIZE &lt; 1/4 * 0 ou DSIZE &lt; 1/4 * 0</td>
-<td>ESDIMENSIONAR e DSIZE &gt; 0</td>
-</tr>
-<tr>
-<td>6</td>
-<td>Sempre ocorrerá pelo menos uma vez.</td>
-<td>Solicite o DEPTTAB para que ocorra um departamento com vendas mais baixas após um departamento com vendas mais altas.</td>
-</tr>
-<tr>
-<td>9</td>
-<td>Sempre ocorrerá pelo menos uma vez.</td>
-<td>Todos os departamentos não têm as mesmas vendas.</td>
-</tr>
-<tr>
-<td>13</td>
-<td>Há um funcionário em um departamento elegível.</td>
-<td>Há um funcionário que não está em um departamento elegível.</td>
-</tr>
-<tr>
-<td>16</td>
-<td>Um funcionário elegível é um gerente ou ganha LSALARY ou mais.</td>
-<td>Um funcionário elegível não é um gerente e ganha menos do que LSALARY.</td>
-</tr>
-<tr>
-<td>21</td>
-<td>Todos os departamentos elegíveis não contêm funcionários.</td>
-<td>Um departamento elegível contém pelo menos um funcionário.</td>
-</tr>
-</tbody>
-</table>
-<p>Dado o pequeno número de decisões, provavelmente devemos optar pela cobertura de várias condições, mas examinaremos todos os critérios de cobertura lógica (exceto a cobertura de instrução, que sempre é muito limitada para ser usada) para ver seus efeitos.</p>
-<p>Para satisfazer o critério de cobertura de decisão, precisamos de casos de teste suficientes para invocar ambos os resultados de cada uma das seis decisões. As situações de entrada necessárias para invocar todos os resultados da decisão estão listadas na Tabela 5.1. Como dois dos resultados sempre ocorrerão, há 10 situações que precisam ser forçadas por casos de teste. Observe que, para construir a Tabela 5.1, as circunstâncias do resultado da decisão tiveram que ser rastreadas através da lógica do programa para determinar as circunstâncias de entrada correspondentes adequadas. Por exemplo, a decisão 16 não é invocada por nenhum funcionário que atenda às condições; o funcionário deve estar em um departamento elegível.</p>
-<p>As 10 situações de interesse na Tabela 5.1 podem ser invocadas pelos dois casos de teste mostrados na Figura 5.3. Observe que cada caso de teste inclui uma definição do resultado esperado, de acordo com os princípios discutidos no Capítulo 2. Embora esses dois casos de teste atendam ao critério de cobertura de decisão, deve ser óbvio que pode haver muitos tipos de erros no módulo que não são detectados por esses dois casos de teste. Por exemplo, os casos de teste não exploram as circunstâncias em que o código de erro é 0, um funcionário é um gerente ou a tabela de departamentos está vazia (DSIZE &lt; 1/40).</p>
-<h3 id="figura-53-casos-de-teste-para-satisfazer-o-criterio-de-cobertura-de-decisao">Figura 5.3: Casos de teste para satisfazer o critério de cobertura de decisão</h3>
-<!-- Espaço para Figura 5.3 -->
-
-<p>Um teste mais satisfatório pode ser obtido usando o critério de cobertura de <strong>condição</strong>. Aqui precisamos de casos de teste suficientes para invocar ambos os resultados de cada condição nas decisões. As condições e situações de entrada necessárias para invocar todos os resultados estão listadas na Tabela 5.2. Como dois dos resultados sempre ocorrerão, existem 14 situações que devem ser forçadas por casos de teste.</p>
-<!-- Espaço para Tabela 5.2: Situações correspondentes aos resultados de condição -->
-
-<p>Novamente, essas situações podem ser invocadas por apenas dois casos de teste, conforme mostrado na Figura 5.4.</p>
-<table>
-  <tr>
-    <th>Caso de teste</th>
-    <th>Entrada</th>
-    <th>Saída esperada</th>
-  </tr>
-  <tr>
-    <td>1</td>
-    <td>
-      <pre>ESIZE = 0  
-All other inputs are irrelevant</pre>
-    </td>
-    <td>
-      <pre>ERRCODE = 1  
-ESIZE, DSIZE, EMPTAB e DEPTTAB permanecem inalterados</pre>
-    </td>
-  </tr>
-  <tr>
-    <td>2</td>
-    <td>
-      <pre>ESIZE – DSIZE = 3</pre>
-      <strong>EMPTAB</strong>
-      <table>
-        <tr>
-          <th>Nome</th><th>Código</th><th>Departamento</th><th>Salário</th>
-        </tr>
-        <tr><td>JONES</td><td>E</td><td>D42</td><td>21.000,00</td></tr>
-        <tr><td>SMITH</td><td>E</td><td>D32</td><td>14.000,00</td></tr>
-        <tr><td>LORIN</td><td>E</td><td>D42</td><td>10.200,00</td></tr>
-      </table>
-      <strong>DEPTTAB</strong>
-      <table>
-        <tr><th>Departamento</th><th>Vendas</th></tr>
-        <tr><td>D42</td><td>10.000,00</td></tr>
-        <tr><td>D32</td><td>8.000,00</td></tr>
-        <tr><td>D95</td><td>10.000,00</td></tr>
-      </table>
-    </td>
-    <td>
-      <pre>ERRCODE = 2  
-ESIZE, DSIZE e DEPTTAB permanecem inalterados</pre>
-      <strong>EMPTAB (após execução)</strong>
-      <table>
-        <tr>
-          <th>Nome</th><th>Código</th><th>Departamento</th><th>Salário</th>
-        </tr>
-        <tr><td>JONES</td><td>E</td><td>D42</td><td>21.100,00</td></tr>
-        <tr><td>SMITH</td><td>E</td><td>D32</td><td>14.000,00</td></tr>
-        <tr><td>LORIN</td><td>E</td><td>D42</td><td>10.200,00</td></tr>
-      </table>
-    </td>
-  </tr>
-</table>
-
-<p>Os casos de teste na Figura 5.4 foram projetados para ilustrar um problema. Uma vez que invocam todos os resultados da Tabela 5.2, eles satisfazem o critério de cobertura de condição, mas provavelmente são um conjunto de casos de teste mais pobre do que os da Figura 5.3 em termos de satisfação do critério de cobertura de decisão. A razão é que eles não executam todas as instruções — por exemplo, o estado 18 nunca é executado. Além disso, eles não realizam muito mais do que os casos de teste na Figura 5.3. Eles não causam a situação de saída <strong>ERRORCODE = 1/40</strong>. Se a instrução 2 tivesse definido erroneamente <strong>ESIZE = 1/40</strong> e <strong>DSIZE = 1/40</strong>, esse erro não seria detectado. É claro que um conjunto alternativo de casos de teste pode resolver esses problemas, mas o fato é que os dois casos de teste na Figura 5.4 satisfazem o critério de cobertura de condição.</p>
-<p>O uso do critério combinado de cobertura de decisão/condição eliminaria a maior fraqueza nos casos de teste na Figura 5.4. Aqui, forneceríamos casos de teste suficientes para que todos os resultados de todas as condições e decisões fossem invocados pelo menos uma vez. Fazer de Jones um gerente e de Lorin um não-gerente conseguiria isso, resultando em executar também a instrução 18.</p>
-<!-- Espaço para Tabela 5.2: Situações correspondentes aos resultados de condição -->
-
-<table>
-<thead>
-<tr>
-<th>Decisão</th>
-<th>Condição</th>
-<th>Resultado verdadeiro</th>
-<th>Resultado falso</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>2</td>
-<td><code>ESIZE &lt; 1/4 * 0</code></td>
-<td><code>ESIZE &lt; 1/4 * 0</code></td>
-<td><code>ESIZE &gt; 0</code></td>
-</tr>
-<tr>
-<td>2</td>
-<td><code>DSIZE &lt; 1/4 * 0</code></td>
-<td><code>DSIZE &lt; 1/4 * 0</code></td>
-<td><code>DSIZE &gt; 0</code></td>
-</tr>
-<tr>
-<td>6</td>
-<td><code>SALES(I) &gt; 1/4 * MAXSALES</code></td>
-<td>Ao menos um departamento tem vendas &gt; 1/4 * MAXSALES</td>
-<td>Todos os departamentos têm vendas ≤ 1/4 * MAXSALES</td>
-</tr>
-<tr>
-<td>9</td>
-<td><code>SALES(J) &gt; 1/4 * MAXSALES</code></td>
-<td>Ao menos um departamento tem vendas &gt; 1/4 * MAXSALES</td>
-<td>Todos os departamentos têm vendas ≤ 1/4 * MAXSALES</td>
-</tr>
-<tr>
-<td>13</td>
-<td><code>EMPTAB.DEPT(K) &gt; DEPTTAB.DEPT(J)</code></td>
-<td>Existe funcionário em um departamento elegível</td>
-<td>Não existe funcionário em um departamento elegível</td>
-</tr>
-<tr>
-<td>16</td>
-<td><code>SALARY(K) &gt; LSALARY</code></td>
-<td>Funcionário elegível ganha ≥ LSALARY</td>
-<td>Funcionário elegível ganha &lt; LSALARY</td>
-</tr>
-<tr>
-<td>16</td>
-<td><code>CODE(K) = MGR</code></td>
-<td>Funcionário elegível é gerente</td>
-<td>Funcionário elegível não é gerente</td>
-</tr>
-<tr>
-<td>21</td>
-<td><code>¬FOUND</code></td>
-<td>Todos os departamentos elegíveis não contêm funcionários</td>
-<td>Pelo menos um departamento elegível contém pelo menos um funcionário</td>
-</tr>
-</tbody>
-</table>
 <blockquote>
-<p><strong>Observações sobre correções realizadas:</strong>
-- Separei cada condição atômica em linhas distintas para clareza.<br />
-- Usei formatação inline-code para expressões lógicas e aritméticas.<br />
-- Padronizei o uso de <code>1/4 *</code> em todas as condições e os símbolos de comparação.<br />
-- Ajustei descrições de “verdadeiro” e “falso” para refletir corretamente cada condição.<br />
-- Mantive todos os termos originais e adicionei o placeholder para inserir a figura correspondente.  </p>
+<p><strong>Eixos</strong><br />
+- <strong>Velocidade</strong>: decresce de unidades → aceitação.<br />
+- <strong>Custo</strong>: cresce de unidades → aceitação.<br />
+- <strong>Quantidade</strong>: cresce de aceitação → unidades.</p>
 </blockquote>
-<h3 id="figura-54-casos-de-teste-para-satisfazer-o-criterio-de-cobertura-de-condicao">Figura 5.4: Casos de teste para satisfazer o critério de cobertura de condição</h3>
-<!-- Espaço para Figura 5.4 -->
-
-<p>Um problema com isso, no entanto, é que não é essencialmente melhor do que os casos de teste na Figura 5.3. Se o compilador que está sendo usado parar de avaliar uma expressão assim que determinar que um operando é verdadeiro, essa modificação resultaria na expressão <code>CODE(K) = MGR</code> na instrução 16 nunca tendo um resultado verdadeiro. Portanto, se essa expressão fosse codificada incorretamente, os casos de teste não detectariam o erro.</p>
-<p>O último critério a explorar é a cobertura <strong>multicondicional</strong>. Este critério requer casos de teste suficientes para que todas as combinações possíveis de condições em cada decisão sejam invocadas pelo menos uma vez. Isso pode ser feito trabalhando na Tabela 5.2. As decisões 6, 9, 13 e 21 têm duas combinações cada; as decisões 2 e 16 têm quatro combinações cada. A metodologia para projetar os casos de teste é:</p>
-<ol>
-<li>Selecionar um caso que cubra o maior número possível de combinações.  </li>
-<li>Selecionar outro que cubra o maior número possível de combinações restantes.  </li>
-<li>Repetir até que todas as combinações sejam cobertas.</li>
-</ol>
-<p>Um conjunto de casos de teste que satisfaz o critério de cobertura multicondicional é mostrado na Figura 5.5. O conjunto é mais abrangente do que os conjuntos anteriores de casos de teste, o que implica que deveríamos ter selecionado esse critério no início.</p>
-<p>É importante perceber que o módulo <strong>BONUS</strong> pode ter um número tão grande de erros que mesmo os testes que satisfazem o critério de cobertura multicondicional não detectariam todos eles. Por exemplo:</p>
+<hr />
+<h2 id="4-outros-formatos-de-estrategia">4. Outros Formatos de Estratégia</h2>
+<h3 id="a-the-testing-trophy">A. The Testing Trophy</h3>
+<p>Desenvolvida por Kent C. Dodds para aplicações web modernas:</p>
+<p><img alt="The Testing Trophy " src="/aae3/assets/the_testing_trophy.jpg" /></p>
 <ul>
-<li>Nenhum caso de teste gera a situação em que <code>ERRCODE</code> é retornado com valor <strong>0</strong>; portanto, se a instrução 1 estivesse ausente, o erro não seria detectado.  </li>
-<li>Se o <code>LSALARY</code> fosse inicializado erroneamente para <strong>US\$ 150 000,01</strong>, o erro passaria despercebido.  </li>
-<li>Se a declaração 16 fosse implementada como <code>SALARY(K) &gt; LSALARY</code> em vez de <code>SALARY(K) &gt; 1/4 * LSALARY</code>, esse erro não seria encontrado.  </li>
-<li>Além disso, erros <em>off-by-one</em> (como não manipular corretamente a última entrada em <code>DEPTTAB</code> ou <code>EMPTAB</code>) dependeriam em grande parte do acaso para serem detectados.</li>
+<li><strong>Static</strong>: detecção de erros sem execução (ESLint, mypy).  </li>
+<li><strong>Unit</strong>: lógica interna (Jest, pytest).  </li>
+<li><strong>Integration</strong>: contratos entre módulos (Testing Library, pytest-docker).  </li>
+<li><strong>End to End</strong>: simulação completa de usuário (Cypress, Playwright).  <blockquote>
+<p><em>Meta:</em> Keep static and unit tests em larga quantidade, reduzindo gradualmente até E2E (Dodds, 2020).</p>
+</blockquote>
+</li>
 </ul>
-<p>Dois pontos devem ficar claros:</p>
+<h3 id="b-microservices-test-strategy">B. Microservices Test Strategy</h3>
+<p>Abordagem do Spotify Labs para arquiteturas de microsserviços:</p>
 <ol>
-<li>O critério <strong>multicondicional</strong> é superior aos outros critérios.  </li>
-<li>Qualquer critério de cobertura lógica <strong>não</strong> é suficiente como único meio de derivar testes de módulo.</li>
+<li><strong>Implementation Detail</strong>: validar lógica isolada de cada serviço (testes de unidade profundas).  </li>
+<li><strong>Integration</strong>: testar comunicação entre pares de serviços (contratos de API).  </li>
+<li><strong>Integrated</strong>: executar conjunto completo de microsserviços simulando produção (fluxos end-to-end).  <blockquote>
+<p><em>Recomendação:</em> minimizar testes de detalhe interno, focar em Integration e Integrated (Spotify Labs, 2019).</p>
+</blockquote>
+</li>
 </ol>
-<p>Portanto, o próximo passo é complementar os testes da Figura 5.5 com um conjunto de <strong>testes de caixa preta</strong>. Para isso, as especificações de interface do módulo BONUS são mostradas a seguir:</p>
-<h2 id="especificacao-de-interface-do-modulo-bonus">Especificação de Interface do Módulo BONUS</h2>
-<p>BONUS, um módulo PL/1, recebe cinco parâmetros, simbolicamente referidos aqui como <strong>EMPTAB</strong>, <strong>DEPTTAB</strong>, <strong>ESIZE</strong>, <strong>DSIZE</strong> e <strong>ERRORCODE</strong>. Os atributos desses parâmetros são:</p>
-<p>```pl1
-DECLARE 1 EMPTAB(<em>),           /</em> ENTRADA E SAÍDA */
-    2    CHARACTER NAME(6),
-    2    CHARACTER CODE(1),
-    2    CHARACTER DEPT(3),
-    2    FIXED DECIMAL SALARY(7,2);</p>
-<p>DECLARE 1 DEPTTAB(<em>),          /</em> ENTRADA */
-    2    CHARACTER DEPTCODE(3),
-    2    FIXED DECIMAL SALES(8,2);</p>
-<p>DECLARE (ESIZE, DSIZE)         /<em> ENTRADA </em>/
-    BINARY FIXED;</p>
-<p>DECLARE ERRCODE                 /<em> SAÍDA </em>/
-    FIXED DECIMAL(1);</p>
-<p>O módulo pressupõe que os argumentos transmitidos tenham esses atributos.<br />
-<strong>ESIZE</strong> e <strong>DSIZE</strong> indicam o número de entradas em <strong>EMPTAB</strong> e <strong>DEPTTAB</strong>, respectivamente. Não devem ser feitas suposições sobre a ordem das entradas em <strong>EMPTAB</strong> e <strong>DEPTTAB</strong>.</p>
-<p>A função do módulo é incrementar o salário (<code>EMPTAB.SALARY</code>) dos funcionários do departamento (ou departamentos) com o maior valor de vendas (<code>DEPTTAB.SALES</code>).  </p>
+<hr />
+<h2 id="5-niveis-de-teste-beneficios">5. Níveis de Teste – Benefícios</h2>
+<ol>
+<li><strong>Evita redundância</strong>  </li>
+<li>Cada nível foca em diferentes categorias de defeitos (Myers et al., 2012).  </li>
+<li><strong>Custo x Risco</strong>  </li>
+<li>Detectar cedo (unidade) corrige barato; detectar tarde (aceitação) corrige caro.  </li>
+<li><strong>Escalabilidade</strong>  </li>
+<li>Pequenos projetos podem parar em integração; projetos críticos devem chegar à aceitação.  </li>
+</ol>
+<hr />
+<h2 id="6-niveis-de-teste-consideracoes">6. Níveis de Teste – Considerações</h2>
 <ul>
-<li>Se o salário atual do funcionário for <strong>R\$ 150.000,00</strong> ou mais, ou se o funcionário for um gerente (<code>EMPTAB.CODE = 'M'</code>), o incremento é de <strong>R\$ 1.000,00</strong>.  </li>
-<li>Caso contrário, o incremento para o funcionário elegível é de <strong>R\$ 2.000,00</strong>.  </li>
+<li><strong>Não são sequenciais:</strong> escolha níveis conforme <strong>risco</strong>, <strong>orçamento</strong> e <strong>complexidade</strong> do projeto.  </li>
+<li><strong>Fatores a influenciar a estratégia:</strong>  </li>
+<li>Grau de acoplamento e coesão do sistema.  </li>
+<li>Frequência de mudanças nos componentes.  </li>
+<li>Recursos de infraestrutura (tempo de build, ambientes de teste).  </li>
 </ul>
-<p>O módulo pressupõe que o salário incrementado caberá no campo <code>EMPTAB.SALARY</code>.  </p>
+<hr />
+<h2 id="7-diagrama-de-correspondencia-de-niveis">7. Diagrama de Correspondência de Níveis</h2>
+<p><img alt="Diagrama de Correspondência de Níveis" src="/aae3/assets/diagrama_de_correspondência_de_níveis.jpg" /></p>
+<h2 id="8-lista-de-niveis-de-teste">8. Lista de Níveis de Teste</h2>
 <ol>
-<li>Se <strong>ESIZE</strong> ≤ 0 ou <strong>DSIZE</strong> ≤ 0, então:</li>
-<li><code>ERRCODE ← 1</code></li>
-<li>
-<p>Nenhuma ação adicional é executada.  </p>
-</li>
-<li>
-<p>Caso contrário:</p>
-</li>
-<li>A função é completamente executada.</li>
-<li>Se nenhum departamento de vendas máximas tiver funcionário, o processamento continua, mas <code>ERRCODE ← 2</code>;  </li>
-<li>Caso contrário, <code>ERRCODE ← 0</code>.  </li>
+<li><strong>Unidade</strong> – testar o menor bloco de código isoladamente.  </li>
+<li><strong>Integração</strong> – validar a interação entre módulos.  </li>
+<li><strong>Função</strong> – foco em funcionalidades discretas, similar a testes de sistema menores.  </li>
+<li><strong>Sistema</strong> – testes de ponta a ponta num ambiente completo.  </li>
+<li><strong>Aceitação</strong> – validação contra critérios de aceite do cliente.</li>
 </ol>
-<p>Esta especificação não é adequada para gráficos de causa e efeito (não há um conjunto de condições de entrada cujas combinações devam ser exploradas). Assim, será utilizada <strong>análise de valor de contorno</strong>. Os limites de entrada identificados são os seguintes:  </p>
-<h2 id="limites-de-valor-de-contorno">Limites de Valor de Contorno</h2>
-<h3 id="limites-de-entrada">Limites de Entrada</h3>
-<ol>
-<li>EMPTAB tem 1 entrada.  </li>
-<li>EMPTAB tem o número máximo de entradas (65 535).  </li>
-<li>EMPTAB possui 0 entradas.  </li>
-<li>DEPTTAB tem 1 entrada.  </li>
-<li>DEPTTAB tem 65 535 entradas.  </li>
-<li>DEPTTAB tem 0 entradas.  </li>
-<li>Um departamento de vendas máximas tem 1 funcionário.  </li>
-<li>Um departamento de vendas máximas tem 65 535 funcionários.  </li>
-<li>Um departamento de vendas máximas não tem funcionários.  </li>
-<li>Todos os departamentos do DEPTTAB têm as mesmas vendas.  </li>
-<li>O departamento de vendas máximas é a primeira entrada no DEPTTAB.  </li>
-<li>O departamento de vendas máximas é a última entrada no DEPTTAB.  </li>
-<li>Um funcionário elegível é a primeira entrada no EMPTAB.  </li>
-<li>Um funcionário elegível é a última entrada no EMPTAB.  </li>
-<li>Um funcionário elegível é um gerente.  </li>
-<li>Um funcionário elegível não é um gerente.  </li>
-<li>Um funcionário elegível não-gerente tem salário de R\$ 149 999,99.  </li>
-<li>Um funcionário elegível não-gerente tem salário de R\$ 150 000,00.  </li>
-<li>Um funcionário elegível não-gerente tem salário de R\$ 150 000,01.  </li>
-</ol>
-<h3 id="limites-de-saida">Limites de Saída</h3>
-<ol>
-<li><code>ERRCODE = 1/40</code>  </li>
-<li><code>ERRCODE = 1/41</code>  </li>
-<li><code>ERRCODE = 1/42</code>  </li>
-<li>O salário incrementado de um funcionário elegível é de R\$ 299 999,99.  </li>
-</ol>
-<h3 id="teste-de-adivinhacao-de-erros">Teste de Adivinhação de Erros</h3>
-<ol>
-<li>Um departamento de vendas máximas sem funcionários é seguido no DEPTTAB por outro departamento de vendas máximas com funcionários.  </li>
-</ol>
-<h2 id="planejamento-de-casos-de-teste-adicionais">Planejamento de Casos de Teste Adicionais</h2>
-<p>Isso é usado para determinar se o módulo encerra erroneamente o processamento da entrada quando encontra uma situação <code>ERRCODE = 1/42</code>. Revendo essas 24 condições, os números 2, 5 e 8 parecem casos de teste impraticáveis. Uma vez que eles também representam condições que nunca ocorrerão (geralmente uma suposição perigosa a ser feita ao testar, mas aparentemente segura aqui), nós os excluímos.</p>
-<p>O próximo passo é comparar as 21 condições restantes com o conjunto atual de casos de teste (Figura 5.5) para determinar quais condições de contorno ainda não estão cobertas. Ao fazer isso, vemos que as condições <strong>1</strong>, <strong>4</strong>, <strong>7</strong>, <strong>10</strong>, <strong>14</strong>, <strong>17</strong>, <strong>18</strong>, <strong>19</strong>, <strong>20</strong>, <strong>23</strong> e <strong>24</strong> exigem casos de teste além dos da Figura 5.5.</p>
-<p>O próximo passo é projetar casos de teste adicionais para cobrir essas 11 condições de limite. Uma abordagem é mesclar essas condições nos casos de teste existentes (por exemplo, modificando o caso de teste 4 na Figura 5.5), mas isso não é recomendado porque poderia inadvertidamente perturbar a cobertura completa de múltiplas condições dos casos de teste existentes. Portanto, a abordagem mais segura é <strong>adicionar</strong> casos de teste aos da Figura 5.5.</p>
-<p>Os três casos de teste na Figura 5.6 conseguem isso:</p>
+<hr />
+<h2 id="9-testes-de-unidade">9. Testes de Unidade</h2>
+<p><strong>Definição (Myers, 2012):</strong><br />
+Processo de testar funções, métodos, procedimentos, sub-rotinas ou subprogramas <strong>individualmente</strong>, garantindo que cada unidade isolada se comporte conforme a especificação.</p>
 <ul>
-<li><strong>Caso de Teste 5</strong>: abrange as condições 7, 10, 14, 17, 18, 19 e 20.  </li>
-<li><strong>Caso de Teste 6</strong>: abrange as condições 1, 4 e 23.  </li>
-<li><strong>Caso de Teste 7</strong>: cobre a condição 24.  </li>
+<li><strong>Objetivo:</strong> verificar o <strong>menor elemento testável</strong> de um software.  </li>
+<li>Procedural: função ou procedimento.  </li>
+<li>Orientado a objeto: método de classe.  </li>
+<li><strong>Responsável:</strong> geralmente o <strong>desenvolvedor</strong>.  </li>
+<li><strong>Enfoque:</strong> algoritmos e lógica de programação.  </li>
+<li><strong>Técnicas:</strong> tipicamente <strong>caixa-branca</strong>, complementada por <strong>caixa-preta</strong>.</li>
 </ul>
-<!-- Espaço para Figura 5.6: Casos de teste adicionais para limites de fronteira -->
+<p><strong>Motivações:</strong><br />
+- Gerenciar incrementalmente os elementos do teste.<br />
+- Facilitar a <strong>depuração</strong> (localização de defeitos).<br />
+- Permitir <strong>paralelismo</strong> na execução dos testes.</p>
+<h3 id="91-ferramentas-em-python">9.1. Ferramentas em Python</h3>
+<table>
+<thead>
+<tr>
+<th>Ferramenta</th>
+<th>Características</th>
+<th>Referência</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>unittest</code></td>
+<td>Framework padrão, estilo xUnit.</td>
+<td>Python Software Foundation (2024).</td>
+</tr>
+<tr>
+<td><code>pytest</code></td>
+<td>Sintaxe concisa, fixtures, parametrização e plugins.</td>
+<td>pytest Documentation (2024).</td>
+</tr>
+<tr>
+<td><code>coverage.py</code></td>
+<td>Medição de cobertura de código.</td>
+<td>Ned Batchelder (2024).</td>
+</tr>
+</tbody>
+</table>
+<h3 id="92-exemplo-simples-funcao-is_even">9.2. Exemplo Simples: Função <code>is_even</code></h3>
+<pre><code class="language-python"># utils.py
+def is_even(n: int) -&gt; bool:
+    &quot;&quot;&quot;
+    Retorna True se n for par, False caso contrário.
+    &quot;&quot;&quot;
+    return n % 2 == 0
+</code></pre>
+<h4 id="921-testes-com-pytest">9.2.1. Testes com <code>pytest</code></h4>
+<pre><code class="language-python"># tests/test_utils.py
+import pytest
+from utils import is_even
 
-<p>A premissa aqui é que os casos de teste de cobertura lógica (caixa branca) na Figura 5.6 formam um teste de módulo razoável para o procedimento <strong>BONUS</strong>.</p>
-<hr />
-<h2 id="testes-incrementais">Testes Incrementais</h2>
-<p>Ao executar o processo de teste de módulos, há duas considerações principais:</p>
-<ol>
-<li><strong>Design</strong> de um conjunto eficaz de casos de teste (discutido na seção anterior).  </li>
-<li><strong>Integração</strong>: a maneira pela qual os módulos são combinados para formar um programa de trabalho.  </li>
-</ol>
-<p>A segunda consideração é importante porque tem as seguintes implicações:</p>
+@pytest.mark.parametrize(&quot;input,expected&quot;, [
+    (0, True),
+    (1, False),
+    (2, True),
+    (99, False),
+])
+def test_is_even(input, expected):
+    assert is_even(input) == expected
+</code></pre>
 <ul>
-<li>A forma na qual os casos de teste do módulo são escritos.  </li>
-<li>Os tipos de ferramentas de teste que podem ser usadas.  </li>
+<li><strong>Casos de teste</strong>:</li>
+<li><code>0</code> → <code>True</code></li>
+<li><code>1</code> → <code>False</code></li>
+<li><code>2</code> → <code>True</code></li>
+<li><code>99</code> → <code>False</code></li>
 </ul>
-<h3 id="figura-56-casos-de-teste-de-analise-de-valor-de-contorno-suplementar-para-bonus">Figura 5.6: Casos de teste de análise de valor de contorno suplementar para BONUS</h3>
-<!-- Espaço para Figura 5.6 -->
-
-<hr />
-<h2 id="testes-incrementais-vs-nao-incrementais">Testes Incrementais vs Não Incrementais</h2>
-<p>A ordem na qual os módulos são codificados e testados influencia diretamente:</p>
+<h4 id="922-teste-caixa-branca-cobertura-de-decisao">9.2.2. Teste Caixa-Branca (Cobertura de Decisão)</h4>
+<pre><code class="language-python">def test_is_even_branches():
+    # testa tanto o ramo True quanto o ramo False
+    assert is_even(4) is True
+    assert is_even(5) is False
+</code></pre>
 <ul>
-<li>O custo de geração de casos de teste  </li>
-<li>O custo de depuração (localização e reparo de erros detectados)  </li>
+<li>Com isso garantimos que ambas as saídas (<code>True</code> e <code>False</code>) ocorram ao menos uma vez.</li>
 </ul>
-<p>Em suma, é uma consideração de importância substancial. Nesta seção, discutimos duas abordagens: <strong>testes incrementais</strong> e <strong>testes não incrementais</strong>. No próximo capítulo, exploraremos duas abordagens incrementais: <strong>top-down</strong> e <strong>bottom-up</strong>.</p>
-<p>A questão central é: você deve testar um programa testando cada módulo de forma independente e, em seguida, combinando os módulos para formar o sistema completo, ou testar o programa de outra forma?</p>
-<p>A primeira abordagem é chamada de <strong>teste ou integração não incremental</strong>, ou “big-bang”. A segunda abordagem é conhecida como <strong>teste incremental</strong>, ou <strong>integração incremental</strong>.</p>
-<p><img alt="Figura 5.7" src="CAMINHO_PARA_IMAGEM" /></p>
-<p>O programa na Figura 5.7 é usado como exemplo. Os retângulos representam os seis módulos (sub-rotinas ou procedimentos) no programa. As linhas que conectam os módulos representam a hierarquia de controle do programa; ou seja, o módulo <strong>A</strong> chama os módulos <strong>B</strong>, <strong>C</strong> e <strong>D</strong>; o módulo <strong>B</strong> chama o módulo <strong>E</strong>; e assim por diante.</p>
-<p>O <strong>teste não incremental</strong>, a abordagem tradicional, é realizado da seguinte maneira. Primeiro, um teste de módulo é realizado em cada um dos seis módulos, testando cada módulo como uma entidade independente. Os módulos podem ser testados ao mesmo tempo ou sucessivamente, dependendo do ambiente (por exemplo, instalações de computação interativas versus instalações de processamento em lote) e do número de pessoas envolvidas. Finalmente, os módulos são combinados ou integrados (por exemplo, “link editado”) para formar o programa.</p>
-<p>O teste de cada módulo requer um <strong>módulo driver</strong> especial e um ou mais <strong>módulos stub</strong>. Por exemplo, para testar o módulo <strong>B</strong>, os casos de teste são primeiro projetados e depois alimentados para o módulo <strong>B</strong>, passando-lhe argumentos de entrada de um módulo driver, um pequeno módulo que deve ser codificado para “conduzir” ou transmitir casos de teste através do módulo em teste. (Como alternativa, uma ferramenta de teste pode ser usada.) O módulo driver também deve exibir, para o testador, os resultados produzidos por <strong>B</strong>. Além disso, como o módulo <strong>B</strong> chama o módulo <strong>E</strong>, algo deve estar presente para receber o controle quando <strong>B</strong> chama <strong>E</strong>. Um módulo stub, um módulo especial com o nome de “E” que deve ser codificado para simular a função do módulo <strong>E</strong>, realiza isso.</p>
 <hr />
-<p>Quando o teste de módulo de todos os seis módulos for concluído, os módulos serão combinados para formar o programa.</p>
-<p>A abordagem alternativa é o <strong>teste incremental</strong>. Em vez de testar cada módulo isoladamente, o próximo módulo a ser testado é primeiro combinado com o conjunto de módulos que já foram testados.</p>
-<p>É prematuro fornecer um procedimento para testar incrementalmente o programa na Figura 5.7, porque há um grande número de abordagens incrementais possíveis. Uma questão fundamental é se devemos começar no topo ou na base do programa. No entanto, como discutiremos essa questão na próxima seção, vamos supor por enquanto que estamos começando de baixo.</p>
-<p><img alt="Figura 5.7" src="CAMINHO_PARA_IMAGEM" /></p>
-<p>O primeiro passo é testar os módulos <strong>E</strong>, <strong>C</strong> e <strong>F</strong>, em paralelo (por três pessoas) ou em série. Observe que devemos preparar um <strong>driver</strong> para cada módulo, mas <strong>não um stub</strong>. O próximo passo é testar <strong>B</strong> e <strong>D</strong>; mas, em vez de testá-los isoladamente, eles são combinados com os módulos <strong>E</strong> e <strong>F</strong>, respectivamente. Em outras palavras, para testar o módulo <strong>B</strong>, um driver é escrito incorporando os casos de teste, e o par <strong>B–E</strong> é testado. O processo incremental — adicionando o próximo módulo ao conjunto ou subconjunto de módulos testados anteriormente — é continuado até que o último módulo (módulo <strong>A</strong>, neste caso) seja testado. Observe que esse procedimento poderia ter progredido alternativamente de cima para baixo.</p>
-<p>Várias observações devem ser aparentes neste ponto:</p>
+<h3 id="93-criterios-de-cobertura">9.3. Critérios de Cobertura</h3>
+<table>
+<thead>
+<tr>
+<th>Critério</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cobertura de decisões</td>
+<td>Garante que <code>n % 2 == 0</code> avalie <code>True</code> e <code>False</code></td>
+</tr>
+<tr>
+<td>Cobertura de instruções</td>
+<td>Garante execução da única linha da função</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-bash"># Gerando relatório de cobertura
+coverage run -m pytest &amp;&amp; coverage report -m
+</code></pre>
+<pre><code class="language-text">Name           Stmts   Miss  Cover
+----------------------------------
+utils.py           3      0   100%
+</code></pre>
+<hr />
+<h2 id="10-testes-de-unidade-consideracoes">10. Testes de Unidade – Considerações</h2>
+<ul>
+<li><strong>Objetivo:</strong> comparar a função <code>is_even</code> com sua especificação, demonstrando que ela retorna <code>True</code> somente para números pares e <code>False</code> para ímpares.  </li>
+<li><strong>Escopo dos testes:</strong>  </li>
+<li>Entradas válidas (números inteiros ≥ 0 e &lt; 1000, por exemplo).  </li>
+<li>Entradas negativas ou tipos incorretos (ex.: strings) para validar robustez.  </li>
+<li><strong>Questões fundamentais:</strong>  </li>
+<li>Como representar valores-limite? (0, 1, maior inteiro par dentro do intervalo)  </li>
+<li>Como testaremos comportamentos inesperados? (valores negativos, tipos errados)  </li>
+<li>Como automatizar e integrar ao CI?</li>
+</ul>
+<hr />
+<h2 id="11-elaboracao-dos-casos-de-teste">11. Elaboração dos Casos de Teste</h2>
+<p><strong>Especificação da função <code>is_even(n: int) -&gt; bool</code>:</strong><br />
+- Retorna <code>True</code> se <code>n % 2 == 0</code>.<br />
+- Retorna <code>False</code> caso contrário.  </p>
+<h3 id="procedimento">Procedimento</h3>
 <ol>
-<li>
-<p>O teste não incremental requer mais trabalho. Para o programa na Figura 5.7, cinco drivers e cinco stubs devem ser preparados (supondo que não precisemos de um módulo de driver para o módulo superior). O teste de baixo para cima exigiria cinco <strong>drivers</strong>, mas nenhum <strong>stub</strong>. Um teste de cima para baixo exigiria cinco <strong>stubs</strong>, mas nenhum <strong>driver</strong>. Menos trabalho é necessário porque os módulos testados anteriormente são usados em vez dos módulos de driver (se você começar de cima) ou módulos de stub (se você começar de baixo) necessários na abordagem não incremental.</p>
+<li><strong>Análise caixa-preta:</strong>  </li>
+<li>Identificar classes de equivalência:  <ul>
+<li><strong>Pares:</strong> {..., 0, 2, 4, ...}  </li>
+<li><strong>Ímpares:</strong> {..., 1, 3, 5, ...}  </li>
+</ul>
 </li>
 <li>
-<p><strong>Erros de programação relacionados a interfaces incompatíveis</strong> ou suposições incorretas entre módulos serão detectados mais cedo quando o teste incremental for usado. A razão é que as combinações de módulos são testadas em conjunto desde o início. No entanto, quando testes não incrementais são usados, os módulos não “se veem” até o final do processo.</p>
+<p>Valores-limite:  </p>
+<ul>
+<li>0 (menor par não-negativo)  </li>
+<li>1 (menor ímpar)  </li>
+<li>999 (maior ímpar dentro do intervalo)  </li>
+<li>1000 (maior par dentro do intervalo)  </li>
+</ul>
 </li>
 <li>
-<p>Como resultado, a depuração deve ser mais fácil se o teste incremental for usado. Se assumirmos que existem erros relacionados a interfaces e suposições entre módulos (uma boa suposição, por experiência), então, se <strong>testes não incrementais</strong> foram usados, os erros não aparecerão até que todo o programa tenha sido combinado. Neste momento, podemos ter dificuldade em identificar o erro, pois ele pode estar em qualquer lugar dentro do programa. Por outro lado, se for utilizado um <strong>teste incremental</strong>, um erro deste tipo deverá ser mais fácil de localizar, uma vez que é provável que ele esteja associado ao módulo adicionado mais recentemente.</p>
+<p><strong>Análise caixa-branca:</strong>  </p>
+</li>
+<li>Verificar a operação <code>% 2</code>: deve executar divisão e resto.  </li>
+<li>
+<p>Cobertura de decisões: ambos os caminhos (<code>== 0</code> True/False).</p>
 </li>
 <li>
-<p>O <strong>teste incremental</strong> pode resultar em <strong>testes mais completos</strong>. Se você estiver testando o módulo <strong>B</strong>, o módulo <strong>E</strong> ou <strong>A</strong> (dependendo se você começou de baixo ou de cima) será executado como consequência. Embora <strong>E</strong> ou <strong>A</strong> devessem ter sido exaustivamente testados anteriormente, talvez executá-los durante o teste de <strong>B</strong> invoque uma nova condição — possivelmente uma deficiência no teste original de <strong>E</strong> ou <strong>A</strong>. Por outro lado, no <strong>teste não incremental</strong>, o teste de <strong>B</strong> afeta apenas o próprio módulo <strong>B</strong>. Em outras palavras, o <strong>teste incremental</strong> substitui os <strong>stubs</strong> ou <strong>drivers</strong> necessários na abordagem não incremental pelos módulos reais, dando-lhes mais exposição ao final do último teste de módulo.</p>
-</li>
-<li>
-<p>A abordagem <strong>não incremental</strong> parece usar menos tempo de máquina. Se o módulo <strong>A</strong> da Figura 5.7 estiver sendo testado usando o <strong>teste de baixo para cima</strong>, os módulos <strong>B</strong>, <strong>C</strong>, <strong>D</strong>, <strong>E</strong> e <strong>F</strong> provavelmente serão executados durante a execução de <strong>A</strong>. Em um <strong>teste não incremental</strong> de <strong>A</strong>, apenas stubs para <strong>B</strong>, <strong>C</strong> e <strong>E</strong> serão executados. O mesmo ocorre no <strong>teste incremental</strong> de cima para baixo: se o módulo <strong>F</strong> estiver sendo testado, os módulos <strong>A</strong>, <strong>B</strong>, <strong>C</strong>, <strong>D</strong> e <strong>E</strong> podem ser executados, enquanto no <strong>teste não incremental</strong> de <strong>F</strong>, apenas o <strong>driver</strong> para <strong>F</strong> e o próprio <strong>F</strong> são executados. Portanto, o número de instruções de máquina executadas em um teste incremental tende a ser maior do que no teste não incremental. Em contrapartida, o <strong>teste não incremental</strong> exige mais tempo de desenvolvimento de <strong>drivers</strong> e <strong>stubs</strong>.</p>
-</li>
-<li>
-<p>No início da fase de teste de módulo, há mais oportunidade para <strong>atividades paralelas</strong> quando o teste não incremental é usado (ou seja, todos os módulos podem ser testados simultaneamente). Isso pode ser significativo em um grande projeto (muitos módulos e pessoas), já que o número de funcionários geralmente atinge seu pico no início dessa fase.</p>
+<p><strong>Documentação em tabela de decisão:</strong></p>
 </li>
 </ol>
-<p>Em resumo, as observações 1 a 4 são <strong>vantagens do teste incremental</strong>, enquanto as observações 5 e 6 são <strong>desvantagens</strong>. Dadas as tendências atuais na <strong>indústria da computação</strong> (os custos de hardware têm diminuído e parecem destinados a continuar a fazê-lo, enquanto a capacidade de hardware aumenta; por outro lado, os custos de hardware e as consequências de erros de software estão aumentando), e dado o fato de que <strong>quanto mais cedo um erro é encontrado, menor é o custo de repará-lo</strong>, pode-se ver que as <strong>observações 1 a 4</strong> estão crescendo em importância, enquanto a <strong>observação 5</strong> está se tornando menos relevante. A <strong>observação 6</strong> parece ser uma desvantagem fraca, se é que existe. Isso leva à conclusão de que o <strong>teste incremental</strong> é superior.</p>
-<h2 id="teste-de-cima-para-baixo-versus-de-baixo-para-cima">Teste de cima para baixo versus de baixo para cima</h2>
-<p>Dada a conclusão da seção anterior — que o <strong>teste incremental</strong> é superior ao <strong>teste não incremental</strong> — exploramos a seguir duas estratégias incrementais: <strong>teste de cima para baixo</strong> e <strong>teste de baixo para cima</strong>. Antes de entrar nelas, no entanto, devemos esclarecer vários equívocos.</p>
-<p>Primeiro, os termos <strong>top-down testing</strong>, <strong>top-down development</strong> e <strong>top-down design</strong> são frequentemente usados como sinônimos. <strong>Teste de cima para baixo</strong> e <strong>desenvolvimento de cima para baixo</strong> são sinônimos (representam uma estratégia de ordenar a codificação e o teste de módulos), mas o <strong>design de cima para baixo</strong> é algo bem diferente e independente. Um programa que foi projetado de cima para baixo pode ser testado de cima para baixo ou de baixo para cima.</p>
-<p>Em segundo lugar, o <strong>teste de baixo para cima</strong> (ou <strong>desenvolvimento de baixo para cima</strong>) é frequentemente equiparado erroneamente ao <strong>teste não incremental</strong>. A razão é que o teste de baixo para cima começa de maneira idêntica a um teste não incremental (ou seja, quando os módulos inferiores, ou terminais, são testados), mas, como vimos na seção anterior, o teste de baixo para cima é uma estratégia incremental.</p>
-<p>Finalmente, como ambas as estratégias são incrementais, não repetiremos aqui as vantagens dos testes incrementais; discutiremos apenas as diferenças entre <strong>teste de cima para baixo</strong> e <strong>teste de baixo para cima</strong>.</p>
-<!-- Espaço para diagrama ilustrativo das duas estratégias -->
-
-<h3 id="teste-de-cima-para-baixo">Teste de cima para baixo</h3>
-<p>A estratégia de cima para baixo começa com o <strong>módulo superior</strong>, ou inicial, no programa. Depois disso, não há um único procedimento “correto” para selecionar o próximo módulo a ser testado incrementalmente; a única regra é que, para ser elegível, pelo menos um dos módulos subordinados (chamados) do módulo em teste deve ter sido testado anteriormente.</p>
-<hr />
-<p><img alt="Figura 5.8" src="CAMINHO_PARA_IMAGEM" /></p>
-<p>A Figura 5.8 é usada para ilustrar essa estratégia. A a L são os 12 <strong>módulos</strong> do programa. Suponha que o módulo <strong>J</strong> contenha as operações de leitura de E/S do programa e o módulo <strong>I</strong> contenha as operações de gravação.</p>
-<p>O primeiro passo é testar o módulo <strong>A</strong>. Para isso, os <strong>módulos stub</strong> que representam <strong>B</strong>, <strong>C</strong> e <strong>D</strong> devem ser escritos. Infelizmente, a produção de módulos stub é muitas vezes mal compreendida; como evidência, frequentemente você pode ver declarações como “um módulo stub precisa apenas escrever uma mensagem informando ‘chegamos até aqui’” e “em muitos casos, o módulo stub simplesmente retorna sem fazer nenhum trabalho”. Na maioria das situações, essas afirmações são falsas.</p>
-<p>Como o módulo <strong>A</strong> chama o módulo <strong>B</strong>, <strong>A</strong> espera que <strong>B</strong> execute algum trabalho; esse trabalho provavelmente é algum resultado (argumentos de saída) retornado a <strong>A</strong>. Se o stub simplesmente retornar o controle ou escrever uma mensagem de erro sem fornecer um resultado significativo, o módulo <strong>A</strong> falhará — não por causa de um erro em <strong>A</strong>, mas por causa da falha do stub em simular o módulo correspondente.</p>
-<p>Além disso, retornar uma saída “conectada” de um módulo stub é muitas vezes insuficiente. Por exemplo, considere a tarefa de escrever um stub representando uma rotina de raiz quadrada, uma rotina de pesquisa de tabela de banco de dados, uma rotina de “obter registro de arquivo mestre correspondente” ou algo semelhante. Se o stub retornar uma saída fixa — mas não o valor específico esperado pelo módulo de chamada durante essa invocação — o módulo de chamada poderá falhar ou produzir um resultado confuso. Portanto, a produção de stubs não é uma tarefa trivial.</p>
-<hr />
-<p>Outra consideração é a forma como os <strong>casos de teste</strong> são apresentados ao programa, uma consideração importante que nem mesmo é mencionada na maioria das discussões sobre <strong>teste de cima para baixo</strong>. Em nosso exemplo, a pergunta é: <strong>Como você alimenta casos de teste para o módulo A?</strong> O módulo superior em programas típicos não recebe argumentos de entrada nem executa operações de <strong>entrada/saída</strong>, portanto, a resposta não é imediatamente óbvia. A resposta é que os dados de teste são alimentados no módulo (módulo A nesta situação) a partir de um ou mais de seus <strong>stubs</strong>.</p>
-<p>Para ilustrar, suponha que as funções de <strong>B</strong>, <strong>C</strong> e <strong>D</strong> sejam as seguintes:<br />
-- <strong>B</strong> — Obter resumo do arquivo de transação.<br />
-- <strong>C</strong> — Determinar se o status semanal atende à cota.<br />
-- <strong>D</strong> — Produzir relatório de resumo semanal.</p>
-<p>Um caso de teste para <strong>A</strong>, então, é um resumo de transação retornado do <strong>stub B</strong>. O stub D pode conter instruções para gravar seus dados de entrada em uma impressora, permitindo que os resultados de cada teste sejam examinados.</p>
-<p>Neste programa, existe outro problema. Presumivelmente, o módulo <strong>A</strong> chama o módulo <strong>B</strong> apenas uma vez; portanto, o problema é <strong>como alimentar mais de um caso de teste para A</strong>. Uma solução é desenvolver várias versões do <strong>stub B</strong>, cada uma com um conjunto diferente de dados de teste a serem retornados a <strong>A</strong>. Para executar os casos de teste, o programa é executado várias vezes, cada vez com uma versão diferente do <strong>stub B</strong>. Outra alternativa é colocar dados de teste em arquivos externos e fazer com que o <strong>stub B</strong> leia esses dados e os retorne para <strong>A</strong>. Em ambos os casos, tendo em mente a discussão anterior, você deve ver que o desenvolvimento de <strong>módulos stub</strong> é mais difícil do que muitas vezes parece.</p>
-<p>Além disso, muitas vezes é necessário, devido às características do programa, representar um caso de teste em vários <strong>stubs</strong> abaixo do módulo em teste (ou seja, onde o módulo recebe dados a serem acionados chamando vários módulos). Depois que <strong>A</strong> for testado, um módulo real substitui um dos stubs e os stubs exigidos por esse módulo são adicionados. Por exemplo, a Figura 5.9 pode representar a próxima versão do programa.</p>
-<p><img alt="Figura 5.9" src="CAMINHO_PARA_IMAGEM" /></p>
-<p>Depois de testar o módulo superior, várias sequências são possíveis. Por exemplo, se estivermos realizando todas as sequências de teste, quatro exemplos de quaisquer sequências possíveis de módulos são:</p>
-<p>//corrigir 
-1. UMA B<br />
-2. UMA B<br />
-3. UMA DCDEFGHEuJKL<br />
-   EFJCGKDHLEu<br />
-   HEuKLCGBFJE<br />
-   BFJDEuECGKHL<br />
-4. UMA</p>
-<hr />
-<p><img alt="Figura 5.9" src="CAMINHO_PARA_IMAGEM" /></p>
-<p>Se ocorrerem <strong>testes paralelos</strong>, outras alternativas são possíveis. Por exemplo, depois que o módulo <strong>A</strong> foi testado, um programador pode testar a combinação <strong>A–B</strong>; outro, <strong>A–C</strong>; e um terceiro, <strong>A–D</strong>. Em geral, não existe uma sequência “melhor”, mas duas diretrizes devem ser consideradas:</p>
+<table>
+<thead>
+<tr>
+<th>Caso</th>
+<th>Entrada</th>
+<th>Saída Esperada</th>
+<th>Tipo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>C1</td>
+<td>n = 0</td>
+<td>True</td>
+<td>Caixa-preta</td>
+</tr>
+<tr>
+<td>C2</td>
+<td>n = 1</td>
+<td>False</td>
+<td>Caixa-preta</td>
+</tr>
+<tr>
+<td>C3</td>
+<td>n = 2</td>
+<td>True</td>
+<td>Caixa-preta</td>
+</tr>
+<tr>
+<td>C4</td>
+<td>n = 999</td>
+<td>False</td>
+<td>Caixa-preta</td>
+</tr>
+<tr>
+<td>C5</td>
+<td>n = 1000</td>
+<td>True</td>
+<td>Caixa-preta</td>
+</tr>
+<tr>
+<td>C6</td>
+<td>n = -1</td>
+<td>Error/TypeError</td>
+<td>Caixa-preta</td>
+</tr>
+<tr>
+<td>C7</td>
+<td>n = 'a'</td>
+<td>TypeError</td>
+<td>Caixa-preta</td>
+</tr>
+<tr>
+<td>C8</td>
+<td>n = 4</td>
+<td>True</td>
+<td>Caixa-branca</td>
+</tr>
+<tr>
+<td>C9</td>
+<td>n = 5</td>
+<td>False</td>
+<td>Caixa-branca</td>
+</tr>
+</tbody>
+</table>
 <ol>
-<li><strong>Seções críticas</strong> do programa (por exemplo, o módulo <strong>G</strong>): uma “seção crítica” pode ser um módulo complexo, com novo algoritmo ou suspeito de ser propenso a erros.  </li>
-<li><strong>Módulos de E/S</strong> devem ser adicionados o mais cedo possível.</li>
+<li><strong>Implementação dos testes:</strong>  </li>
+<li>Usar <code>pytest</code> para casos de equivalência e limites.  </li>
+<li>
+<p>Usar <code>pytest.raises</code> para tipos incorretos.  </p>
+</li>
+<li>
+<p><strong>Execução e relatório de cobertura:</strong>  </p>
+</li>
 </ol>
-<p>A motivação para a primeira diretriz é óbvia, mas a segunda merece discussão. Lembre-se de que, enquanto alguns stubs devem conter casos de teste, outros precisam gravar suas entradas em impressora ou monitor. Assim que o módulo que <strong>aceita</strong> a entrada do programa é adicionado, a representação dos casos de teste se simplifica — sua forma passa a ser idêntica à entrada do programa final (por exemplo, de um arquivo de transação ou de um terminal). Da mesma forma, quando o módulo que <strong>executa</strong> a função de saída é incorporado, o código nos stubs para escrever resultados pode deixar de ser necessário.</p>
-<p>Portanto, se <strong>J</strong> e <strong>I</strong> são os módulos de E/S e <strong>G</strong> é o módulo crítico, uma sequência incremental possível é:</p>
-<p>A → B → F → J → D → I → C → G → E → K → H → L</p>
-<p>O programa após o sexto incremento (após <strong>D</strong>) ficaria conforme ilustrado na Figura 5.10.</p>
-<p><img alt="Figura 5.10" src="CAMINHO_PARA_IMAGEM" /></p>
-<p>Uma vez atingido o estado intermediário na <strong>Figura 5.10</strong>, a representação dos casos de teste e a inspeção dos resultados são simplificadas. Tem ainda outra vantagem, pois você possui uma <strong>versão esquelética funcional</strong> do programa — ou seja, uma versão que executa operações reais de entrada e saída. No entanto, os stubs ainda estão simulando alguns dos “interiores”. Esta versão esquelética inicial:</p>
+<pre><code class="language-bash">pytest --maxfail=1 --disable-warnings -q
+coverage run -m pytest &amp;&amp; coverage report -m
+</code></pre>
+<h2 id="12-referencias-bibliograficas">12. Referências Bibliográficas</h2>
 <ul>
-<li><strong>Permite que você encontre erros</strong> e problemas de fator humano.  </li>
-<li><strong>Possibilita demonstrar o programa</strong> ao eventual usuário.  </li>
-<li><strong>Serve como evidência</strong> de que o design geral do programa é sólido.  </li>
-<li><strong>Serve como um impulsionador do moral</strong>.</li>
+<li>Myers, G. J., Sandler, C., &amp; Badgett, T. (2012). <em>The Art of Software Testing</em>. John Wiley &amp; Sons.  </li>
+<li>pytest Development Team. (2024). <em>pytest documentation</em>. Retrieved from https://docs.pytest.org/  </li>
+<li>Ned Batchelder. (2024). <em>coverage.py documentation</em>. Retrieved from https://coverage.readthedocs.io/  </li>
+<li>Meszaros, G. (2007). <em>xUnit Test Patterns: Refactoring Test Code</em>. Addison-Wesley.  </li>
+<li>Dodds, K. C. (2020). <em>The Testing Trophy</em>.  </li>
+<li>Spotify Labs. (2019). <em>Microservices Test Strategy</em></li>
 </ul>
-<p>Esses pontos representam a principal vantagem da estratégia de cima para baixo. Por outro lado, a <strong>abordagem de cima para baixo</strong> tem algumas deficiências sérias.</p>
-<p>Suponha que nosso estado atual de teste seja o da Figura 5.10 e que nosso próximo passo seja substituir o <strong>stub H</strong> pelo <strong>módulo H</strong>. O que devemos fazer neste ponto (ou antes) é usar os métodos descritos anteriormente neste capítulo para <strong>desincronizar um conjunto de casos de teste para H</strong>. Observe, no entanto, que os casos de teste estão na forma de entradas reais do programa para o módulo <strong>J</strong>. Isso apresenta vários problemas. Primeiro, por causa dos módulos intermediários entre <strong>J</strong> e <strong>H</strong> (F, B, A e D), podemos achar impossível representar certos casos de teste para o módulo <strong>J</strong> que testem todas as situações predefinidas em <strong>H</strong>. Por exemplo, se <strong>H</strong> é o módulo <strong>BÔNUS</strong> da Figura 5.2, pode ser impossível, devido à natureza do módulo intermediário <strong>D</strong>, criar alguns dos sete casos de teste das Figuras 5.5 e 5.6.</p>
-<p>Em segundo lugar, por causa da “distância” entre <strong>H</strong> e o ponto em que os dados de teste entram no programa, mesmo que fosse possível testar todas as situações, determinar quais dados alimentar para <strong>J</strong> a fim de testar essas situações em <strong>H</strong> é frequentemente uma tarefa mental complexa.</p>
-<p>Terceiro, como a saída exibida de um teste pode vir de um módulo distante daquele que está sendo testado, correlacionar a saída exibida com o que ocorreu no módulo-alvo pode ser difícil ou impossível. Por exemplo, ao adicionar o módulo <strong>E</strong> à Figura 5.10, os resultados de cada caso de teste são obtidos examinando a saída escrita pelo módulo <strong>I</strong>, mas, devido aos módulos intermediários, pode ser complicado deduzir a saída real de <strong>E</strong> (isto é, os dados retornados a <strong>B</strong>).</p>
-<p>A estratégia de cima para baixo, dependendo da abordagem, pode apresentar mais dois problemas. Algumas pessoas acreditam que ela se sobrepõe à fase de design do programa. Por exemplo, ao projetar o programa na Figura 5.8, pode-se supor que, após definir os dois primeiros níveis, os módulos <strong>A</strong> a <strong>D</strong> possam ser codificados e testados enquanto o design dos níveis inferiores prossegue. Como enfatizado em outros locais, essa costuma ser uma decisão imprudente. O design é uma etapa inicial; ao projetar níveis inferiores, podem surgir mudanças ou melhorias desejáveis nos níveis superiores. Se estes já tiverem sido codificados e testados, tais melhorias provavelmente serão descartadas, o que é prejudicial a longo prazo.</p>
-<p>Um problema final, comum na prática, é não testar completamente um módulo antes de avançar para o próximo. Isso acontece por dois motivos: pela dificuldade de incorporar dados de teste em stubs e pelo fato de os níveis superiores geralmente proverem recursos aos níveis inferiores. Na Figura 5.8, vimos que testar o módulo <strong>A</strong> pode exigir várias versões do stub para <strong>B</strong>. Na prática, há quem diga: “Isso dá muito trabalho; vou postergar alguns casos de teste de <strong>A</strong> até incluir o módulo <strong>J</strong>, quando será mais fácil apresentar os dados de teste, e só então concluirei o teste de <strong>A</strong>.” O risco é esquecer de executar todos os casos de <strong>A</strong> nessa etapa posterior. Além disso, como os níveis superiores costumam fornecer recursos (por exemplo, abertura de arquivos) usados pelos níveis inferiores, às vezes só se percebe que um recurso não foi corretamente configurado (por exemplo, arquivo aberto com atributos inadequados) ao testar o módulo que o utiliza.</p>
-<hr />
-<h2 id="teste-incremental-de-baixo-para-cima">Teste incremental de baixo para cima</h2>
-<p>O próximo passo é examinar a <strong>estratégia de teste incremental de baixo para cima</strong>. Na maioria das vezes, o teste de baixo para cima é o oposto do teste de cima para baixo; assim, as vantagens do teste de cima para baixo tornam-se desvantagens do teste de baixo para cima, e as desvantagens do teste de cima para baixo tornam-se vantagens do teste de baixo para cima. Por isso, a discussão sobre os testes ascendente e descendente é mais curta.</p>
-<p>A estratégia <strong>ascendente</strong> começa com os <strong>módulos terminais</strong> no programa (aqueles que não chamam outros módulos). Depois que esses módulos forem testados, não existe um procedimento único para selecionar o próximo módulo a ser testado incrementalmente; a única regra é que, para ser elegível, <strong>todos os módulos subordinados</strong> (os módulos que ele chama) devem ter sido testados anteriormente.</p>
-<p>Voltando à <strong>Figura 5.8</strong>, o primeiro passo é testar alguns ou todos os módulos <strong>E</strong>, <strong>J</strong>, <strong>G</strong>, <strong>K</strong>, <strong>L</strong> e <strong>I</strong>, em série ou em paralelo. Para isso, cada módulo precisa de um <strong>driver</strong> especial: um módulo que fornece entradas de teste, chama o módulo em teste e exibe as saídas (ou compara as saídas reais com as esperadas). Ao contrário da situação com stubs, várias versões de um driver não são necessárias, pois o driver pode chamar iterativamente o módulo que está sendo testado. Na maioria dos casos, os drivers são mais fáceis de produzir do que os stubs.</p>
-<p>Como mencionado anteriormente, um fator que influencia a sequência de testes é a <strong>criticidade</strong> dos módulos. Se decidirmos que os módulos <strong>D</strong> e <strong>F</strong> são os mais críticos, um estado intermediário do teste incremental de baixo para cima pode ser o da <strong>Figura 5.11</strong>. As próximas etapas podem ser testar <strong>E</strong> e, em seguida, testar <strong>B</strong>, combinando B com os módulos E, F e J testados anteriormente.</p>
-<p>Uma desvantagem da estratégia de baixo para cima é que não existe o conceito de <strong>programa quase esquelético</strong>. De fato, o programa funcional não existe até que o último módulo (módulo <strong>A</strong>) seja adicionado, e então o programa de trabalho é o programa completo. Embora as funções de E/S possam ser testadas antes que todo o programa seja integrado (os módulos de E/S estão sendo usados na Figura 5.11), as vantagens do programa esquelético precoce não estão presentes.</p>
-<p>Os problemas associados à dificuldade de criar todas as situações de teste na abordagem top-down não existem aqui. Se você pensar em um driver como uma <strong>sonda de teste</strong>, a sonda é colocada diretamente no módulo em teste; não há módulos intermediários para complicar a análise. Examinando outros problemas da abordagem de cima para baixo, você não pode tomar a decisão imprudente de sobrepor <strong>design</strong> e <strong>teste</strong>, uma vez que o <strong>teste de baixo para cima</strong> não pode começar até que a parte inferior do programa tenha sido <strong>designada</strong>. Além disso, o problema de não completar o teste de um módulo antes de iniciar outro — devido à dificuldade de codificar dados de teste em versões de um <strong>stub</strong> — não existe ao usar o teste de baixo para cima.</p>
-<h3 id="uma-comparacao">Uma comparação</h3>
-<p>Seria conveniente se a questão <strong>cima para baixo versus baixo para cima</strong> fosse tão clara quanto <strong>incremental versus não incremental</strong>, mas infelizmente não é. A <strong>Tabela 5.3</strong> resume as vantagens e desvantagens relativas das duas abordagens (excluindo as vantagens compartilhadas por ambas — ou seja, as do teste incremental).</p>
-<!-- Tabela 5.3: Vantagens e desvantagens de cima para baixo vs. de baixo para cima -->
-
-<p>A primeira vantagem de cada abordagem pode parecer o fator decisivo, mas não há evidências de que as principais falhas ocorram com mais frequência nos níveis superior ou inferior de um programa típico. A maneira mais segura de decidir é pesar os fatores da Tabela 5.3 em relação ao programa específico em teste. Na falta de um programa concreto aqui, as sérias <strong>consequências</strong> da quarta desvantagem do teste de cima para baixo — e a disponibilidade de ferramentas de teste que eliminam a necessidade de <strong>drivers</strong>, mas não de <strong>stubs</strong> — parecem dar vantagem à estratégia de baixo para cima.</p>
-<p>Além disso, pode ser evidente que os testes de cima para baixo e de baixo para cima não são as únicas estratégias incrementais possíveis.</p>
-<hr />
-<h2 id="tabela-53-comparacao-de-testes-de-cima-para-baixo-e-de-baixo-para-cima">Tabela 5.3 Comparação de testes de cima para baixo e de baixo para cima</h2>
-<h3 id="teste-de-cima-para-baixo_1">Teste de cima para baixo</h3>
-<p><strong>Vantagens</strong>
-1. Vantajoso quando ocorrem falhas graves no topo do programa.<br />
-2. Os módulos de esboço costumam ser mais complicados do que parecem à primeira vista.<br />
-3. Antes que as funções de E/S sejam adicionadas, a representação de casos de teste pode ser difícil.<br />
-4. As condições de teste podem ser impossíveis ou muito difíceis de criar.<br />
-5. A observação do resultado do teste é mais difícil.<br />
-6. Leva à conclusão de que o design e o teste podem ser sobrepostos.<br />
-7. Adia a conclusão do teste de certos módulos.  </p>
-<p><strong>Desvantagens</strong>
-1. Devem ser produzidos módulos stub de topo.<br />
-2. Uma vez que as funções de E/S são adicionadas, a representação de casos é mais fácil.<br />
-3. O programa esquelético inicial permite demonstrações e aumenta o moral.<br />
-4. As condições de teste podem ser impossíveis ou muito difíceis de criar.<br />
-5. A observação do resultado do teste é mais difícil.<br />
-6. Leva à conclusão de que o design e o teste podem ser sobrepostos.<br />
-7. Adia a conclusão do teste de certos módulos.  </p>
-<h3 id="teste-de-baixo-para-cima">Teste de baixo para cima</h3>
-<p><strong>Vantagens</strong>
-1. Vantajoso quando ocorrem falhas graves na parte inferior do programa.<br />
-2. As condições de teste são mais fáceis de criar.<br />
-3. A observação dos resultados dos testes é mais fácil.  </p>
-<p><strong>Desvantagens</strong>
-1. Devem ser produzidos módulos de driver.<br />
-2. O programa, como entidade funcional, só existe após a adição do último módulo.  </p>
-<h2 id="executando-o-teste">Executando o teste</h2>
-<p>A parte restante do teste de módulo é o ato de realmente realizar o teste. Um conjunto de dicas e diretrizes para isso está incluído aqui.</p>
-<p>Quando um caso de teste produz uma situação em que os resultados reais do módulo não correspondem aos resultados esperados, há duas explicações possíveis: ou o módulo contém um erro, ou os resultados esperados estão incorretos (o caso de teste está incorreto). Para minimizar essa confusão, o conjunto de casos de teste deve ser <strong>revisado ou inspecionado antes</strong> que o teste seja realizado (ou seja, os casos de teste devem ser testados).</p>
-<p>O uso de <strong>ferramentas de teste automatizadas</strong> pode minimizar parte do trabalho penoso do processo de teste. Por exemplo, existem ferramentas que eliminam a necessidade de módulos de driver. Ferramentas de análise de fluxo enumeram os caminhos por meio de um programa, encontram instruções que nunca podem ser executadas (código <em>“inacessível”</em>) e identificam instâncias em que uma variável é usada antes de receber um valor.</p>
-<p>Como foi prática anterior neste capítulo, lembre-se de que <strong>definir o resultado esperado</strong> é parte necessária de um caso de teste. Ao executar um teste, lembre-se de procurar <strong>efeitos colaterais</strong> (casos em que um módulo faz algo que não deveria fazer). Em geral, essas situações são difíceis de detectar, mas algumas podem ser encontradas verificando, após a execução do caso de teste, as entradas para o módulo que não devem ter sido alteradas. Por exemplo, o caso de teste 7 na Figura 5.6 afirma que, como parte do resultado esperado, <strong>ESIZE</strong>, <strong>DSIZE</strong> e <strong>DEPTTAB</strong> devem permanecer inalterados. Ao executar esse caso de teste, examine não apenas a saída quanto ao resultado correto, mas também <strong>ESIZE</strong>, <strong>DSIZE</strong> e <strong>DEPTTAB</strong> para verificar alterações indevidas.</p>
-<!-- Espaço para Figura 5.6 -->
-
-<p>Os problemas psicológicos associados a uma pessoa que tenta testar <strong>seus próprios</strong> programas também se aplicam ao teste de módulo. Em vez de testar seus próprios módulos, os programadores podem <strong>trocá-los</strong>; mais especificamente, o programador do módulo de chamada é sempre um bom candidato para testar o módulo chamado. Observe que isso se aplica apenas ao teste — a depuração de um módulo sempre deve ser realizada pelo programador original.</p>
-<p>Evite casos de teste descartáveis; represente-os de forma que possam ser <strong>reutilizados</strong> no futuro. Lembre-se do fenômeno contra-intuitivo na Figura 2.2: se for detectado um número anormalmente elevado de erros em um subconjunto de módulos, é provável que esses módulos contenham ainda mais erros não detectados. Esses módulos devem ser submetidos a testes adicionais de módulo e, possivelmente, a um passo a passo ou inspeção de código adicional.</p>
-<!-- Espaço para Figura 2.2 -->
-
-<p>Por fim, lembre-se de que o objetivo de um teste de módulo não é demonstrar que o módulo funciona corretamente, mas <strong>demonstrar a presença de erros</strong> no módulo.</p>
-<hr />
-<h2 id="resumo">Resumo</h2>
-<p>Neste capítulo, apresentamos algumas das mecânicas de teste de componentes individuais de programas — sub-rotinas, subprogramas, classes e procedimentos. No teste de módulo, você compara a funcionalidade do software com a especificação que define sua função pretendida. O teste de módulo ou unidade pode ser uma parte importante da caixa de ferramentas de um desenvolvedor para ajudar a obter um aplicativo confiável, especialmente com linguagens orientadas a objetos, como Java e C#. O objetivo no teste de módulo é o mesmo que em qualquer outro tipo de teste de software: tentar mostrar como o programa contradiz a especificação. Além da especificação do software, você precisará do <strong>código-fonte</strong> de cada módulo para efetuar o teste.</p>
-<p>O teste de módulo é em grande parte um <strong>teste de caixa branca</strong> (consulte o Capítulo 4 para mais informações). Um projeto de teste de módulo completo incluirá estratégias incrementais, como técnicas de cima para baixo e de baixo para cima. É útil, ao se preparar para um teste de módulo, revisar os <strong>princípios psicológicos e econômicos</strong> estabelecidos no Capítulo 2.</p>
-<p>Mais um ponto: o software de teste de módulos é apenas o começo de um procedimento de teste exaustivo. Você precisará passar para o <strong>teste de ordem superior</strong> (Capítulo 6) e o <strong>teste de usuário</strong> (Capítulo 7).</p>
-<hr />
 
 
 
@@ -1661,13 +1420,13 @@ DECLARE 1 EMPTAB(<em>),           /</em> ENTRADA E SAÍDA */
         
         
           
-          <a href="../unitv2/" class="md-footer__link md-footer__link--next" aria-label="Próximo: Teste de Unidade v2">
+          <a href="../mc_dc/" class="md-footer__link md-footer__link--next" aria-label="Próximo: Modified Condition/Decision Coverage (MC/DC)">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Próximo
               </span>
               <div class="md-ellipsis">
-                Teste de Unidade v2
+                Modified Condition/Decision Coverage (MC/DC)
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -1703,7 +1462,7 @@ DECLARE 1 EMPTAB(<em>),           /</em> ENTRADA E SAÍDA */
     
     
       
-      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.footer", "navigation.sections", "navigation.expand"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.footer", "navigation.sections", "navigation.expand", "toc.integrate", "search.suggest", "search.highlight", "content.code.annotate", "content.code.copy", "header.autohide", "announce.dismiss"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}, "version": null}</script>
     
     
       <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
