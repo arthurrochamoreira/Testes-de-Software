@@ -66,6 +66,12 @@ python -m venv .venv
 source .venv/bin/activate
 ```
 
+**Windows (PowerShell ou CMD)**
+
+```powershell
+.\venv\Scripts\Activate
+```
+
 > Você verá o prefixo `(.venv)` no prompt quando o venv estiver ativo.
 
 ## 5. Instale as dependências
@@ -73,13 +79,7 @@ source .venv/bin/activate
 Com o venv ativo, instale o MkDocs e o tema Material:
 
 ```bash
-pip install mkdocs mkdocs-material
-```
-
-Se quiser fixar versões, adapte para:
-
-```bash
-pip install mkdocs==1.5.3 mkdocs-material==9.1.10
+pip install -r requirements.txt
 ```
 
 ## 6. Rode o ambiente de desenvolvimento
@@ -89,6 +89,8 @@ Ainda com o venv ativo, execute:
 ```bash
 mkdocs serve
 ```
+
+---
 
 ---
 

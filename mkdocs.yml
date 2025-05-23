@@ -2,6 +2,9 @@ site_name: Testes de Software
 repo_url: https://github.com/arthurrochamoreira/Testes-de-Software
 repo_name: testes-de-software
 
+plugins:
+    - mermaid2
+
 theme:
   name: material
   features:
@@ -13,21 +16,34 @@ theme:
     - navigation.footer
     - navigation.sections        
     - navigation.expand
+    - toc.integrate
+    - search.suggest
+    - search.highlight
+    - content.code.annotate
+    - content.code.copy
+    - header.autohide
+    - announce.dismiss
+    
+
   language: pt-BR
   font:
     text: Roboto Mono
     code: Roboto Mono
+    heading: Montserrat
 
   palette:
-
     # Palette toggle for light mode
     - scheme: default
+      primary: deep purple   # Cor principal (barra superior, botões ativos)
+      accent: deep orange    # Cor de destaque (links, botões)
       toggle:
         icon: material/brightness-5 
         name: Switch to dark mode
 
     # Palette toggle for dark mode
     - scheme: slate
+      primary: deep purple  # Cor principal (barra superior, botões ativos)
+      accent: deep orange   # Cor de destaque (links, botões)
       toggle:
         icon: material/brightness-2
         name: Switch to light mode
