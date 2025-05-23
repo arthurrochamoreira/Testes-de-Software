@@ -13,6 +13,21 @@ cd Testes-de-Software
 
 ## 2. Pré-requisitos
 
+### Configuração inicial do Git no Windows
+
+Após instalar o Git, configure seu nome de usuário e e-mail globalmente (eles serão usados nos commits):
+
+```bash
+git config --global user.name "Seu Nome"
+git config --global user.email "seu@email.com"
+```
+
+Você pode verificar as configurações atuais com:
+
+```bash
+git config --global --list
+```
+
 ### Ubuntu
 
 Antes de criar o ambiente virtual, instale os pacotes necessários:
@@ -33,7 +48,7 @@ Marque a opção "Add Python to PATH" durante a instalação.
 
 Instale o Git: [https://git-scm.com/download/win](https://git-scm.com/download/win)
 
-Opcional: Como admin use o terminal PowerShell ou Git Bash para seguir os comandos com mais facilidade.
+Opcional: use o terminal PowerShell ou Git Bash para seguir os comandos com mais facilidade.
 
 ## 3. Crie o ambiente virtual
 
