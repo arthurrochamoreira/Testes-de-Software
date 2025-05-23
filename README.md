@@ -11,7 +11,9 @@ git clone https://github.com/arthurrochamoreira/Testes-de-Software.git
 cd Testes-de-Software
 ```
 
-## 2. Pré-requisitos no Ubuntu
+## 2. Pré-requisitos
+
+### Ubuntu
 
 Antes de criar o ambiente virtual, instale os pacotes necessários:
 
@@ -20,12 +22,25 @@ sudo apt update
 sudo apt install -y python3 python3-venv python3-pip git
 ```
 
+### Windows
+
+Instale o Python de uma das seguintes formas:
+
+* Site oficial: [https://www.python.org/downloads/windows/](https://www.python.org/downloads/windows/)
+* Microsoft Store (versão mais recente recomendada para iniciantes): abra a Microsoft Store, pesquise por "Python" e instale a versão mais recente disponível
+
+Marque a opção "Add Python to PATH" durante a instalação.
+
+Instale o Git: [https://git-scm.com/download/win](https://git-scm.com/download/win)
+
+Opcional: Como admin use o terminal PowerShell ou Git Bash para seguir os comandos com mais facilidade.
+
 ## 3. Crie o ambiente virtual
 
 No diretório raiz do projeto, crie um venv chamado `.venv`:
 
 ```bash
-python3 -m venv .venv
+python -m venv .venv
 ```
 
 ## 4. Ative o ambiente virtual
@@ -35,6 +50,7 @@ python3 -m venv .venv
 ```bash
 source .venv/bin/activate
 ```
+
 > Você verá o prefixo `(.venv)` no prompt quando o venv estiver ativo.
 
 ## 5. Instale as dependências
@@ -58,3 +74,9 @@ Ainda com o venv ativo, execute:
 ```bash
 mkdocs serve
 ```
+
+---
+
+Acesse a documentação no navegador pelo endereço:
+
+[http://127.0.0.1:8000](http://127.0.0.1:8000)
