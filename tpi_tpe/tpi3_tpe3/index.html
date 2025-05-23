@@ -962,10 +962,7 @@
 </ul>
 <p><strong>RESPOSTA:</strong> d. Grafo de Fluxo de Controle.</p>
 <blockquote>
-<p>“The diagram is a control-flow graph. Each node or circle represents a segment of statements that execute sequentially, possibly terminating with a branching statement. Each edge or arc represents a transfer of control (branch) between segments.”<br />
-<em>(p. 11, The Art of Software Testing – 3rd Edition)</em></p>
-<p>Tradução:<br />
-“O diagrama é um grafo de fluxo de controle. Cada nó ou círculo representa um segmento de instruções que executam sequencialmente, podendo terminar com uma instrução de desvio. Cada aresta ou arco representa uma transferência de controle (desvio) entre segmentos.”</p>
+<p>O diagrama é um grafo de fluxo de controle. Cada nó ou círculo representa um segmento de instruções que executam sequencialmente, podendo terminar com uma instrução de desvio. Cada aresta ou arco representa uma transferência de controle (desvio) entre segmentos.</p>
 </blockquote>
 <p><strong>Referência:</strong> <em>The Art of Software Testing – 3rd Edition</em>, página 11.</p>
 <hr />
@@ -978,9 +975,9 @@
 </ul>
 <p><strong>RESPOSTA:</strong> b. É uma abordagem de teste de caixa branca que foca nos componentes individuais de um programa.</p>
 <blockquote>
-<p>“O teste de unidade é amplamente orientado à caixa-branca.” (p. 86)<br />
-Module testing is largely white-box oriented.</p>
+<p>O teste de unidade é amplamente orientado à caixa-branca. (p. 86)  </p>
 </blockquote>
+<p><strong>Referência:</strong> <em>The Art of Software Testing – 3rd Edition</em>, página 86.</p>
 <hr />
 <h2 id="q03-quais-sao-os-dois-principais-motivos-para-realizar-o-teste-de-unidade">Q03. Quais são os dois principais motivos para realizar o teste de unidade?</h2>
 <ul>
@@ -991,10 +988,9 @@ Module testing is largely white-box oriented.</p>
 </ul>
 <p><strong>RESPOSTA:</strong> b. Reduzir a complexidade de testar programas grandes e facilitar a depuração.</p>
 <blockquote>
-<p>“The motivations for doing this are threefold. First, module testing is a way of managing the combined elements of testing, since attention is focused initially on smaller units of the program. Second, module testing eases the task of debugging since attention is focused on a small unit of code and since the interface to the rest of the program is often simulated by a stub module.”<br />
-<em>(p. 85, The Art of Software Testing – 3rd Edition)</em></p>
-<p>“As motivações para fazer isso são três. Primeiro, o teste de módulo é uma forma de gerenciar os elementos combinados do teste, já que a atenção é focada inicialmente em unidades menores do programa. Segundo, o teste de módulo facilita a tarefa de depuração, já que a atenção está concentrada em uma pequena unidade de código e, frequentemente, a interface com o restante do programa é simulada por um módulo stub.” (p. 85)</p>
+<p>As motivações para fazer isso são três. Primeiro, o teste de módulo é uma forma de gerenciar os elementos combinados do teste, já que a atenção é focada inicialmente em unidades menores do programa. Segundo, o teste de módulo facilita a tarefa de depuração, já que a atenção está concentrada em uma pequena unidade de código e, frequentemente, a interface com o restante do programa é simulada por um módulo stub. (p. 85)</p>
 </blockquote>
+<p><strong>Referência:</strong> <em>The Art of Software Testing – 3rd Edition</em>, página 85.</p>
 <hr />
 <h2 id="q04-por-que-a-cobertura-de-condicao-pode-nao-satisfazer-a-cobertura-de-decisao">Q04. Por que a cobertura de condição pode não satisfazer a cobertura de decisão?</h2>
 <ul>
@@ -1005,10 +1001,8 @@ Module testing is largely white-box oriented.</p>
 </ul>
 <p><strong>RESPOSTA:</strong> b. Porque algumas condições podem mascarar outras.</p>
 <blockquote>
-<p>“Um ponto fraco da cobertura de condição/decisão é que, embora pareça exercitar todos os resultados de todas as condições, frequentemente não o faz, porque certas condições mascaram outras condições.”<br />
-<em>“A weakness with decision/condition coverage is that although it may appear to exercise all outcomes of all conditions, it frequently does not, because certain conditions mask other conditions.”</em> (p. 46)</p>
-<p>“Por exemplo, se uma condição ‘and’ for falsa, nenhuma das condições subsequentes na expressão precisa ser avaliada. Da mesma forma, se uma condição ‘or’ for verdadeira, as condições subsequentes também não precisam ser avaliadas.”<br />
-<em>“For instance, if an and condition is false, none of the subsequent conditions in the expression need be evaluated. Likewise, if an or condition is true, none of the subsequent conditions need be evaluated.”</em> (p. 47)</p>
+<p>Um ponto fraco da cobertura de condição/decisão é que, embora pareça exercitar todos os resultados de todas as condições, frequentemente não o faz, porque certas condições mascaram outras condições.  </p>
+<p>Por exemplo, se uma condição ‘and’ for falsa, nenhuma das condições subsequentes na expressão precisa ser avaliada. Da mesma forma, se uma condição ‘or’ for verdadeira, as condições subsequentes também não precisam ser avaliadas.  </p>
 </blockquote>
 <p><strong>Referência:</strong> <em>The Art of Software Testing – 3rd Edition</em>, páginas 46–47.</p>
 <hr />
@@ -1021,14 +1015,9 @@ Module testing is largely white-box oriented.</p>
 </ul>
 <p><strong>RESPOSTA:</strong> b. Não considera as múltiplas condições dentro de uma decisão.</p>
 <blockquote>
-<p>“Decision coverage is a stronger criterion than statement coverage, but it still is rather weak.”<br />
-“A criterion that is sometimes stronger than decision coverage is condition coverage. [...] But, as with decision coverage, this does not always lead to the execution of each statement.”<br />
-“Although the condition coverage criterion appears, at first glance, to satisfy the decision coverage criterion, it does not always do so. [...] The condition coverage tests for the earlier example covered all condition outcomes but only two of the four decision outcomes...”<br />
-<em>(p. 45–46, The Art of Software Testing – 3rd Edition)</em></p>
-<p>Tradução:<br />
-“A cobertura de decisão é um critério mais forte do que a cobertura de instruções, mas ainda é bastante fraco.”<br />
-“Um critério que às vezes é mais forte do que a cobertura de decisão é a cobertura de condição. [...] Mas, assim como a cobertura de decisão, isso nem sempre leva à execução de cada instrução.”<br />
-“Embora o critério de cobertura de condição pareça, à primeira vista, satisfazer o critério de cobertura de decisão, isso nem sempre acontece. [...] Os testes de cobertura de condição do exemplo anterior cobriram todos os resultados das condições, mas apenas dois dos quatro resultados das decisões...”</p>
+<p>A cobertura de decisão é um critério mais forte do que a cobertura de instruções, mas ainda é bastante fraco.<br />
+Um critério que às vezes é mais forte do que a cobertura de decisão é a cobertura de condição. [...] Mas, assim como a cobertura de decisão, isso nem sempre leva à execução de cada instrução.<br />
+Embora o critério de cobertura de condição pareça, à primeira vista, satisfazer o critério de cobertura de decisão, isso nem sempre acontece. [...] Os testes de cobertura de condição do exemplo anterior cobriram todos os resultados das condições, mas apenas dois dos quatro resultados das decisões...</p>
 </blockquote>
 <p><strong>Referência:</strong> <em>The Art of Software Testing – 3rd Edition</em>, páginas 45–46.</p>
 <hr />
@@ -1041,11 +1030,8 @@ Module testing is largely white-box oriented.</p>
 </ul>
 <p><strong>RESPOSTA:</strong> d. Cobertura de instrução.</p>
 <blockquote>
-<p>“Embora você possa executar todas as instruções com um único teste, esse critério é bastante fraco.”<br />
-<em>“You could execute every statement by writing a single test case [...] Unfortunately, this criterion is a rather poor one.”</em><br />
-[...]<br />
-“Em outras palavras, o critério de cobertura de instrução é tão fraco que geralmente é inútil.”<br />
-<em>“In other words, the statement coverage criterion is so weak that it generally is useless.”</em> (p. 44)</p>
+<p>Embora você possa executar todas as instruções com um único teste, esse critério é bastante fraco.<br />
+Em outras palavras, o critério de cobertura de instrução é tão fraco que geralmente é inútil.  </p>
 </blockquote>
 <p><strong>Referência:</strong> <em>The Art of Software Testing – 3rd Edition</em>, página 44</p>
 <hr />
@@ -1058,10 +1044,7 @@ Module testing is largely white-box oriented.</p>
 </ul>
 <p><strong>RESPOSTA:</strong> d. Garantir que cada condição independente em uma decisão tenha um efeito independente na saída da decisão.</p>
 <blockquote>
-<p>“Modified condition/decision coverage (MC/DC) requires that every point of entry and exit in the program has been invoked at least once, every condition in a decision takes on all possible outcomes at least once, and each condition in a decision has been shown to independently affect the decision’s outcome.”<br />
-<em>(p. 47, The Art of Software Testing – 3rd Edition)</em></p>
-<p>Tradução:<br />
-“A cobertura de condição/decisão modificada (MC/DC) exige que cada ponto de entrada e saída do programa tenha sido invocado pelo menos uma vez, que cada condição em uma decisão assuma todos os resultados possíveis pelo menos uma vez e que cada condição em uma decisão tenha mostrado afetar de forma independente o resultado da decisão.”</p>
+<p>A cobertura de condição/decisão modificada (MC/DC) exige que cada ponto de entrada e saída do programa tenha sido invocado pelo menos uma vez, que cada condição em uma decisão assuma todos os resultados possíveis pelo menos uma vez e que cada condição em uma decisão tenha mostrado afetar de forma independente o resultado da decisão.</p>
 </blockquote>
 <p><strong>Referência:</strong> <em>The Art of Software Testing – 3rd Edition</em>, página 47.</p>
 <hr />
@@ -1074,14 +1057,9 @@ Module testing is largely white-box oriented.</p>
 </ul>
 <p><strong>RESPOSTA:</strong> c. Garante uma cobertura mais robusta ao testar condições de decisão.</p>
 <blockquote>
-<p>“A criterion that covers this problem, and then some, is multiple-condition coverage.”<br />
-“This criterion requires that you write sufficient test cases such that all possible combinations of condition outcomes in each decision, and all points of entry, are invoked at least once.”<br />
-“Although MC/DC does not require all combinations, it improves upon decision/condition coverage by ensuring that each condition independently affects the decision’s outcome.”<br />
-<em>(p. 47, The Art of Software Testing – 3rd Edition)</em></p>
-<p>Tradução:<br />
-“Um critério que cobre esse problema, e vai além, é a cobertura de múltiplas condições.”<br />
-“Esse critério exige que você escreva casos de teste suficientes para que todas as combinações possíveis de resultados de condições em cada decisão, e todos os pontos de entrada, sejam invocados pelo menos uma vez.”<br />
-“Embora o MC/DC não exija todas as combinações, ele melhora a cobertura de decisão/condição ao garantir que cada condição afete independentemente o resultado da decisão.”</p>
+<p>Um critério que cobre esse problema, e vai além, é a cobertura de múltiplas condições.<br />
+Esse critério exige que você escreva casos de teste suficientes para que todas as combinações possíveis de resultados de condições em cada decisão, e todos os pontos de entrada, sejam invocados pelo menos uma vez.<br />
+Embora o MC/DC não exija todas as combinações, ele melhora a cobertura de decisão/condição ao garantir que cada condição afete independentemente o resultado da decisão.</p>
 </blockquote>
 <p><strong>Referência:</strong> <em>The Art of Software Testing – 3rd Edition</em>, página 47.</p>
 <hr />
@@ -1094,10 +1072,7 @@ Module testing is largely white-box oriented.</p>
 </ul>
 <p><strong>RESPOSTA:</strong> b. Listar as decisões condicionais no programa, focando em declarações IF, DO e similares.</p>
 <blockquote>
-<p>“Regardless of which of the logic coverage techniques you use, the first step is to list the conditional decisions in the program. Candidates in this program are all IF and DO statements.”<br />
-<em>(p. 89, The Art of Software Testing – 3rd Edition)</em></p>
-<p>Tradução:<br />
-“Independentemente da técnica de cobertura lógica utilizada, o primeiro passo é listar as decisões condicionais no programa. Os candidatos neste programa são todas as instruções IF e DO.”</p>
+<p>Independentemente da técnica de cobertura lógica utilizada, o primeiro passo é listar as decisões condicionais no programa. Os candidatos neste programa são todas as instruções IF e DO.</p>
 </blockquote>
 <p><strong>Referência:</strong> <em>The Art of Software Testing – 3rd Edition</em>, página 89.</p>
 <hr />
@@ -1110,10 +1085,7 @@ Module testing is largely white-box oriented.</p>
 </ul>
 <p><strong>RESPOSTA:</strong> b. Mesmo testes que satisfazem o critério de cobertura de múltiplas condições podem não detectar certos erros, como valores iniciais incorretos.</p>
 <blockquote>
-<p>“Although these two test cases meet the decision coverage criterion, it should be obvious that there could be many types of errors in the module that are not detected by these two test cases. For instance, the test cases do not explore the circumstances where the error code is 0, an employee is a manager, or the department table is empty (DSIZE &lt;= 0).”<br />
-<em>(p. 90, The Art of Software Testing – 3rd Edition)</em></p>
-<p>Tradução:<br />
-“Embora esses dois casos de teste atendam ao critério de cobertura de decisão, deve ser óbvio que pode haver muitos tipos de erros no módulo que não são detectados por esses dois casos. Por exemplo, os casos de teste não exploram circunstâncias como quando o código de erro é 0, um funcionário é gerente ou a tabela de departamentos está vazia (DSIZE ≤ 0).”</p>
+<p>Embora esses dois casos de teste atendam ao critério de cobertura de decisão, deve ser óbvio que pode haver muitos tipos de erros no módulo que não são detectados por esses dois casos. Por exemplo, os casos de teste não exploram circunstâncias como quando o código de erro é 0, um funcionário é gerente ou a tabela de departamentos está vazia (DSIZE ≤ 0).</p>
 </blockquote>
 <p><strong>Referência:</strong> <em>The Art of Software Testing – 3rd Edition</em>, página 90.</p>
 <hr />
@@ -1126,10 +1098,7 @@ Module testing is largely white-box oriented.</p>
 </ul>
 <p><strong>RESPOSTA:</strong> a. Requer menos módulos de driver e stub.</p>
 <blockquote>
-<p>“Nonincremental testing requires more work. For the program in Figure 5.7, five drivers and five stubs must be prepared [...]. The bottom-up incremental test would require five drivers but no stubs. A top-down incremental test would require five stubs but no drivers. Less work is required because previously tested modules are used instead of the driver modules (if you start from the top) or stub modules (if you start from the bottom) needed in the nonincremental approach.”<br />
-<em>(p. 99, The Art of Software Testing – 3rd Edition)</em></p>
-<p>Tradução:<br />
-“O teste não incremental exige mais trabalho. Para o programa da Figura 5.7, cinco drivers e cinco stubs devem ser preparados [...]. O teste incremental bottom-up exigiria cinco drivers, mas nenhum stub. Um teste incremental top-down exigiria cinco stubs, mas nenhum driver. Menos trabalho é necessário porque os módulos previamente testados são usados em vez dos módulos driver (se começar do topo) ou dos módulos stub (se começar pela base) exigidos na abordagem não incremental.”</p>
+<p>O teste não incremental exige mais trabalho. Para o programa da Figura 5.7, cinco drivers e cinco stubs devem ser preparados [...]. O teste incremental bottom-up exigiria cinco drivers, mas nenhum stub. Um teste incremental top-down exigiria cinco stubs, mas nenhum driver. Menos trabalho é necessário porque os módulos previamente testados são usados em vez dos módulos driver (se começar do topo) ou dos módulos stub (se começar pela base) exigidos na abordagem não incremental.</p>
 </blockquote>
 <p><strong>Referência:</strong> <em>The Art of Software Testing – 3rd Edition</em>, página 99.</p>
 <hr />
@@ -1142,10 +1111,7 @@ Module testing is largely white-box oriented.</p>
 </ul>
 <p><strong>RESPOSTA:</strong> c. Permite mais atividades paralelas no início da fase de testes de módulo.</p>
 <blockquote>
-<p>“At the beginning of the module testing phase, there is more opportunity for parallel activities when nonincremental testing is used (that is, all the modules can be tested simultaneously). This might be of significance in a large project (many modules and people), since the head count of a project is usually at its peak at the start of the module test phase.”<br />
-<em>(p. 100, The Art of Software Testing – 3rd Edition)</em></p>
-<p>Tradução:<br />
-“No início da fase de testes de módulo, há mais oportunidade para atividades paralelas quando se utiliza o teste não incremental (isto é, todos os módulos podem ser testados simultaneamente). Isso pode ser significativo em projetos grandes (com muitos módulos e pessoas), já que o número de integrantes do projeto geralmente atinge seu pico no início dessa fase.”</p>
+<p>No início da fase de testes de módulo, há mais oportunidade para atividades paralelas quando se utiliza o teste não incremental (isto é, todos os módulos podem ser testados simultaneamente). Isso pode ser significativo em projetos grandes (com muitos módulos e pessoas), já que o número de integrantes do projeto geralmente atinge seu pico no início dessa fase.</p>
 </blockquote>
 <p><strong>Referência:</strong> <em>The Art of Software Testing – 3rd Edition</em>, página 100.</p>
 <hr />
@@ -1158,10 +1124,7 @@ Module testing is largely white-box oriented.</p>
 </ul>
 <p><strong>RESPOSTA:</strong> b. Facilita a representação de casos de teste uma vez que as funções de entrada e saída são adicionadas.</p>
 <blockquote>
-<p>“Once the I/O functions are added, representation of cases is easier.”<br />
-<em>(p. 109, The Art of Software Testing – 3rd Edition)</em></p>
-<p>Tradução:<br />
-“Uma vez que as funções de entrada/saída são adicionadas, a representação dos casos é facilitada.”</p>
+<p>Uma vez que as funções de entrada/saída são adicionadas, a representação dos casos é facilitada.</p>
 </blockquote>
 <p><strong>Referência:</strong> <em>The Art of Software Testing – 3rd Edition</em>, página 109.</p>
 <hr />
@@ -1174,10 +1137,7 @@ Module testing is largely white-box oriented.</p>
 </ul>
 <p><strong>RESPOSTA:</strong> b. Não permite a criação de um esqueleto inicial do programa.</p>
 <blockquote>
-<p>“A drawback of the bottom-up strategy is that there is no concept of an early skeletal program. In fact, the working program does not exist until the last module (module A) is added, and this working program is the complete program.”<br />
-<em>(p. 107, The Art of Software Testing – 3rd Edition)</em></p>
-<p>Tradução:<br />
-“Uma desvantagem da estratégia bottom-up é que não há conceito de um programa esquelético inicial. De fato, o programa funcional não existe até que o último módulo (módulo A) seja adicionado, e esse programa funcional é o programa completo.”</p>
+<p>Uma desvantagem da estratégia bottom-up é que não há conceito de um programa esquelético inicial. De fato, o programa funcional não existe até que o último módulo (módulo A) seja adicionado, e esse programa funcional é o programa completo.</p>
 </blockquote>
 <p><strong>Referência:</strong> <em>The Art of Software Testing – 3rd Edition</em>, página 107.</p>
 <hr />

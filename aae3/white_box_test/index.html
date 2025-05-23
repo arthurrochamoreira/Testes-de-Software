@@ -970,9 +970,9 @@
 <p>A primeira é que um teste exaustivo de trajetória não garante, de forma alguma, que um programa corresponda à sua especificação. Por exemplo, se você fosse solicitado a escrever uma rotina de classificação em ordem crescente, mas produzisse por engano uma rotina de classificação em ordem decrescente, o teste de caminho exaustivo seria de pouco valor; o programa ainda tem um bug: é o programa errado, pois não atende à especificação.</p>
 <p>Em segundo lugar, um programa pode estar incorreto devido a caminhos ausentes. O teste exaustivo de caminho, é claro, não detectaria a ausência de caminhos necessários.</p>
 <p>Terceiro, um teste de caminho exaustivo pode não revelar erros de confidencialidade de dados. Existem muitos exemplos de tais erros, mas um simples deve ser suficiente. Suponha que, em um programa, você tenha que comparar dois números para convergência, isto é, para ver se a diferença entre os dois números é menor do que algum valor predeterminado. Por exemplo, você pode escrever uma instrução Java IF como:</p>
-<p>```java
-if (a - b &lt; c)
-    System.out.println("a - b &lt; c");</p>
+<pre><code class="language-java">if (a - b &lt; c)
+    System.out.println(&quot;a - b &lt; c&quot;);
+</code></pre>
 <p>Claro, a declaração contém um erro porque deveria comparar <code>c</code> com o valor absoluto de <code>a - b</code>. A detecção desse erro, no entanto, depende dos valores usados para <code>a</code> e <code>b</code>, e não seria necessariamente detectada apenas executando todos os caminhos do programa.</p>
 <p>Em conclusão, embora o teste exaustivo de entrada seja superior ao teste de caminho exaustivo, nenhum deles se mostra útil porque ambos são inviáveis. Talvez, então, existam maneiras de combinar elementos de teste de caixa preta e caixa branca para derivar uma estratégia de teste razoável, mas não hermética. Este assunto é aprofundado no Capítulo 4.</p>
 <h2 id="principios-de-teste-de-software">Princípios de teste de software</h2>
