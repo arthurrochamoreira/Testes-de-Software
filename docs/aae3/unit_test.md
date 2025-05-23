@@ -2,7 +2,7 @@
 
 A **Pirâmide de Testes** ilustra como equilibrar velocidade, custo e cobertura ao estruturar sua suíte de testes (Meszaros, 2007):
 
-![Pirâmide de Testes](/aae3/assets/piramide_de_testes.jpg)
+![Pirâmide de Testes](/assets/unit_test/piramide_de_testes.jpg)
 
 | Nível       | Quantidade de Testes | Custo por Teste | Velocidade de Execução | Exemplos de Ferramentas          |
 |-------------|----------------------|-----------------|------------------------|----------------------------------|
