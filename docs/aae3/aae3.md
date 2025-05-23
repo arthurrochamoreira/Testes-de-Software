@@ -2,17 +2,6 @@
 
 ## 1.1 Objetivo
 
-## teste de fluxograma
-
-```mermaid
-flowchart TD
-    A[Início] --> B{Decisão}
-    B -->|Sim| C[Etapa 1]
-    B -->|Não| D[Etapa 2]
-    C --> E[Fim]
-    D --> E
-```
-
 Elaborar o menor conjunto de casos de teste que garanta 100% de cobertura segundo o critério **MC/DC** para o método `isNumber(String number)` abaixo:
 
 ```java
