@@ -627,15 +627,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#13-etapas-para-resolver" class="md-nav__link">
-    <span class="md-ellipsis">
-      1.3 Etapas para resolver
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#2-primeira-decisao-linha-2" class="md-nav__link">
     <span class="md-ellipsis">
       2. Primeira decisão (linha 2)
@@ -762,69 +753,27 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-quarta-decisao-linha-12" class="md-nav__link">
+  <a href="#5-resumo-dos-pares-mcdc" class="md-nav__link">
     <span class="md-ellipsis">
-      5. Quarta decisão (linha 12)
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="5. Quarta decisão (linha 12)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#estrutura-logica_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      Estrutura lógica
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#tabela-verdade-de-c9" class="md-nav__link">
-    <span class="md-ellipsis">
-      Tabela-verdade de C9
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#par-mcdc" class="md-nav__link">
-    <span class="md-ellipsis">
-      Par MC/DC
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#6-resumo-dos-pares-mcdc" class="md-nav__link">
-    <span class="md-ellipsis">
-      6. Resumo dos pares MC/DC
+      5. Resumo dos pares MC/DC
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#7-conclusao" class="md-nav__link">
+  <a href="#6-conclusao" class="md-nav__link">
     <span class="md-ellipsis">
-      7. Conclusão
+      6. Conclusão
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#8-referencias-bibliograficas" class="md-nav__link">
+  <a href="#7-referencias-bibliograficas" class="md-nav__link">
     <span class="md-ellipsis">
-      8. Referências Bibliográficas
+      7. Referências Bibliográficas
     </span>
   </a>
   
@@ -1198,18 +1147,9 @@
 <blockquote>
 <p><strong>Nota:</strong></p>
 <ul>
-<li>Decisões simples (com apenas uma condição) também podem ser consideradas para MC/DC — basta testar o “true” e o “false”.</li>
 <li>Condições de laço sem múltiplas variáveis (ex.: <code>i &lt; n</code> em <code>for</code>) não precisam de MC/DC.</li>
 </ul>
 </blockquote>
-<hr />
-<h2 id="13-etapas-para-resolver">1.3 Etapas para resolver</h2>
-<ol>
-<li>Identificar as <strong>decisões</strong> no código (<code>if</code>, <code>else if</code>).</li>
-<li>Decompor cada decisão em suas <strong>condições</strong>.</li>
-<li>Elaborar tabela-verdade para cada expressão composta.</li>
-<li>Selecionar pares de testes MC/DC que evidenciem mudança isolada de cada condição.</li>
-</ol>
 <hr />
 <h2 id="2-primeira-decisao-linha-2">2. Primeira decisão (linha 2)</h2>
 <pre><code class="language-java">if (number == null || number.isEmpty()) {
@@ -1399,62 +1339,17 @@
 <li><strong>C8</strong>: (C6 = V; C7 = F; C8 muda V → F; resultado muda V → F) — D3-T3 vs D3-T4</li>
 </ul>
 <hr />
-<h2 id="5-quarta-decisao-linha-12">5. Quarta decisão (linha 12)</h2>
-<pre><code class="language-java">else if (!Character.isDigit(c)) {
-    return false;
-}
-</code></pre>
-<ul>
-<li><strong>C9</strong>: <code>!Character.isDigit(c)</code></li>
-</ul>
-<h4 id="estrutura-logica_3">Estrutura lógica</h4>
-<pre><code class="language-text">C9
-</code></pre>
-<blockquote>
-<p>“Se o caractere atual não for um dígito (ou seja, não estiver entre ‘0’ e ‘9’), então retorna false imediatamente.”</p>
-</blockquote>
-<h4 id="tabela-verdade-de-c9">Tabela-verdade de <code>C9</code></h4>
-<table>
-<thead>
-<tr>
-<th>Caso</th>
-<th>isDigit(c)</th>
-<th>C9</th>
-<th>Resultado</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>D4-T1</td>
-<td>V</td>
-<td>F</td>
-<td>F</td>
-</tr>
-<tr>
-<td>D4-T2</td>
-<td>F</td>
-<td>V</td>
-<td>V</td>
-</tr>
-</tbody>
-</table>
-<h4 id="par-mcdc">Par MC/DC</h4>
-<ul>
-<li><strong>C9</strong>: (isDigit = V; C9 muda F → V; resultado muda F → V) — D4-T1 vs D4-T2</li>
-</ul>
-<hr />
-<h2 id="6-resumo-dos-pares-mcdc">6. Resumo dos pares MC/DC</h2>
+<h2 id="5-resumo-dos-pares-mcdc">5. Resumo dos pares MC/DC</h2>
 <ul>
 <li><strong>Decisão 1</strong> (C1, C2): D1-T1 vs D1-T3; D1-T1 vs D1-T2</li>
 <li><strong>Decisão 2</strong> (C3, C4, C5): D2-T1 vs D2-T4; D2-T1 vs D2-T3; D2-T2 vs D2-T3</li>
 <li><strong>Decisão 3</strong> (C6, C7, C8): D3-T1 vs D3-T2; D3-T2 vs D3-T4; D3-T3 vs D3-T4</li>
-<li><strong>Decisão 4</strong> (C9): D4-T1 vs D4-T2</li>
 </ul>
 <hr />
-<h2 id="7-conclusao">7. Conclusão</h2>
-<p>Com o conjunto de 14 casos de teste (D1-T1 a D1-T4, D2-T1 a D2-T4, D3-T1 a D3-T4 e D4-T1 e D4-T2), cada condição C1–C9 foi avaliada como verdadeira e falsa e demonstrou, isoladamente, sua capacidade de alterar o resultado da decisão. Assim, alcançamos 100% de cobertura segundo o critério <strong>MC/DC</strong> para o método <code>isNumber</code>.</p>
+<h2 id="6-conclusao">6. Conclusão</h2>
+<p>Com o conjunto de 12 casos de teste (D1-T1 a D1-T4, D2-T1 a D2-T4 e D3-T1 a D3-T4), cada condição C1–C8 foi avaliada como verdadeira e falsa e demonstrou, isoladamente, sua capacidade de alterar o resultado da decisão. Assim, alcançamos 100% de cobertura segundo o critério <strong>MC/DC</strong> para o método <code>isNumber</code>.</p>
 <hr />
-<h2 id="8-referencias-bibliograficas">8. Referências Bibliográficas</h2>
+<h2 id="7-referencias-bibliograficas">7. Referências Bibliográficas</h2>
 <ol>
 <li>Myers, G. J., Sandler, C., &amp; Badgett, T. (2011). <em>The Art of Software Testing</em> (3rd ed.). Wiley. pp. 46–48.</li>
 <li>RTCA/DO-178C. (2011). <em>Software Considerations in Airborne Systems and Equipment Certification</em>. RTCA.</li>
