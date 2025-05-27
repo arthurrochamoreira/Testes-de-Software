@@ -646,6 +646,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#estrutura-logica" class="md-nav__link">
+    <span class="md-ellipsis">
+      Estrutura lógica
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#tabela-verdade-de-c1-c2" class="md-nav__link">
     <span class="md-ellipsis">
       Tabela-verdade de C1 || C2
@@ -677,6 +686,15 @@
   
     <nav class="md-nav" aria-label="3. Segunda decisão (linha 5)">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#estrutura-logica_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Estrutura lógica
+    </span>
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#tabela-verdade-de-c3-c4-c5" class="md-nav__link">
@@ -712,6 +730,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#estrutura-logica_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Estrutura lógica
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#tabela-verdade-de-c6-c7-c8" class="md-nav__link">
     <span class="md-ellipsis">
       Tabela-verdade de C6 &amp;&amp; (C7 || C8)
@@ -743,6 +770,15 @@
   
     <nav class="md-nav" aria-label="5. Quarta decisão (linha 12)">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#estrutura-logica_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Estrutura lógica
+    </span>
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#tabela-verdade-de-c9" class="md-nav__link">
@@ -1162,7 +1198,7 @@
 <blockquote>
 <p><strong>Nota:</strong></p>
 <ul>
-<li>Decisões com única condição (ex.: <code>if (flag)</code>) exigem apenas flag = V/F.</li>
+<li>Decisões simples (com apenas uma condição) também podem ser consideradas para MC/DC — basta testar o “true” e o “false”.</li>
 <li>Condições de laço sem múltiplas variáveis (ex.: <code>i &lt; n</code> em <code>for</code>) não precisam de MC/DC.</li>
 </ul>
 </blockquote>
@@ -1184,6 +1220,12 @@
 <li><strong>C1</strong>: <code>number == null</code></li>
 <li><strong>C2</strong>: <code>number.isEmpty()</code></li>
 </ul>
+<h4 id="estrutura-logica">Estrutura lógica</h4>
+<pre><code class="language-text">C1 || C2
+</code></pre>
+<blockquote>
+<p>Se a string for nula <strong>ou</strong> estiver vazia, retorna false</p>
+</blockquote>
 <h4 id="tabela-verdade-de-c1-c2">Tabela-verdade de <code>C1 || C2</code></h4>
 <table>
 <thead>
@@ -1237,6 +1279,12 @@
 <li><strong>C4</strong>: <code>number.charAt(0) == '-'</code></li>
 <li><strong>C5</strong>: <code>number.charAt(0) == '+'</code></li>
 </ul>
+<h4 id="estrutura-logica_1">Estrutura lógica</h4>
+<pre><code class="language-text">C3 &amp;&amp; (C4 || C5)
+</code></pre>
+<blockquote>
+<p>Se há um caractere <strong>e</strong> ele é ‘-’ <strong>ou</strong> ‘+’, retorna false</p>
+</blockquote>
 <h4 id="tabela-verdade-de-c3-c4-c5">Tabela-verdade de <code>C3 &amp;&amp; (C4 || C5)</code></h4>
 <table>
 <thead>
@@ -1296,6 +1344,12 @@
 <li><strong>C7</strong>: <code>c == '-'</code></li>
 <li><strong>C8</strong>: <code>c == '+'</code></li>
 </ul>
+<h4 id="estrutura-logica_2">Estrutura lógica</h4>
+<pre><code class="language-text">C6 &amp;&amp; (C7 || C8)
+</code></pre>
+<blockquote>
+<p>Se é o primeiro caractere <strong>e</strong> ele é ‘-’ <strong>ou</strong> ‘+’, ignora e segue</p>
+</blockquote>
 <h4 id="tabela-verdade-de-c6-c7-c8">Tabela-verdade de <code>C6 &amp;&amp; (C7 || C8)</code></h4>
 <table>
 <thead>
@@ -1353,6 +1407,12 @@
 <ul>
 <li><strong>C9</strong>: <code>!Character.isDigit(c)</code></li>
 </ul>
+<h4 id="estrutura-logica_3">Estrutura lógica</h4>
+<pre><code class="language-text">C9
+</code></pre>
+<blockquote>
+<p>Se não é dígito, retorna false</p>
+</blockquote>
 <h4 id="tabela-verdade-de-c9">Tabela-verdade de <code>C9</code></h4>
 <table>
 <thead>
