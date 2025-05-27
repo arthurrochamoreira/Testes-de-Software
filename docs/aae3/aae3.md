@@ -58,17 +58,7 @@ Uma **decisão válida** é qualquer expressão booleana que:
 
 > **Nota:**
 >
-> * Decisões simples (com apenas uma condição) também podem ser consideradas para MC/DC — basta testar o “true” e o “false”.
 > * Condições de laço sem múltiplas variáveis (ex.: `i < n` em `for`) não precisam de MC/DC.
-
----
-
-## 1.3 Etapas para resolver
-
-1. Identificar as **decisões** no código (`if`, `else if`).
-2. Decompor cada decisão em suas **condições**.
-3. Elaborar tabela-verdade para cada expressão composta.
-4. Selecionar pares de testes MC/DC que evidenciem mudança isolada de cada condição.
 
 ---
 
@@ -181,56 +171,22 @@ C6 && (C7 || C8)
 
 ---
 
-## 5. Quarta decisão (linha 12)
-
-```java
-else if (!Character.isDigit(c)) {
-    return false;
-}
-```
-
-* **C9**: `!Character.isDigit(c)`
-
-#### Estrutura lógica
-
-```text
-C9
-```
-
-> “Se o caractere atual não for um dígito (ou seja, não estiver entre ‘0’ e ‘9’), então retorna false imediatamente.”
-
-
-#### Tabela-verdade de `C9`
-
-| Caso  | isDigit(c) | C9 | Resultado |
-| ----- | ---------- | -- | --------- |
-| D4-T1 | V          | F  | F         |
-| D4-T2 | F          | V  | V         |
-
-#### Par MC/DC
-
-* **C9**: (isDigit = V; C9 muda F → V; resultado muda F → V) — D4-T1 vs D4-T2
-
----
-
-## 6. Resumo dos pares MC/DC
+## 5. Resumo dos pares MC/DC
 
 * **Decisão 1** (C1, C2): D1-T1 vs D1-T3; D1-T1 vs D1-T2
 * **Decisão 2** (C3, C4, C5): D2-T1 vs D2-T4; D2-T1 vs D2-T3; D2-T2 vs D2-T3
 * **Decisão 3** (C6, C7, C8): D3-T1 vs D3-T2; D3-T2 vs D3-T4; D3-T3 vs D3-T4
-* **Decisão 4** (C9): D4-T1 vs D4-T2
 
 ---
 
-## 7. Conclusão
+## 6. Conclusão
 
-Com o conjunto de 14 casos de teste (D1-T1 a D1-T4, D2-T1 a D2-T4, D3-T1 a D3-T4 e D4-T1 e D4-T2), cada condição C1–C9 foi avaliada como verdadeira e falsa e demonstrou, isoladamente, sua capacidade de alterar o resultado da decisão. Assim, alcançamos 100% de cobertura segundo o critério **MC/DC** para o método `isNumber`.
+Com o conjunto de 12 casos de teste (D1-T1 a D1-T4, D2-T1 a D2-T4 e D3-T1 a D3-T4), cada condição C1–C8 foi avaliada como verdadeira e falsa e demonstrou, isoladamente, sua capacidade de alterar o resultado da decisão. Assim, alcançamos 100% de cobertura segundo o critério **MC/DC** para o método `isNumber`.
 
 ---
 
-## 8. Referências Bibliográficas
+## 7. Referências Bibliográficas
 
 1. Myers, G. J., Sandler, C., & Badgett, T. (2011). *The Art of Software Testing* (3rd ed.). Wiley. pp. 46–48.
 2. RTCA/DO-178C. (2011). *Software Considerations in Airborne Systems and Equipment Certification*. RTCA.
 3. ISO/IEC/IEEE 29119. (2013). *Software and Systems Engineering — Software Testing*. ISO/IEC/IEEE.
-
