@@ -58,7 +58,7 @@ Uma **decisão válida** é qualquer expressão booleana que:
 
 > **Nota:**
 >
-> * Decisões com única condição (ex.: `if (flag)`) exigem apenas flag = V/F.
+> * Decisões simples (com apenas uma condição) também podem ser consideradas para MC/DC — basta testar o “true” e o “false”.
 > * Condições de laço sem múltiplas variáveis (ex.: `i < n` em `for`) não precisam de MC/DC.
 
 ---
@@ -82,6 +82,14 @@ if (number == null || number.isEmpty()) {
 
 * **C1**: `number == null`
 * **C2**: `number.isEmpty()`
+
+#### Estrutura lógica
+
+```text
+C1 || C2
+```
+
+> Se a string for nula **ou** estiver vazia, retorna false
 
 #### Tabela-verdade de `C1 || C2`
 
@@ -110,6 +118,14 @@ if (number.length() == 1 && (number.charAt(0) == '-' || number.charAt(0) == '+')
 * **C3**: `number.length() == 1`
 * **C4**: `number.charAt(0) == '-'`
 * **C5**: `number.charAt(0) == '+'`
+
+#### Estrutura lógica
+
+```text
+C3 && (C4 || C5)
+```
+
+> Se há um caractere **e** ele é ‘-’ **ou** ‘+’, retorna false
 
 #### Tabela-verdade de `C3 && (C4 || C5)`
 
@@ -140,6 +156,14 @@ if (i == 0 && (c == '-' || c == '+')) {
 * **C7**: `c == '-'`
 * **C8**: `c == '+'`
 
+#### Estrutura lógica
+
+```text
+C6 && (C7 || C8)
+```
+
+> Se é o primeiro caractere **e** ele é ‘-’ **ou** ‘+’, ignora e segue
+
 #### Tabela-verdade de `C6 && (C7 || C8)`
 
 | Caso  | C6 | C7 | C8 | Resultado |
@@ -166,6 +190,15 @@ else if (!Character.isDigit(c)) {
 ```
 
 * **C9**: `!Character.isDigit(c)`
+
+#### Estrutura lógica
+
+```text
+C9
+```
+
+> Se não é dígito, retorna false
+
 
 #### Tabela-verdade de `C9`
 
