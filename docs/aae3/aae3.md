@@ -197,7 +197,7 @@ else if (!Character.isDigit(c)) {
 C9
 ```
 
-> Se não é dígito, retorna false
+> “Se o caractere atual não for um dígito (ou seja, não estiver entre ‘0’ e ‘9’), então retorna false imediatamente.”
 
 
 #### Tabela-verdade de `C9`
