@@ -55,7 +55,7 @@ Opcional: use o terminal PowerShell ou Git Bash para seguir os comandos com mais
 No diretório raiz do projeto, crie um venv chamado `.venv`:
 
 ```bash
-python -m venv .venv
+python3 -m venv .venv
 ```
 
 ## 4. Ative o ambiente virtual
