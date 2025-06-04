@@ -92,6 +92,24 @@ mkdocs serve
 
 ---
 
+# Este comando único realiza os seguintes passos:
+
+1. Instala as dependências necessárias (Python, pip, venv, Git)
+2. Clona o repositório `Testes-de-Software`
+3. Cria e ativa um ambiente virtual Python
+4. Instala as dependências do projeto
+5. Inicia o servidor de desenvolvimento do MkDocs
+
+## Comando único (para sistemas Linux/Ubuntu)
+
+```bash
+sudo apt update && sudo apt install -y python3 python3-venv python3-pip git && \
+git clone https://github.com/arthurrochamoreira/Testes-de-Software.git && cd Testes-de-Software && \
+python3 -m venv .venv && source .venv/bin/activate && \
+pip install -r requirements.txt && \
+mkdocs serve
+```
+
 ---
 
 Acesse a documentação no navegador pelo endereço:
