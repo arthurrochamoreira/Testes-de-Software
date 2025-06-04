@@ -1,2 +1,3 @@
-pip install mkdocs-mermaid2-plugin
-pip install mkdocs mkdocs-material
+mkdocs
+mkdocs-material
+mkdocs-mermaid2-plugin
