@@ -31,6 +31,7 @@
 
 **Referência:**
 Meszaros, G. (2007). _xUnit Test Patterns: Refactoring Test Code_. Addison-Wesley.
+Aniche, Maurício. Effective Software Testing: A Developer's Guide. Manning, 26 de abril de 2022. ISBN‑10: 1633439933; ISBN‑13: 978‑1633439931.
 
 #### Por que as outras alternativas estão erradas
 
@@ -51,6 +52,7 @@ Meszaros, G. (2007). _xUnit Test Patterns: Refactoring Test Code_. Addison-Wesle
 
 **Referência:**
 Meszaros, G. (2007). _xUnit Test Patterns: Refactoring Test Code_. Addison-Wesley.
+Aniche, Maurício. Effective Software Testing: A Developer's Guide. Manning, 26 de abril de 2022. ISBN‑10: 1633439933; ISBN‑13: 978‑1633439931.
 
 ---
 
@@ -102,6 +104,7 @@ Meszaros, G. (2007). _xUnit Test Patterns: Refactoring Test Code_. Addison-Wesle
 
 **Referência:**  
 Meszaros, G. (2007). _xUnit Test Patterns: Refactoring Test Code_. Addison-Wesley.
+Aniche, Maurício. Effective Software Testing: A Developer's Guide. Manning, 26 de abril de 2022. ISBN‑10: 1633439933; ISBN‑13: 978‑1633439931.
 
 ---
 
@@ -155,6 +158,7 @@ Meszaros, G. (2007). _xUnit Test Patterns: Refactoring Test Code_. Addison-Wesle
 
 **Referência:**  
 Meszaros, G. (2007). _xUnit Test Patterns: Refactoring Test Code_. Addison-Wesley.
+Aniche, Maurício. Effective Software Testing: A Developer's Guide. Manning, 26 de abril de 2022. ISBN‑10: 1633439933; ISBN‑13: 978‑1633439931.
 
 ---
 
@@ -208,6 +212,7 @@ Meszaros, G. (2007). _xUnit Test Patterns: Refactoring Test Code_. Addison-Wesle
 
 **Referência:**  
 Meszaros, G. (2007). _xUnit Test Patterns: Refactoring Test Code_. Addison-Wesley.
+Aniche, Maurício. Effective Software Testing: A Developer's Guide. Manning, 26 de abril de 2022. ISBN‑10: 1633439933; ISBN‑13: 978‑1633439931.
 
 ---
 
@@ -260,6 +265,7 @@ Meszaros, G. (2007). _xUnit Test Patterns: Refactoring Test Code_. Addison-Wesle
 
 **Referência:**  
 Meszaros, G. (2007). _xUnit Test Patterns: Refactoring Test Code_. Addison-Wesley.
+Aniche, Maurício. Effective Software Testing: A Developer's Guide. Manning, 26 de abril de 2022. ISBN‑10: 1633439933; ISBN‑13: 978‑1633439931.
 
 ---
 
@@ -311,6 +317,7 @@ Meszaros, G. (2007). _xUnit Test Patterns: Refactoring Test Code_. Addison-Wesle
 
 **Referência:**  
 Meszaros, G. (2007). _xUnit Test Patterns: Refactoring Test Code_. Addison-Wesley.
+Aniche, Maurício. Effective Software Testing: A Developer's Guide. Manning, 26 de abril de 2022. ISBN‑10: 1633439933; ISBN‑13: 978‑1633439931.
 
 ---
 
@@ -362,6 +369,7 @@ Meszaros, G. (2007). _xUnit Test Patterns: Refactoring Test Code_. Addison-Wesle
 
 **Referência:**  
 Meszaros, G. (2007). _xUnit Test Patterns: Refactoring Test Code_. Addison-Wesley.
+Aniche, Maurício. Effective Software Testing: A Developer's Guide. Manning, 26 de abril de 2022. ISBN‑10: 1633439933; ISBN‑13: 978‑1633439931.
 
 ---
 
@@ -410,6 +418,7 @@ Meszaros, G. (2007). _xUnit Test Patterns: Refactoring Test Code_. Addison-Wesle
 
 **Referência:**  
 Meszaros, G. (2007). _xUnit Test Patterns: Refactoring Test Code_. Addison-Wesley.
+Aniche, Maurício. Effective Software Testing: A Developer's Guide. Manning, 26 de abril de 2022. ISBN‑10: 1633439933; ISBN‑13: 978‑1633439931.
 
 ---
 
@@ -476,6 +485,7 @@ Meszaros, G. (2007). _xUnit Test Patterns: Refactoring Test Code_. Addison-Wesle
 
 **Referência:**  
 Beck, K. (2002). _Test-Driven Development: By Example_. Addison-Wesley.
+Aniche, Maurício. Effective Software Testing: A Developer's Guide. Manning, 26 de abril de 2022. ISBN‑10: 1633439933; ISBN‑13: 978‑1633439931.
 
 ---
 
@@ -533,6 +543,7 @@ Beck, K. (2002). _Test-Driven Development: By Example_. Addison-Wesley.
 **Referências:**  
 Beck, K. (2002). _Test-Driven Development: By Example_. Addison-Wesley.  
 Meszaros, G. (2007). _xUnit Test Patterns: Refactoring Test Code_. Addison-Wesley.
+Aniche, Maurício. Effective Software Testing: A Developer's Guide. Manning, 26 de abril de 2022. ISBN‑10: 1633439933; ISBN‑13: 978‑1633439931.
 
 ---
 
@@ -592,6 +603,7 @@ Meszaros, G. (2007). _xUnit Test Patterns: Refactoring Test Code_. Addison-Wesle
 
 **Referência:**  
 Beck, K. (2002). _Test-Driven Development: By Example_. Addison-Wesley.
+Aniche, Maurício. Effective Software Testing: A Developer's Guide. Manning, 26 de abril de 2022. ISBN‑10: 1633439933; ISBN‑13: 978‑1633439931.
 
 ---
 
@@ -635,6 +647,7 @@ Beck, K. (2002). _Test-Driven Development: By Example_. Addison-Wesley.
 
 **Referência:**  
 Beck, K. (2002). _Test-Driven Development: By Example_. Addison-Wesley.
+Aniche, Maurício. Effective Software Testing: A Developer's Guide. Manning, 26 de abril de 2022. ISBN‑10: 1633439933; ISBN‑13: 978‑1633439931.
 
 ---
 
@@ -679,6 +692,7 @@ Beck, K. (2002). _Test-Driven Development: By Example_. Addison-Wesley.
 
 **Referência:**  
 Beck, K. (2002). _Test-Driven Development: By Example_. Addison-Wesley.
+Aniche, Maurício. Effective Software Testing: A Developer's Guide. Manning, 26 de abril de 2022. ISBN‑10: 1633439933; ISBN‑13: 978‑1633439931.
 
 ---
 
@@ -760,5 +774,9 @@ Beck, K. (2002). _Test-Driven Development: By Example_. Addison-Wesley.
 
   > TDD produz testes eficazes, que funcionam como especificações automatizadas e garantem confiabilidade contínua do sistema.  
   > _(Tradução livre de Meszaros, 2007, p. 33)_
+
+**Referência:**  
+Meszaros, G. (2007). _xUnit Test Patterns: Refactoring Test Code_. Addison-Wesley.
+Aniche, Maurício. Effective Software Testing: A Developer's Guide. Manning, 26 de abril de 2022. ISBN‑10: 1633439933; ISBN‑13: 978‑1633439931.
 
 ---
