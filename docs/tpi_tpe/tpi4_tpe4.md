@@ -223,8 +223,6 @@ Aniche, Maurício. Effective Software Testing: A Developer's Guide. Manning, 26 
 - c. Mock
 - d. Stub
 
-“Imagine a fake database class that uses an array list...” (p. 144)
-
 **RESPOSTA:** a. Fake object
 
 > Objetos fake têm implementações reais e funcionais da classe que estão simulando. No entanto, geralmente realizam a mesma tarefa de uma forma muito mais simples. Imagine uma classe de banco de dados fake que usa uma ArrayList em vez de um banco de dados real. Esse objeto fake é mais fácil de controlar do que o banco de dados verdadeiro. Um exemplo comum na prática é usar um banco de dados mais simples durante os testes.
