@@ -3,15 +3,15 @@ PORT=8123
 REQ=requirements.txt
 
 # Cores ANSI
-Y='\033[0;33m'
-G='\033[0;32m'
-B='\033[0;34m'
-W='\033[0;37m'
-R='\033[0;31m'
-C='\033[0;36m'
-E='\033[0m'
+Y=\033[0;33m
+G=\033[0;32m
+B=\033[0;34m
+W=\033[0;37m
+R=\033[0;31m
+C=\033[0;36m
+E=\033[0m
 
-build-up:
+build-up: check-python
 	@echo
 	@echo "${Y}===============================================${E}"
 	@echo "${W}Iniciando build do ambiente MkDocs${E}"
@@ -78,3 +78,12 @@ build-up:
 	@echo "\n[3/3] Iniciando MkDocs"
 	@echo "${B}Acesse:${E} ${C}http://127.0.0.1:$(PORT)/${E}"
 	@$(VENV)/bin/mkdocs serve -a 127.0.0.1:$(PORT)
+
+
+check-python:
+	@echo "[0/3] Verificando se o Python 3 está instalado..."
+	@command -v python3 >/dev/null 2>&1 || { \
+		echo "${R}→ Python3 não encontrado. Instalando...${E}"; \
+		sudo apt update && sudo apt install -y python3 python3-venv python3-pip; \
+	}
+	@echo "${G}→ Python3 está disponível: $$(python3 --version)${E}"
