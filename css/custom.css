@@ -50,6 +50,13 @@ body {
   padding: 0;
 }
 
+.md-content {
+  position: relative;
+}
+
+.md-sidebar--secondary {
+}
+
 .text-container {
   z-index: 100;
   width: 100vw;
