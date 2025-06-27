@@ -1,3 +1,33 @@
 .md-main__inner {
   min-width: 90vw;
 }
+
+/* Modo claro */
+[data-md-color-scheme="default"] {
+  --md-typeset-color: #1a1a1a;
+  --md-typeset-muted-color: #333333;
+}
+
+[data-md-color-scheme="default"] h1,
+[data-md-color-scheme="default"] h2,
+[data-md-color-scheme="default"] h3,
+[data-md-color-scheme="default"] h4,
+[data-md-color-scheme="default"] h5,
+[data-md-color-scheme="default"] h6 {
+  color: #1a1a1a;
+}
+
+/* Modo escuro */
+[data-md-color-scheme="slate"] {
+  --md-typeset-color: #f5f5f5;
+  --md-typeset-muted-color: #cccccc;
+}
+
+[data-md-color-scheme="slate"] h1,
+[data-md-color-scheme="slate"] h2,
+[data-md-color-scheme="slate"] h3,
+[data-md-color-scheme="slate"] h4,
+[data-md-color-scheme="slate"] h5,
+[data-md-color-scheme="slate"] h6 {
+  color: #f5f5f5;
+}

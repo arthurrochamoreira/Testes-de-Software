@@ -1,9 +1,3 @@
-// Interactive bubble effect
-
-// The style is defined in css/custom.css and the interactive div is in index.md
-
-// Move interactive bubble smoothly following mouse pointer
-
 document.addEventListener("DOMContentLoaded", () => {
   const interBubble = document.querySelector(".interactive");
   let curX = 0;
