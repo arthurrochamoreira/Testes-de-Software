@@ -4,6 +4,12 @@
 
 :root {
   --md-typeset-max-width: 100ch;
+  --circle-size: 75%;
+  --blending: hard-light;
+}
+
+/* Paleta padrão */
+.palette-default {
   --color-bg1: rgb(108, 0, 162);
   --color-bg2: rgb(0, 17, 82);
   --color1: 18, 113, 255;
@@ -12,8 +18,17 @@
   --color4: 200, 50, 50;
   --color5: 180, 180, 50;
   --color-interactive: 140, 100, 255;
-  --circle-size: 80%;
-  --blending: hard-light;
+}
+
+.palette-warm {
+  --color-bg1: rgb(162, 40, 0);
+  --color-bg2: rgb(82, 17, 0);
+  --color1: 255, 113, 18;
+  --color2: 255, 74, 74;
+  --color3: 255, 180, 100;
+  --color4: 200, 80, 50;
+  --color5: 200, 120, 50;
+  --color-interactive: 255, 150, 100;
 }
 
 html,
