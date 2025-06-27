@@ -16,10 +16,6 @@
   --blending: hard-light;
 }
 
-.md-main__inner {
-  min-width: 60vw;
-}
-
 html,
 body {
   font-family: "Dongle", sans-serif;
