@@ -67,8 +67,22 @@ body {
   text-shadow: 1px 1px rgba(0, 0, 0, 0.1);
 }
 
+.md-main__inner,
 .md-content {
+  color: #f5f5f5; /* branco levemente quebrado para reduzir brilho extremo e manter contraste */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* sombra ainda mais intensa e maior para contraste garantido */
   position: relative;
+}
+
+/* contraste reforçado para títulos */
+.md-content h1,
+.md-content h2,
+.md-content h3,
+.md-content h4,
+.md-content h5,
+.md-content h6 {
+  color: #f5f5f5;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
 }
 
 .md-content .gradient-bg {
