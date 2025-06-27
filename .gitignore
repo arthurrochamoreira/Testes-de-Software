@@ -77,3 +77,6 @@ tmp
 # IDEs & Editors
 .idea
 *~
+
+# Windows
+NUL
