@@ -77,7 +77,7 @@ body {
   overflow: hidden;
   background: linear-gradient(40deg, var(--color-bg1), var(--color-bg2));
   top: -4rem;
-  bottom: 0; /* faz o fundo chegar até a parte inferior do conteúdo */
+  bottom: -285px;
   left: 0;
   pointer-events: none;
   z-index: -1;
