@@ -11,36 +11,36 @@
 
 /* Paletas */
 .palette-default {
-  --color-bg1: rgba(108, 0, 162);
-  --color-bg2: rgba(0, 17, 82);
-  --color1: rgba(18, 113, 255);
-  --color2: rgba(221, 74, 255);
-  --color3: rgba(100, 220, 255);
-  --color4: rgba(200, 50, 50);
-  --color5: rgba(180, 180, 50);
-  --color-interactive: rgba(140, 100, 255);
+  --color-bg1: rgb(108, 0, 162);
+  --color-bg2: rgb(0, 17, 82);
+  --color1: 18, 113, 255;
+  --color2: 221, 74, 255;
+  --color3: 100, 220, 255;
+  --color4: 200, 50, 50;
+  --color5: 180, 180, 50;
+  --color-interactive: 140, 100, 255;
 }
 
 .palette-warm {
-  --color-bg1: rgba(162, 40, 0);
-  --color-bg2: rgba(82, 17, 0);
-  --color1: rgba(255, 113, 18);
-  --color2: rgba(255, 74, 74);
-  --color3: rgba(255, 180, 100);
-  --color4: rgba(200, 80, 50);
-  --color5: rgba(200, 120, 50);
-  --color-interactive: rgba(255, 150, 100);
+  --color-bg1: rgb(162, 40, 0);
+  --color-bg2: rgb(82, 17, 0);
+  --color1: 255, 113, 18;
+  --color2: 255, 74, 74;
+  --color3: 255, 180, 100;
+  --color4: 200, 80, 50;
+  --color5: 200, 120, 50;
+  --color-interactive: 255, 150, 100;
 }
 
 .palette-purple-orange {
-  --color-bg1: rgba(75, 0, 130);
-  --color-bg2: rgba(0, 17, 82);
-  --color1: rgba(138, 43, 226);
-  --color2: rgba(255, 102, 0);
-  --color3: rgba(218, 112, 214);
-  --color4: rgba(255, 165, 0);
-  --color5: rgba(255, 200, 120);
-  --color-interactive: rgba(186, 85, 211);
+  --color-bg1: rgb(75, 0, 130);
+  --color-bg2: rgb(0, 17, 82);
+  --color1: 138, 43, 226;
+  --color2: 255, 102, 0;
+  --color3: 218, 112, 214;
+  --color4: 255, 165, 0;
+  --color5: 255, 200, 120;
+  --color-interactive: 186, 85, 211;
 }
 
 .text-container {
@@ -54,7 +54,7 @@
   justify-content: center;
   align-items: center;
   font-size: 96px;
-  color: rgba(255, 255, 255);
+  color: white;
   opacity: 0.5;
   user-select: none;
   text-shadow: 1px 1px rgba(0, 0, 0, 0.1);
@@ -132,8 +132,8 @@
 .gradient-bg .g1 {
   background: radial-gradient(
     circle,
-    rgba(18, 113, 255, 0.8) 0,
-    rgba(18, 113, 255, 0) 50%
+    rgba(var(--color1), 0.8) 0,
+    rgba(var(--color1), 0) 50%
   );
   animation: moveVertical 30s ease infinite;
 }
@@ -141,8 +141,8 @@
 .gradient-bg .g2 {
   background: radial-gradient(
     circle,
-    rgba(221, 74, 255, 0.8) 0,
-    rgba(221, 74, 255, 0) 50%
+    rgba(var(--color2), 0.8) 0,
+    rgba(var(--color2), 0) 50%
   );
   transform-origin: calc(50% - 400px);
   animation: moveInCircle 20s reverse infinite;
@@ -151,8 +151,8 @@
 .gradient-bg .g3 {
   background: radial-gradient(
     circle,
-    rgba(100, 220, 255, 0.8) 0,
-    rgba(100, 220, 255, 0) 50%
+    rgba(var(--color3), 0.8) 0,
+    rgba(var(--color3), 0) 50%
   );
   top: calc(50% - var(--circle-size) / 2 + 200px);
   left: calc(50% - var(--circle-size) / 2 - 500px);
@@ -163,8 +163,8 @@
 .gradient-bg .g4 {
   background: radial-gradient(
     circle,
-    rgba(200, 50, 50, 0.8) 0,
-    rgba(200, 50, 50, 0) 50%
+    rgba(var(--color4), 0.8) 0,
+    rgba(var(--color4), 0) 50%
   );
   transform-origin: calc(50% - 200px);
   animation: moveHorizontal 40s ease infinite;
@@ -174,8 +174,8 @@
 .gradient-bg .g5 {
   background: radial-gradient(
     circle,
-    rgba(180, 180, 50, 0.8) 0,
-    rgba(180, 180, 50, 0) 50%
+    rgba(var(--color5), 0.8) 0,
+    rgba(var(--color5), 0) 50%
   );
   width: calc(var(--circle-size) * 2);
   height: calc(var(--circle-size) * 2);
@@ -188,8 +188,8 @@
 .gradient-bg .interactive {
   background: radial-gradient(
     circle,
-    rgba(140, 100, 255, 0.8) 0,
-    rgba(140, 100, 255, 0) 50%
+    rgba(var(--color-interactive), 0.8) 0,
+    rgba(var(--color-interactive), 0) 50%
   );
   width: 100%;
   height: 100%;
