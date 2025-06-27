@@ -1,1 +1,79 @@
-.venv/
+# -----------------------------------------------------------------------------Add commentMore actions
+# Node, TypeScript, Python
+# -----------------------------------------------------------------------------
+
+# Dependencies
+node_modules
+__pycache__
+venv
+.venv
+
+# Build files
+build
+site
+
+# Distribution files
+dist
+mkdocs_material.egg-info
+
+# Caches and logs
+*.cpuprofile
+*.log
+*.tsbuildinfo
+.cache
+.eslintcache
+__pycache__
+
+# Examples
+example
+example.zip
+
+# -----------------------------------------------------------------------------
+# Java
+# -----------------------------------------------------------------------------
+*.class
+*.jar
+*.war
+*.ear
+*.iml
+*.log
+*.ctxt
+*.project
+*.classpath
+*.settings/
+target/
+out/
+
+# -----------------------------------------------------------------------------
+# C++
+# -----------------------------------------------------------------------------
+*.o
+*.obj
+*.exe
+*.gch
+*.pch
+*.so
+*.a
+*.dll
+*.lib
+*.dSYM/
+cmake-build-*/
+build*/
+
+# -----------------------------------------------------------------------------
+# General
+# -----------------------------------------------------------------------------
+
+# Never ignore .gitkeep files
+!**/.gitkeep
+
+# macOS internals
+.DS_Store
+
+# Temporary files
+TODO
+tmp
+
+# IDEs & Editors
+.idea
+*~
