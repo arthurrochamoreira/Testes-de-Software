@@ -18,6 +18,9 @@ ifeq ($(OS),Windows_NT)
 	DEVNULL=NUL
 	COLOR_START=
 	COLOR_END=
+       PRINT=@echo
+       QUOTE=
+       BLANK=@echo.
 else
 	PYTHON=python3
 	PYTHON_VENV=$(VENV)/bin/python3
@@ -30,6 +33,9 @@ else
 	DEVNULL=/dev/null
 	COLOR_START=\033[0;32m
 	COLOR_END=\033[0m
+       PRINT=@printf '%b\n'
+       QUOTE="
+       BLANK=@echo
 endif
 
 build-up:
@@ -42,25 +48,25 @@ else
 endif
 	@$(PYTHON) --version
 
-	@echo.
-	@echo $(COLOR_START)===============================================$(COLOR_END)
-	@echo $(COLOR_START)Iniciando build do ambiente MkDocs$(COLOR_END)
-	@echo $(COLOR_START)Porta: $(URL)$(COLOR_END)
-	@echo $(COLOR_START)===============================================$(COLOR_END)
+	@$(BLANK)
+	@$(PRINT) $(QUOTE)$(COLOR_START)===============================================$(COLOR_END)$(QUOTE)
+	@$(PRINT) $(QUOTE)$(COLOR_START)Iniciando build do ambiente MkDocs$(COLOR_END)$(QUOTE)
+	@$(PRINT) $(QUOTE)$(COLOR_START)Porta: $(URL)$(COLOR_END)$(QUOTE)
+	@$(PRINT) $(QUOTE)$(COLOR_START)===============================================$(COLOR_END)$(QUOTE)
 
 	@echo [1/3] Verificando ambiente virtual...
 	@$(CHECK_VENV)
 
 	@$(PYTHON_VENV) -m pip install -q rich
 
-	@echo.
+	@$(BLANK)
 	@echo [2/3] Verificando dependências:
 	@$(CHECK_REQ)
 
-	@echo.
-	@echo $(COLOR_START)✅ Ambiente configurado com sucesso!$(COLOR_END)
-	@echo.
+	@$(BLANK)
+	@$(PRINT) $(QUOTE)$(COLOR_START)✅ Ambiente configurado com sucesso!$(COLOR_END)$(QUOTE)
+	@$(BLANK)
 	@echo [3/3] Iniciando MkDocs
-	@echo $(COLOR_START)Acesse: $(URL)$(COLOR_END)
+	@$(PRINT) $(QUOTE)$(COLOR_START)Acesse: $(URL)$(COLOR_END)$(QUOTE)
 	@$(OPEN_BROWSER)
 	@$(MKDOCS) serve -a 127.0.0.1:$(PORT)

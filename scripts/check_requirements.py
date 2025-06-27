@@ -45,5 +45,13 @@ with Progress(
         for i in range(0, 101, 10):
             progress.update(task, advance=10)
             time.sleep(0.02)
-        subprocess.run([".venv\\Scripts\\pip.exe", "install", "-q", pkg])
+        pip_cmd = [
+            sys.executable,
+            "-m",
+            "pip",
+            "install",
+            "-q",
+            pkg,
+        ]
+        subprocess.run(pip_cmd)
         progress.update(total_task, advance=1)
