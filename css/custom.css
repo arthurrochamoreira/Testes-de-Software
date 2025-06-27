@@ -2,45 +2,45 @@
   --md-typeset-max-width: 100ch;
   --circle-size: 75%;
   --blending: hard-light;
-  --background-opacity: 35%;
+  --background-opacity: 30%;
 }
 
 .md-nav {
   display: none !important;
 }
 
-/* Paleta padrão */
+/* Paletas */
 .palette-default {
-  --color-bg1: rgb(108, 0, 162);
-  --color-bg2: rgb(0, 17, 82);
-  --color1: 18, 113, 255;
-  --color2: 221, 74, 255;
-  --color3: 100, 220, 255;
-  --color4: 200, 50, 50;
-  --color5: 180, 180, 50;
-  --color-interactive: 140, 100, 255;
+  --color-bg1: rgba(108, 0, 162);
+  --color-bg2: rgba(0, 17, 82);
+  --color1: rgba(18, 113, 255);
+  --color2: rgba(221, 74, 255);
+  --color3: rgba(100, 220, 255);
+  --color4: rgba(200, 50, 50);
+  --color5: rgba(180, 180, 50);
+  --color-interactive: rgba(140, 100, 255);
 }
 
 .palette-warm {
-  --color-bg1: rgb(162, 40, 0);
-  --color-bg2: rgb(82, 17, 0);
-  --color1: 255, 113, 18;
-  --color2: 255, 74, 74;
-  --color3: 255, 180, 100;
-  --color4: 200, 80, 50;
-  --color5: 200, 120, 50;
-  --color-interactive: 255, 150, 100;
+  --color-bg1: rgba(162, 40, 0);
+  --color-bg2: rgba(82, 17, 0);
+  --color1: rgba(255, 113, 18);
+  --color2: rgba(255, 74, 74);
+  --color3: rgba(255, 180, 100);
+  --color4: rgba(200, 80, 50);
+  --color5: rgba(200, 120, 50);
+  --color-interactive: rgba(255, 150, 100);
 }
 
 .palette-purple-orange {
-  --color-bg1: rgb(75, 0, 130); /* roxo profundo (tipo índigo) */
-  --color-bg2: rgb(0, 17, 82);
-  --color1: 138, 43, 226; /* roxo médio (blueviolet) */
-  --color2: 255, 102, 0; /* laranja intenso */
-  --color3: 218, 112, 214; /* orquídea suave */
-  --color4: 255, 165, 0; /* laranja clássico */
-  --color5: 255, 200, 120; /* laranja claro */
-  --color-interactive: 186, 85, 211; /* roxo interativo (medium orchid) */
+  --color-bg1: rgba(75, 0, 130);
+  --color-bg2: rgba(0, 17, 82);
+  --color1: rgba(138, 43, 226);
+  --color2: rgba(255, 102, 0);
+  --color3: rgba(218, 112, 214);
+  --color4: rgba(255, 165, 0);
+  --color5: rgba(255, 200, 120);
+  --color-interactive: rgba(186, 85, 211);
 }
 
 .text-container {
@@ -54,19 +54,19 @@
   justify-content: center;
   align-items: center;
   font-size: 96px;
-  color: white;
+  color: rgba(255, 255, 255);
   opacity: 0.5;
   user-select: none;
   text-shadow: 1px 1px rgba(0, 0, 0, 0.1);
 }
 
+/* contraste reforçado */
 .md-main__inner,
 .md-content {
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9); /* sombra ainda mais intensa e maior para contraste garantido */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
   position: relative;
 }
 
-/* contraste reforçado para títulos */
 .md-content h1,
 .md-content h2,
 .md-content h3,
@@ -76,6 +76,7 @@
   text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.95);
 }
 
+/* background gradiente fixo */
 .md-content .gradient-bg {
   width: 100%;
   position: fixed;
@@ -103,105 +104,93 @@
   height: 100%;
 }
 
-.gradient-bg .g1 {
+/* Bubbles gerais */
+.gradient-bg .g1,
+.gradient-bg .g2,
+.gradient-bg .g3,
+.gradient-bg .g4,
+.gradient-bg .g5,
+.gradient-bg .interactive {
   position: absolute;
-  background: radial-gradient(
-      circle at center,
-      rgba(var(--color1), 0.8) 0,
-      rgba(var(--color1), 0) 50%
-    )
-    no-repeat;
   mix-blend-mode: var(--blending);
+  border-radius: 50%;
+  opacity: 1;
+}
+
+/* Bubbles específicas */
+.gradient-bg .g1,
+.gradient-bg .g2,
+.gradient-bg .g3,
+.gradient-bg .g4,
+.gradient-bg .g5 {
   width: var(--circle-size);
   height: var(--circle-size);
   top: calc(50% - var(--circle-size) / 2);
   left: calc(50% - var(--circle-size) / 2);
-  transform-origin: center center;
+}
+
+.gradient-bg .g1 {
+  background: radial-gradient(
+    circle,
+    rgba(18, 113, 255, 0.8) 0,
+    rgba(18, 113, 255, 0) 50%
+  );
   animation: moveVertical 30s ease infinite;
-  opacity: 1;
 }
 
 .gradient-bg .g2 {
-  position: absolute;
   background: radial-gradient(
-      circle at center,
-      rgba(var(--color2), 0.8) 0,
-      rgba(var(--color2), 0) 50%
-    )
-    no-repeat;
-  mix-blend-mode: var(--blending);
-  width: var(--circle-size);
-  height: var(--circle-size);
-  top: calc(50% - var(--circle-size) / 2);
-  left: calc(50% - var(--circle-size) / 2);
+    circle,
+    rgba(221, 74, 255, 0.8) 0,
+    rgba(221, 74, 255, 0) 50%
+  );
   transform-origin: calc(50% - 400px);
   animation: moveInCircle 20s reverse infinite;
-  opacity: 1;
 }
 
 .gradient-bg .g3 {
-  position: absolute;
   background: radial-gradient(
-      circle at center,
-      rgba(var(--color3), 0.8) 0,
-      rgba(var(--color3), 0) 50%
-    )
-    no-repeat;
-  mix-blend-mode: var(--blending);
-  width: var(--circle-size);
-  height: var(--circle-size);
+    circle,
+    rgba(100, 220, 255, 0.8) 0,
+    rgba(100, 220, 255, 0) 50%
+  );
   top: calc(50% - var(--circle-size) / 2 + 200px);
   left: calc(50% - var(--circle-size) / 2 - 500px);
   transform-origin: calc(50% + 400px);
   animation: moveInCircle 40s linear infinite;
-  opacity: 1;
 }
 
 .gradient-bg .g4 {
-  position: absolute;
   background: radial-gradient(
-      circle at center,
-      rgba(var(--color4), 0.8) 0,
-      rgba(var(--color4), 0) 50%
-    )
-    no-repeat;
-  mix-blend-mode: var(--blending);
-  width: var(--circle-size);
-  height: var(--circle-size);
-  top: calc(50% - var(--circle-size) / 2);
-  left: calc(50% - var(--circle-size) / 2);
+    circle,
+    rgba(200, 50, 50, 0.8) 0,
+    rgba(200, 50, 50, 0) 50%
+  );
   transform-origin: calc(50% - 200px);
   animation: moveHorizontal 40s ease infinite;
   opacity: 0.7;
 }
 
 .gradient-bg .g5 {
-  position: absolute;
   background: radial-gradient(
-      circle at center,
-      rgba(var(--color5), 0.8) 0,
-      rgba(var(--color5), 0) 50%
-    )
-    no-repeat;
-  mix-blend-mode: var(--blending);
+    circle,
+    rgba(180, 180, 50, 0.8) 0,
+    rgba(180, 180, 50, 0) 50%
+  );
   width: calc(var(--circle-size) * 2);
   height: calc(var(--circle-size) * 2);
   top: calc(50% - var(--circle-size));
   left: calc(50% - var(--circle-size));
   transform-origin: calc(50% - 800px) calc(50% + 200px);
   animation: moveInCircle 20s ease infinite;
-  opacity: 1;
 }
 
 .gradient-bg .interactive {
-  position: absolute;
   background: radial-gradient(
-      circle at center,
-      rgba(var(--color-interactive), 0.8) 0,
-      rgba(var(--color-interactive), 0) 50%
-    )
-    no-repeat;
-  mix-blend-mode: var(--blending);
+    circle,
+    rgba(140, 100, 255, 0.8) 0,
+    rgba(140, 100, 255, 0) 50%
+  );
   width: 100%;
   height: 100%;
   top: -50%;
@@ -209,6 +198,7 @@
   opacity: 0.7;
 }
 
+/* animações */
 @keyframes moveInCircle {
   0% {
     transform: rotate(0deg);
@@ -245,7 +235,7 @@
   }
 }
 
-/* Hide background when sidebar is focused */
+/* esconder gradiente quando sidebar focado */
 .md-sidebar__scrollwrap.focus-visible ~ .md-main .gradient-bg {
   display: none;
 }
