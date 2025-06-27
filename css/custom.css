@@ -71,38 +71,11 @@ body {
   animation: rotateGradient 30s linear infinite;
 }
 
-@keyframes moveInCircle {
-  0% {
+@keyframes rotateGradient {
+  from {
     transform: rotate(0deg);
   }
-  50% {
-    transform: rotate(180deg);
-  }
-  100% {
+  to {
     transform: rotate(360deg);
-  }
-}
-
-@keyframes moveVertical {
-  0% {
-    transform: translateY(-50%);
-  }
-  50% {
-    transform: translateY(50%);
-  }
-  100% {
-    transform: translateY(-50%);
-  }
-}
-
-@keyframes moveHorizontal {
-  0% {
-    transform: translateX(-50%) translateY(-10%);
-  }
-  50% {
-    transform: translateX(50%) translateY(10%);
-  }
-  100% {
-    transform: translateX(-50%) translateY(-10%);
   }
 }
