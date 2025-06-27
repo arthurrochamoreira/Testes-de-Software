@@ -3,6 +3,8 @@ repo_url: https://github.com/arthurrochamoreira/Testes-de-Software
 repo_name: testes-de-software
 extra_css:
   - css/custom.css
+extra_javascript:
+  - js/interactive.js
 
 plugins:
   - search
