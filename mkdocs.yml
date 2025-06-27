@@ -1,6 +1,8 @@
 site_name: Testes de Software
 repo_url: https://github.com/arthurrochamoreira/Testes-de-Software
 repo_name: testes-de-software
+extra_css:
+  - css/custom.css
 
 plugins:
   - search
@@ -15,9 +17,9 @@ theme:
     - navigation.tabs.sticky
     - navigation.top
     - navigation.footer
-    - navigation.sections        
-    - navigation.expand
-    - toc.integrate
+    - navigation.sections
+    - navigation.index
+    #- toc.integrate
     - search.suggest
     - search.highlight
     - content.code.annotate
@@ -37,7 +39,7 @@ theme:
       primary: deep purple
       accent: deep orange
       toggle:
-        icon: material/brightness-5 
+        icon: material/brightness-5
         name: Switch to dark mode
 
     # Palette toggle for dark mode
@@ -52,11 +54,11 @@ nav:
   - Home: index.md
   - MC/DC:
       - Modified Condition/Decision Coverage (MC/DC): aae3/mc_dc.md
-  # - AAE: 
-    # - AAE3: aae3/aae3.md
+  # - AAE:
+  # - AAE3: aae3/aae3.md
   - TPI/TPE:
-    - TPI/TPE(3): tpi_tpe/tpi3_tpe3.md
-    - TPI/TPE(4): tpi_tpe/tpi4_tpe4.md
+      - TPI/TPE(3): tpi_tpe/tpi3_tpe3.md
+      - TPI/TPE(4): tpi_tpe/tpi4_tpe4.md
   - Unit Testing:
       - Teste de Unidade: aae3/unit_test.md
   - White-Box Testing:
