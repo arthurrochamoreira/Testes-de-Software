@@ -1,5 +1,7 @@
 # Testes de Software — Documentação Pessoal
 
+<link rel="stylesheet" href="css/custom.css">
+
 <div class="gradient-bg palette-purple-orange">
   <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
     <defs>

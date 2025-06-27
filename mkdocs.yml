@@ -2,7 +2,7 @@ site_name: Testes de Software
 repo_url: https://github.com/arthurrochamoreira/Testes-de-Software
 repo_name: testes-de-software
 extra_css:
-  - css/custom.css
+  - css/custom-general.css
 extra_javascript:
   - js/interactive.js
 
