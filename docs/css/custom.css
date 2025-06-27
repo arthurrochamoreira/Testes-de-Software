@@ -6,6 +6,7 @@
   --md-typeset-max-width: 100ch;
   --circle-size: 75%;
   --blending: hard-light;
+  --background-opacity: 50%;
 }
 
 /* Paleta padrão */
@@ -29,6 +30,17 @@
   --color4: 200, 80, 50;
   --color5: 200, 120, 50;
   --color-interactive: 255, 150, 100;
+}
+
+.palette-purple-orange {
+  --color-bg1: rgb(75, 0, 130); /* roxo profundo (tipo índigo) */
+  --color-bg2: rgb(0, 17, 82);
+  --color1: 138, 43, 226; /* roxo médio (blueviolet) */
+  --color2: 255, 102, 0; /* laranja intenso */
+  --color3: 218, 112, 214; /* orquídea suave */
+  --color4: 255, 165, 0; /* laranja clássico */
+  --color5: 255, 200, 120; /* laranja claro */
+  --color-interactive: 186, 85, 211; /* roxo interativo (medium orchid) */
 }
 
 html,
@@ -58,13 +70,14 @@ body {
 .gradient-bg {
   width: 100vw;
   height: 100vh;
-  position: fixed;
+  position: absolute;
   overflow: hidden;
   background: linear-gradient(40deg, var(--color-bg1), var(--color-bg2));
   top: 0;
   left: 0;
   pointer-events: none;
   z-index: -1;
+  opacity: var(--background-opacity);
 }
 
 .gradient-bg svg {
@@ -221,4 +234,9 @@ body {
   100% {
     transform: translateX(-50%) translateY(-10%);
   }
+}
+
+/* Hide background when sidebar is focused */
+.md-sidebar__scrollwrap.focus-visible ~ .md-main .gradient-bg {
+  display: none;
 }
