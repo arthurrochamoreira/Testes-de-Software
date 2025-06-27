@@ -4,7 +4,7 @@ VENV=.venv
 URL=http://127.0.0.1:$(PORT)/
 
 # Detecta SO
-OS := $(shell uname 2>/dev/null || echo Windows_NT)
+OS := $(shell (uname 2>NUL) || echo Windows_NT)
 
 ifeq ($(OS),Windows_NT)
 	PYTHON=python
