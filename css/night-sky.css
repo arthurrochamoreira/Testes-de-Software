@@ -1,0 +1,237 @@
+:root {
+  --night-sky-background-opacity: 100%;
+  --shooting-time: 4000ms;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.md-content .sky {
+  position: fixed;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: -1;
+  opacity: var(--night-sky-background-opacity);
+  background: linear-gradient(
+    to bottom,
+    #060010 0%,
+    #060010 2%,
+    #070011 4%,
+    #070012 6%,
+    #080013 8%,
+    #080014 10%,
+    #090015 12%,
+    #090016 14%,
+    #0a0117 16%,
+    #0a0118 18%,
+    #0a0119 20%,
+    #0b011a 22%,
+    #0b011b 24%,
+    #0b011c 26%,
+    #0c011d 28%,
+    #0c011e 30%,
+    #0c011f 32%,
+    #0d0120 34%,
+    #0d0121 36%,
+    #0d0122 38%,
+    #0e0123 40%,
+    #0e0124 42%,
+    #0e0125 44%,
+    #0f0126 46%,
+    #0f0127 48%,
+    #100128 50%,
+    #100129 52%,
+    #10012a 54%,
+    #11012b 56%,
+    #11012c 58%,
+    #11012d 60%,
+    #12012e 62%,
+    #12012f 64%,
+    #120130 66%,
+    #130131 68%,
+    #130132 70%,
+    #140133 72%,
+    #140134 74%,
+    #150135 76%,
+    #150136 78%,
+    #160237 80%,
+    #160238 82%,
+    #160239 84%,
+    #17023a 86%,
+    #17023b 88%,
+    #18023c 90%,
+    #18023d 92%,
+    #19023e 94%,
+    #1a023f 96%,
+    #1b0240 98%,
+    #1c0242 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(
+    startColorstr="#060010",
+    endColorstr="#1c0242",
+    GradientType=0
+  );
+  transform: scale(1);
+}
+
+.stars {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  height: 100vh;
+  transition: all 10s linear;
+}
+
+.star {
+  position: absolute;
+  border-radius: 50%;
+  background-color: white;
+  opacity: 0.8;
+}
+
+.blink {
+  animation: blink ease-in-out infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+.star-0 {
+  height: 0.5px;
+  width: 0.5px;
+}
+
+.star-1 {
+  height: 1px;
+  width: 1px;
+}
+
+.star-2 {
+  height: 1.5px;
+  width: 1.5px;
+}
+
+.star-3 {
+  height: 2px;
+  width: 2px;
+}
+
+.star-4 {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  background: transparent;
+  border-radius: 15px;
+}
+
+.star-4::before,
+.star-4::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 2px;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 255, 0),
+    rgba(95, 145, 255, 1),
+    rgba(0, 0, 255, 0)
+  );
+  border-radius: 15px;
+  transform-origin: center;
+  filter: drop-shadow(0 0 6px rgba(105, 155, 255, 1));
+}
+
+.star-4::before {
+  transform: translate(-50%, -50%) rotate(0deg);
+}
+
+.star-4::after {
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.star-5 {
+  height: 2.5px;
+  width: 2.5px;
+  box-shadow: 0px 0px 6px 1px rgba(255, 255, 255, 0.7);
+  animation: star5-glow 3s ease-in-out infinite;
+}
+
+@keyframes star5-glow {
+  0%,
+  100% {
+    box-shadow: 0px 0px 6px 1px rgba(rgb(255, 50, 50, 0.6));
+  }
+  50% {
+    box-shadow: 0px 0px 8px 2px rgba(rgb(255, 50, 50, 1));
+  }
+}
+
+@keyframes star4-shine {
+  0% {
+    width: 0;
+  }
+  50% {
+    width: 30px;
+  }
+  100% {
+    width: 0;
+  }
+}
+
+.stars-cross {
+  position: absolute;
+  top: 10vh;
+  left: 0px;
+  width: 120vw;
+  height: 20vh;
+  transform: rotate(20deg);
+  transform-origin: top left;
+}
+
+.stars-cross-aux {
+  position: absolute;
+  top: 0vh;
+  left: 10vw;
+  width: 120vw;
+  height: 10vh;
+  transform: rotate(20deg);
+  transform-origin: top left;
+}
+
+.stars-cross > .blur,
+.stars-cross-aux > .blur {
+  position: absolute;
+  border-radius: 50%;
+  background-color: white;
+  opacity: 1;
+  filter: blur(15px);
+  width: 5px;
+  height: 10px;
+}
+
+/* ----------------------------------------------------
+   Cometas (shooting stars)
+   ---------------------------------------------------- */
+.night {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 150%;
+  height: 150%;
+  transform: rotateZ(-210deg);
+  opacity: var(--night-sky-background-opacity);
+  pointer-events: none;
+  z-index: 0;
+}

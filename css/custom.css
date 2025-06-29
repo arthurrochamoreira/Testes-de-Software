@@ -2,7 +2,7 @@
   --md-typeset-max-width: 100ch;
   --circle-size: 75%;
   --blending: hard-light;
-  --background-opacity: 30%;
+  --gradient-background-opacity: 30%;
 }
 
 .md-nav {
@@ -79,15 +79,15 @@
 /* background gradiente fixo */
 .md-content .gradient-bg {
   width: 100%;
-  position: fixed;
+  height: 100%;
+  position: absolute;
   overflow: hidden;
   background: linear-gradient(40deg, var(--color-bg1), var(--color-bg2));
-  top: -33px;
-  bottom: -311px;
+  top: 0;
   left: 0;
   pointer-events: none;
   z-index: -1;
-  opacity: var(--background-opacity);
+  opacity: var(--gradient-background-opacity);
 }
 
 .gradient-bg svg {
