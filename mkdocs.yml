@@ -3,8 +3,14 @@ repo_url: https://github.com/arthurrochamoreira/Testes-de-Software
 repo_name: testes-de-software
 extra_css:
   - css/custom-general.css
+  - css/night-sky.css
+  - css/shooting-stars.css
 extra_javascript:
+  - https://code.jquery.com/jquery-3.6.0.min.js
   - js/interactive.js
+  - js/shooting-stars.js
+  - js/starfield.js
+  - js/night-sky.js
 
 plugins:
   - search

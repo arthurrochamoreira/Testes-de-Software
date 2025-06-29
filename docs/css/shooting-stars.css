@@ -1,0 +1,113 @@
+/* Shooting Stars Styles */
+.shooting_star {
+  position: absolute;
+  right: var(--shooting-right, 0%);
+  top: var(--shooting-top, 50%);
+  height: 2px;
+  background: linear-gradient(
+    -30deg,
+    rgba(213, 244, 254, 1),
+    rgba(0, 0, 255, 0)
+  );
+  border-radius: 999px;
+  filter: drop-shadow(0 0 6px rgba(105, 155, 255, 1));
+  animation: tail var(--shooting-time) ease-out infinite,
+    shooting var(--shooting-time) linear infinite;
+  opacity: 0;
+  --delay: 0s;
+  --shooting-distance: 900px;
+  animation-delay: var(--delay);
+}
+
+.shooting_star.active {
+  opacity: 1;
+}
+
+.shooting_star::before,
+.shooting_star::after {
+  content: "";
+  position: absolute;
+  top: calc(50% - 1px);
+  right: 0;
+  width: 30px;
+  height: 2px;
+  background: linear-gradient(
+    -45deg,
+    rgba(0, 0, 255, 0),
+    rgba(213, 244, 254, 1),
+    rgba(0, 0, 255, 0)
+  );
+  transform-origin: center;
+  border-radius: 100%;
+  animation-delay: var(--delay);
+}
+
+.shooting_star::before {
+  transform: translateX(50%) rotateZ(0deg);
+  animation: shining-before var(--shooting-time) linear infinite;
+}
+
+.shooting_star::after {
+  transform: translateX(50%) rotateZ(90deg);
+  animation: shining-after var(--shooting-time) linear infinite;
+}
+
+/* Tail (rastro) */
+@keyframes tail {
+  0% {
+    width: 0;
+  }
+  40% {
+    width: 120px;
+  }
+  100% {
+    width: 0;
+  }
+}
+
+/* Shooting (movimento da estrela) */
+@keyframes shooting {
+  0% {
+    transform: translateX(0) scale(1);
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(var(--shooting-distance)) scale(0);
+    opacity: 0;
+  }
+}
+
+/* Shining (brilho da ponta) */
+@keyframes shining-before {
+  0% {
+    transform: translateX(50%) rotateZ(0deg);
+    width: 15px;
+  }
+  50% {
+    width: 30px;
+  }
+  100% {
+    transform: translateX(50%) rotateZ(360deg);
+    width: 15px;
+  }
+}
+
+@keyframes shining-after {
+  0% {
+    transform: translateX(50%) rotateZ(90deg);
+    width: 15px;
+  }
+  50% {
+    width: 30px;
+  }
+  100% {
+    transform: translateX(50%) rotateZ(450deg);
+    width: 15px;
+  }
+}
