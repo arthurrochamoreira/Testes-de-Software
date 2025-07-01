@@ -1,6 +1,4 @@
-Claro, aqui está o relatório completo em formato Markdown (.md).
-
-# Análise Aprofundada da Segurança de Software: Do Desenvolvimento Seguro às Defesas em Tempo de Execução
+# Segurança de Software: Do Desenvolvimento Seguro às Defesas em Tempo de Execução
 
 ## Introdução: A Mudança de Paradigma na Defesa Digital
 
