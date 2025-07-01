@@ -18,6 +18,3 @@ Documentação pessoal sobre **Testes de Software**, desenvolvida como apoio aos
 - _xUnit Test Patterns_ (Meszaros, 2007)
 - _Test-Driven Development: By Example_ (Kent Beck, 2002)
 - _The Art of Software Testing_ (Glenford J. Myers, 2011)
-- _xUnit Test Patterns_ (Meszaros, 2007)
-- _Test-Driven Development: By Example_ (Kent Beck, 2002)
-- _The Art of Software Testing_ (Glenford J. Myers, 2011)
