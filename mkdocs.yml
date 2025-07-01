@@ -60,6 +60,7 @@ nav:
   - TPI/TPE:
       - TPI/TPE(3): tpi_tpe/tpi3_tpe3.md
       - TPI/TPE(4): tpi_tpe/tpi4_tpe4.md
+      - TPI/TPE(5): tpi_tpe/tpi5_tpe5.md
   - Unit Testing:
       - Teste de Unidade: aae3/unit_test.md
   - White-Box Testing:

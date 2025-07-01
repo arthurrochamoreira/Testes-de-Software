@@ -4,7 +4,7 @@ VENV=.venv
 URL=http://127.0.0.1:$(PORT)/
 
 # Detecta SO
-OS := $(shell (uname 2>/dev/null) || echo Windows_NT)
+OS := $(shell (uname 2>NUL) || echo Windows_NT)
 
 ifeq ($(OS),Windows_NT)
 	PYTHON=python
@@ -14,7 +14,7 @@ ifeq ($(OS),Windows_NT)
 	CHECK_VENV=call scripts\check_venv.bat
 	CHECK_REQ=$(PYTHON_VENV) scripts\check_requirements.py
 	OPEN_BROWSER=cmd /c start $(URL)
-	CHCP_CMD=chcp 65001 > /dev/null
+	CHCP_CMD=chcp 65001 >NUL
 	DEVNULL=NUL
 	COLOR_START=
 	COLOR_END=
