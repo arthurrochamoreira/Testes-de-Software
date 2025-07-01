@@ -1,5 +1,8 @@
-document.addEventListener("DOMContentLoaded", () => {
+function bootstrapInteractive() {
   const interBubble = document.querySelector(".interactive");
+  if (!interBubble || interBubble.dataset.interactiveLoaded) return;
+  interBubble.dataset.interactiveLoaded = "true";
+
   let curX = 0;
   let curY = 0;
   let tgX = 0;
@@ -8,11 +11,9 @@ document.addEventListener("DOMContentLoaded", () => {
   function move() {
     curX += (tgX - curX) / 20;
     curY += (tgY - curY) / 20;
-    if (interBubble) {
-      interBubble.style.transform = `translate(${Math.round(
-        curX
-      )}px, ${Math.round(curY)}px)`;
-    }
+    interBubble.style.transform = `translate(${Math.round(curX)}px, ${Math.round(
+      curY
+    )}px)`;
     requestAnimationFrame(move);
   }
 
@@ -22,4 +23,8 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   move();
-});
+}
+
+window.addEventListener("DOMContentLoaded", bootstrapInteractive);
+const interactiveObserver = new MutationObserver(bootstrapInteractive);
+interactiveObserver.observe(document.body, { childList: true, subtree: true });

@@ -45,6 +45,8 @@
   function startAutoStars(parent) {
     parent = parent || document.body;
 
+    let intervalId;
+
     function gerarEstrelas() {
       // cria múltiplas estrelas conforme o multiplicador
       for (let i = 0; i < STAR_CONFIG.quantidadeMultiplicador; i++) {
@@ -52,8 +54,30 @@
       }
     }
 
+    function startInterval() {
+      if (!intervalId) {
+        intervalId = setInterval(gerarEstrelas, STAR_CONFIG.intervalo);
+      }
+    }
+
+    function stopInterval() {
+      if (intervalId) {
+        clearInterval(intervalId);
+        intervalId = null;
+      }
+    }
+
+    document.addEventListener("visibilitychange", function () {
+      if (document.hidden) {
+        stopInterval();
+      } else {
+        gerarEstrelas();
+        startInterval();
+      }
+    });
+
     gerarEstrelas();
-    setInterval(gerarEstrelas, STAR_CONFIG.intervalo);
+    startInterval();
   }
 
   function init(root = document) {
@@ -84,8 +108,14 @@
     config: STAR_CONFIG, // expõe as configurações
   };
 
-  document.addEventListener("DOMContentLoaded", function () {
+  function bootstrapShootingStars() {
     const container = document.querySelector(".night");
+    if (!container || container.dataset.shootingStarsLoaded) return;
+    container.dataset.shootingStarsLoaded = "true";
     ShootingStars.startAutoStars(container);
-  });
+  }
+
+  window.addEventListener("DOMContentLoaded", bootstrapShootingStars);
+  const shootingObserver = new MutationObserver(bootstrapShootingStars);
+  shootingObserver.observe(document.body, { childList: true, subtree: true });
 })(window);
