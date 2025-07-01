@@ -45,6 +45,7 @@ make build-up
 ```
 
 O script irá:
+
 - Verificar o Python e ambiente virtual
 - Instalar dependências com barra de progresso interativa
 - Iniciar o servidor local com MkDocs
@@ -55,7 +56,7 @@ O script irá:
 
 Abra o navegador e vá para:
 
-👉 [http://127.0.0.1:8123](http://127.0.0.1:8123)
+[http://127.0.0.1:8123](http://127.0.0.1:8123)
 
 ---
 
@@ -73,5 +74,3 @@ Verifique suas configurações com:
 ```bash
 git config --global --list
 ```
-
----
