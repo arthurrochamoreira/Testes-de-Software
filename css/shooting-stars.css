@@ -15,7 +15,6 @@
     shooting var(--shooting-time) linear infinite;
   opacity: 0;
   --delay: 0s;
-  --shooting-distance: 900px;
   animation-delay: var(--delay);
 }
 

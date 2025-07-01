@@ -1,6 +1,19 @@
+/*
+  =====================================================================
+  Variáveis globais que controlam o comportamento do céu noturno.
+  Ajuste os valores abaixo para modificar opacidade, velocidade de
+  animações e angulação da faixa de estrelas cruzadas.
+  =====================================================================
+*/
 :root {
-  --night-sky-background-opacity: 100%;
-  --shooting-time: 4000ms;
+  --night-sky-background-opacity: 80%;
+  --shooting-time: 4000ms; /* duração das animações de estrelas cadentes */
+  --cross-rotation: 0deg; /* ângulo da faixa de estrelas cruzadas */
+  /* tamanhos base das estrelas em pixels para fácil ajuste */
+  --star-size-min: 0.5px;
+  --star-size-small: 1px;
+  --star-size-medium: 1.5px;
+  --star-size-large: 2px;
 }
 
 * {
@@ -8,13 +21,16 @@
 }
 
 .md-content .sky {
+  /*
+    Contêiner principal do céu.
+    Posicionado fixo para cobrir toda a tela e ficar atrás do conteúdo.
+  */
   position: fixed;
   overflow: hidden;
   width: 100vw;
   height: 100vh;
   top: 0;
   left: 0;
-  overflow: hidden;
   pointer-events: none;
   z-index: -1;
   opacity: var(--night-sky-background-opacity);
@@ -81,19 +97,220 @@
 }
 
 .stars {
+  /* Camada onde as estrelas são posicionadas */
   position: absolute;
-  top: 0px;
-  left: 0px;
+  top: 0;
+  left: 0;
   width: 100vw;
   height: 100vh;
   transition: all 10s linear;
 }
 
+/*
+  Definição visual das estrelas. Cada classe representa um tamanho
+  e coloração diferente para criar variedade no céu.
+*/
 .star {
   position: absolute;
   border-radius: 50%;
-  background-color: white;
   opacity: 0.8;
+}
+
+.star-0 {
+  /* Estrela mínima utilizada como fundo */
+  height: var(--star-size-min);
+  width: var(--star-size-min);
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(200, 200, 255, 0.5) 60%,
+    rgba(150, 150, 255, 0) 100%
+  );
+}
+
+.star-1 {
+  /* Estrela pequena com leve brilho */
+  height: var(--star-size-small);
+  width: var(--star-size-small);
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 230, 1) 0%,
+    rgba(255, 255, 200, 0.5) 60%,
+    rgba(255, 255, 150, 0) 100%
+  );
+}
+
+.star-2 {
+  /* Estrela média utilizada na maioria do fundo */
+  height: var(--star-size-medium);
+  width: var(--star-size-medium);
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(150, 200, 255, 0.5) 60%,
+    rgba(100, 150, 255, 0) 100%
+  );
+}
+
+.star-3 {
+  /* Estrela um pouco maior para destacar áreas específicas */
+  height: var(--star-size-large);
+  width: var(--star-size-large);
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 240, 1) 0%,
+    rgba(255, 230, 180, 0.5) 60%,
+    rgba(255, 200, 150, 0) 100%
+  );
+}
+
+.star-4 {
+  /* Estrela em formato de cruz, utilizada para brilhos mais fortes */
+  position: absolute;
+  right: var(--star4-right, 50%);
+  top: var(--star4-top, 50%);
+  width: 1px;
+  height: 1px;
+  background: radial-gradient(
+    circle,
+    rgba(213, 244, 254, 1) 0%,
+    rgba(105, 155, 255, 0.5) 60%,
+    rgba(0, 0, 255, 0) 100%
+  );
+  border-radius: 999px;
+  filter: drop-shadow(0 0 6px rgba(105, 155, 255, 1));
+  opacity: 1;
+}
+
+.star-4::before,
+.star-4::after {
+  /* Braços da estrela em cruz */
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 15px;
+  height: 1px;
+  background: linear-gradient(
+    -45deg,
+    rgba(0, 0, 255, 0),
+    rgba(105, 155, 255, 1),
+    rgba(0, 0, 255, 0)
+  );
+  border-radius: 100%;
+  transform-origin: center;
+  transform: translate(-50%, -50%);
+}
+
+.star-4::before {
+  transform: translate(-50%, -50%) rotateZ(90deg);
+}
+
+.star-4::after {
+  transform: translate(-50%, -50%) rotateZ(0deg);
+}
+
+.star-5 {
+  /* Estrela especial com brilho pulsante */
+  height: 2.5px;
+  width: 2.5px;
+  background: radial-gradient(
+    circle,
+    rgba(255, 220, 220, 1) 0%,
+    rgba(255, 150, 150, 0.5) 60%,
+    rgba(255, 100, 100, 0) 100%
+  );
+  box-shadow: 0px 0px 6px 1px rgba(255, 150, 150, 0.7);
+  animation: star5-glow 3s ease-in-out infinite;
+}
+
+/*
+  Classes espectrais aproximadas para representar diferentes
+  temperaturas de estrelas. Podem ser combinadas com outras
+  classes de tamanho.
+*/
+.star-o {
+  height: 2.5px;
+  width: 2.5px;
+  background: radial-gradient(
+    circle,
+    rgba(180, 210, 255, 1) 0%,
+    rgba(100, 150, 255, 0.5) 60%,
+    rgba(50, 100, 255, 0) 100%
+  );
+  box-shadow: 0 0 8px 2px rgba(100, 150, 255, 0.8);
+}
+
+.star-b {
+  height: 2px;
+  width: 2px;
+  background: radial-gradient(
+    circle,
+    rgba(220, 230, 255, 1) 0%,
+    rgba(180, 200, 255, 0.5) 60%,
+    rgba(120, 150, 255, 0) 100%
+  );
+  box-shadow: 0 0 5px 1px rgba(150, 180, 255, 0.6);
+}
+
+.star-a {
+  height: 1.8px;
+  width: 1.8px;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(230, 230, 255, 0.5) 60%,
+    rgba(200, 200, 255, 0) 100%
+  );
+  box-shadow: 0 0 4px 1px rgba(200, 200, 255, 0.5);
+}
+
+.star-f {
+  height: 1.5px;
+  width: 1.5px;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 230, 1) 0%,
+    rgba(255, 255, 200, 0.5) 60%,
+    rgba(255, 255, 150, 0) 100%
+  );
+  box-shadow: 0 0 4px 1px rgba(255, 255, 180, 0.5);
+}
+
+.star-g {
+  height: 1.5px;
+  width: 1.5px;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 200, 1) 0%,
+    rgba(255, 230, 150, 0.5) 60%,
+    rgba(255, 200, 100, 0) 100%
+  );
+  box-shadow: 0 0 4px 1px rgba(255, 230, 150, 0.5);
+}
+
+.star-k {
+  height: 1.8px;
+  width: 1.8px;
+  background: radial-gradient(
+    circle,
+    rgba(255, 210, 180, 1) 0%,
+    rgba(255, 180, 120, 0.5) 60%,
+    rgba(255, 150, 100, 0) 100%
+  );
+  box-shadow: 0 0 4px 1px rgba(255, 180, 120, 0.5);
+}
+
+.star-m {
+  height: 1.5px;
+  width: 1.5px;
+  background: radial-gradient(
+    circle,
+    rgba(255, 180, 180, 1) 0%,
+    rgba(255, 100, 100, 0.5) 60%,
+    rgba(255, 50, 50, 0) 100%
+  );
+  box-shadow: 0 0 4px 1px rgba(255, 100, 100, 0.5);
 }
 
 .blink {
@@ -106,75 +323,13 @@
   }
 }
 
-.star-0 {
-  height: 0.5px;
-  width: 0.5px;
-}
-
-.star-1 {
-  height: 1px;
-  width: 1px;
-}
-
-.star-2 {
-  height: 1.5px;
-  width: 1.5px;
-}
-
-.star-3 {
-  height: 2px;
-  width: 2px;
-}
-
-.star-4 {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  background: transparent;
-  border-radius: 15px;
-}
-
-.star-4::before,
-.star-4::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 20px;
-  height: 2px;
-  background: linear-gradient(
-    to right,
-    rgba(0, 0, 255, 0),
-    rgba(95, 145, 255, 1),
-    rgba(0, 0, 255, 0)
-  );
-  border-radius: 15px;
-  transform-origin: center;
-  filter: drop-shadow(0 0 6px rgba(105, 155, 255, 1));
-}
-
-.star-4::before {
-  transform: translate(-50%, -50%) rotate(0deg);
-}
-
-.star-4::after {
-  transform: translate(-50%, -50%) rotate(90deg);
-}
-
-.star-5 {
-  height: 2.5px;
-  width: 2.5px;
-  box-shadow: 0px 0px 6px 1px rgba(255, 255, 255, 0.7);
-  animation: star5-glow 3s ease-in-out infinite;
-}
-
 @keyframes star5-glow {
   0%,
   100% {
-    box-shadow: 0px 0px 6px 1px rgba(rgb(255, 50, 50, 0.6));
+    box-shadow: 0px 0px 4px 1px rgba(255, 120, 120, 0.4);
   }
   50% {
-    box-shadow: 0px 0px 8px 2px rgba(rgb(255, 50, 50, 1));
+    box-shadow: 0px 0px 6px 2px rgba(255, 120, 120, 0.7);
   }
 }
 
@@ -191,32 +346,45 @@
 }
 
 .stars-cross {
+  /*
+    Faixa principal que forma a "cruz" de estrelas
+    atravessando diagonalmente o céu.
+  */
   position: absolute;
   top: 10vh;
-  left: 0px;
+  left: 0;
   width: 120vw;
   height: 20vh;
-  transform: rotate(20deg);
+  transform: rotate(var(--cross-rotation));
   transform-origin: top left;
 }
 
 .stars-cross-aux {
+  /*
+    Segunda faixa usada para reforçar o efeito de cruz.
+    Fica deslocada para dar maior profundidade.
+  */
   position: absolute;
-  top: 0vh;
+  top: 0;
   left: 10vw;
   width: 120vw;
   height: 10vh;
-  transform: rotate(20deg);
+  transform: rotate(var(--cross-rotation));
   transform-origin: top left;
+}
+
+.blur {
+  /* Elemento genérico utilizado para criar halos de luz */
+  position: absolute;
+  border-radius: 50%;
+  background-color: white;
+  filter: blur(15px);
 }
 
 .stars-cross > .blur,
 .stars-cross-aux > .blur {
-  position: absolute;
-  border-radius: 50%;
-  background-color: white;
+  /* Ajustes específicos dos halos presentes na faixa em cruz */
   opacity: 1;
-  filter: blur(15px);
   width: 5px;
   height: 10px;
 }
@@ -225,6 +393,10 @@
    Cometas (shooting stars)
    ---------------------------------------------------- */
 .night {
+  /*
+    Área utilizada para as estrelas cadentes.
+    Fica rotacionada para que os rastros tenham ângulo natural.
+  */
   position: absolute;
   top: 0;
   left: 0;
@@ -234,4 +406,15 @@
   opacity: var(--night-sky-background-opacity);
   pointer-events: none;
   z-index: 0;
+}
+
+/*
+  Elementos de nebulosa gerados via JavaScript. A classe provê
+  estilos básicos para que o script trabalhe apenas com
+  propriedades variáveis como posição e cor.
+*/
+.nebulosa {
+  position: absolute;
+  pointer-events: none;
+  border-radius: 50%;
 }
