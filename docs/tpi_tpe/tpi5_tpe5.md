@@ -1,155 +1,211 @@
-## Segurança Cibernética e Segurança de Software
+# Questionário - TPI-5
 
-- **O que é segurança cibernética e quais as principais diferenças em relação à segurança de software?**
+## Questão 1
 
-  - _Trecho de apoio:_ —
-  - _Resposta:_ Segurança cibernética abrange a proteção de redes, sistemas e dados de forma ampla. Segurança de software foca na robustez do código e de seus componentes ao longo do SDLC, usando práticas como SAST/DAST, correções e hardening de dependências.
-  - _Resposta da web:_ Segurança cibernética protege “tudo” — infra, redes, dispositivos — enquanto **software security** cuida de vulnerabilidades internas a um programa; a primeira atua em várias camadas (firewalls, IAM, monitoramento de rede), a segunda incorpora requisitos de segurança, revisões de código e testes dentro do ciclo de desenvolvimento.
+**Enunciado:**  
+Por que é importante desenvolver a mentalidade correta ao testar a segurança de aplicações web?
 
-- **Quais são os objetivos principais da segurança de software (confidencialidade, integridade e disponibilidade) e como eles são aplicados na prática?**
-  - _Trecho de apoio:_ “...proving **confidentiality, integrity and availability** of the data as well as the service.”
-  - _Resposta:_ Controles de segurança devem manter dados acessíveis apenas a quem deve (C), impedir alterações não autorizadas (I) e garantir que o serviço permaneça funcional (A). Isso é realizado com criptografia, controle de acesso, logs imutáveis e resiliência na infraestrutura.
-  - _Resposta da web:_ O **CIA Triad** guia políticas de segurança: criptografia e segregação de funções garantem confidencialidade; hashing, controle de versão e assinaturas digitais asseguram integridade; alta disponibilidade usa balanceamento de carga e redundância para manter serviços online.
+**Alternativas:**  
+a) Porque os testes de segurança devem seguir os mesmos cenários dos testes funcionais.  
+b) Porque a maioria das ferramentas automatizadas cobre todos os cenários possíveis de ataque.  
+c) Porque é necessário pensar como um atacante e explorar comportamentos inesperados que não foram considerados pelos desenvolvedores.  
+d) Porque os testes de segurança devem priorizar a validação dos fluxos de uso previstos pelo negócio.
 
----
-
-## Vulnerabilidades
-
-- **O que são CVEs (Common Vulnerabilities and Exposures) e como são aplicadas na identificação de vulnerabilidades de software?**
-
-  - _Trecho de apoio:_ “...via vulnerability databases such as **CVE**.”
-  - _Resposta:_ CVE é um identificador único para falhas públicas. Ferramentas de SCA, scanners de contêiner e sistemas de gestão de patch usam o ID CVE para apontar componentes afetados.
-  - _Resposta da web:_ Um **CVE** fornece nome padronizado, severidade (CVSS) e referências; fornecedores e pesquisadores o citam para sincronizar patches e alertas.
-
-- **Qual é a definição e função da CWE (Common Weakness Enumeration) em ferramentas de segurança?**
-  - _Trecho de apoio:_ —
-  - _Resposta:_ CWE cataloga fraquezas (erros de design ou código). Ferramentas mapeiam findings a CWEs (ex.: **CWE-89 SQL Injection**) para priorizar correções e gerar métricas de qualidade.
-  - _Resposta da web:_ O projeto **CWE** da MITRE descreve mais de 900 fraquezas; scanners vinculam detecções a esses códigos para relatórios consistentes e comunicação entre equipes.
+**Resposta correta:** c
 
 ---
 
-## OWASP Top Ten
+## Questão 2
 
-- **O que é o OWASP Top Ten e como ele classifica as vulnerabilidades de aplicações web?**
+**Enunciado:**  
+Qual das alternativas melhor descreve uma vantagem das inspeções manuais no processo de teste de segurança?
 
-  - _Trecho de apoio:_ —
-  - _Resposta:_ Lista semestral da OWASP com as dez categorias de risco mais críticas, priorizadas por prevalência, impacto e facilidade de exploração.
-  - _Resposta da web:_ O documento é referência de conscientização; cada categoria (A01-A10) consolida dados de milhares de testes, mapeando‐as a CWEs correlatas para orientar mitigação.
+**Alternativas:**  
+a) Podem ser executadas em curto espaço de tempo, principalmente se houver material de apoio disponível.  
+b) Permitem que a verificação seja realizada em estágios finais do SDLC.  
+c) Podem avaliar políticas, habilidades e decisões de arquitetura por meio de análise de documentação e entrevistas.  
+d) São recomendadas quando não há especialista em segurança disponível para a equipe.
 
-- **Quais são exemplos concretos de vulnerabilidades classificadas no OWASP Top Ten 2021 (como Injeção, Falhas Criptográficas e Server-Side Request Forgery)?**
-  - _Trecho de apoio:_ —
-  - _Resposta:_ Exemplos: **A01 Injeção** (SQL/OS), **A02 Falhas Criptográficas** (algoritmos fracos, chaves vazadas) e **A10 SSRF** (servidor faz requisições internas indevidas).
-  - _Resposta da web:_ Para **A02 Cryptographic Failures**, a OWASP cita CWE-259 (senha hard-coded) e CWE-327 (algoritmo fraco); já **SSRF** permite que atacantes alcancem recursos internos via URLs manipuladas.
-
----
-
-## OWASP ASVS
-
-- **O que é o OWASP Application Security Verification Standard (ASVS) e como ele se aplica no processo de verificação de segurança em aplicações web?**
-  - _Trecho de apoio:_ —
-  - _Resposta:_ O ASVS fornece requisitos de verificação em três níveis (Básico, Padrão, Crítico). Equipes usam o checklist para revisar código, testar segurança e auditar controles conforme o risco do aplicativo.
-  - _Resposta da web:_ A ASVS lista mais de 250 controles em áreas como autenticação, criptografia e lógica de negócios; pode ser integrada a pipelines CI para garantir cobertura mínima de segurança antes do “go-live”.
+**Resposta correta:** c
 
 ---
 
-## Testes de Segurança
+## Questão 3
 
-- **O que é SAST (Static Application Security Testing) e quais as vantagens e limitações dessa técnica no contexto dos testes de segurança?**
+**Enunciado:**  
+Qual é o objetivo principal da modelagem de ameaças (threat modeling) no contexto de segurança de aplicações?
 
-  - _Trecho de apoio:_ citações SAST
-  - _Resposta:_ SAST examina código parado. Vantagens: detecção precoce, fácil integração ao CI/IDE. Limitações: alto volume de falsos-positivos e falta de visão de comportamento em tempo de execução.
-  - _Resposta da web:_ Ferramentas SAST como **SonarQube** exibem CWEs e OWASP Top 10 diretamente na revisão de código; porém exigem ajuste de regras para reduzir falsos-positivos.
+**Alternativas:**  
+a) Avaliar riscos e antecipar ameaças para desenvolver estratégias de mitigação desde as primeiras fases do SDLC.  
+b) Medir o desempenho da aplicação em cenários de ataque de DDOS.  
+c) Substituir a análise de código-fonte na identificação de falhas de segurança.  
+d) Testar a eficácia das ferramentas automatizadas de segurança, a partir da modelagem da aplicação.
 
-- **O que é DAST (Dynamic Application Security Testing) e como ele é aplicado na detecção prática de vulnerabilidades em aplicações executando em ambientes reais?**
-
-  - _Trecho de apoio:_ citações DAST
-  - _Resposta:_ DAST “ataca” a aplicação rodando, analisando respostas HTTP para detectar falhas de configuração, autenticação, vazamento de dados e comportamentos inesperados.
-  - _Resposta da web:_ DAST é “black-box”: escaneia a aplicação em execução simulando ataques (XSS, SQLi). Ferramentas modernas podem integrar autenticação e scan contínuo em produção.
-
-- **Como são realizados na prática os testes Systematic Manual Penetration Testing (SMPT) e Exploratory Manual Penetration Testing (EMPT)?**
-
-  - _Trecho de apoio:_ —
-  - _Resposta:_ SMPT segue roteiros e checklists (p.ex. WSTG), enquanto EMPT é guiado pela criatividade do pentester. Ambos combinam enumeração, exploração e prova de conceito.
-  - _Resposta da web:_ Pentesters humanos executam **manual penetration testing** para detectar falhas de lógica que scanners ignoram; guias recomendam PTES/NIST 800-115 como framework sistematizado.
-
-- **Como é realizado um teste de penetração (penetration testing), e quais as etapas e objetivos principais desta atividade?**
-
-  - _Trecho de apoio:_ —
-  - _Resposta:_ Etapas: 1) Reconhecimento, 2) Enumeração, 3) Exploração, 4) Pós-exploração, 5) Relatório. Objetivo: demonstrar impacto real e fornecer recomendações.
-  - _Resposta da web:_ Organizações como EC-Council definem cinco fases: reconnaissance, scanning, vulnerability assessment, exploitation e reporting.
-
-- **Quais são exemplos práticos de aplicação das ferramentas SAST (como SonarQube) e DAST (como OWASP ZAP)?**
-  - _Trecho de apoio:_ citação ZAP
-  - _Resposta:_ **SonarQube** integra-se ao CI/CD apontando CWEs; **OWASP ZAP** pode automatizar fuzzing WebSocket, spider e análise passiva durante o pipeline, bloqueando o merge em caso de achados críticos.
-  - _Resposta da web:_ SonarQube 9+ cobre NIST SSDF e Top 10; já ZAP permite fuzzing de WebSockets com interface gráfica ou CLI, útil em testes de APIs em tempo real.
+**Resposta correta:** a
 
 ---
 
-## Desenvolvimento de Software Seguro
+## Questão 4
 
-- **No contexto do SDL (Security Development Lifecycle), quais são as principais práticas para assegurar a segurança durante todo o ciclo de vida do software?**
+**Enunciado:**  
+Qual é uma limitação importante da revisão de código-fonte?
 
-  - _Trecho de apoio:_
-  - _Resposta:_ Planejar requisitos, modelar ameaças, SAST/DAST contínuos, gates de liberação, resposta a incidentes e monitoramento em produção.
-  - _Resposta da web:_ O **Microsoft SDL** adiciona treinamento, requisitos, análise de design e verificação de mitigação antes do release; threat modeling segue 5 passos (definir requisitos, diagramar, identificar ameaças, mitigar, validar).
+**Alternativas:**  
+a) O código analisado pode não ser o mesmo que será implantado em produção.  
+b) É um processo lento, mesmo para desenvolvedores bastante experientes.  
+c) Identifica tipos de vulnerabilidades que poderiam ser detectadas por outros métodos.  
+d) É realizada apenas nos estágios finais do SDLC, reduzindo sua eficácia.
 
-- **Quais são as práticas fundamentais detalhadas no modelo Microsoft Security Development Lifecycle (SDL)?**
-
-  - _Trecho de apoio:_ —
-  - _Resposta:_ Treinamento, requisitos de segurança, modelagem STRIDE, análise de design, código seguro, testes, “security gates” e resposta a incidentes.
-  - _Resposta da web:_ Documentação oficial destaca STRIDE, ferramentas automáticas e revisão de binários para ASLR/DEP antes da assinatura.
-
-- **O que são casos de abuso (abuser stories), e como podem ser usados efetivamente na especificação de requisitos de segurança?**
-
-  - _Trecho de apoio:_ —
-  - _Resposta:_ São histórias na perspectiva do atacante (“Como invasor, quero...”) usadas para derivar controles defensivos específicos logo na fase de requisitos.
-  - _Resposta da web:_ Abuser stories complementam user stories em metodologias ágeis, forçando a equipe a pensar como o atacante e gerar requisitos de negação de abuso.
-
-- **Como é aplicado na prática o método de threat modeling no contexto do SDL?**
-  - _Trecho de apoio:_ cita SDL
-  - _Resposta:_ Identificar ativos, decompor fluxos, aplicar STRIDE, definir mitigações e documentar riscos.
-  - _Resposta da web:_ STRIDE provê check-list sistemático; ferramentas (MS Threat Modeling Tool, IriusRisk) automatizam diagramação e geração de mitigações.
+**Resposta correta:** a
 
 ---
 
-## DevSecOps
+## Questão 5
 
-- **O que é DevSecOps, e quais os principais pilares que sustentam sua implementação?**
+**Enunciado:**  
+Qual é uma vantagem do teste de penetração em aplicações web?
 
-  - _Trecho de apoio:_ —
-  - _Resposta:_ Integra segurança à cultura DevOps. Pilares: Responsabilidade Coletiva, Treinamento & Integração, Implementação Pragmática, Conformidade × Desenvolvimento, Automação e Métricas.
-  - _Resposta da web:_ CSA define **seis pilares** com ênfase em responsabilidade coletiva; Fortinet reforça o “shift-left” para reduzir custo de remediação.
+**Alternativas:**  
+a) Permite modificar o comportamento da aplicação sem acesso ao ambiente de produção.  
+b) Pode ser realizado nos estágios iniciais do SDLC, ampliando a capacidade de detecção de vulnerabilidades.  
+c) Substitui a necessidade de entrevistas e análise documental para detectar vulnerabilidades.  
+d) Avalia o comportamento do código realmente implantado, mesmo sem conhecer sua implementação interna.
 
-- **Como a automação contribui para a eficiência e segurança no contexto de DevSecOps?**
-
-  - _Trecho de apoio:_
-  - _Resposta:_ Automatização de SAST, DAST, SCA, políticas como código e gates de segurança reduz tempo de feedback e erro humano.
-  - _Resposta da web:_ DevSecOps automatiza segurança em cada commit, permitindo detecção precoce e release contínuo sem comprometer a qualidade.
-
-- **Quais são exemplos práticos e benefícios da aplicação dos pilares específicos de DevSecOps (Responsabilidade Coletiva, Colaboração e Integração, Conformidade e Desenvolvimento)?**
-  - _Trecho de apoio:_ —
-  - _Resposta:_ Merge bloqueado em falha crítica (Responsabilidade Coletiva), revisões de segurança em pull requests (Colaboração), evidências versionadas para auditoria (Conformidade), resultando em menor _time-to-fix_.
-  - _Resposta da web:_ Programas de bug bounty internos, pipelines GitOps assinados e políticas OPA demonstram esses pilares na prática.
+**Resposta correta:** d
 
 ---
 
-## Aplicações Práticas e Exemplos
+## Questão 6
 
-- **Quais são exemplos práticos de vulnerabilidade de injeção SQL, incluindo causas comuns e técnicas de prevenção?**
+**Enunciado:**  
+Qual é uma vantagem principal da revisão manual do código-fonte para identificar problemas de segurança em aplicações web?
 
-  - _Trecho de apoio:_
-  - _Resposta:_ Exemplos incluem concatenação de parâmetros sem validação. Prevenção: _prepared statements_, validação de entrada, princípio de menor privilégio.
-  - _Resposta da web:_ Prepared statements eliminam concatenação de strings e reduzem risco de SQLi; OWASP e Imperva citam-nos como defesa primária.
+**Alternativas:**  
+a) Permite detectar problemas de segurança que outras formas de análise, como testes de penetração, podem não identificar.  
+b) Facilita a execução sistemática de testes de segurança, por ser um método caixa-preta.  
+c) Elimina a necessidade de verificar a lógica de negócios e o controle de acesso.  
+d) Reduz a necessidade de habilidades técnicas para identificar vulnerabilidades.
 
-- **Como ocorre um ataque de buffer overflow, e quais medidas de prevenção e mitigação são recomendadas?**
+**Resposta correta:** a
 
-  - _Trecho de apoio:_ —
-  - _Resposta:_ Gravação além do limite do buffer altera ponteiros de retorno e permite execução de código arbitrário. Mitigações: ASLR, canários de pilha, _bounds-checking_.
-  - _Resposta da web:_ OWASP recomenda **stack canaries** e DEP; Android implementa ASLR/KASLR para reduzir exploitabilidade.
+---
 
-- **Quais são as melhores práticas para a gestão de segredos (secrets management) em pipelines de desenvolvimento seguro?**
-  - _Trecho de apoio:_
-  - _Resposta:_ Utilizar cofres (HashiCorp Vault, AWS Secrets Manager), rotacionar chaves, evitar texto claro em repositórios e escanear vazamentos.
-  - _Resposta da web:_ Guias recomendam centralizar segredos em Vault, usar tokens efêmeros e restringir permissões no pipeline CI/CD.
+## Questão 7
+
+**Enunciado:**  
+No processo de derivação de requisitos de segurança usando casos de uso e abuso, qual é a importância de descrever cenários negativos, como ataques de força bruta?
+
+**Alternativas:**  
+a) Para garantir que a aplicação seja capaz de fornecer respostas específicas para cada tipo de ataque identificado.  
+b) Para identificar e documentar vulnerabilidades potenciais e as contramedidas necessárias para mitigar os riscos associados a ataques.  
+c) Para avaliar a conformidade da aplicação com regulamentos e padrões de segurança aplicáveis.  
+d) Para implementar controles de segurança que bloqueiem o acesso não autorizado antes do início do desenvolvimento.
+
+**Resposta correta:** b
+
+---
+
+## Questão 8
+
+**Enunciado:**  
+A proteção de dados sensíveis, como informações pessoalmente identificáveis (PII), deve envolver a validação de qual requisito de segurança?
+
+**Alternativas:**  
+a) A análise de risco baseada no nível de sensibilidade do dado.  
+b) A verificação do uso de criptografia.  
+c) A verificação da conformidade com as políticas de segurança da informação da empresa.  
+d) A eliminação do armazenamento de dados sensíveis.
+
+**Resposta correta:** c
+
+---
+
+## Questão 9
+
+**Enunciado:**  
+Por que os requisitos de segurança baseados em risco (negativos) são mais difíceis de testar do que os requisitos funcionais (positivos)?
+
+**Alternativas:**  
+a) Porque eles sempre exigem o uso de ferramentas de fuzzing automatizado.  
+b) Porque não podem ser descritos por meio de casos de uso nem validados com testes de penetração.  
+c) Porque dependem exclusivamente de verificações manuais feitas após a implantação do sistema.  
+d) Porque não descrevem um comportamento esperado, exigindo análise de ameaças e cenários imprevistos.
+
+**Resposta correta:** d
+
+---
+
+## Questão 10
+
+**Enunciado:**  
+O que são "misuse cases" ou "abuse cases" no contexto da engenharia de requisitos de segurança?
+
+**Alternativas:**  
+a) Cenários que descrevem como um sistema pode ser maliciosamente explorado.  
+b) Casos de teste automatizados para validar funcionalidades não documentadas.  
+c) Casos de uso voltados para testes de desempenho em ambientes inseguros.  
+d) Casos que descrevem a experiência do usuário em situações de erro.
+
+**Resposta correta:** a
+
+---
+
+## Questão 11
+
+**Enunciado:**  
+Como os testes unitários de segurança contribuem para a validação de mudanças no código após a correção de vulnerabilidades?
+
+**Alternativas:**  
+a) Garantem que a nova funcionalidade foi implementada conforme as especificações do cliente.  
+b) Verificam se as alterações no código mitigam a vulnerabilidade identificada e seguem os padrões de codificação segura.  
+c) Permitem que o código com problemas de segurança seja incluído no build desde que esteja documentado.  
+d) Avaliam o impacto das mudanças no desempenho do sistema em tempo de execução.
+
+**Resposta correta:** b
+
+---
+
+## Questão 12
+
+**Enunciado:**  
+O que ocorre com um pacote no pipeline DevSecOps quando o resultado das atividades de segurança não atender aos requisitos de um checkpoint?
+
+**Alternativas:**  
+a) O pacote é automaticamente modificado para atender aos requisitos de segurança necessários.  
+b) O pacote é encaminhado para uma revisão externa para verificar a conformidade com os requisitos de segurança.  
+c) O pacote avança para o próximo estágio, mas com uma nota de alerta sobre os requisitos de segurança não atendidos.  
+d) O pacote permanece na fase atual e não é permitido avançar para o próximo checkpoint ou estágio.
+
+**Resposta correta:** d
+
+---
+
+## Questão 13
+
+**Enunciado:**  
+Qual é a abordagem recomendada para introduzir recursos de testes de segurança no pipeline de entrega para suportar DevSecOps?
+
+**Alternativas:**  
+a) Introduzir todos os recursos de testes de segurança de forma integral para garantir uma abordagem completa desde o início.  
+b) Investir em ferramentas atualizadas e avançadas substituindo as ferramentas existentes para garantir uma integração eficiente.  
+c) Realizar a automação de controles e atividades de segurança antes de implementar qualquer ferramenta de segurança existente.  
+d) Começar com recursos de testes de segurança de alto valor e baixo impacto, como ferramentas de qualidade de código, e adicionar novos recursos gradualmente.
+
+**Resposta correta:** d
+
+---
+
+## Questão 14
+
+**Enunciado:**  
+Qual é um benefício de utilizar uma suíte de testes de segurança genérica integrada ao framework de testes unitários dos desenvolvedores?
+
+**Alternativas:**  
+a) Permitir a verificação das funcionalidades de segurança tanto para requisitos positivos quanto negativos em componentes de software.  
+b) Facilitar a criação de novos módulos de software sem a necessidade de análise de código.  
+c) Identificar problemas de desempenho em tempo real durante a execução do código, em função dos requisitos de segurança adicionais.  
+d) Automatizar os testes, substituindo a necessidade de testes de segurança realizados por engenheiros de segurança especializados.
+
+**Resposta correta:** a
 
 ---
