@@ -53,8 +53,8 @@ nav:
 
 nav:
   - Home: index.md
-  - MC/DC:
-      - Modified Condition/Decision Coverage (MC/DC): aae3/mc_dc.md
+  # - MC/DC:
+  #    - Modified Condition/Decision Coverage (MC/DC): aae3/mc_dc.md
   # - AAE:
   # - AAE3: aae3/aae3.md
   - TPI/TPE:
@@ -63,7 +63,7 @@ nav:
       - TPI/TPE(3): tpi_tpe/tpi3_tpe3.md
       - TPI/TPE(4): tpi_tpe/tpi4_tpe4.md
       - TPI/TPE(5): tpi_tpe/tpi5_tpe5.md
-  - Unit Testing:
-      - Teste de Unidade: aae3/unit_test.md
-  - White-Box Testing:
-      - Teste Caixa Branca: aae3/white_box_test.md
+  # - Unit Testing:
+  #    - Teste de Unidade: aae3/unit_test.md
+  # - White-Box Testing:
+  #    - Teste Caixa Branca: aae3/white_box_test.md
