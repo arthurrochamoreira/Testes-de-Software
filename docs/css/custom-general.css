@@ -1,26 +1,13 @@
 .md-main__inner {
   min-width: 90vw;
+  position: relative;
 }
 
-/* Modo claro */
-[data-md-color-scheme="default"] {
-  --md-typeset-color: #1a1a1a;
-  --md-typeset-muted-color: #333333;
-}
-
-[data-md-color-scheme="default"] h1,
-[data-md-color-scheme="default"] h2,
-[data-md-color-scheme="default"] h3,
-[data-md-color-scheme="default"] h4,
-[data-md-color-scheme="default"] h5,
-[data-md-color-scheme="default"] h6 {
-  color: #1a1a1a;
-}
-
-/* Modo escuro */
 [data-md-color-scheme="slate"] {
-  --md-typeset-color: #f5f5f5;
-  --md-typeset-muted-color: #cccccc;
+  --md-typeset-color: #cccccc;
+  --md-typeset-muted-color: #aaaaaa;
+  --heading-color: #e0e0e0;
+  --text-color: #cccccc;
 }
 
 [data-md-color-scheme="slate"] h1,
@@ -29,7 +16,24 @@
 [data-md-color-scheme="slate"] h4,
 [data-md-color-scheme="slate"] h5,
 [data-md-color-scheme="slate"] h6 {
-  color: #f5f5f5;
+  color: var(--heading-color);
 }
 
-/* Ensure the main element acts as the positioning context */
+[data-md-color-scheme="slate"] p {
+  color: var(--text-color);
+}
+
+/* Sombra dupla aprimorada — reforça contraste sem branco puro */
+.md-main__inner,
+.md-content {
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8), 0 0 1px rgba(0, 0, 0, 0.6);
+}
+
+.md-content h1,
+.md-content h2,
+.md-content h3,
+.md-content h4,
+.md-content h5,
+.md-content h6 {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.85), 0 0 2px rgba(0, 0, 0, 0.7);
+}
