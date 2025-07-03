@@ -1,10 +1,9 @@
-/*
-  =====================================================================
-  Variáveis globais que controlam o comportamento do céu noturno.
-  Ajuste os valores abaixo para modificar opacidade, velocidade de
-  animações e angulação da faixa de estrelas cruzadas.
-  =====================================================================
-*/
+.md-nav__title,
+.md-nav__link--active {
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+
 :root {
   --night-sky-background-opacity: 80%;
   --shooting-time: 4000ms; /* duração das animações de estrelas cadentes */

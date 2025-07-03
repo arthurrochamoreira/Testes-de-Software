@@ -1,5 +1,3 @@
-<link rel="stylesheet" href="css/custom.css">
-<link rel="stylesheet" href="css/star-background.css">
 <link rel="stylesheet" href="css/night-sky.css">
 
   <div class="sky">
@@ -18,3 +16,4 @@ Documentação pessoal sobre **Testes de Software**, desenvolvida como apoio aos
 - _xUnit Test Patterns_ (Meszaros, 2007)
 - _Test-Driven Development: By Example_ (Kent Beck, 2002)
 - _The Art of Software Testing_ (Glenford J. Myers, 2011)
+- _Effective Software Testing_ (Maurício Aniche, 2022)
