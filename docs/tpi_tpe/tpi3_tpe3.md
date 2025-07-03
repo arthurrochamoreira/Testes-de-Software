@@ -1,274 +1,228 @@
-# Questionário - TPI/TPE 3
+# Questionário - TPI/TPE-3
+
+---
 
 ## Questão 1
 
-**Enunciado:**  
-Qual é a representação de programa mais comumente utilizada nos critérios de teste estrutural?
+**Enunciado:**
+Por que a cobertura de linha não é considerada suficiente como critério de teste?
 
-**Alternativas:**  
-a) Grafo de Causa-Efeito  
-b) Grafo de Fluxo de Dados  
-c) Grafo de Caminhos Independentes  
-d) Grafo de Fluxo de Controle
+**Alternativas:**
+a) Porque ela exige muitos testes para atingir alta cobertura
+b) Porque ela verifica apenas se todas as instruções foram executadas, sem garantir cobertura das decisões
+c) Porque ela garante a cobertura de todas as condições compostas
+d) Porque ela avalia somente entradas válidas
 
-**Resposta correta:** d
-
-> O diagrama é um grafo de fluxo de controle. Cada nó ou círculo representa um segmento de instruções que executam sequencialmente, podendo terminar com uma instrução de desvio. Cada aresta ou arco representa uma transferência de controle (desvio) entre segmentos.
-
-**Referência:** _The Art of Software Testing – 3rd Edition_, página 11.
+**Resposta correta:** b
 
 ---
 
 ## Questão 2
 
-**Enunciado:**  
-Qual das seguintes afirmações é MAIS VERDADEIRA sobre o teste de unidade?
+**Enunciado:**
+A cobertura de decisão é satisfeita quando:
 
-**Alternativas:**  
-a) É uma abordagem de teste de caixa preta onde a estrutura interna do módulo não é considerada  
-b) É uma abordagem de teste de caixa branca que foca nos componentes individuais de um programa  
-c) Só é usado para grandes programas com mais de 500 instruções  
-d) É o mesmo que teste de integração, que combina vários componentes
+**Alternativas:**
+a) Todas as variáveis foram testadas com valores extremos
+b) Todos os operadores lógicos foram testados isoladamente
+c) Cada resultado possível de cada decisão (true e false) ocorre em pelo menos um caso de teste
+d) Todos os caminhos possíveis do programa foram testados
 
-**Resposta correta:** b
-
-> O teste de unidade é amplamente orientado à caixa-branca. (p. 86)
-
-**Referência:** _The Art of Software Testing – 3rd Edition_, página 86.
+**Resposta correta:** c
 
 ---
 
 ## Questão 3
 
-**Enunciado:**  
-Quais são os dois principais motivos para realizar o teste de unidade?
+**Enunciado:**
+A cobertura de condição nem sempre é mais forte que a de decisão porque:
 
-**Alternativas:**  
-a) Documentar a funcionalidade do programa e identificar erros no início do processo de desenvolvimento  
-b) Reduzir a complexidade de testar programas grandes e facilitar a depuração  
-c) Atender aos requisitos do usuário e garantir que o programa esteja livre de erros  
-d) Melhorar a cobertura do código e testar o desempenho do programa
+**Alternativas:**
+a) Pode não garantir que ambos os resultados de uma decisão ocorram
+b) Ela ignora a avaliação de variáveis booleanas
+c) Avalia decisões compostas sem condições isoladas
+d) É baseada apenas em testes de exceção
 
-**Resposta correta:** b
-
-> As motivações para fazer isso são três. Primeiro, o teste de módulo é uma forma de gerenciar os elementos combinados do teste, já que a atenção é focada inicialmente em unidades menores do programa. Segundo, o teste de módulo facilita a tarefa de depuração, já que a atenção está concentrada em uma pequena unidade de código e, frequentemente, a interface com o restante do programa é simulada por um módulo stub. (p. 85)
-
-**Referência:** _The Art of Software Testing – 3rd Edition_, página 85.
+**Resposta correta:** a
 
 ---
 
 ## Questão 4
 
-**Enunciado:**  
-Por que a cobertura de condição pode não satisfazer a cobertura de decisão?
+**Enunciado:**
+A cobertura de condições exige que:
 
-**Alternativas:**  
-a) Porque a cobertura de condição não testa todas as instruções  
-b) Porque algumas condições podem mascarar outras  
-c) Porque a cobertura de condição não inclui os pontos de entrada do programa  
-d) Porque a cobertura de condição não testa todas as combinações de condições
+**Alternativas:**
+a) Cada condição em uma expressão seja avaliada como verdadeira e falsa em algum teste
+b) Todas as decisões tenham a mesma quantidade de condições
+c) Cada condição seja executada pelo menos uma vez
+d) Todas as combinações de condições resultem em verdade e falso
 
-**Resposta correta:** b
-
-> Um ponto fraco da cobertura de condição/decisão é que, embora pareça exercitar todos os resultados de todas as condições, frequentemente não o faz, porque certas condições mascaram outras condições.
-
-> Por exemplo, se uma condição ‘and’ for falsa, nenhuma das condições subsequentes na expressão precisa ser avaliada. Da mesma forma, se uma condição ‘or’ for verdadeira, as condições subsequentes também não precisam ser avaliadas.
-
-**Referência:** _The Art of Software Testing – 3rd Edition_, páginas 46–47.
+**Resposta correta:** a
 
 ---
 
 ## Questão 5
 
-**Enunciado:**  
-Qual é a principal limitação da cobertura de decisão?
+**Enunciado:**
+A cobertura de decisão/condição não garante:
 
-**Alternativas:**  
-a) Não garante que todas as instruções sejam executadas  
-b) Não considera as múltiplas condições dentro de uma decisão  
-c) Não testa todas as possíveis combinações de condições  
-d) Não identifica erros em decisões aninhadas
+**Alternativas:**
+a) A execução de todos os loops envolvendo decisões
+b) Que todas as decisões sejam falsas ao menos uma vez
+c) Que todas as instruções de decisões sejam executadas
+d) Que cada condição isoladamente determine o resultado da decisão
 
-**Resposta correta:** b
-
-> A cobertura de decisão é um critério mais forte do que a cobertura de instruções, mas ainda é bastante fraco.  
-> Um critério que às vezes é mais forte do que a cobertura de decisão é a cobertura de condição. [...] Mas, assim como a cobertura de decisão, isso nem sempre leva à execução de cada instrução.  
-> Embora o critério de cobertura de condição pareça, à primeira vista, satisfazer o critério de cobertura de decisão, isso nem sempre acontece. [...] Os testes de cobertura de condição do exemplo anterior cobriram todos os resultados das condições, mas apenas dois dos quatro resultados das decisões...
-
-**Referência:** _The Art of Software Testing – 3rd Edition_, páginas 45–46.
+**Resposta correta:** d
 
 ---
 
 ## Questão 6
 
-**Enunciado:**  
-Qual dos critérios de cobertura de lógica é considerado o mais fraco?
+**Enunciado:**
+A cobertura de múltiplas condições exige que:
 
-**Alternativas:**  
-a) Cobertura de condição  
-b) Cobertura de decisão  
-c) Cobertura de múltiplas condições  
-d) Cobertura de instrução
+**Alternativas:**
+a) Cada condição seja testada isoladamente
+b) Todas as decisões tenham apenas duas condições
+c) Todas as combinações possíveis de valores das condições em uma decisão sejam testadas
+d) Todas as múltiplas decisões e condições sejam executadas
 
-**Resposta correta:** d
-
-> Embora você possa executar todas as instruções com um único teste, esse critério é bastante fraco.  
-> Em outras palavras, o critério de cobertura de instrução é tão fraco que geralmente é inútil.
-
-**Referência:** _The Art of Software Testing – 3rd Edition_, página 44.
+**Resposta correta:** c
 
 ---
 
 ## Questão 7
 
-**Enunciado:**  
-O que o método MC/DC visa alcançar?
+**Enunciado:**
+Em comparação com outros critérios, o MC/DC:
 
-**Alternativas:**  
-a) Testar todas as instruções do programa pelo menos uma vez  
-b) Testar todas as combinações de decisões em um programa  
-c) Garantir que cada condição em uma decisão tenha um resultado verdadeiro e falso pelo menos uma vez  
-d) Garantir que cada condição independente em uma decisão tenha um efeito independente na saída da decisão
+**Alternativas:**
+a) É mais forte que a cobertura de múltiplas condições
+b) Garante que cada condição influencie o resultado da decisão, mas com menos casos de teste do que a cobertura de múltiplas condições
+c) É inferior ao teste de condições/decisões por gerar menos casos de testes
+d) Testa todas as combinações das múltiplas condições em cada decisão
 
-**Resposta correta:** d
-
-> A cobertura de condição/decisão modificada (MC/DC) exige que cada ponto de entrada e saída do programa tenha sido invocado pelo menos uma vez, que cada condição em uma decisão assuma todos os resultados possíveis pelo menos uma vez e que cada condição em uma decisão tenha mostrado afetar de forma independente o resultado da decisão.
-
-**Referência:** _The Art of Software Testing – 3rd Edition_, página 47.
+**Resposta correta:** b
 
 ---
 
 ## Questão 8
 
-**Enunciado:**  
-Qual é uma das principais vantagens do método MC/DC em relação a outros critérios de cobertura?
+**Enunciado:**
+Para aplicar MC/DC corretamente, deve-se:
 
-**Alternativas:**  
-a) Requer menos casos de teste para ser implementado  
-b) É mais fácil de entender e aplicar em programas grandes  
-c) Garante uma cobertura mais robusta ao testar condições de decisão  
-d) Não requer testes de múltiplas condições dentro de uma decisão
+**Alternativas:**
+a) Testar todos os caminhos independentes do programa
+b) Garantir que cada linha de código seja executada
+c) Usar apenas condições independentes para cada uma das decisões
+d) Criar pares de casos de teste que diferem em uma única condição e causam mudança na decisão
 
-**Resposta correta:** c
-
-> Um critério que cobre esse problema, e vai além, é a cobertura de múltiplas condições.  
-> Esse critério exige que você escreva casos de teste suficientes para que todas as combinações possíveis de resultados de condições em cada decisão, e todos os pontos de entrada, sejam invocados pelo menos uma vez.  
-> Embora o MC/DC não exija todas as combinações, ele melhora a cobertura de decisão/condição ao garantir que cada condição afete independentemente o resultado da decisão.
-
-**Referência:** _The Art of Software Testing – 3rd Edition_, página 47.
+**Resposta correta:** d
 
 ---
 
 ## Questão 9
 
-**Enunciado:**  
-Qual das seguintes afirmações melhor descreve o primeiro passo ao usar técnicas de cobertura lógica no teste de software?
+**Enunciado:**
+Considere a seguinte decisão: (A && B) || C. Quais dos pares de valores abaixo demonstram independência da condição C?
 
-**Alternativas:**  
-a) Identificar todas as variáveis no programa e garantir que cada uma seja testada em diferentes condições  
-b) Listar as decisões condicionais no programa, focando em declarações IF, DO e similares  
-c) Criar casos de teste para todas as funcionalidades do software sem considerar a estrutura interna do código  
-d) Garantir que todas as declarações IF no programa sejam testadas de forma isolada para verificar seu comportamento
+**Alternativas:**
+a) A = false, B = false, C = false e A = false, B = false, C = true
+b) A = true, B = true, C = false e A = false, B = true, C = true
+c) A = true, B = true, C = true e A = false, B = false, C = false
+d) A = true, B = false, C = true e A = true, B = true, C = false
 
-**Resposta correta:** b
-
-> Independentemente da técnica de cobertura lógica utilizada, o primeiro passo é listar as decisões condicionais no programa. Os candidatos neste programa são todas as instruções IF e DO.
-
-**Referência:** _The Art of Software Testing – 3rd Edition_, página 89.
+**Resposta correta:** a
 
 ---
 
 ## Questão 10
 
-**Enunciado:**  
-Qual das seguintes afirmações melhor descreve uma característica do critério de cobertura de múltiplas condições?
+**Enunciado:**
+Dada a expressão A || (B && C), quais dos pares abaixo demonstram que B afeta o resultado da decisão independentemente das demais?
 
-**Alternativas:**  
-a) O critério de cobertura de múltiplas condições é suficiente para detectar todos os erros possíveis em uma unidade  
-b) Mesmo testes que satisfazem o critério de cobertura de múltiplas condições podem não detectar certos erros, como valores iniciais incorretos  
-c) O critério de cobertura de múltiplas condições se concentra apenas em testes de caixa-preta  
-d) O critério de cobertura de múltiplas condições garante que todos os caminhos de execução do código sejam testados
+**Alternativas:**
+a) A = true, B = false, C = false e A = false, B = false, C = true
+b) A = true, B = true, C = false e A = true, B = false, C = true
+c) A = false, B = false, C = true e A = false, B = true, C = true
+d) A = false, B = false, C = false e A = false, B = true, C = false
 
-**Resposta correta:** b
-
-> Embora esses dois casos de teste atendam ao critério de cobertura de decisão, deve ser óbvio que pode haver muitos tipos de erros no módulo que não são detectados por esses dois casos. Por exemplo, os casos de teste não exploram circunstâncias como quando o código de erro é 0, um funcionário é gerente ou a tabela de departamentos está vazia (DSIZE ≤ 0).
-
-**Referência:** _The Art of Software Testing – 3rd Edition_, página 90.
+**Resposta correta:** c
 
 ---
 
 ## Questão 11
 
-**Enunciado:**  
-Qual é uma vantagem importante do teste incremental sobre o teste não incremental?
+**Enunciado:**
+O primeiro passo na elaboração de testes caixa-branca é:
 
-**Alternativas:**  
-a) Requer menos módulos de driver e stub  
-b) Necessita de menos tempo de máquina  
-c) Permite que todos os módulos sejam testados simultaneamente  
-d) Reduz a possibilidade de detectar erros nas interfaces dos módulos
+**Alternativas:**
+a) Analisar o fluxo de controle e identificar decisões e condições
+b) Definir critérios de desempenho da aplicação
+c) Construir um grafo de fluxo de controle
+d) Analisar os requisitos funcionais e não funcionais
 
 **Resposta correta:** a
-
-> O teste não incremental exige mais trabalho. Para o programa da Figura 5.7, cinco drivers e cinco stubs devem ser preparados [...]. O teste incremental bottom-up exigiria cinco drivers, mas nenhum stub. Um teste incremental top-down exigiria cinco stubs, mas nenhum driver. Menos trabalho é necessário porque os módulos previamente testados são usados em vez dos módulos driver (se começar do topo) ou dos módulos stub (se começar pela base) exigidos na abordagem não incremental.
-
-**Referência:** _The Art of Software Testing – 3rd Edition_, página 99.
 
 ---
 
 ## Questão 12
 
-**Enunciado:**  
-Qual das seguintes observações é uma vantagem do teste não incremental?
+**Enunciado:**
+Para elaborar testes caixa-branca, deve-se elencar os resultados das saídas das decisões para:
 
-**Alternativas:**  
-a) Detecta erros de interfaces de módulos mais cedo  
-b) Reduz a necessidade de drivers e stubs  
-c) Permite mais atividades paralelas no início da fase de testes de módulo  
-d) Resulta em testes mais completos dos módulos
+**Alternativas:**
+a) Garantir que todos os caminhos possíveis do código sejam exercitados
+b) Aumentar o número de testes executados
+c) Testar as condições de forma isolada
+d) Forçar a execução de todas as condições verdadeiras
 
-**Resposta correta:** c
-
-> No início da fase de testes de módulo, há mais oportunidade para atividades paralelas quando se utiliza o teste não incremental (isto é, todos os módulos podem ser testados simultaneamente). Isso pode ser significativo em projetos grandes (com muitos módulos e pessoas), já que o número de integrantes do projeto geralmente atinge seu pico no início dessa fase.
-
-**Referência:** _The Art of Software Testing – 3rd Edition_, página 100.
+**Resposta correta:** a
 
 ---
 
 ## Questão 13
 
-**Enunciado:**  
-Qual é uma das principais vantagens do teste top-down?
+**Enunciado:**
+No contexto do teste unitário, drivers são:
 
-**Alternativas:**  
-a) Não requer a criação de stubs  
-b) Facilita a representação de casos de teste uma vez que as funções de entrada e saída são adicionadas  
-c) Permite a identificação de todos os erros possíveis no programa  
-d) Garante que todos os módulos são testados simultaneamente
+**Alternativas:**
+a) Programas que automatizam a geração de código
+b) Scripts que testam apenas interfaces gráficas
+c) Unidades auxiliares para testes de desempenho
+d) Módulos que simulam chamadas de módulos superiores a um módulo em teste
 
-**Resposta correta:** b
-
-> Uma vez que as funções de entrada/saída são adicionadas, a representação dos casos é facilitada.
-
-**Referência:** _The Art of Software Testing – 3rd Edition_, página 109.
+**Resposta correta:** d
 
 ---
 
 ## Questão 14
 
-**Enunciado:**  
-Qual é uma desvantagem do teste bottom-up?
+**Enunciado:**
+Por que o teste incremental é preferido ao teste não incremental?
 
-**Alternativas:**  
-a) A produção de módulos driver é mais difícil que a produção de stubs  
-b) Não permite a criação de um esqueleto inicial do programa  
-c) Requer que todos os módulos sejam testados simultaneamente  
-d) Aumenta a possibilidade de erros humanos durante a fase de design
+**Alternativas:**
+a) Porque testa os módulos à medida que são integrados, facilitando a detecção de falhas
+b) Porque não requer testes de regressão, aumentando a eficiência do teste
+c) Porque ignora falhas em módulos já testados, reduzindo a quantidade de casos de teste
+d) Porque é mais rápido e mais eficiente que o teste unitário
 
-**Resposta correta:** b
+**Resposta correta:** a
 
-> Uma desvantagem da estratégia bottom-up é que não há conceito de um programa esquelético inicial. De fato, o programa funcional não existe até que o último módulo (módulo A) seja adicionado, e esse programa funcional é o programa completo.
+---
 
-**Referência:** _The Art of Software Testing – 3rd Edition_, página 107.
+## Questão 15
+
+**Enunciado:**
+Qual a principal vantagem do top-down testing?
+
+**Alternativas:**
+a) Permite validar a lógica de controle do sistema a partir dos níveis superiores
+b) Reduz a necessidade de integração ao testar apenas o módulo principal do sistema
+c) Testa todos os módulos simultaneamente utilizando drivers e stubs
+d) Testa os módulos de mais alto nível primeiro, substituindo os inferiores por drivers
+
+**Resposta correta:** a
 
 ---

@@ -1,319 +1,213 @@
-# Questionário - TPI/TPE 4
+# Questionário - TPI/TPE-4
 
 ---
 
 ## Questão 1
 
-**Enunciado:**  
+**Enunciado:**
 O que são objetos dummy?
 
-**Alternativas:**  
-a) Objetos que possuem implementações reais, mas simplificadas  
-b) Objetos passados para a classe em teste, mas nunca utilizados  
-c) Objetos que fornecem respostas codificadas para chamadas realizadas durante o teste  
+**Alternativas:**
+a) Objetos que possuem implementações reais, mas simplificadas
+b) Objetos passados para a classe em teste, mas nunca utilizados
+c) Objetos que fornecem respostas codificadas para chamadas realizadas durante o teste
 d) Objetos que gravam todas as interações e permitem fazer asserções posteriormente
 
 **Resposta correta:** b
-
-> Objetos dummy são passados para a classe em teste, mas nunca são utilizados. Isso é comum em aplicações de negócio, onde é necessário preencher uma longa lista de parâmetros, mas o teste utiliza apenas alguns deles.  
-> Pense em um teste de unidade para uma classe Customer. Talvez essa classe dependa de várias outras, como Address, Email, e assim por diante. Talvez um caso de teste específico (caso A) queira exercitar um comportamento, e esse comportamento não se importa com qual Address o Customer possui. Nesse caso, o testador pode criar um objeto Address dummy e passá-lo para a classe Customer.
-
-> (Tradução Livre de Aniche, 2022, Cap. 6)
-
-> Dummy objects are passed to the class under test but never used. This is common in business applications where you need to fill a long list of parameters, but the test exercises only a few of them. Think of a unit test for a Customer class. Maybe this class depends on several other classes like Address, Email, and so on. Maybe a specific test case A wants to exercise a behavior, and this behavior does not care which Address this Customer has. In this case, a tester can set up a dummy Address object and pass it to the Customer class.
-
-> (Aniche, 2022, Cap. 6)
-
-> Objetos Dummy são uma forma degenerada de _Test Double_. Eles existem apenas para serem passados de método para método; eles **nunca são utilizados**.  
-> _(Tradução livre de Meszaros, 2007, p. 728)_
-
-> Um objeto dummy é passado para preencher uma lista de parâmetros, mas nunca é usado. Eles são mais frequentemente usados para preencher parâmetros obrigatórios em métodos ou construtores.  
-> _(Tradução livre de Meszaros, 2007, p. 728)_
-
-> Algumas linguagens exigem que forneçamos valores para todos os parâmetros formais de um método; objetos dummy nos permitem satisfazer esse requisito sem afetar o comportamento do teste.  
-> _(Tradução livre de Meszaros, 2007, p. 728)_
-
-**Referências:**
-
-- Meszaros, G. (2007). _xUnit Test Patterns: Refactoring Test Code_. Addison-Wesley.
-- Aniche, Maurício. Effective Software Testing: A Developer's Guide. Manning, 2022. ISBN‑10: 1633439933; ISBN‑13: 978‑1633439931.
-
-**Por que as outras alternativas estão erradas**
-
-- **a. Objetos que possuem implementações reais, mas simplificadas.**
-
-  > Isso define um _Fake Object_, substituindo um componente real por uma implementação funcional mais leve.  
-  > _(Meszaros, 2007, p. 551)_
-
-- **c. Objetos que fornecem respostas codificadas para chamadas realizadas durante o teste.**
-
-  > Isso define um _Test Stub_.  
-  > _(Meszaros, 2007, p. 529)_
-
-- **d. Objetos que gravam todas as interações e permitem fazer asserções posteriormente.**
-  > Isso corresponde a um _Test Spy_.  
-  > _(Meszaros, 2007, p. 538)_
 
 ---
 
 ## Questão 2
 
-**Enunciado:**  
+**Enunciado:**
 Qual a principal característica de objetos fake?
 
-**Alternativas:**  
-a) Eles têm implementações reais, mas geralmente fazem a tarefa de forma mais simples  
-b) Eles fornecem respostas codificadas para chamadas realizadas durante o teste  
-c) Eles gravam todas as interações e permitem fazer asserções posteriormente  
+**Alternativas:**
+a) Eles têm implementações reais, mas geralmente fazem a tarefa de forma mais simples
+b) Eles fornecem respostas codificadas para chamadas realizadas durante o teste
+c) Eles gravam todas as interações e permitem fazer asserções posteriormente
 d) Eles envolvem o objeto real e observam seu comportamento
 
 **Resposta correta:** a
-
-> Objetos fake possuem implementações reais e funcionais da classe que estão simulando, mas realizam a tarefa de forma mais simples. Imagine uma classe de banco de dados fake que usa uma ArrayList em vez de um banco real.  
-> (Aniche, 2022, Cap. 6)
-
-> Um _Fake Object_ substitui um componente do SUT por uma implementação funcional, geralmente mais leve.  
-> _(Meszaros, 2007, p. 551)_
-
-**Por que as outras alternativas estão erradas**
-
-- **b.** Isso descreve um _Test Stub_.
-
-  > _(Meszaros, 2007, p. 529)_
-
-- **c.** Isso descreve um _Test Spy_.
-
-  > _(Meszaros, 2007, p. 538)_
-
-- **d.** Isso descreve um _Mock Object_ com _proxying_.
-  > _(Meszaros, 2007, p. 544)_
-
-**Referências:**  
-Meszaros, 2007; Aniche, 2022.
 
 ---
 
 ## Questão 3
 
-**Enunciado:**  
+**Enunciado:**
 Como os stubs diferem dos objetos fake?
 
-**Alternativas:**  
-a) Stubs têm implementações reais, mas simplificadas  
-b) Stubs são usados apenas para observar o comportamento de uma dependência real  
-c) Stubs fornecem respostas codificadas e não têm implementação funcional  
+**Alternativas:**
+a) Stubs têm implementações reais, mas simplificadas
+b) Stubs são usados apenas para observar o comportamento de uma dependência real
+c) Stubs fornecem respostas codificadas e não têm uma implementação funcional
 d) Stubs permitem fazer asserções sobre as interações após o teste
 
 **Resposta correta:** c
-
-> Stubs fornecem respostas codificadas e não têm comportamento funcional.  
-> _(Aniche, 2022, Cap. 6; Meszaros, 2007, p. 529)_
-
-**Por que as outras alternativas estão erradas**
-
-- **a.** Descreve _Fake_
-- **b.** Descreve _Spy_
-- **d.** Descreve _Spy_
-
-**Referências:**  
-Meszaros, 2007; Aniche, 2022.
 
 ---
 
 ## Questão 4
 
-**Enunciado:**  
+**Enunciado:**
 Qual a vantagem principal dos objetos mocks em comparação com os stubs?
 
-**Alternativas:**  
-a) Mocks têm implementações reais  
-b) Mocks são mais fáceis de controlar do que stubs  
-c) Mocks podem gravar interações e permitir asserções sobre elas  
+**Alternativas:**
+a) Mocks têm implementações reais
+b) Mocks são mais fáceis de controlar do que stubs
+c) Mocks podem gravar interações e permitir asserções sobre elas
 d) Mocks fornecem respostas codificadas para chamadas realizadas durante o teste
 
 **Resposta correta:** c
-
-> Mocks permitem verificar interações ao final do teste, além de retornarem valores esperados como stubs fazem.  
-> _(Aniche, 2022, Cap. 6; Meszaros, 2007, p. 544)_
 
 ---
 
 ## Questão 5
 
-**Enunciado:**  
-Uma classe que simula uma base de dados usando uma lista pode ser classificada como:
+**Enunciado:**
+Uma classe que simula uma base de dados usando um array list em vez de uma base de dados real pode ser classificada como que tipo de dublê de teste?
 
-**Alternativas:**  
-a) Fake object  
-b) Dummy object  
-c) Mock  
+**Alternativas:**
+a) Fake object
+b) Dummy object
+c) Mock
 d) Stub
 
 **Resposta correta:** a
-
-> Fake Object substitui a implementação real por algo funcional mais simples, como um banco de dados em memória.  
-> _(Meszaros, 2007, p. 551; Aniche, 2022, Cap. 6)_
 
 ---
 
 ## Questão 6
 
-**Enunciado:**  
-O que pode ser necessário para injetar dublês de teste?
+**Enunciado:**
+O que pode ser necessário para injetar dublês de teste nas classes sendo testadas?
 
-**Alternativas:**  
-a) Criar um tipo especial de dublê que intercepte chamadas  
-b) Refatorar o construtor da classe de teste  
-c) Usar um framework de mocking  
-d) Alterar o código da classe sendo testada para aceitar a dependência via construtor
+**Alternativas:**
+a) Pode ser necessário criar um tipo especial de dublê de teste que seja capaz de interceptar as chamadas da classe sendo testada a partir da classe de dependência
+b) Pode ser necessário refatorar o construtor da classe de teste para instanciar a classe que será mockada no código da classe sendo testada
+c) Pode ser necessário utilizar um framework de mocking para que o dublê de teste seja injetado na classe de dependência
+d) Pode ser necessário alterar o código da classe sendo testada para passar a classe de dependência que será mockada em seu construtor
 
 **Resposta correta:** d
-
-> O livro destaca a injeção via construtor como forma de passar dublês para o SUT.  
-> _(Aniche, 2022, Cap. 6; Meszaros, 2007, p. 680–684)_
 
 ---
 
 ## Questão 7
 
-**Enunciado:**  
-Qual a principal vantagem de configurar dublês para lançar exceções?
+**Enunciado:**
+Qual é a principal vantagem de configurar dublês para lançar exceções em testes de software?
 
-**Alternativas:**  
-a) Permite testar como os sistemas se comportariam em cenários inesperados  
-b) Garante que todos os métodos sejam chamados ao menos uma vez  
-c) Facilita respostas codificadas  
-d) Substitui testes de integração
+**Alternativas:**
+a) Permite testar como os sistemas se comportariam em cenários inesperados, simulando a indisponibilidade de sistemas externos
+b) Garante que todos os métodos da aplicação sejam chamados pelo menos uma vez durante o teste, cobrindo diversos cenários
+c) Facilita a implementação de respostas codificadas para chamadas realizadas durante o teste, simplificando o processo
+d) Substitui a necessidade de testes de integração com sistemas externos reais, economizando tempo e recursos
 
 **Resposta correta:** a
-
-> Isso facilita testar caminhos de exceção sem dependências reais.  
-> _(Aniche, 2022, Cap. 6; Meszaros, 2007, p. 127)_
 
 ---
 
 ## Questão 8
 
-**Enunciado:**  
-Qual é uma das principais desvantagens de usar dublês?
+**Enunciado:**
+Qual é uma das principais desvantagens de usar dublês de teste?
 
-**Alternativas:**  
-a) O acoplamento com o código de produção, que pode levar a falhas ao mudar interações  
-b) Dificuldade de configuração e manutenção  
-c) Incapacidade de simular comportamentos complexos  
-d) Modificação excessiva do código de produção
+**Alternativas:**
+a) O acoplamento entre os dublês e o código de produção, que pode causar a falha dos testes quando a interação entre as classes muda
+b) A dificuldade em configurar e manter os dublês durante o ciclo de vida do projeto, resultando em testes menos eficientes
+c) A incapacidade de dublês em simular comportamentos complexos de sistemas externos, limitando a eficácia dos testes
+d) A necessidade de modificar o código de produção para acomodar o uso de dublês, introduzindo complexidade desnecessária
 
 **Resposta correta:** a
-
-> Dublês, especialmente mocks, podem gerar testes frágeis muito acoplados ao código real.  
-> _(Aniche, 2022, Cap. 6; Meszaros, 2007, p. 570)_
 
 ---
 
 ## Questão 9
 
-**Enunciado:**  
-Qual é o ciclo repetido no processo de TDD?
+**Enunciado:**
+Qual é o ciclo repetido no processo de TDD (Test-Driven Development)?
 
-**Alternativas:**  
-a) Teste passa → implementação → refatoração  
-b) Teste falha → implementação → refatoração  
-c) Implementação → teste passa → refatoração  
-d) Refatoração → teste falha → implementação
+**Alternativas:**
+a) Escrever um teste que passe, implementar a funcionalidade, refatorar o código de produção e de teste
+b) Escrever um teste que falhe, implementar a funcionalidade para que o teste passe, refatorar o código de produção e de teste
+c) Implementar a funcionalidade, escrever um teste que passe, refatorar o código de produção e de teste
+d) Refatorar o código de produção, escrever um teste que falhe, implementar a funcionalidade para que o teste passe
 
 **Resposta correta:** b
-
-> O ciclo do TDD clássico: falhar → passar → refatorar.  
-> _(Aniche, 2022, Cap. 8; Beck, 2002, Cap. 2)_
 
 ---
 
 ## Questão 10
 
-**Enunciado:**  
-Por que o TDD facilita a identificação de problemas?
+**Enunciado:**
+Por que o TDD facilita a identificação de novos problemas à medida que surgem?
 
-**Alternativas:**  
-a) Porque desenvolvedores escrevem código antes dos testes  
-b) Porque desenvolvedores focam no produto final  
-c) Porque todos os testes são escritos antes da implementação  
-d) Porque o ciclo incremental permite detectar problemas após pequenas alterações
+**Alternativas:**
+a) Porque os desenvolvedores escrevem grandes pedaços de código de produção antes de obter qualquer feedback
+b) Porque os desenvolvedores podem focar especificamente no código, concentrando-se no produto final
+c) Porque os desenvolvedores escrevem todos os testes de uma vez e depois implementam a funcionalidade
+d) Porque os desenvolvedores são forçados a dar um passo de cada vez, escrevendo um teste, fazendo-o passar e refletindo, facilitando a identificação de problemas depois de pequenas alterações
 
 **Resposta correta:** d
-
-> Pequenas alterações facilitam identificar falhas rapidamente.  
-> _(Aniche, 2022, Cap. 8; Beck, 2002, Cap. 2)_
 
 ---
 
 ## Questão 11
 
-**Enunciado:**  
-Como o TDD afeta o design?
+**Enunciado:**
+Como o TDD afeta o design das classes ou componentes?
 
-**Alternativas:**  
-a) Testes não influenciam o design  
-b) O teste é o primeiro cliente da classe, influenciando seu design  
-c) TDD encoraja designs mais complexos  
-d) TDD desencoraja refatoração
+**Alternativas:**
+a) O código de teste raramente influencia o design das classes ou componentes
+b) O código de teste é frequentemente o primeiro cliente da classe ou componente, moldando seu design se ele estiver difícil de testar
+c) O TDD encoraja designs mais complexos, pois cada teste cobre múltiplos casos
+d) O TDD desencoraja a refatoração, pois prioriza apenas passar nos testes
 
 **Resposta correta:** b
-
-> O código de teste serve de primeiro cliente, influenciando a forma do design.  
-> _(Aniche, 2022, Cap. 8; Beck, 2002, Cap. 17)_
 
 ---
 
 ## Questão 12
 
-**Enunciado:**  
-Quando o TDD é mais vantajoso?
+**Enunciado:**
+Quando o uso do TDD pode ser mais vantajoso?
 
-**Alternativas:**  
-a) Em problemas simples  
-b) Em qualquer tipo de problema  
-c) Em projetos de manutenção  
-d) Em problemas mais complicados, onde ajuda a estruturar melhor o desenvolvimento
+**Alternativas:**
+a) Em problemas simples, onde a abordagem TDD pode ser aplicada rapidamente
+b) Em qualquer tipo de problema, independentemente da complexidade
+c) Em projetos de manutenção, onde o código já está bem estabelecido
+d) Em problemas mais complicados, onde o TDD ajuda a estruturar melhor o desenvolvimento e detectar problemas de design mais cedo
 
 **Resposta correta:** d
-
-> O TDD auxilia muito quando a solução não está clara e exige experimentação.  
-> _(Aniche, 2022, Cap. 8; Beck, 2002)_
 
 ---
 
 ## Questão 13
 
-**Enunciado:**  
+**Enunciado:**
 Em quais situações o uso do TDD não é recomendado?
 
-**Alternativas:**  
-a) Quando o problema é bem conhecido e não há necessidade de experimentação  
-b) Quando se está em projetos ágeis  
-c) Em sistemas embarcados  
-d) Quando a pirâmide de testes não é aplicada
+**Alternativas:**
+a) Quando o problema é bem conhecido e não há necessidade de experimentação
+b) Quando se está trabalhando em projetos ágeis, onde a velocidade de entrega é crucial
+c) Quando se está desenvolvendo software para sistemas embarcados, devido às suas limitações naturais
+d) Quando a pirâmide de testes não estiver sendo aplicada como estratégia de testes
 
 **Resposta correta:** a
-
-> Se o problema já está totalmente dominado, não há muito a aprender com TDD.  
-> _(Aniche, 2022, Cap. 8; Beck, 2002)_
 
 ---
 
 ## Questão 14
 
-**Enunciado:**  
-Qual a eficácia dos testes em TDD?
+**Enunciado:**
+Qual é a eficácia dos testes gerados durante as sessões de TDD em comparação com testes sistemáticos?
 
-**Alternativas:**  
-a) As suítes de TDD são superiores às suítes sistemáticas em vários aspectos  
-b) As suítes são equivalentes  
-c) São inferiores apenas em projetos pequenos  
-d) TDD foca em desenvolvimento e não gera testes eficazes
+**Alternativas:**
+a) As suítes de teste geradas durante as sessões de TDD são superiores às suítes de teste sistemáticos em vários aspectos
+b) As suítes de teste geradas durante as sessões de TDD são equivalentes às suítes de teste sistemáticos
+c) As suítes de teste geradas durante as sessões de TDD são inferiores às suítes de teste sistemáticos apenas em projetos pequenos
+d) As suítes de teste geradas durante as sessões de TDD não são tão boas quanto as suítes de teste sistemáticos, pois TDD foca no desenvolvimento e não no teste
 
-**Resposta correta:** a
-
-> Pesquisas apontam maior qualidade de design, cobertura de testes e redução de defeitos.  
-> _(Aniche, 2022, Cap. 8; Meszaros, 2007, p. 33)_
+**Resposta correta:** d
 
 ---

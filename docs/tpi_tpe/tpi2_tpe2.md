@@ -1,4 +1,4 @@
-# Questionário - TPI-2
+# Questionário - TPI/TPE-2
 
 ## Questão 1
 
