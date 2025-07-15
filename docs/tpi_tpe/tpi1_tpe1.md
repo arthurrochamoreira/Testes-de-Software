@@ -15,7 +15,7 @@ d) Elas produzem software menos complexo, o que facilita a manutenção.
 
 > Equipes que produzem muitos bugs tendem a desperdiçar tempo em um ciclo eterno no qual desenvolvedores criam bugs, clientes (ou QAs dedicados) encontram os bugs, desenvolvedores corrigem os bugs, clientes encontram um novo conjunto de bugs, e assim por diante.
 
-“Teams that produce many bugs tend to waste time in an eternal loop where developers write bugs, customers (or dedicated QAs) find the bugs, developers fix the bugs, customers find a different set of bugs, and so on.”
+Teams that produce many bugs tend to waste time in an eternal loop where developers write bugs, customers (or dedicated QAs) find the bugs, developers fix the bugs, customers find a different set of bugs, and so on.
 
 — Aniche, _Effective Software Testing_, Capítulo 1, página 15 do PDF
 

@@ -11,6 +11,7 @@ extra_javascript:
   - js/shooting-stars.js
   - js/starfield.js
   - js/night-sky.js
+  - js/translate.js
 
 plugins:
   - search
