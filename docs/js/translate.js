@@ -6,7 +6,7 @@ function insertTranslationWidget() {
   select.id = "lang-select";
   select.style.marginLeft = "auto";
   select.innerHTML = `
-    <option value="pt">PT</option>
+    <option value="pt-br">BR</option>
     <option value="en">EN</option>
     <option value="es">ES</option>
   `;
